@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './Role.css';
+
 class Role extends Component {
     constructor(props) {
         super(props);

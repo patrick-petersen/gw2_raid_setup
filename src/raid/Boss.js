@@ -10,7 +10,7 @@ class Boss extends Component {
     render() {
         return (
             <section>
-                <h2>{this.props.name}</h2>
+                <h2>Boss: {this.props.name}</h2>
                 {this.props.children}
             </section>
         )

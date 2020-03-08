@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './Setup.css';
+
 class Setup extends Component {
     constructor(props) {
         super(props);
@@ -8,9 +10,13 @@ class Setup extends Component {
     }
     render() {
         return (
-            <div>
-                <h3>{this.props.name}</h3>
-                {this.props.children}
+            <div className={"setup"}>
+                <div className={"setup-name"}>
+                    <h3>Setup: {this.props.name}</h3>
+                </div>
+                <div className={"setup-roles"}>
+                    {this.props.children}
+                </div>
             </div>
         )
     }

@@ -10,7 +10,7 @@ class Wing extends Component {
     render() {
         return (
             <article>
-                <h1>{this.props.name}</h1>
+                <h1>Raid: {this.props.name}</h1>
                 {this.props.children}
             </article>
         )
