@@ -90,7 +90,7 @@ function App() {
                       <Role task={"Quickness"} profession={"Chronomancer"} player={"Kalell"} />
                       <Role task={"Tank & Heal & Buffs"} profession={"Tempest"} player={"Schrotty"} />
                       <Role task={"Alacrity"} profession={"Renegade"} player={"Ely"} />
-                      <Role task={"Pusher"} profession={"Chronomander"} player={"Fynn"} />
+                      <Role task={"Pusher"} profession={"Chronomancer"} player={"Fynn"} />
                   </Setup>
               </Boss>
               <Boss name={"Xera"}>
@@ -98,6 +98,45 @@ function App() {
                       <Role task={"Quickness"} profession={"Chronomancer"} player={"Kalell"} />
                       <Role task={"Tank & Heal & Buffs"} profession={"Tempest"} player={"Schrotty"} />
                       <Role task={"Alacrity"} profession={"Renegade"} player={"Ely"} />
+                  </Setup>
+              </Boss>
+          </Wing>
+
+
+          <Wing name={"Wing 4"}>
+              <Boss name={"Cairn"}>
+                  <Setup name={"Center"}>
+                      <Role task={"Quickness"} profession={"Chronomancer"} player={"Kalell"} />
+                      <Role task={"Quickness & Stability"} profession={"Firebrand"} player={"Yasi"} />
+                      <Role task={"Heal & Buffs"} profession={"Tempest"} player={"Schrotty"} />
+                      <Role task={"Alacrity"} profession={"Renegade"} player={"Ely"} />
+                  </Setup>
+              </Boss>
+              <Boss name={"Mursaat Overseer"}>
+                  <Setup name={"Normal"}>
+                      <Role task={"Claim"} profession={"?"} player={"Kalell"} />
+                      <Role task={"Buffs"} profession={"Thief"} player={"Assa"} />
+                      <Role task={"Heal & Buffs"} profession={"Tempest"} player={"Schrotty"} />
+                      <Role task={"Alacrity"} profession={"Renegade"} player={"Ely"} />
+                      <Role task={"Dispel"} profession={"?"} player={"?"} />
+                      <Role task={"Protect"} profession={"?"} player={"?"} />
+                  </Setup>
+              </Boss>
+              <Boss name={"Samarog"}>
+                  <Setup name={"Normal"}>
+                      <Role task={"Quickness & Pull"} profession={"Chronomancer"} player={"Kalell"} />
+                      <Role task={"Heal & Buffs"} profession={"Tempest"} player={"Schrotty"} />
+                      <Role task={"Alacrity"} profession={"Renegade"} player={"Ely"} />
+                      <Role task={"Extra Push"} profession={"Warrior"} player={"David"} />
+                  </Setup>
+              </Boss>
+              <Boss name={"Deimos"}>
+                  <Setup name={"Normal"}>
+                      <Role task={"Quickness & Tank"} profession={"Chronomancer"} player={"Kalell"} />
+                      <Role task={"Quickness"} profession={"Firebrand"} player={"Yasi"} />
+                      <Role task={"Heal & Buffs & Black-kiter"} profession={"Tempest"} player={"Schrotty"} />
+                      <Role task={"Alacrity"} profession={"Renegade"} player={"Ely"} />
+                      <Role task={"Handkiter"} profession={"Warrior"} player={"David"} />
                   </Setup>
               </Boss>
           </Wing>
