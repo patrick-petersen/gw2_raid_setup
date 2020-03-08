@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import './Role.css';
+import Profession from "../helper/Profession.js";
 
 class Role extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class Role extends Component {
         return (
             <div className={"role"}>
                 <div className={"task"}>{this.props.task}</div>
-                <div className={"profession"}>{this.props.profession}</div>
+                <div className={"profession"}><Profession name={this.props.profession} /></div>
                 <div className={"player"}>{this.props.player}</div>
             </div>
         )
