@@ -49,9 +49,9 @@ function App() {
                       <Role task={"Quickness"} profession={"Chronomancer"} player={"Kalell"} />
                       <Role task={"Heal & Buffs"} profession={"Tempest"} player={"Schrotty"} />
                       <Role task={"Alacrity"} profession={"Renegade"} player={"Ely"} />
-                      <Role task={"Mushroom 1"} profession={"Daredevil"} player={"Assa"} />
+                      <Role task={"Mushroom 1"} profession={"Warrior"} player={"David"} />
                       <Role task={"Mushroom 2"} profession={"Daredevil"} player={"Nevra"} />
-                      <Role task={"Mushroom 3"} profession={"Weaver"} player={"Fynn"} />
+                      <Role task={"Mushroom 3"} profession={"Daredevil"} player={"Lumi"} />
                       <Role task={"Mushroom 4"} profession={"Weaver"} player={"Alex"} />
                   </Setup>
               </Boss>
@@ -214,7 +214,7 @@ function App() {
                       <Role task={"Heal & Buffs & Tank"} profession={"Tempest"} player={"Schrotty"} />
                       <Role task={"Alacrity"} profession={"Renegade"} player={"Lumi"} />
                       <Role task={"Heal & Res"} profession={"Scourge"} player={"Ely"} />
-                      <Role task={"Portal"} profession={"Mirage"} player={"David"} />
+                      <Role task={"Portal"} profession={"Chronomancer"} player={"Yasi"} />
                   </Setup>
               </Boss>
               <Boss name={"Qadim"}>
