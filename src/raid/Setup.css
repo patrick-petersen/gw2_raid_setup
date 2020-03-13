@@ -20,6 +20,7 @@
 .setup .setup-name {
     order: 0;
     display: flex;
+    width: 175px;
 }
 
 .setup .setup-name > * {
