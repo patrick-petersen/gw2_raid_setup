@@ -12,8 +12,8 @@ class Role extends Component {
     render() {
         return (
             <div className={"role"}>
-                <div className={"task"}>{this.props.task}</div>
                 <div className={"profession"}><Profession name={this.props.profession} /></div>
+                <div className={"task"}>{this.props.tasks.join(", ")}</div>
                 <div className={"player"}>{this.props.player}</div>
             </div>
         )
