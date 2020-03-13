@@ -35,6 +35,7 @@ class Role extends Component {
     }
 
     render() {
+        let players = this.props.backups ? this.props.backups : Settings.players;
         return (
             <div className={"role"}>
                 <div className={"profession"}><Profession name={this.props.profession} /></div>
@@ -48,7 +49,7 @@ class Role extends Component {
                         }>{this.state.player}
                             </span>
                             {
-                                Settings.players.map(player =>
+                                players.map(player =>
                                     (player !== this.state.player)
                                         ? <span key={player} onClick={
                                             (e) => this.selectPlayer(player, e)

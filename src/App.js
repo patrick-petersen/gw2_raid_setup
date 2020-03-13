@@ -18,7 +18,7 @@ class App extends Component {
                     <Wing name={"Wing 1"}>
                         <Boss name={"Valeguardian"} iconMiniId={"77334"}>
                             <Setup name={"Center"}>
-                                <Role tasks={["Tank", "Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
+                                <Role tasks={["Tank", "Quickness"]} profession={"Chronomancer"} player={"Kalell"} backups={["Yasi"]}/>
                                 <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Seeker Root"]} profession={"Soulbeast"} player={"Assa"} />
