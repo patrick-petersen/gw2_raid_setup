@@ -65,19 +65,19 @@ class Profession extends Component {
     loadProfessions() {
         if(!Profession.loading && !Profession.error) {
             Profession.loading = true;
-            console.log("Loading!");
+            console.debug("Loading!");
             fetch("https://api.guildwars2.com/v2/professions")
                 .then(response => response.json())
                 .then((jsonData) => {
                     // jsonData is parsed json object received from url
-                    console.log(jsonData);
+                    console.debug(jsonData);
                     for(let index in jsonData) {
                         let profession = jsonData[index];
                         fetch("https://api.guildwars2.com/v2/professions/" + profession)
                             .then(response => response.json())
                             .then((jsonData) => {
                                 // jsonData is parsed json object received from url
-                                console.log(jsonData);
+                                console.debug(jsonData);
                                 Profession.professions[jsonData["name"]] = jsonData["icon_big"];
                                 this.resolvePromises(jsonData["name"], jsonData["icon_big"]);
 
@@ -109,7 +109,7 @@ class Profession extends Component {
             .then(response => response.json())
             .then((jsonData) => {
                 // jsonData is parsed json object received from url
-                console.log(jsonData);
+                console.debug(jsonData);
                 Profession.professions[jsonData["name"]] = jsonData["profession_icon_big"];
                 this.resolvePromises(jsonData["name"], jsonData["profession_icon_big"]);
 

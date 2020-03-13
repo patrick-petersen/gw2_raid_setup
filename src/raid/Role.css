@@ -1,6 +1,7 @@
 .role {
     padding: 0 10px;
     text-align: center;
+    position: relative;
 }
 
 .role .task, .role .profession, .role .player {
@@ -13,5 +14,22 @@
 
 }
 .role .player {
+    cursor: pointer;
+}
 
+.role .player-select {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    background-color: beige;
+    border-radius: 5px;
+    cursor: auto;
+    width: 100%;
+    z-index: 10;
+}
+.role .player-select span {
+    cursor: pointer;
+    border: grey 1px solid;
+    margin: 2px;
+    border-radius: 5px;
 }

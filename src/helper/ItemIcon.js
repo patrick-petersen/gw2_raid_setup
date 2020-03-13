@@ -55,7 +55,7 @@ class ItemIcon extends Component {
     }
 
     resolvePromises(itemId, url) {
-        console.log("Resolving: ", itemId, url);
+        console.debug("Resolving: ", itemId, url);
 
         if(ItemIcon.promises.hasOwnProperty(itemId)) {
             let current;
@@ -69,14 +69,14 @@ class ItemIcon extends Component {
     loadItem(itemId) {
         if(!ItemIcon.loading.includes(itemId) && !ItemIcon.error.includes(itemId)) {
             ItemIcon.loading.push(itemId);
-            console.log("Loading " + itemId);
+            console.debug("Loading " + itemId);
 
             fetch("https://api.guildwars2.com/v2/items?ids=" + itemId)
                 .then(response => response.json())
                 .then((jsonData) => {
                     // jsonData is parsed json object received from url
                     const item = jsonData[0];
-                    console.log(item);
+                    console.debug(item);
                     ItemIcon.items[item["id"]] = item["icon"];
                     this.resolvePromises(item["id"], item["icon"]);
                 })
