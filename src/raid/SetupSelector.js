@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import './Setup.css';
+import './SetupSelector.css';
 
 class SetupSelector extends Component {
     static setupStates = ["main-setup", "backup-setup", "missing-setup"];

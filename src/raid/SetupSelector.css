@@ -1,0 +1,36 @@
+.setup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+.setup.active {
+
+}
+.setup.inactive {
+    display: none;
+}
+
+.setup.main-setup {
+    background-color: #41ff5d;
+}
+
+.setup.backup-setup {
+    background-color: #ffc135;
+}
+
+.setup.missing-setup {
+    background-color: #ff1300;
+}
+
+.setup .setup-name {
+    order: 0;
+    display: flex;
+    width: 175px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.setup .setup-name > * {
+    margin: auto;
+}
