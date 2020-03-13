@@ -2,6 +2,7 @@
     padding: 0 10px;
     text-align: center;
     position: relative;
+    user-select: none;
 }
 
 .role .task, .role .profession, .role .player {
@@ -15,6 +16,7 @@
 }
 .role .player {
     cursor: pointer;
+    user-select: none;
 }
 
 .role .player-select {
@@ -32,4 +34,5 @@
     border: grey 1px solid;
     margin: 2px;
     border-radius: 5px;
+    user-select: none;
 }
