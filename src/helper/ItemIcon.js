@@ -37,9 +37,7 @@ class ItemIcon extends Component {
         });
 
         if(ItemIcon.items.hasOwnProperty(itemId)) {
-            setTimeout( function() {
-                outsideResolve(ItemIcon.items[itemId]);
-            }, 50)
+            outsideResolve(ItemIcon.items[itemId]);
         }
         else {
             if(!ItemIcon.promises.hasOwnProperty(itemId)) {

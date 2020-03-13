@@ -46,24 +46,35 @@ class SetupSelector extends Component {
         }).bind(this)
     }
 
+    renderSetup(child) {
+        return (
+            <div className={"setup " + this.state.setupState + (
+                (this.state.setupSelection || this.state.activeSetup == child.key)? " active" : " inactive")}>
+                <div className={"setup-name"}>
+                    <h3 onClick={this.childClick(child.key)}>Setup: {child.props.name}</h3>
+                </div>
+                <div className={"setup-roles"}>
+                    {child}
+                </div>
+            </div>
+        );
+    }
 
     render() {
-        console.log("rendering setupselector", this.props.children);
         return (
             <div className={"setupSelector"}>
-            {React.Children.map(this.props.children, child => {
-                return (
-                    <div className={"setup " + this.state.setupState + (
-                        (this.state.setupSelection || this.state.activeSetup == child.key)? " active" : " inactive")}>
-                        <div className={"setup-name"}>
-                            <h3 onClick={this.childClick(child.key)}>Setup: {child.props.name}</h3>
-                        </div>
-                        <div className={"setup-roles"}>
-                            {child}
-                        </div>
-                    </div>);
-                })
-            }
+                {
+                    React.Children.map(this.props.children, child => {
+                        if(this.state.activeSetup != child.key) return null;
+                        return this.renderSetup(child);
+                    })
+                }
+                {
+                    React.Children.map(this.props.children, child => {
+                        if(this.state.activeSetup == child.key) return null;
+                        return this.renderSetup(child);
+                    })
+                }
             </div>
 
         )

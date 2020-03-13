@@ -37,9 +37,7 @@ class Profession extends Component {
         });
 
         if(Profession.professions.hasOwnProperty(profession)) {
-            setTimeout( function() {
-                outsideResolve(Profession.professions[profession]);
-            }, 50)
+            outsideResolve(Profession.professions[profession]);
         }
         else {
             if(!Profession.promises.hasOwnProperty(profession)) {
