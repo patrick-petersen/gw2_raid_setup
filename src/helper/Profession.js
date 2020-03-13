@@ -25,7 +25,6 @@ class Profession extends Component {
                 <img src={this.state.url} alt={this.props.name}/>
             )
         }
-
     }
 
     didLoadProfession(profession) {
@@ -48,15 +47,12 @@ class Profession extends Component {
             }
 
             Profession.promises[profession].push(outsideResolve);
-
         }
 
         return promise;
     }
 
     resolvePromises(profession, url) {
-        console.log("Resolving: ", profession, url);
-
         if(Profession.promises.hasOwnProperty(profession)) {
             let current;
             while (current = Profession.promises[profession].pop())
@@ -123,11 +119,10 @@ class Profession extends Component {
                 // handle your errors here
                 console.error(error)
             })
-    }
+        }
     }
 
     componentDidMount() {
-
         this.didLoadProfession(this.props.name).then((url) => {
             this.setState({loaded: true, url: url});
         });

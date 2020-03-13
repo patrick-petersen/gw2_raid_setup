@@ -11,6 +11,7 @@ class Setup extends Component {
             setupState: Setup.setupStates[0]
         };
     }
+
     render() {
         return (
             <div className={"setup " + this.state.setupState}>

@@ -11,10 +11,10 @@ class Boss extends Component {
         this.state = {
         };
     }
+
     render() {
         return (
             <section className={"boss"}>
-
                 {this.props.iconMiniId
                     ? <ItemIcon itemId={this.props.iconMiniId} />
                     : null

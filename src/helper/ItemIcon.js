@@ -25,7 +25,6 @@ class ItemIcon extends Component {
                 <img src={this.state.url} alt={this.props.name}/>
             )
         }
-
     }
 
     didLoadItem(itemId) {

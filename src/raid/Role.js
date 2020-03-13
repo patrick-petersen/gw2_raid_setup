@@ -9,6 +9,7 @@ class Role extends Component {
         this.state = {
         };
     }
+
     render() {
         return (
             <div className={"role"}>
