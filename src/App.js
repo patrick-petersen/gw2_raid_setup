@@ -38,7 +38,7 @@ function App() {
                       <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                       <Role tasks={["Kiter"]} profession={"Scourge"} player={"Nevra"} />
                       <Role tasks={["Cannon 1 & 3"]} profession={"Warrior"} player={"David"} />
-                      <Role tasks={["Cannon 2 & 4"]} profession={"?"} player={"Lumi"} />
+                      <Role tasks={["Cannon 2 & 4"]} profession={"Firebrand"} player={"Lumi"} />
                   </Setup>
               </Boss>
           </Wing>
@@ -113,12 +113,12 @@ function App() {
               </Boss>
               <Boss name={"Mursaat Overseer"} iconMiniId={"80224"}>
                   <Setup name={"Normal"}>
-                      <Role tasks={["Claim"]} profession={"?"} player={"Kalell"} />
+                      <Role tasks={["Claim"]} profession={"Weaver"} player={"Kalell"} />
                       <Role tasks={["Buffs"]} profession={"Thief"} player={"Assa"} />
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
                       <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                      <Role tasks={["Dispel"]} profession={"?"} player={"?"} />
-                      <Role tasks={["Protect"]} profession={"?"} player={"?"} />
+                      <Role tasks={["Dispel"]} profession={"Tempest"} player={"Schrotty"} />
+                      <Role tasks={["Protect"]} profession={"Berserker"} player={"David"} />
                   </Setup>
               </Boss>
               <Boss name={"Samarog"} iconMiniId={"80218"}>
@@ -192,7 +192,7 @@ function App() {
                       <Role tasks={["Green 1"]} profession={"Warrior"} player={"David"} />
                       <Role tasks={["Kiter", "Green 2"]} profession={"Druid"} player={"Kalell"} />
                       <Role tasks={["Green 3"]} profession={"Warrior"} player={"Nevra"} />
-                      <Role tasks={["First Green 2"]} profession={"?"} player={"Lumi"} />
+                      <Role tasks={["First Green 2"]} profession={"Firebrand"} player={"Lumi"} />
                   </Setup>
               </Boss>
           </Wing>
@@ -204,13 +204,13 @@ function App() {
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
                       <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                       <Role tasks={["Shields"]} profession={"Warrior"} player={"David"} />
-                      <Role tasks={["Swords"]} profession={"?"} player={"Alex"} />
-                      <Role tasks={["Swords"]} profession={"?"} player={"Fynn"} />
+                      <Role tasks={["Swords"]} profession={"Soulbeast"} player={"Alex"} />
+                      <Role tasks={["Swords"]} profession={"Chronomancer"} player={"Fynn"} />
                   </Setup>
               </Boss>
               <Boss name={"Twin Largos"} iconMiniId={"88868"}>
                   <Setup name={"Portal"}>
-                      <Role tasks={["Quickness"]} profession={"?"} player={"Kalell"} />
+                      <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
                       <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Lumi"} />
                       <Role tasks={["Heal", "Reviving"]} profession={"Scourge"} player={"Ely"} />
@@ -234,10 +234,10 @@ function App() {
                       <Role tasks={["Boons", "Pillar"]} profession={"Thief"} player={"Assa"} />
                       <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
                       <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                      <Role tasks={["Pillar"]} profession={"?"} player={"Nevra"} />
-                      <Role tasks={["Pillar"]} profession={"?"} player={"Kalell"} />
-                      <Role tasks={["Pillar"]} profession={"?"} player={"Yasi"} />
-                      <Role tasks={["Pillar"]} profession={"?"} player={"?"} />
+                      <Role tasks={["Pillar"]} profession={"Dragonhunter"} player={"Nevra"} />
+                      <Role tasks={["Pillar"]} profession={"Dragonhunter"} player={"Kalell"} />
+                      <Role tasks={["Pillar"]} profession={"Firebrand"} player={"Yasi"} />
+                      <Role tasks={["Pillar"]} profession={"Berserker"} player={"David"} />
                   </Setup>
               </Boss>
               <Boss name={"Sabir"}>
