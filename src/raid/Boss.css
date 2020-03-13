@@ -1,0 +1,16 @@
+section.boss {
+
+}
+
+section.boss img {
+    display: inline-block;
+    height: 50px;
+    vertical-align:middle;
+}
+
+section.boss span.boss-name {
+    display: inline-block;
+    line-height: 50px;
+    font-size: 20px;
+    margin-left: 10px;
+}

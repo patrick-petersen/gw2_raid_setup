@@ -15,7 +15,7 @@ function App() {
       </header>
       <main>
           <Wing name={"Wing 1"}>
-              <Boss name={"Valeguardian"}>
+              <Boss name={"Valeguardian"} iconMiniId={"77334"}>
                   <Setup name={"Center"}>
                       <Role tasks={["Tank", "Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -24,14 +24,14 @@ function App() {
                       <Role tasks={["Seeker Root"]} profession={"Soulbeast"} player={"Nevra"} />
                   </Setup>
               </Boss>
-              <Boss name={"Gorseval"}>
+              <Boss name={"Gorseval"} iconMiniId={"77296"}>
                   <Setup name={"No Updraft"}>
                       <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
                       <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                   </Setup>
               </Boss>
-              <Boss name={"Sabetha"}>
+              <Boss name={"Sabetha"} iconMiniId={"77339"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -44,7 +44,7 @@ function App() {
           </Wing>
 
           <Wing name={"Wing 2"}>
-              <Boss name={"Slothasor"}>
+              <Boss name={"Slothasor"} iconMiniId={"77870"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -55,7 +55,7 @@ function App() {
                       <Role tasks={["Mushroom 4"]} profession={"Weaver"} player={"Alex"} />
                   </Setup>
               </Boss>
-              <Boss name={"Trio"}>
+              <Boss name={"Trio"} iconMiniId={"77820"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness", "Mortar"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
@@ -64,7 +64,7 @@ function App() {
                       <Role tasks={["Saboteur"]} profession={"Warrior"} player={"David"} />
                   </Setup>
               </Boss>
-              <Boss name={"Mathias"}>
+              <Boss name={"Mathias"} iconMiniId={"77911"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Buffs"]} profession={"Thief"} player={"Assa"} />
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -76,7 +76,7 @@ function App() {
           </Wing>
 
           <Wing name={"Wing 3"}>
-              <Boss name={"Escort"}>
+              <Boss name={"Escort"} iconMiniId={"78828"}>
                   <Setup name={"Solo cap"}>
                       <Role tasks={["Solo cap"]} profession={"Mirage"} player={"Kalell"} />
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -85,7 +85,7 @@ function App() {
                       <Role tasks={["Warg"]} profession={"Warrior"} player={"David"} />
                   </Setup>
               </Boss>
-              <Boss name={"Keep Construct"}>
+              <Boss name={"Keep Construct"} iconMiniId={"78890"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -93,7 +93,7 @@ function App() {
                       <Role tasks={["Pusher"]} profession={"Chronomancer"} player={"Fynn"} />
                   </Setup>
               </Boss>
-              <Boss name={"Xera"}>
+              <Boss name={"Xera"} iconMiniId={"78815"}>
                   <Setup name={"Mid"}>
                       <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -103,7 +103,7 @@ function App() {
           </Wing>
 
           <Wing name={"Wing 4"}>
-              <Boss name={"Cairn"}>
+              <Boss name={"Cairn"} iconMiniId={"80562"}>
                   <Setup name={"Center"}>
                       <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Quickness", "Stability"]} profession={"Firebrand"} player={"Yasi"} />
@@ -111,7 +111,7 @@ function App() {
                       <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                   </Setup>
               </Boss>
-              <Boss name={"Mursaat Overseer"}>
+              <Boss name={"Mursaat Overseer"} iconMiniId={"80224"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Claim"]} profession={"?"} player={"Kalell"} />
                       <Role tasks={["Buffs"]} profession={"Thief"} player={"Assa"} />
@@ -121,7 +121,7 @@ function App() {
                       <Role tasks={["Protect"]} profession={"?"} player={"?"} />
                   </Setup>
               </Boss>
-              <Boss name={"Samarog"}>
+              <Boss name={"Samarog"} iconMiniId={"80218"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness", "Pull"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -129,7 +129,7 @@ function App() {
                       <Role tasks={["Extra Push"]} profession={"Warrior"} player={"David"} />
                   </Setup>
               </Boss>
-              <Boss name={"Deimos"}>
+              <Boss name={"Deimos"} iconMiniId={"80327"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
@@ -141,7 +141,7 @@ function App() {
           </Wing>
 
           <Wing name={"Wing 5"}>
-              <Boss name={"Desmina"}>
+              <Boss name={"Desmina"} iconMiniId={"86076"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
@@ -161,7 +161,7 @@ function App() {
                       <Role tasks={["Quickness", "Aegis"]} profession={"Firebrand"} player={"Yasi"} />
                   </Setup>
               </Boss>
-              <Boss name={"Statue of Ice"}>
+              <Boss name={"Statue of Ice"} iconMiniId={"85667"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -184,7 +184,7 @@ function App() {
                       <Role tasks={["Orb"]} profession={"Warrior"} player={"Fynn"} />
                   </Setup>
               </Boss>
-              <Boss name={"Dhuum"}>
+              <Boss name={"Dhuum"} iconMiniId={"85998"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
                       <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -208,7 +208,7 @@ function App() {
                       <Role tasks={["Swords"]} profession={"?"} player={"Fynn"} />
                   </Setup>
               </Boss>
-              <Boss name={"Twin Largos"}>
+              <Boss name={"Twin Largos"} iconMiniId={"88868"}>
                   <Setup name={"Portal"}>
                       <Role tasks={["Quickness"]} profession={"?"} player={"Kalell"} />
                       <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -217,7 +217,7 @@ function App() {
                       <Role tasks={["Portal"]} profession={"Chronomancer"} player={"Yasi"} />
                   </Setup>
               </Boss>
-              <Boss name={"Qadim"}>
+              <Boss name={"Qadim"} iconMiniId={"88587"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Tank", "Boonstrip","Banner"]} profession={"Spellbreaker"} player={"Kalell"} />
                       <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -248,7 +248,7 @@ function App() {
                       <Role tasks={["Whisps"]} profession={"Warrior"} player={"David"} />
                   </Setup>
               </Boss>
-              <Boss name={"Qadim 2"}>
+              <Boss name={"Qadim 2"} iconMiniId={"91232"}>
                   <Setup name={"Normal"}>
                       <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
                       <Role tasks={["Quickness", "Stability"]} profession={"Firebrand"} player={"Yasi"} />
