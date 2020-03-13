@@ -9,26 +9,13 @@ class Setup extends Component {
         super(props);
         this.state = {
             setupState: Setup.setupStates[0],
-            active: this.props.hidden?false:true
         };
-        this.onClick = () => {};
-    }
-
-    setActive(active) {
-        this.setState({
-            active: active,
-        })
     }
 
     render() {
         return (
-            <div className={"setup " + this.state.setupState + (this.state.active?" active":" inactive")}>
-                <div className={"setup-name"}>
-                    <h3 onClick={this.props.onClick}>Setup: {this.props.name}</h3>
-                </div>
-                <div className={"setup-roles"}>
-                    {this.props.children}
-                </div>
+            <div className={"setup-roles"}>
+                {this.props.children}
             </div>
         )
     }
