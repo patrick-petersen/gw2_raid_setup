@@ -19,15 +19,12 @@ class Role extends Component {
     }
 
     openPlayerSelect() {
-        console.log(this);
         this.setState({
             playerSelection: true
         })
     }
 
     selectPlayer(player) {
-        console.log(player);
-
         this.setState({
             playerSelection: false,
             player: player

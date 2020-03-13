@@ -4,6 +4,12 @@
     flex-wrap: nowrap;
     justify-content: flex-start;
 }
+.setup.active {
+
+}
+.setup.inactive {
+    display: none;
+}
 
 .setup.main-setup {
     background-color: #41ff5d;
