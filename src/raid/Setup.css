@@ -19,6 +19,11 @@
 
 .setup .setup-name {
     order: 0;
+    display: flex;
+}
+
+.setup .setup-name > * {
+    margin: auto;
 }
 
 .setup .setup-roles {
