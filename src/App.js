@@ -152,7 +152,7 @@ class App extends Component {
                                 <Role tasks={["Epi"]} profession={"Scourge"} player={"Nevra"} />
                             </Setup>
                         </Boss>
-                        <Boss name={"River"}>
+                        <Boss name={"River"} iconMiniId={"85785"}>
                             <Setup name={"Normal"}>
                                 <Role tasks={["Desmina Aegis"]} profession={"Chronomancer"} player={"Kalell"} />
                                 <Role tasks={["Desmina Superspeed"]} profession={"Holosmith"} player={"Fynn"} />
@@ -230,7 +230,7 @@ class App extends Component {
                     </Wing>
 
                     <Wing name={"Wing 7"}>
-                        <Boss name={"Adina"}>
+                        <Boss name={"Adina"} iconMiniId={"82686"}>
                             <Setup name={"Normal"}>
                                 <Role tasks={["Boons", "Pillar"]} profession={"Thief"} player={"Assa"} />
                                 <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
@@ -241,7 +241,7 @@ class App extends Component {
                                 <Role tasks={["Pillar"]} profession={"Berserker"} player={"David"} />
                             </Setup>
                         </Boss>
-                        <Boss name={"Sabir"}>
+                        <Boss name={"Sabir"} iconMiniId={"83551"}>
                             <Setup name={"Normal"}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                                 <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
