@@ -5,6 +5,18 @@
     justify-content: flex-start;
 }
 
+.setup.main-setup {
+    background-color: #41ff5d;
+}
+
+.setup.backup-setup {
+    background-color: #ffc135;
+}
+
+.setup.missing-setup {
+    background-color: #ff1300;
+}
+
 .setup .setup-name {
     order: 0;
 }
