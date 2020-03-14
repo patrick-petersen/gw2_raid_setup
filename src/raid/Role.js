@@ -11,7 +11,7 @@ class Role extends Component {
         super(props);
         this.state = {
             playerSelection: false,
-            player: this.props.player,
+            player: this.props.selectedPlayer ? this.props.selectedPlayer: this.props.player,
         };
 
         this.openPlayerSelect = this.openPlayerSelect.bind(this);

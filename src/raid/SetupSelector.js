@@ -15,13 +15,26 @@ class SetupSelector extends Component {
         };
 
         this.openSetupSelect = this.openSetupSelect.bind(this);
+        this.cloneChildren = this.cloneChildren.bind(this);
         this.selectSetup = this.selectSetup.bind(this);
         this.childClick = this.childClick.bind(this);
-    }
 
+        this.children = this.cloneChildren();
+    }
 
     componentDidUpdate( prevProps, prevState) {
         HistoryManager.getInstance().saveSetupSettings(this.props.bossId, this.state.activeSetup);
+    }
+
+    cloneChildren() {
+        return React.Children.map(this.props.children, (child, index) => {
+            let props = Object.assign({}, child.props);
+            Object.assign(props, {
+                bossId: this.props.bossId,
+            });
+
+            return React.cloneElement(child, props);
+        });
     }
 
     openSetupSelect() {
@@ -51,12 +64,12 @@ class SetupSelector extends Component {
         }).bind(this)
     }
 
-    renderSetup(child) {
+    renderSetup(child, index) {
         return (
             <div className={"setup " + this.state.setupState + (
-                (this.state.setupSelection || this.state.activeSetup == child.key)? " active" : " inactive")}>
+                (this.state.setupSelection || this.state.activeSetup == index)? " active" : " inactive")}>
                 <div className={"setup-name"}>
-                    <h3 onClick={this.childClick(child.key)}>Setup: {child.props.name}</h3>
+                    <h3 onClick={this.childClick(index)}>Setup: {child.props.name}</h3>
                 </div>
                 <div className={"setup-roles"}>
                     {child}
@@ -69,15 +82,15 @@ class SetupSelector extends Component {
         return (
             <div className={"setupSelector"}>
                 {
-                    React.Children.map(this.props.children, child => {
-                        if(this.state.activeSetup != child.key) return null;
-                        return this.renderSetup(child);
+                    React.Children.map(this.children, (child, index) => {
+                        if(this.state.activeSetup != index) return null;
+                        return this.renderSetup(child, index);
                     })
                 }
                 {
-                    React.Children.map(this.props.children, child => {
-                        if(this.state.activeSetup == child.key) return null;
-                        return this.renderSetup(child);
+                    React.Children.map(this.children, (child, index) => {
+                        if(this.state.activeSetup == index) return null;
+                        return this.renderSetup(child, index);
                     })
                 }
             </div>

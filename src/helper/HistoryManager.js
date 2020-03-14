@@ -41,7 +41,8 @@ export default class HistoryManager {
 
     getPlayerSettings(boss) {
         return (role) => {
-            return this._players[boss][role];
+            return null;
+            //return this._players[boss][role];
         }
     }
 
