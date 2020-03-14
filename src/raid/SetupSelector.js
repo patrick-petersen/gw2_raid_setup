@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import './SetupSelector.css';
+import HistoryManager from "../helper/HistoryManager";
 
 class SetupSelector extends Component {
     static setupStates = ["main-setup", "backup-setup", "missing-setup"];
@@ -9,7 +10,7 @@ class SetupSelector extends Component {
         super(props);
         this.state = {
             setupState: SetupSelector.setupStates[0],
-            activeSetup: 0,
+            activeSetup: HistoryManager.getInstance().getSetupSettings(this.props.bossId),
             setupSelection: false,
         };
 
@@ -18,6 +19,10 @@ class SetupSelector extends Component {
         this.childClick = this.childClick.bind(this);
     }
 
+
+    componentDidUpdate( prevProps, prevState) {
+        HistoryManager.getInstance().saveSetupSettings(this.props.bossId, this.state.activeSetup);
+    }
 
     openSetupSelect() {
         console.log("openSelect");

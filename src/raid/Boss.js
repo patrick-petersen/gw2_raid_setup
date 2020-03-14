@@ -4,6 +4,7 @@ import ItemIcon from "../helper/ItemIcon";
 
 import './Boss.css';
 import SetupSelector from "./SetupSelector";
+import HistoryManager from "../helper/HistoryManager";
 
 class Boss extends Component {
 
@@ -21,7 +22,7 @@ class Boss extends Component {
                     : null
                 }
                 <span className={"boss-name"}>Boss: {this.props.name}</span>
-                <SetupSelector>
+                <SetupSelector bossId={this.props.bossId}>
                     {this.props.children}
                 </SetupSelector>
             </section>
