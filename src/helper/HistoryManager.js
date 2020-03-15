@@ -10,11 +10,15 @@ export default class HistoryManager {
 
     constructor() {
         this.loadSetupFromString(window.location.hash.substr(1));
-        /*
+
         window.onpopstate = (event) => {
-            console.log("location:", document.location, "state:", event)
+            console.log("location:", window.location.hash, "state:", event);
+            const historyObject = event.state;
+            this._setups = historyObject._setups;
+            this._players = historyObject._players;
+            this._currentUrl = historyObject._currentUrl;
         };
-         */
+
         console.log("generate: ", this.generateUrl());
     }
 
@@ -97,8 +101,13 @@ export default class HistoryManager {
         console.log("new url:", url);
 
         this._currentUrl = url;
+        const historyObject = {
+            _currentUrl: this._currentUrl,
+            _setups: this._setups,
+            _players: this._players,
+        }
 
-        window.history.pushState(url, "[Koss] Raidplaner", "#"+url)
+        window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+url)
     }
 
     generateUrl() {
