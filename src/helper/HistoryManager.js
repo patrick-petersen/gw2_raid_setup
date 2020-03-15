@@ -8,7 +8,7 @@ export default class HistoryManager {
     _setups = [];
     _players = [];
 
-    _demoString = "";
+    _demoString = "007481;0074;0074168;00796143;002796;087091;007926;00795;0074;00279;0087976;00796;002796;0027951;0053792;00799;0079;00795;02796014;0079635;007492;007921;08791026;00796;0027936418;";
 
     constructor() {
         this.loadSetupFromString(this._demoString);
@@ -58,11 +58,13 @@ export default class HistoryManager {
         return (boss in this._setups)?this._setups[boss] : 0;
     }
 
-    saveSetupSettings(boss, value) {
+    saveSetupSettings(boss, value, dontClearPlayers) {
         console.log("saving setup for boss:", boss, value);
         this._setups[boss] = value;
         //clear the setup settings after the setup was changed, as these were for a different setup
-        this._players[boss] = [];
+        if((typeof dontClearPlayers != "undefined") && !dontClearPlayers) {
+            this._players[boss] = [];
+        }
 
         this.updateCurrentUrl();
     }
@@ -76,6 +78,10 @@ export default class HistoryManager {
     savePlayerSettings(boss) {
         return (role) => {
             return (value) => {
+                console.log("save player setting", boss, role, value);
+                if(!(boss in this._players)) {
+                    this._players[boss] = [];
+                }
                 this._players[boss][role] = value;
                 this.updateCurrentUrl();
             }
@@ -87,21 +93,23 @@ export default class HistoryManager {
     }
 
     generateUrl() {
-        return this._setups.reduce((previousUrlPart, currentSetup, currentSetupIndex) => {
-            let thisUrlPart = currentSetup;
+        let url = "";
+        for(let currentSetupIndex=0; currentSetupIndex < this._setups.length; currentSetupIndex++) {
+            let currentSetup = this._setups[currentSetupIndex];
+            let thisUrlPart = "" + currentSetup;
 
             if(currentSetupIndex in this._players) {
-                thisUrlPart += this._players[currentSetupIndex].reduce((previousRoleString, currentPlayer, currentPlayerIndex) => {
-                    console.log("currentPlayer: ", currentPlayer);
-                    previousRoleString += currentPlayer;
-                    //previousRoleString += "-";
-                    return previousRoleString;
-                }, "");
+                for(let currentPlayerIndex=0; currentPlayerIndex < this._players[currentSetupIndex].length; currentPlayerIndex++) {
+                    let currentPlayer = this._players[currentSetupIndex][currentPlayerIndex];
+                    //console.log("currentPlayer: ", currentPlayer);
+                    thisUrlPart += currentPlayer;
+                }
             }
 
             thisUrlPart += ";";
-            return previousUrlPart + thisUrlPart;
-        }, "");
+            url += thisUrlPart;
+        }
+        return url;
     }
 
     getCurrentUrl() {

@@ -20,6 +20,14 @@ class Role extends Component {
 
         this.openPlayerSelect = this.openPlayerSelect.bind(this);
         this.selectPlayer = this.selectPlayer.bind(this);
+        this.savePlayerToHistory = this.savePlayerToHistory.bind(this);
+        this.getIndexOfPlayer = this.getIndexOfPlayer.bind(this);
+
+        this.props.addSaveCallback(this.savePlayerToHistory);
+    }
+
+    componentDidMount() {
+        this.savePlayerToHistory(this.state.player);
     }
 
     openPlayerSelect() {
@@ -33,13 +41,19 @@ class Role extends Component {
             playerSelection: false,
             player: player
         });
+        this.savePlayerToHistory(player);
+    }
+
+    savePlayerToHistory(player) {
         HistoryManager.getInstance().savePlayerSettings(this.props.bossId)
-            (this.props.roleNumber)
-            (this.getIndexOfPlayer(player));
+        (this.props.roleNumber)
+        (this.getIndexOfPlayer(player));
     }
 
     getIndexOfPlayer(player) {
-        return Settings.players.findIndex((playerName) => playerName == player);
+        const index = Settings.players.findIndex((playerName) => playerName == player);
+        console.log("player index:", player, index);
+        return index;
     }
 
     render() {

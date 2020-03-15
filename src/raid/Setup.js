@@ -13,9 +13,14 @@ class Setup extends Component {
         };
 
         this.cloneChildren = this.cloneChildren.bind(this);
-        this.onRoleChanged = this.onRoleChanged.bind(this);
+        this.addSaveCallback = this.addSaveCallback.bind(this);
+        this.saveChildren = this.saveChildren.bind(this);
 
         this.children = this.cloneChildren();
+
+        this.saveCallbacks = [];
+
+        this.props.saveCallback(this.saveChildren);
     }
 
     cloneChildren() {
@@ -25,7 +30,7 @@ class Setup extends Component {
             let props = Object.assign({}, child.props);
             Object.assign(props, {
                 bossId: this.props.bossId,
-                onChange: this.onRoleChanged(index),
+                addSaveCallback: this.addSaveCallback,
                 selectedPlayer: getSelectedPlayer(index),
                 roleNumber: index,
             });
@@ -34,11 +39,14 @@ class Setup extends Component {
         });
     }
 
-    onRoleChanged(roleNumber) {
-        return (value) => {
-            //TODO
-            console.log("role changed value", roleNumber, value);
-        }
+    addSaveCallback(callback) {
+        this.saveCallbacks.push(callback);
+    }
+
+    saveChildren() {
+        this.saveCallbacks.forEach(callback => {
+            callback();
+        });
     }
 
     render() {

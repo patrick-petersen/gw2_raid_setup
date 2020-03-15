@@ -14,16 +14,20 @@ class SetupSelector extends Component {
             setupSelection: false,
         };
 
+        this.saveCallbacks = [];
+
         this.openSetupSelect = this.openSetupSelect.bind(this);
         this.cloneChildren = this.cloneChildren.bind(this);
         this.selectSetup = this.selectSetup.bind(this);
         this.childClick = this.childClick.bind(this);
+        this.addSaveCallback = this.addSaveCallback.bind(this);
+        this.saveSetup = this.saveSetup.bind(this);
 
         this.children = this.cloneChildren();
     }
 
-    componentDidUpdate( prevProps, prevState) {
-        HistoryManager.getInstance().saveSetupSettings(this.props.bossId, this.state.activeSetup);
+    componentDidMount() {
+        this.saveSetup(this.state.activeSetup, true);
     }
 
     cloneChildren() {
@@ -31,6 +35,7 @@ class SetupSelector extends Component {
             let props = Object.assign({}, child.props);
             Object.assign(props, {
                 bossId: this.props.bossId,
+                saveCallback: this.addSaveCallback(index),
             });
 
             return React.cloneElement(child, props);
@@ -50,6 +55,13 @@ class SetupSelector extends Component {
             setupSelection: false,
             activeSetup: setupKey
         });
+
+        this.saveSetup(setupKey);
+        this.saveCallbacks[setupKey]();
+    }
+
+    saveSetup(setupKey, dontClearPlayers) {
+        HistoryManager.getInstance().saveSetupSettings(this.props.bossId, setupKey, dontClearPlayers);
     }
 
     childClick(setupKey) {
@@ -61,6 +73,12 @@ class SetupSelector extends Component {
             else {
                 this.openSetupSelect();
             }
+        }).bind(this)
+    }
+
+    addSaveCallback(index) {
+        return ((callback) => {
+            this.saveCallbacks[index] = callback;
         }).bind(this)
     }
 
