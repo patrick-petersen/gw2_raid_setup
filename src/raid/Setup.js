@@ -33,6 +33,8 @@ class Setup extends Component {
                 addSaveCallback: this.addSaveCallback,
                 selectedPlayer: getSelectedPlayer(index),
                 roleNumber: index,
+                wantToChangePlayer: this.props.wantToChangePlayer(index),
+                wantToShowChangePlayer: this.props.wantToShowChangePlayer(index),
             });
 
             return React.cloneElement(child, props);

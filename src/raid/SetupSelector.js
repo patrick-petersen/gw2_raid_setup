@@ -22,6 +22,9 @@ class SetupSelector extends Component {
         this.childClick = this.childClick.bind(this);
         this.addSaveCallback = this.addSaveCallback.bind(this);
         this.saveSetup = this.saveSetup.bind(this);
+        this.wantToChangePlayerCallback = this.wantToChangePlayerCallback.bind(this);
+        this.wantToShowChangePlayerCallback = this.wantToShowChangePlayerCallback.bind(this);
+
 
         this.children = this.cloneChildren();
     }
@@ -36,10 +39,28 @@ class SetupSelector extends Component {
             Object.assign(props, {
                 bossId: this.props.bossId,
                 saveCallback: this.addSaveCallback(index),
+                wantToChangePlayer: this.wantToChangePlayerCallback(index),
+                wantToShowChangePlayer: this.wantToShowChangePlayerCallback(index),
             });
 
             return React.cloneElement(child, props);
         });
+    }
+
+    wantToChangePlayerCallback(setup) {
+        return (role) => {
+            return (fromPlayer, toPlayer) => {
+                return true;
+            }
+        }
+    }
+
+    wantToShowChangePlayerCallback(setup) {
+        return (role) => {
+            return () => {
+                return !this.state.setupSelection;
+            }
+        }
     }
 
     openSetupSelect() {

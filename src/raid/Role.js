@@ -32,17 +32,21 @@ class Role extends Component {
     }
 
     openPlayerSelect() {
-        this.setState({
-            playerSelection: true
-        })
+        if(this.props.wantToShowChangePlayer()) {
+            this.setState({
+                playerSelection: true
+            })
+        }
     }
 
     selectPlayer(player) {
-        this.setState({
-            playerSelection: false,
-            player: player
-        });
-        this.savePlayerToHistory(player);
+        if(this.props.wantToChangePlayer(this.state.player, player)) {
+            this.setState({
+                playerSelection: false,
+                player: player
+            });
+            this.savePlayerToHistory(player);
+        }
     }
 
     savePlayerToHistory(player, dontSaveUrl) {
@@ -50,6 +54,7 @@ class Role extends Component {
         (this.props.roleNumber)
         (this.getIndexOfPlayer(player), dontSaveUrl);
     }
+
     savePlayerCallback() {
         this.savePlayerToHistory(this.state.player, true);
     }
