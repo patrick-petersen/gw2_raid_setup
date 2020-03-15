@@ -1,3 +1,5 @@
+import settings from "./settings"
+
 export default class HistoryManager {
     static myInstance = null;
 
@@ -6,7 +8,7 @@ export default class HistoryManager {
     _setups = [];
     _players = [];
 
-    _demoString = "";
+    _demoString = "000;0;000;0000;0000;;00";
 
     constructor() {
         this.loadSetupFromString(this._demoString);
@@ -15,6 +17,7 @@ export default class HistoryManager {
             console.log("location:", document.location, "state:", event)
         };
          */
+        console.log("generate: ", this.generateUrl());
     }
 
     /**
@@ -32,7 +35,10 @@ export default class HistoryManager {
         source.split(";").map((value, index) => {
            //Looping through bosses
            let bossNumber = index;
-           if(value.length > 0) {
+           if(value.length <= 0) {
+               this._setups[bossNumber] = 0;
+           }
+           else {
                let setup = value.charAt(0);
                this._setups[bossNumber] = setup;
 
@@ -55,6 +61,10 @@ export default class HistoryManager {
     saveSetupSettings(boss, value) {
         console.log("saving setup for boss:", boss, value);
         this._setups[boss] = value;
+        //clear the setup settings after the setup was changed, as these were for a different setup
+        this._players[boss] = [];
+
+        this.updateCurrentUrl();
     }
 
     getPlayerSettings(boss) {
@@ -73,7 +83,25 @@ export default class HistoryManager {
     }
 
     updateCurrentUrl() {
-        //TODO:
+        console.log("new url:", this.generateUrl());
+    }
+
+    generateUrl() {
+        return this._setups.reduce((previousUrlPart, currentSetup, currentSetupIndex) => {
+            let thisUrlPart = currentSetup;
+
+            if(currentSetupIndex in this._players) {
+                thisUrlPart += this._players[currentSetupIndex].reduce((previousRoleString, currentPlayer, currentPlayerIndex) => {
+                    console.log("currentPlayer: ", currentPlayer);
+                    previousRoleString += currentPlayer;
+                    //previousRoleString += "-";
+                    return previousRoleString;
+                }, "");
+            }
+
+            thisUrlPart += ";";
+            return previousUrlPart + thisUrlPart;
+        }, "");
     }
 
     getCurrentUrl() {
