@@ -21,9 +21,10 @@ class Role extends Component {
         this.openPlayerSelect = this.openPlayerSelect.bind(this);
         this.selectPlayer = this.selectPlayer.bind(this);
         this.savePlayerToHistory = this.savePlayerToHistory.bind(this);
+        this.savePlayerToHistoryWithoutUrl = this.savePlayerToHistoryWithoutUrl.bind(this);
         this.getIndexOfPlayer = this.getIndexOfPlayer.bind(this);
 
-        this.props.addSaveCallback(this.savePlayerToHistory);
+        this.props.addSaveCallback(this.savePlayerToHistoryWithoutUrl);
     }
 
     componentDidMount() {
@@ -48,6 +49,9 @@ class Role extends Component {
         HistoryManager.getInstance().savePlayerSettings(this.props.bossId)
         (this.props.roleNumber)
         (this.getIndexOfPlayer(player), dontSaveUrl);
+    }
+    savePlayerToHistoryWithoutUrl(player) {
+        this.savePlayerToHistory(player, true);
     }
 
     getIndexOfPlayer(player) {
