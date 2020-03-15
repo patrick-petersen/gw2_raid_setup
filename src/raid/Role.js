@@ -4,14 +4,17 @@ import './Role.css';
 import Profession from "../helper/Profession.js";
 import Settings from '../helper/settings.json';
 
-
-
 class Role extends Component {
     constructor(props) {
         super(props);
+
+        let player = ("selectedPlayer" in this.props && this.props.selectedPlayer in Settings.players)
+            ? Settings.players[this.props.selectedPlayer]
+            : this.props.player;
+
         this.state = {
             playerSelection: false,
-            player: this.props.selectedPlayer ? this.props.selectedPlayer: this.props.player,
+            player: player,
         };
 
         this.openPlayerSelect = this.openPlayerSelect.bind(this);

@@ -7,7 +7,7 @@ export default class HistoryManager {
     _players = [];
 
     constructor() {
-        this._setups = [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+        this._setups = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
         this._setups.forEach((value, index) => {
             this._players[index] = [0,0,0,0,0,0,0,0,0,0];
         });
@@ -41,8 +41,7 @@ export default class HistoryManager {
 
     getPlayerSettings(boss) {
         return (role) => {
-            return null;
-            //return this._players[boss][role];
+            return this._players[boss][role];
         }
     }
 
