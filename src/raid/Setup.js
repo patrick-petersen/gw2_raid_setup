@@ -24,12 +24,13 @@ class Setup extends Component {
     }
 
     cloneChildren() {
-        let getSelectedPlayer = HistoryManager.getInstance().getPlayerSettings(this.props.bossId);
+        let getSelectedPlayer = HistoryManager.getInstance().getPlayerSettings(this.props.bossId, this.props.setupId);
 
         return React.Children.map(this.props.children, (child, index) => {
             let props = Object.assign({}, child.props);
             Object.assign(props, {
                 bossId: this.props.bossId,
+                setupId: this.props.setupId,
                 addSaveCallback: this.addSaveCallback,
                 selectedPlayer: getSelectedPlayer(index),
                 roleNumber: index,

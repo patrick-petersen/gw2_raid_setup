@@ -71,9 +71,15 @@ export default class HistoryManager {
 
     }
 
-    getPlayerSettings(boss) {
+    getPlayerSettings(boss, setupId) {
         return (role) => {
-            return (boss in this._players && role in this._players[boss])?this._players[boss][role]:null;
+            if(setupId === this._setups[boss]) {
+                return (boss in this._players && role in this._players[boss])?this._players[boss][role]:null;
+            }
+            else {
+                return null;
+            }
+
         }
     }
 
