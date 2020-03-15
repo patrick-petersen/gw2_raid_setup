@@ -1,11 +1,16 @@
 section.boss {
-
+    background-color: rgba(220,220,220,0.4);
+    border-radius: 25px;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px darkgray;
 }
 
 section.boss img {
     display: inline-block;
     height: 50px;
     vertical-align:middle;
+    margin-left: 12px;
+    border-radius: 3px;
 }
 
 section.boss span.boss-name {

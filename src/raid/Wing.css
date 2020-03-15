@@ -1,0 +1,22 @@
+.wing {
+
+}
+
+.wing-name-wrapper {
+    width: calc(100% - 55px);
+    position: relative;
+    text-align: center;
+    background-color: rgba(220,220,220,0.4);
+    margin-top: 30px;
+    margin-bottom: 17px;
+    margin-left: 25px;
+    box-shadow: 3px 3px darkgray;
+    border-radius: 10px;
+
+}
+.wing-name-wrapper .wing-name {
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}

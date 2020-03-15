@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Wing.css';
 
 class Wing extends Component {
     constructor(props) {
@@ -9,8 +10,8 @@ class Wing extends Component {
 
     render() {
         return (
-            <article>
-                <h1>Raid: {this.props.name}</h1>
+            <article className={"wing"}>
+                <div className={"wing-name-wrapper"}><span className={"wing-name"}>Raid: {this.props.name}</span></div>
                 {this.props.children}
             </article>
         )

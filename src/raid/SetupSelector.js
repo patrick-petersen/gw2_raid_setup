@@ -99,7 +99,7 @@ class SetupSelector extends Component {
 
     render() {
         return (
-            <div className={"setupSelector"}>
+            <div className={"setupSelector" + (this.state.setupSelection ? " open": " closed")}>
                 {
                     React.Children.map(this.children, (child, index) => {
                         if(this.state.activeSetup != index) return null;
