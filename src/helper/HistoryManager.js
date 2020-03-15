@@ -6,16 +6,15 @@ export default class HistoryManager {
     _setups = [];
     _players = [];
 
-    constructor() {
-        this._setups = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
-        this._setups.forEach((value, index) => {
-            this._players[index] = [0,0,0,0,0,0,0,0,0,0];
-        });
-        //this._parseUrlHash(this._startUrl);
+    _demoString = "";
 
+    constructor() {
+        this.loadSetupFromString(this._demoString);
+        /*
         window.onpopstate = function(event) {
             console.log("location:", document.location, "state:", event)
         };
+         */
     }
 
     /**
@@ -29,9 +28,28 @@ export default class HistoryManager {
         return this.myInstance;
     }
 
+    loadSetupFromString(source) {
+        source.split(";").map((value, index) => {
+           //Looping through bosses
+           let bossNumber = index;
+           if(value.length > 0) {
+               let setup = value.charAt(0);
+               this._setups[bossNumber] = setup;
+
+               if(value.length > 1) {
+                   this._players[index] = [];
+                   for (let i = 1; i < value.length; i++) {
+                       let player = parseInt(value.charAt(i));
+                       this._players[index][i-1] = player;
+                   }
+               }
+           }
+        });
+    }
+
     getSetupSettings(boss) {
         console.log("loading setup for boss:", boss, this._setups[boss]);
-        return this._setups[boss];
+        return (boss in this._setups)?this._setups[boss] : 0;
     }
 
     saveSetupSettings(boss, value) {
@@ -41,7 +59,7 @@ export default class HistoryManager {
 
     getPlayerSettings(boss) {
         return (role) => {
-            return this._players[boss][role];
+            return (boss in this._players && role in this._players[boss])?this._players[boss][role]:null;
         }
     }
 
