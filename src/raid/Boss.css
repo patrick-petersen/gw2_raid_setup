@@ -5,7 +5,7 @@ section.boss {
     box-shadow: 2px 2px darkgray;
 }
 
-section.boss img {
+section.boss > img {
     display: inline-block;
     height: 50px;
     vertical-align:middle;
