@@ -27,7 +27,7 @@ class Role extends Component {
     }
 
     componentDidMount() {
-        this.savePlayerToHistory(this.state.player);
+        this.savePlayerToHistory(this.state.player, true);
     }
 
     openPlayerSelect() {
@@ -44,10 +44,10 @@ class Role extends Component {
         this.savePlayerToHistory(player);
     }
 
-    savePlayerToHistory(player) {
+    savePlayerToHistory(player, dontSaveUrl) {
         HistoryManager.getInstance().savePlayerSettings(this.props.bossId)
         (this.props.roleNumber)
-        (this.getIndexOfPlayer(player));
+        (this.getIndexOfPlayer(player), dontSaveUrl);
     }
 
     getIndexOfPlayer(player) {

@@ -11,9 +11,9 @@ export default class HistoryManager {
     _demoString = "007481;0074;0074168;00796143;002796;087091;007926;00795;0074;00279;0087976;00796;002796;0027951;0053792;00799;0079;00795;02796014;0079635;007492;007921;08791026;00796;0027936418;";
 
     constructor() {
-        this.loadSetupFromString(this._demoString);
+        this.loadSetupFromString(window.location.hash.substr(1));
         /*
-        window.onpopstate = function(event) {
+        window.onpopstate = (event) => {
             console.log("location:", document.location, "state:", event)
         };
          */
@@ -64,9 +64,9 @@ export default class HistoryManager {
         //clear the setup settings after the setup was changed, as these were for a different setup
         if((typeof dontClearPlayers != "undefined") && !dontClearPlayers) {
             this._players[boss] = [];
+            this.updateCurrentUrl();
         }
 
-        this.updateCurrentUrl();
     }
 
     getPlayerSettings(boss) {
@@ -77,19 +77,30 @@ export default class HistoryManager {
 
     savePlayerSettings(boss) {
         return (role) => {
-            return (value) => {
+            return (value, dontUpdateUrl) => {
                 console.log("save player setting", boss, role, value);
                 if(!(boss in this._players)) {
                     this._players[boss] = [];
                 }
                 this._players[boss][role] = value;
-                this.updateCurrentUrl();
+
+                console.log("dontUpdateUrl:", dontUpdateUrl);
+
+                if((typeof dontUpdateUrl == "undefined") || !dontUpdateUrl) {
+                    this.updateCurrentUrl();
+                }
             }
         }
     }
 
     updateCurrentUrl() {
-        console.log("new url:", this.generateUrl());
+        const url = this.generateUrl();
+
+        console.log("new url:", url);
+
+        this._currentUrl = url;
+
+        window.history.pushState(url, "[Koss] Raidplaner", "#"+url)
     }
 
     generateUrl() {

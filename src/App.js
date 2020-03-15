@@ -8,9 +8,6 @@ import Role from "./raid/Role.js";
 
 
 class App extends Component {
-    componentDidMount() {
-
-    }
 
     render() {
         return (
