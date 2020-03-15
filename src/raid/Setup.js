@@ -27,6 +27,7 @@ class Setup extends Component {
                 bossId: this.props.bossId,
                 onChange: this.onRoleChanged(index),
                 selectedPlayer: getSelectedPlayer(index),
+                roleNumber: index,
             });
 
             return React.cloneElement(child, props);

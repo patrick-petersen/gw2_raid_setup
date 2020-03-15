@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import './Role.css';
 import Profession from "../helper/Profession.js";
 import Settings from '../helper/settings.json';
+import HistoryManager from "../helper/HistoryManager";
 
 class Role extends Component {
     constructor(props) {
@@ -31,7 +32,14 @@ class Role extends Component {
         this.setState({
             playerSelection: false,
             player: player
-        })
+        });
+        HistoryManager.getInstance().savePlayerSettings(this.props.bossId)
+            (this.props.roleNumber)
+            (this.getIndexOfPlayer(player));
+    }
+
+    getIndexOfPlayer(player) {
+        return Settings.players.findIndex((playerName) => playerName == player);
     }
 
     render() {

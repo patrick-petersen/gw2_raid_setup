@@ -8,7 +8,7 @@ export default class HistoryManager {
     _setups = [];
     _players = [];
 
-    _demoString = "000;0;000;0000;0000;;00";
+    _demoString = "";
 
     constructor() {
         this.loadSetupFromString(this._demoString);
