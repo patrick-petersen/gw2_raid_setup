@@ -5,6 +5,10 @@
     user-select: none;
 }
 
+.role.replacement {
+    background-color: yellow;
+}
+
 .role .task, .role .profession, .role .player {
 
 }
@@ -26,7 +30,7 @@
     background-color: beige;
     border-radius: 5px;
     cursor: auto;
-    width: 100%;
+    width: calc(100% - 20px);
     z-index: 10;
 }
 .role .player-select span {
