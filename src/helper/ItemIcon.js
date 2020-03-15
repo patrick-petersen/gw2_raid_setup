@@ -28,7 +28,7 @@ class ItemIcon extends Component {
     }
 
     didLoadItem(itemId) {
-        let outsideResolve;
+        let outsideResolve = () => {};
         //let outsideReject;
 
         let promise = new Promise((resolve, reject) => {
@@ -57,6 +57,7 @@ class ItemIcon extends Component {
 
         if(ItemIcon.promises.hasOwnProperty(itemId)) {
             let current;
+            // eslint-disable-next-line
             while (current = ItemIcon.promises[itemId].pop())
             {
                 current(url);

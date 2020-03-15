@@ -4,7 +4,6 @@ import ItemIcon from "../helper/ItemIcon";
 
 import './Boss.css';
 import SetupSelector from "./SetupSelector";
-import HistoryManager from "../helper/HistoryManager";
 
 class Boss extends Component {
 

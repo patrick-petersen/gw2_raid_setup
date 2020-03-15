@@ -1,5 +1,3 @@
-import settings from "./settings"
-
 export default class HistoryManager {
     static myInstance = null;
 
@@ -32,7 +30,7 @@ export default class HistoryManager {
     }
 
     loadSetupFromString(source) {
-        source.split(";").map((value, index) => {
+        source.split(";").forEach((value, index) => {
            //Looping through bosses
            let bossNumber = index;
            if(value.length <= 0) {
@@ -40,13 +38,12 @@ export default class HistoryManager {
            }
            else {
                let setup = value.charAt(0);
-               this._setups[bossNumber] = setup;
+               this._setups[bossNumber] = parseInt(setup);
 
                if(value.length > 1) {
                    this._players[index] = [];
                    for (let i = 1; i < value.length; i++) {
-                       let player = parseInt(value.charAt(i));
-                       this._players[index][i-1] = player;
+                       this._players[index][i-1] = parseInt(value.charAt(i));
                    }
                }
            }

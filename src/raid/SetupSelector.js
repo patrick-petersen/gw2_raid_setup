@@ -74,19 +74,19 @@ class SetupSelector extends Component {
             else {
                 this.openSetupSelect();
             }
-        }).bind(this)
+        })
     }
 
     addSaveCallback(index) {
         return ((callback) => {
             this.saveCallbacks[index] = callback;
-        }).bind(this)
+        })
     }
 
     renderSetup(child, index) {
         return (
             <div className={"setup " + this.state.setupState + (
-                (this.state.setupSelection || this.state.activeSetup == index)? " active" : " inactive")}>
+                (this.state.setupSelection || this.state.activeSetup === index)? " active" : " inactive")}>
                 <div className={"setup-name"}>
                     <h3 onClick={this.childClick(index)}>Setup: {child.props.name}</h3>
                 </div>
@@ -102,13 +102,13 @@ class SetupSelector extends Component {
             <div className={"setupSelector" + (this.state.setupSelection ? " open": " closed")}>
                 {
                     React.Children.map(this.children, (child, index) => {
-                        if(this.state.activeSetup != index) return null;
+                        if(this.state.activeSetup !== index) return null;
                         return this.renderSetup(child, index);
                     })
                 }
                 {
                     React.Children.map(this.children, (child, index) => {
-                        if(this.state.activeSetup == index) return null;
+                        if(this.state.activeSetup === index) return null;
                         return this.renderSetup(child, index);
                     })
                 }

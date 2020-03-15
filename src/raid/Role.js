@@ -55,7 +55,7 @@ class Role extends Component {
     }
 
     getIndexOfPlayer(player) {
-        const index = Settings.players.findIndex((playerName) => playerName == player);
+        const index = Settings.players.findIndex((playerName) => playerName === player);
         console.log("player index:", player, index);
         return index;
     }
@@ -63,7 +63,7 @@ class Role extends Component {
     render() {
         let players = this.props.backups ? this.props.backups.concat([this.props.player]) : Settings.players;
         return (
-            <div className={"role" + (this.props.player != this.state.player?" replacement":"")}>
+            <div className={"role" + (this.props.player !== this.state.player?" replacement":"")}>
                 <div className={"profession"}><Profession name={this.props.profession} /></div>
                 <div className={"task"}>{this.props.tasks.join(", ")}</div>
                 {
