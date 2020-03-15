@@ -21,10 +21,10 @@ class Role extends Component {
         this.openPlayerSelect = this.openPlayerSelect.bind(this);
         this.selectPlayer = this.selectPlayer.bind(this);
         this.savePlayerToHistory = this.savePlayerToHistory.bind(this);
-        this.savePlayerToHistoryWithoutUrl = this.savePlayerToHistoryWithoutUrl.bind(this);
+        this.savePlayerCallback = this.savePlayerCallback.bind(this);
         this.getIndexOfPlayer = this.getIndexOfPlayer.bind(this);
 
-        this.props.addSaveCallback(this.savePlayerToHistoryWithoutUrl);
+        this.props.addSaveCallback(this.savePlayerCallback);
     }
 
     componentDidMount() {
@@ -50,8 +50,8 @@ class Role extends Component {
         (this.props.roleNumber)
         (this.getIndexOfPlayer(player), dontSaveUrl);
     }
-    savePlayerToHistoryWithoutUrl(player) {
-        this.savePlayerToHistory(player, true);
+    savePlayerCallback() {
+        this.savePlayerToHistory(this.state.player, true);
     }
 
     getIndexOfPlayer(player) {

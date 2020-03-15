@@ -58,6 +58,7 @@ class SetupSelector extends Component {
 
         this.saveSetup(setupKey);
         this.saveCallbacks[setupKey]();
+        HistoryManager.getInstance().updateCurrentUrl();
     }
 
     saveSetup(setupKey, dontClearPlayers) {
