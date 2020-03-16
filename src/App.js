@@ -76,7 +76,7 @@ class App extends Component {
                                 <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
                                 <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                                <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Ely"} />
+                                <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
                             </Setup>
                         </Boss>
                         <Boss name={"Statue of Death"} bossId={16}>
