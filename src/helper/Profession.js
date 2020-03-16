@@ -67,14 +67,14 @@ class Profession extends Component {
         if(!Profession.loading && !Profession.error) {
             Profession.loading = true;
             console.debug("Loading!");
-            fetch("https://api.guildwars2.com/v2/professions")
+            fetch("https://api.guildwars2.com/v2/professions?lang=en")
                 .then(response => response.json())
                 .then((jsonData) => {
                     // jsonData is parsed json object received from url
                     console.debug(jsonData);
                     for(let index in jsonData) {
                         let profession = jsonData[index];
-                        fetch("https://api.guildwars2.com/v2/professions/" + profession)
+                        fetch("https://api.guildwars2.com/v2/professions/" + profession + "?lang=en")
                             .then(response => response.json())
                             .then((jsonData) => {
                                 // jsonData is parsed json object received from url
@@ -106,7 +106,7 @@ class Profession extends Component {
     loadSpecs(ids) {
         for(let index in ids) {
         let spec = ids[index];
-        fetch("https://api.guildwars2.com/v2/specializations/" + spec)
+        fetch("https://api.guildwars2.com/v2/specializations/" + spec + "?lang=en")
             .then(response => response.json())
             .then((jsonData) => {
                 // jsonData is parsed json object received from url

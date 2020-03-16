@@ -70,7 +70,7 @@ class ItemIcon extends Component {
             ItemIcon.loading.push(itemId);
             console.debug("Loading " + itemId);
 
-            fetch("https://api.guildwars2.com/v2/items?ids=" + itemId)
+            fetch("https://api.guildwars2.com/v2/items?lang=en&ids=" + itemId)
                 .then(response => response.json())
                 .then((jsonData) => {
                     // jsonData is parsed json object received from url
