@@ -11,7 +11,7 @@ class SetupSelector extends Component {
         this.state = {
             setupState: SetupSelector.setupStates[0],
             activeSetup: HistoryManager.getInstance().getSetupSettings(this.props.bossId),
-            setupSelection: false,
+            setupSelection: false
         };
 
         this.saveCallbacks = [];
@@ -131,7 +131,8 @@ class SetupSelector extends Component {
 
     render() {
         return (
-            <div className={"setupSelector" + (this.state.setupSelection ? " open": " closed")}>
+            <div className={"setupSelector"
+            + (this.state.setupSelection ? " open": " closed")}>
                 {
                     React.Children.map(this.children, (child, index) => {
                         if(this.state.activeSetup !== index) return null;

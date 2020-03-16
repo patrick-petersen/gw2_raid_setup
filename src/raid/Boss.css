@@ -11,6 +11,8 @@ section.boss > img {
     vertical-align:middle;
     margin-left: 12px;
     border-radius: 3px;
+    vertical-align: top;
+    margin-top: 5px;
 }
 
 section.boss span.boss-name {
@@ -18,4 +20,9 @@ section.boss span.boss-name {
     line-height: 50px;
     font-size: 20px;
     margin-left: 10px;
+
+    cursor: pointer;
+    user-select: none;
+    vertical-align: top;
+    margin-top: 5px;
 }

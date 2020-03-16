@@ -10,17 +10,27 @@ class Boss extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            big: false,
         };
+
+        this.toggleSize = this.toggleSize.bind(this);
+    }
+
+    toggleSize() {
+        this.setState({
+            big: !this.state.big,
+        })
     }
 
     render() {
         return (
-            <section className={"boss"}>
+            <section className={"boss"
+            + (this.state.big?" big" : " small")}>
                 {this.props.iconMiniId
                     ? <ItemIcon itemId={this.props.iconMiniId} />
                     : null
                 }
-                <span className={"boss-name"}>Boss: {this.props.name}</span>
+                <span className={"boss-name"} onClick={this.toggleSize}>Boss: {this.props.name}</span>
                 <SetupSelector bossId={this.props.bossId}>
                     {this.props.children}
                 </SetupSelector>
