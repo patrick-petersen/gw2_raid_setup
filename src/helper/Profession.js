@@ -32,7 +32,7 @@ class Profession extends Component {
         //let outsideReject;
 
         let promise = new Promise((resolve, reject) => {
-            outsideResolve = resolve = () => {};
+            outsideResolve = resolve;
             //outsideReject = reject;
         });
 
@@ -51,6 +51,7 @@ class Profession extends Component {
     }
 
     resolvePromises(profession, url) {
+        console.debug("resolving", profession, url);
         if(Profession.promises.hasOwnProperty(profession)) {
             let current;
             // eslint-disable-next-line
@@ -62,6 +63,7 @@ class Profession extends Component {
     }
 
     loadProfessions() {
+        console.log("loading professions");
         if(!Profession.loading && !Profession.error) {
             Profession.loading = true;
             console.debug("Loading!");
