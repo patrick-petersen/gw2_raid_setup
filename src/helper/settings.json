@@ -1,3 +1,4 @@
 {
-  "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Schrotty", "Assa", "Ely"]
+  "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Schrotty", "Assa", "Ely"],
+  "missing": ["Ely"]
 }
