@@ -25,10 +25,26 @@ class Role extends Component {
         this.getIndexOfPlayer = this.getIndexOfPlayer.bind(this);
 
         this.props.addSaveCallback(this.savePlayerCallback);
+
+        this.popStateCallback = this.popStateCallback.bind(this);
+        HistoryManager.getInstance().addPopstateCallback(this.popStateCallback);
     }
 
     componentDidMount() {
         this.savePlayerToHistory(this.state.player, true);
+    }
+
+    popStateCallback() {
+        //console.log("role popstate");
+        //console.log(this.props.bossId, this.props.setupId, this.props.roleNumber);
+        let playerId = HistoryManager.getInstance().getPlayerSettings(this.props.bossId, this.props.setupId)(this.props.roleNumber);
+        //console.log(playerId, playerId in Settings.players);
+        if(playerId in Settings.players) {
+            console.log("Setting state");
+            this.setState({
+                player: Settings.players[playerId]
+            })
+        }
     }
 
     openPlayerSelect() {

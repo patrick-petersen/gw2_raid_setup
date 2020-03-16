@@ -6,6 +6,8 @@ export default class HistoryManager {
     _setups = [];
     _players = [];
 
+    _popstateCallbacks = [];
+
     _demoString = "007481;0074;0074168;00796143;002796;087091;007926;00795;0074;00279;0087976;00796;002796;0027951;0053792;00799;0079;00795;02796014;0079635;007492;007921;08791026;00796;0027936418;";
 
     constructor() {
@@ -17,6 +19,8 @@ export default class HistoryManager {
             this._setups = historyObject._setups;
             this._players = historyObject._players;
             this._currentUrl = historyObject._currentUrl;
+
+            this._popstateCallbacks.forEach(value => value());
         };
 
         console.log("generate: ", this.generateUrl());
@@ -32,6 +36,11 @@ export default class HistoryManager {
 
         return this.myInstance;
     }
+
+    addPopstateCallback(callback) {
+        this._popstateCallbacks.push(callback);
+    }
+
 
     loadSetupFromString(source) {
         source.split(";").forEach((value, index) => {

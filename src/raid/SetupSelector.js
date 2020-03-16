@@ -26,11 +26,20 @@ class SetupSelector extends Component {
         this.wantToShowChangePlayerCallback = this.wantToShowChangePlayerCallback.bind(this);
 
 
+        this.popStateCallback = this.popStateCallback.bind(this);
+        HistoryManager.getInstance().addPopstateCallback(this.popStateCallback);
+
         this.children = this.cloneChildren();
     }
 
     componentDidMount() {
         this.saveSetup(this.state.activeSetup, true);
+    }
+
+    popStateCallback() {
+        this.setState({
+            activeSetup: HistoryManager.getInstance().getSetupSettings(this.props.bossId)
+        })
     }
 
     cloneChildren() {
