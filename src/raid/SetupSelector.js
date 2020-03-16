@@ -74,9 +74,11 @@ class SetupSelector extends Component {
 
     openSetupSelect() {
         console.log("openSelect");
-        this.setState({
-            setupSelection: true
-        });
+        if(this.children.length > 1) {
+            this.setState({
+                setupSelection: true
+            });
+        }
     }
 
     selectSetup(setupKey) {
