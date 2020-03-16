@@ -50,103 +50,6 @@ class App extends Component {
                         </Boss>
                     </Wing>
 
-                    <Wing name={"Wing 2"}>
-                        <Boss name={"Slothasor"} iconMiniId={"77870"} bossId={3}>
-                            <Setup name={"Normal"} setupId={0}>
-                                <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                                <Role tasks={["Mushroom 1"]} profession={"Berserker"} player={"David"} />
-                                <Role tasks={["Mushroom 2"]} profession={"Daredevil"} player={"Nevra"} />
-                                <Role tasks={["Mushroom 3"]} profession={"Daredevil"} player={"Lumi"} />
-                                <Role tasks={["Mushroom 4"]} profession={"Weaver"} player={"Alex"} />
-                            </Setup>
-                        </Boss>
-                        <Boss name={"Trio"} iconMiniId={"77820"} bossId={4}>
-                            <Setup name={"Normal"} setupId={0}>
-                                <Role tasks={["Quickness", "Mortar"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                                <Role tasks={["Saboteur"]} profession={"Berserker"} player={"David"} />
-                            </Setup>
-                        </Boss>
-                        <Boss name={"Mathias"} iconMiniId={"77911"} bossId={5}>
-                            <Setup name={"Normal"} setupId={0}>
-                                <Role tasks={["Buffs"]} profession={"Thief"} player={"Assa"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Kalell"} />
-                                <Role tasks={["Healing", "Reviving"]} profession={"Scourge"} player={"Ely"} />
-                                <Role tasks={["Reflect"]} profession={"Mirage"} player={"Nevra"} />
-                            </Setup>
-                        </Boss>
-                    </Wing>
-
-                    <Wing name={"Wing 3"}>
-                        <Boss name={"Escort"} iconMiniId={"78828"} bossId={6}>
-                            <Setup name={"Solo cap"} setupId={0}>
-                                <Role tasks={["Solo cap"]} profession={"Mirage"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                                <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Warg"]} profession={"Berserker"} player={"David"} />
-                            </Setup>
-                        </Boss>
-                        <Boss name={"Keep Construct"} iconMiniId={"78890"} bossId={7}>
-                            <Setup name={"Normal"} setupId={0}>
-                                <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                                <Role tasks={["Pusher"]} profession={"Chronomancer"} player={"Fynn"} />
-                            </Setup>
-                        </Boss>
-                        <Boss name={"Xera"} iconMiniId={"78815"} bossId={8}>
-                            <Setup name={"Mid"} setupId={0}>
-                                <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                            </Setup>
-                        </Boss>
-                    </Wing>
-
-                    <Wing name={"Wing 4"}>
-                        <Boss name={"Cairn"} iconMiniId={"80562"} bossId={9}>
-                            <Setup name={"Center"} setupId={0}>
-                                <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Quickness", "Stability"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                            </Setup>
-                        </Boss>
-                        <Boss name={"Mursaat Overseer"} iconMiniId={"80224"} bossId={10}>
-                            <Setup name={"Normal"} setupId={0}>
-                                <Role tasks={["Claim"]} profession={"Weaver"} player={"Kalell"} />
-                                <Role tasks={["Buffs"]} profession={"Thief"} player={"Assa"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                                <Role tasks={["Dispel"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Protect"]} profession={"Berserker"} player={"David"} />
-                            </Setup>
-                        </Boss>
-                        <Boss name={"Samarog"} iconMiniId={"80218"} bossId={11}>
-                            <Setup name={"Normal"} setupId={0}>
-                                <Role tasks={["Quickness", "Pull"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                                <Role tasks={["Extra Push"]} profession={"Berserker"} player={"David"} />
-                            </Setup>
-                        </Boss>
-                        <Boss name={"Deimos"} iconMiniId={"80327"} bossId={12}>
-                            <Setup name={"Normal"} setupId={0}>
-                                <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Heal", "Buffs", "Black-kiter"]} profession={"Tempest"} player={"Schrotty"} />
-                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                                <Role tasks={["Handkiter"]} profession={"Berserker"} player={"David"} />
-                            </Setup>
-                        </Boss>
-                    </Wing>
-
                     <Wing name={"Wing 5"}>
                         <Boss name={"Desmina"} iconMiniId={"86076"} bossId={13}>
                             <Setup name={"Normal"} setupId={0}>
@@ -266,6 +169,103 @@ class App extends Component {
                                 <Role tasks={["Pylon N"]} profession={"Scourge"} player={"Lumi"} />
                                 <Role tasks={["Pylon W"]} profession={"Scourge"} player={"Nevra"} />
                                 <Role tasks={["Pylon E"]} profession={"Deadeye"} player={"Assa"} />
+                            </Setup>
+                        </Boss>
+                    </Wing>
+
+                    <Wing name={"Wing 3"}>
+                        <Boss name={"Escort"} iconMiniId={"78828"} bossId={6}>
+                            <Setup name={"Solo cap"} setupId={0}>
+                                <Role tasks={["Solo cap"]} profession={"Mirage"} player={"Kalell"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
+                                <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
+                                <Role tasks={["Warg"]} profession={"Berserker"} player={"David"} />
+                            </Setup>
+                        </Boss>
+                        <Boss name={"Keep Construct"} iconMiniId={"78890"} bossId={7}>
+                            <Setup name={"Normal"} setupId={0}>
+                                <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
+                                <Role tasks={["Pusher"]} profession={"Chronomancer"} player={"Fynn"} />
+                            </Setup>
+                        </Boss>
+                        <Boss name={"Xera"} iconMiniId={"78815"} bossId={8}>
+                            <Setup name={"Mid"} setupId={0}>
+                                <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
+                            </Setup>
+                        </Boss>
+                    </Wing>
+
+                    <Wing name={"Wing 2"}>
+                        <Boss name={"Slothasor"} iconMiniId={"77870"} bossId={3}>
+                            <Setup name={"Normal"} setupId={0}>
+                                <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
+                                <Role tasks={["Mushroom 1"]} profession={"Berserker"} player={"David"} />
+                                <Role tasks={["Mushroom 2"]} profession={"Daredevil"} player={"Nevra"} />
+                                <Role tasks={["Mushroom 3"]} profession={"Daredevil"} player={"Lumi"} />
+                                <Role tasks={["Mushroom 4"]} profession={"Weaver"} player={"Alex"} />
+                            </Setup>
+                        </Boss>
+                        <Boss name={"Trio"} iconMiniId={"77820"} bossId={4}>
+                            <Setup name={"Normal"} setupId={0}>
+                                <Role tasks={["Quickness", "Mortar"]} profession={"Chronomancer"} player={"Kalell"} />
+                                <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
+                                <Role tasks={["Saboteur"]} profession={"Berserker"} player={"David"} />
+                            </Setup>
+                        </Boss>
+                        <Boss name={"Mathias"} iconMiniId={"77911"} bossId={5}>
+                            <Setup name={"Normal"} setupId={0}>
+                                <Role tasks={["Buffs"]} profession={"Thief"} player={"Assa"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Kalell"} />
+                                <Role tasks={["Healing", "Reviving"]} profession={"Scourge"} player={"Ely"} />
+                                <Role tasks={["Reflect"]} profession={"Mirage"} player={"Nevra"} />
+                            </Setup>
+                        </Boss>
+                    </Wing>
+
+                    <Wing name={"Wing 4"}>
+                        <Boss name={"Cairn"} iconMiniId={"80562"} bossId={9}>
+                            <Setup name={"Center"} setupId={0}>
+                                <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
+                                <Role tasks={["Quickness", "Stability"]} profession={"Firebrand"} player={"Yasi"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
+                            </Setup>
+                        </Boss>
+                        <Boss name={"Mursaat Overseer"} iconMiniId={"80224"} bossId={10}>
+                            <Setup name={"Normal"} setupId={0}>
+                                <Role tasks={["Claim"]} profession={"Weaver"} player={"Kalell"} />
+                                <Role tasks={["Buffs"]} profession={"Thief"} player={"Assa"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
+                                <Role tasks={["Dispel"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Protect"]} profession={"Berserker"} player={"David"} />
+                            </Setup>
+                        </Boss>
+                        <Boss name={"Samarog"} iconMiniId={"80218"} bossId={11}>
+                            <Setup name={"Normal"} setupId={0}>
+                                <Role tasks={["Quickness", "Pull"]} profession={"Chronomancer"} player={"Kalell"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
+                                <Role tasks={["Extra Push"]} profession={"Berserker"} player={"David"} />
+                            </Setup>
+                        </Boss>
+                        <Boss name={"Deimos"} iconMiniId={"80327"} bossId={12}>
+                            <Setup name={"Normal"} setupId={0}>
+                                <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
+                                <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
+                                <Role tasks={["Heal", "Buffs", "Black-kiter"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
+                                <Role tasks={["Handkiter"]} profession={"Berserker"} player={"David"} />
                             </Setup>
                         </Boss>
                     </Wing>
