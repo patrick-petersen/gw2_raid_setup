@@ -20,21 +20,21 @@ class App extends Component {
                         <Boss name={"Valeguardian"} iconMiniId={"77334"} bossId={0}>
                             <Setup name={"Center"} setupId={0}>
                                 <Role tasks={["Tank", "Quickness"]} profession={"Chronomancer"} player={"Kalell"} backups={["Yasi"]}/>
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Seeker Root"]} profession={"Soulbeast"} player={"Assa"} />
                                 <Role tasks={["Seeker Root"]} profession={"Soulbeast"} player={"Nevra"} />
                             </Setup>
                             <Setup name={"Rand"} setupId={1} hidden={true}>
                                 <Role tasks={["Tank", "Quickness"]} profession={"Chronomancer"} player={"Kalell"} backups={["Yasi"]}/>
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                             </Setup>
                         </Boss>
                         <Boss name={"Gorseval"} iconMiniId={"77296"} bossId={1}>
                             <Setup name={"No Updraft"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Stability"]} profession={"Firebrand"} player={"Yasi"} />
                             </Setup>
@@ -42,7 +42,7 @@ class App extends Component {
                         <Boss name={"Sabetha"} iconMiniId={"77339"} bossId={2}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Kiter"]} profession={"Scourge"} player={"Assa"} />
                                 <Role tasks={["Cannon 1 & 3"]} profession={"Berserker"} player={"David"} />
@@ -56,7 +56,7 @@ class App extends Component {
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
                                 <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Pusher"]} profession={"Druid"} player={"Fynn"} />
                                 <Role tasks={["Epi"]} profession={"Scourge"} player={"Assa"} />
@@ -67,7 +67,7 @@ class App extends Component {
                                 <Role tasks={["Desmina Aegis"]} profession={"Chronomancer"} player={"Kalell"} />
                                 <Role tasks={["Desmina Superspeed"]} profession={"Holosmith"} player={"Fynn"} />
                                 <Role tasks={["Desmina Healing"]} profession={"Revenant"} player={"Alex"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Quickness", "Aegis"]} profession={"Firebrand"} player={"Yasi"} />
                             </Setup>
@@ -75,7 +75,7 @@ class App extends Component {
                         <Boss name={"Statue of Ice"} iconMiniId={"85667"} bossId={15}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
                             </Setup>
@@ -83,14 +83,14 @@ class App extends Component {
                         <Boss name={"Statue of Death"} bossId={16}>
                             <Setup name={"0 - 5"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                             </Setup>
                         </Boss>
                         <Boss name={"Statue of Darkness"} bossId={17}>
                             <Setup name={"Portal"} setupId={0}>
                                 <Role tasks={["Portal"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Orb"]} profession={"Berserker"} player={"Fynn"} />
                             </Setup>
@@ -98,7 +98,7 @@ class App extends Component {
                         <Boss name={"Dhuum"} iconMiniId={"85998"} bossId={18}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Green 1"]} profession={"Berserker"} player={"David"} />
                                 <Role tasks={["Kiter", "Green 2"]} profession={"Druid"} player={"Kalell"} />
@@ -112,7 +112,7 @@ class App extends Component {
                         <Boss name={"Conjured Amalgamate"} bossId={19}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Shields"]} profession={"Berserker"} player={"David"} />
                                 <Role tasks={["Swords"]} profession={"Soulbeast"} player={"Alex"} />
@@ -122,7 +122,7 @@ class App extends Component {
                         <Boss name={"Twin Largos"} iconMiniId={"88868"} bossId={20}>
                             <Setup name={"Portal"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Lumi"} />
                                 <Role tasks={["Heal", "Reviving"]} profession={"Scourge"} player={"Ely"} />
                                 <Role tasks={["Portal"]} profession={"Chronomancer"} player={"Yasi"} />
@@ -131,7 +131,7 @@ class App extends Component {
                         <Boss name={"Qadim"} iconMiniId={"88587"} bossId={21}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Tank", "Boonstrip","Banner"]} profession={"Spellbreaker"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Quickness", "Wyvern Tank"]} profession={"Chronomancer"} player={"Yasi"} />
                                 <Role tasks={["Lampe"]} profession={"Reaper"} player={"Nevra"} />
@@ -143,7 +143,7 @@ class App extends Component {
                         <Boss name={"Adina"} iconMiniId={"82686"} bossId={22}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Boons", "Pillar"]} profession={"Thief"} player={"Assa"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Pillar"]} profession={"Dragonhunter"} player={"Nevra"} />
                                 <Role tasks={["Pillar"]} profession={"Soulbeast"} player={"Kalell"} />
@@ -154,7 +154,7 @@ class App extends Component {
                         <Boss name={"Sabir"} iconMiniId={"83551"} bossId={23}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Whisps"]} profession={"Berserker"} player={"David"} />
                             </Setup>
@@ -163,7 +163,7 @@ class App extends Component {
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
                                 <Role tasks={["Quickness", "Stability"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Soulcleave"]} profession={"Renegade"} player={"Alex"} />
                                 <Role tasks={["Anomaly CC"]} profession={"Berserker"} player={"David"} />
@@ -178,7 +178,7 @@ class App extends Component {
                         <Boss name={"Escort"} iconMiniId={"78828"} bossId={6}>
                             <Setup name={"Solo cap"} setupId={0}>
                                 <Role tasks={["Solo cap"]} profession={"Mirage"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
                                 <Role tasks={["Warg"]} profession={"Berserker"} player={"David"} />
@@ -187,7 +187,7 @@ class App extends Component {
                         <Boss name={"Keep Construct"} iconMiniId={"78890"} bossId={7}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Pusher"]} profession={"Chronomancer"} player={"Fynn"} />
                             </Setup>
@@ -195,7 +195,7 @@ class App extends Component {
                         <Boss name={"Xera"} iconMiniId={"78815"} bossId={8}>
                             <Setup name={"Mid"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                             </Setup>
                         </Boss>
@@ -205,7 +205,7 @@ class App extends Component {
                         <Boss name={"Slothasor"} iconMiniId={"77870"} bossId={3}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Mushroom 1"]} profession={"Berserker"} player={"David"} />
                                 <Role tasks={["Mushroom 2"]} profession={"Daredevil"} player={"Nevra"} />
@@ -217,7 +217,7 @@ class App extends Component {
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness", "Mortar"]} profession={"Chronomancer"} player={"Kalell"} />
                                 <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Saboteur"]} profession={"Berserker"} player={"David"} />
                             </Setup>
@@ -225,7 +225,7 @@ class App extends Component {
                         <Boss name={"Mathias"} iconMiniId={"77911"} bossId={5}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Buffs"]} profession={"Thief"} player={"Assa"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Kalell"} />
                                 <Role tasks={["Healing", "Reviving"]} profession={"Scourge"} player={"Ely"} />
                                 <Role tasks={["Reflect"]} profession={"Mirage"} player={"Nevra"} />
@@ -238,7 +238,7 @@ class App extends Component {
                             <Setup name={"Center"} setupId={0}>
                                 <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"} />
                                 <Role tasks={["Quickness", "Stability"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                             </Setup>
                         </Boss>
@@ -246,16 +246,16 @@ class App extends Component {
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Claim"]} profession={"Weaver"} player={"Kalell"} />
                                 <Role tasks={["Buffs"]} profession={"Thief"} player={"Assa"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
-                                <Role tasks={["Dispel"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Dispel"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Protect"]} profession={"Berserker"} player={"David"} />
                             </Setup>
                         </Boss>
                         <Boss name={"Samarog"} iconMiniId={"80218"} bossId={11}>
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness", "Pull"]} profession={"Chronomancer"} player={"Kalell"} />
-                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Extra Push"]} profession={"Berserker"} player={"David"} />
                             </Setup>
@@ -264,7 +264,7 @@ class App extends Component {
                             <Setup name={"Normal"} setupId={0}>
                                 <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"} />
                                 <Role tasks={["Quickness"]} profession={"Firebrand"} player={"Yasi"} />
-                                <Role tasks={["Heal", "Buffs", "Black-kiter"]} profession={"Tempest"} player={"Schrotty"} />
+                                <Role tasks={["Heal", "Buffs", "Black-kiter"]} profession={"Tempest"} player={"Shrotty"} />
                                 <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"} />
                                 <Role tasks={["Handkiter"]} profession={"Herald"} player={"David"} />
                                 <Role tasks={["Banner"]} profession={"Berserker"} player={"Assa"} />
