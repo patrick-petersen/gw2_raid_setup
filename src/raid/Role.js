@@ -84,7 +84,9 @@ class Role extends Component {
     render() {
         let players = this.props.backups ? this.props.backups.concat([this.props.player]) : Settings.players;
         return (
-            <div className={"role" + (this.props.player !== this.state.player?" replacement":"")}>
+            <div className={"role"
+            + (this.state.player !== this.props.player?" replacement":"")
+            + (Settings.missing.includes(this.state.player )?" missing":"")}>
                 <div className={"profession"}><Profession name={this.props.profession} /></div>
                 <div className={"task"}>{this.props.tasks.join(", ")}</div>
                 {

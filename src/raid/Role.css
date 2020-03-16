@@ -9,6 +9,10 @@
     background-color: yellow;
 }
 
+.role.missing {
+    background-color: red;
+}
+
 .role .task, .role .profession, .role .player {
 
 }
