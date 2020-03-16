@@ -16,9 +16,16 @@ export default class HistoryManager {
         window.onpopstate = (event) => {
             console.log("location:", window.location.hash, "state:", event);
             const historyObject = event.state;
-            this._setups = historyObject._setups;
-            this._players = historyObject._players;
-            this._currentUrl = historyObject._currentUrl;
+            if(historyObject !== null) {
+                this._setups = historyObject._setups;
+                this._players = historyObject._players;
+                this._currentUrl = historyObject._currentUrl;
+            }
+            else {
+                this._setups = [];
+                this._players = [];
+                this._currentUrl = "#";
+            }
 
             this._popstateCallbacks.forEach(value => value());
         };
