@@ -30,7 +30,7 @@ class Boss extends Component {
                     ? <ItemIcon itemId={this.props.iconMiniId} />
                     : null
                 }
-                <span className={"boss-name"} onClick={this.toggleSize}>Boss: {this.props.name}</span>
+                <span className={"boss-name"} onClick={this.toggleSize}>{this.props.name}</span>
                 <SetupSelector bossId={this.props.bossId}>
                     {this.props.children}
                 </SetupSelector>
