@@ -88,13 +88,13 @@ class SetupSelector extends Component {
             activeSetup: setupKey
         });
 
-        this.saveSetup(setupKey);
+        this.saveSetup(setupKey, false, true);
         this.saveCallbacks[setupKey]();
         HistoryManager.getInstance().updateCurrentUrl();
     }
 
-    saveSetup(setupKey, dontClearPlayers) {
-        HistoryManager.getInstance().saveSetupSettings(this.props.bossId, setupKey, dontClearPlayers);
+    saveSetup(setupKey, dontClearPlayers, dontSave) {
+        HistoryManager.getInstance().saveSetupSettings(this.props.bossId, setupKey, dontClearPlayers, dontSave);
     }
 
     childClick(setupKey) {

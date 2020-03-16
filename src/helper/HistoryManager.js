@@ -75,14 +75,16 @@ export default class HistoryManager {
         return (boss in this._setups)?this._setups[boss] : 0;
     }
 
-    saveSetupSettings(boss, value, dontClearPlayers) {
+    saveSetupSettings(boss, value, dontClearPlayers, dontSave) {
         console.log("saving setup for boss:", boss, value, dontClearPlayers);
         this._setups[boss] = value;
         //clear the setup settings after the setup was changed, as these were for a different setup
         if((typeof dontClearPlayers == "undefined") || !dontClearPlayers) {
             console.log("clearing _player[boss]: ", boss);
             this._players[boss] = [];
-            this.updateCurrentUrl();
+            if((typeof dontSave == "undefined") || !dontSave) {
+                this.updateCurrentUrl();
+            }
         }
 
     }
