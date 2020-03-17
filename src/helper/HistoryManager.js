@@ -8,10 +8,11 @@ export default class HistoryManager {
 
     _popstateCallbacks = [];
 
-    _demoString = "007481;0074;0074168;00796143;002796;087091;007926;00795;0074;00279;0087976;00796;002796;0027951;0053792;00799;0079;00795;02796014;0079635;007492;007921;08791026;00796;0027936418;";
+    _defaultSetup = "007981;00792;0079168;00796153;002796;087091;007926;00795;0079;00279;0087976;00796;0027968;0027958;0053792;00792;0079;00795;02796012;0079635;007892;007921;08791026;00796;0047936218;";
 
     constructor() {
-        this.loadSetupFromString(window.location.hash.substr(1));
+        const hash = window.location.hash.substr(1);
+        this.loadSetupFromString(hash.length >= 1? hash : this._defaultSetup);
 
         window.onpopstate = (event) => {
             console.log("location:", window.location.hash, "state:", event);
