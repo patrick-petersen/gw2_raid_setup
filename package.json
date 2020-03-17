@@ -1,6 +1,6 @@
 {
   "name": "gw2_raid_setup",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "homepage": "http://setup.gw2koss.de",
   "dependencies": {
