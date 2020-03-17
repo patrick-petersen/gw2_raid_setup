@@ -3,15 +3,25 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    overflow: hidden;
 }
 
 .boss.big .setupSelector.closed .setup.active {
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
 }
-
 .boss.big .setupSelector.open .setup.active:last-child {
     border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.boss.small .setupSelector.closed .setup.active {
+     border-top-right-radius: 25px;
+     border-bottom-right-radius: 25px;
+}
+.boss.small .setupSelector.open .setup.active:first-child {
+    border-top-right-radius: 25px;
+}
+.boss.small .setupSelector.open .setup.active:last-child {
     border-bottom-right-radius: 25px;
 }
 
