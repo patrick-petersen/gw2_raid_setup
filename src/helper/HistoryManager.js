@@ -12,7 +12,11 @@ export default class HistoryManager {
 
     constructor() {
         const hash = window.location.hash.substr(1);
-        this.loadSetupFromString(hash.length >= 1? hash : this._defaultSetup);
+        let setup = "";
+        if(hash.length >= 1) {
+            setup = hash;
+        }
+        this.loadSetupFromString(setup);
 
         window.onpopstate = (event) => {
             console.log("location:", window.location.hash, "state:", event);
