@@ -8,7 +8,7 @@ import React, {Component} from "react";
 class FullComp extends Component {
     render() {
         return [
-            <Wing name={"Wing 1"}>
+            <Wing name={"Wing 1"} key={0}>
                 <Boss name={"Valeguardian"} iconMiniId={"77334"} bossId={0}>
                     <Setup name={"Center"} setupId={0}>
                         <Role tasks={["Tank", "Quickness"]} profession={"Chronomancer"} player={"Kalell"}
@@ -45,7 +45,7 @@ class FullComp extends Component {
                 </Boss>
             </Wing>,
 
-                <Wing name={"Wing 5"}>
+                <Wing name={"Wing 5"} key={4}>
                     <Boss name={"Desmina"} iconMiniId={"86076"} bossId={13}>
                         <Setup name={"Normal"} setupId={0}>
                             <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"}/>
@@ -102,7 +102,7 @@ class FullComp extends Component {
                     </Boss>
                 </Wing>,
 
-                <Wing name={"Wing 6"}>
+                <Wing name={"Wing 6"} key={5}>
                     <Boss name={"Conjured Amalgamate"} bossId={19}>
                         <Setup name={"Normal"} setupId={0}>
                             <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"}/>
@@ -134,7 +134,7 @@ class FullComp extends Component {
                     </Boss>
                 </Wing>,
 
-                <Wing name={"Wing 7"}>
+                <Wing name={"Wing 7"} key={6}>
                     <Boss name={"Adina"} iconMiniId={"82686"} bossId={22}>
                         <Setup name={"Normal"} setupId={0}>
                             <Role tasks={["Boons", "Pillar"]} profession={"Thief"} player={"Assa"}/>
@@ -169,7 +169,7 @@ class FullComp extends Component {
                     </Boss>
                 </Wing>,
 
-                <Wing name={"Wing 3"}>
+                <Wing name={"Wing 3"} key={2}>
                     <Boss name={"Escort"} iconMiniId={"78828"} bossId={6}>
                         <Setup name={"Solo cap"} setupId={0}>
                             <Role tasks={["Solo cap"]} profession={"Mirage"} player={"Kalell"}/>
@@ -196,7 +196,7 @@ class FullComp extends Component {
                     </Boss>
                 </Wing>,
 
-                <Wing name={"Wing 2"}>
+                <Wing name={"Wing 2"} key={1}>
                     <Boss name={"Slothasor"} iconMiniId={"77870"} bossId={3}>
                         <Setup name={"Normal"} setupId={0}>
                             <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"}/>
@@ -228,7 +228,7 @@ class FullComp extends Component {
                     </Boss>
                 </Wing>,
 
-                <Wing name={"Wing 4"}>
+                <Wing name={"Wing 4"} key={3}>
                     <Boss name={"Cairn"} iconMiniId={"80562"} bossId={9}>
                         <Setup name={"Center"} setupId={0}>
                             <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"}/>

@@ -1,16 +1,29 @@
 import React, {Component} from "react";
 import FullComp from "./Setups/FullComp";
+import Marvin from "./Setups/Marvin";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 class Setups extends Component {
-    static _defaultSetup = 0;
-
     render() {
-        const setup = Setups._defaultSetup;
-        switch (setup) {
-            default:
-            case 0:
-                return (<FullComp/>);
-        }
+        return (
+            <Router>
+                <Switch>
+                <Route exact path="/">
+                    <FullComp />
+                </Route>
+                <Route path="/marvin">
+                    <Marvin />
+                </Route>
+                <Route>
+                    <FullComp />
+                </Route>
+            </Switch>
+            </Router>);
     }
 }
 
