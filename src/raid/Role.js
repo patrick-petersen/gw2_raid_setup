@@ -2,16 +2,20 @@ import React, {Component} from 'react';
 
 import './Role.css';
 import Profession from "../helper/Profession.js";
-import Settings from '../helper/settings.json';
 import HistoryManager from "../helper/HistoryManager";
 
 class Role extends Component {
     constructor(props) {
         super(props);
 
-        let player = ("selectedPlayer" in this.props && this.props.selectedPlayer in Settings.players)
-            ? Settings.players[this.props.selectedPlayer]
-            : this.props.player;
+        let player = this.props.player;
+
+        if("selectedPlayer" in this.props && this.props.selectedPlayer in global.settings.players) {
+            player = global.settings.players[this.props.selectedPlayer];
+        }
+        else if("replacement" in this.props) {
+            player = this.props.replacement;
+        }
 
         this.state = {
             playerSelection: false,
@@ -38,11 +42,11 @@ class Role extends Component {
         //console.log("role popstate");
         //console.log(this.props.bossId, this.props.setupId, this.props.roleNumber);
         let playerId = HistoryManager.getInstance().getPlayerSettings(this.props.bossId, this.props.setupId)(this.props.roleNumber);
-        //console.log(playerId, playerId in Settings.players);
-        if(playerId in Settings.players) {
+        //console.log(playerId, playerId in global.settings.players);
+        if(playerId in global.settings.players) {
             console.log("Setting state");
             this.setState({
-                player: Settings.players[playerId]
+                player: global.settings.players[playerId]
             })
         }
     }
@@ -76,17 +80,17 @@ class Role extends Component {
     }
 
     getIndexOfPlayer(player) {
-        const index = Settings.players.findIndex((playerName) => playerName === player);
+        const index = global.settings.players.findIndex((playerName) => playerName === player);
         console.log("player index:", player, index);
         return index;
     }
 
     render() {
-        let players = this.props.backups ? this.props.backups.concat([this.props.player]) : Settings.players;
+        let players = this.props.backups ? this.props.backups.concat([this.props.player]) : global.settings.players;
         return (
             <div className={"role"
             + (this.state.player !== this.props.player?" replacement":"")
-            + (Settings.missing.includes(this.state.player )?" missing":"")}>
+            + (global.settings.missing.includes(this.state.player )?" missing":"")}>
                 <div className={"profession"}><Profession name={this.props.profession} /></div>
                 <div className={"task"}>{this.props.tasks.join(", ")}</div>
                 {

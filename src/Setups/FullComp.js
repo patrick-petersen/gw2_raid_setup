@@ -6,6 +6,14 @@ import React, {Component} from "react";
 
 
 class FullComp extends Component {
+    constructor(props) {
+        super(props);
+        global.settings = {
+            "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
+            "missing": []
+        };
+    }
+
     render() {
         return [
             <Wing name={"Wing 1"} key={0}>

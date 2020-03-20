@@ -7,6 +7,10 @@ import React, {Component} from "react";
 
 class Marvin extends Component {
     render() {
+        global.settings = {
+            "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
+            "missing": ["Lumi"]
+        };
         return [
             <Wing name={"Wing 1"} key={0}>
                 <Boss name={"Valeguardian"} iconMiniId={"77334"} bossId={0}>
@@ -40,7 +44,7 @@ class Marvin extends Component {
                         <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"}/>
                         <Role tasks={["Kiter"]} profession={"Scourge"} player={"Assa"}/>
                         <Role tasks={["Cannon 1 & 3"]} profession={"Berserker"} player={"David"}/>
-                        <Role tasks={["Cannon 2 & 4"]} profession={"Firebrand"} player={"Lumi"}/>
+                        <Role tasks={["Cannon 2 & 4"]} profession={"Firebrand"} player={"Lumi"} replacement={"Yasi"}/>
                     </Setup>
                 </Boss>
             </Wing>,
@@ -97,7 +101,7 @@ class Marvin extends Component {
                         <Role tasks={["Green 1"]} profession={"Berserker"} player={"David"}/>
                         <Role tasks={["Kiter", "Green 2"]} profession={"Druid"} player={"Kalell"}/>
                         <Role tasks={["Green 3"]} profession={"Chronomancer"} player={"Nevra"}/>
-                        <Role tasks={["First Green 2"]} profession={"Firebrand"} player={"Lumi"}/>
+                        <Role tasks={["First Green 2"]} profession={"Firebrand"} player={"Lumi"} replacement={"Yasi"}/>
                     </Setup>
                 </Boss>
             </Wing>,
@@ -117,7 +121,7 @@ class Marvin extends Component {
                     <Setup name={"Portal"} setupId={0}>
                         <Role tasks={["Quickness"]} profession={"Chronomancer"} player={"Kalell"}/>
                         <Role tasks={["Tank", "Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"}/>
-                        <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Lumi"}/>
+                        <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Lumi"} replacement={"Assa"}/>
                         <Role tasks={["Heal", "Reviving"]} profession={"Scourge"} player={"Ely"}/>
                         <Role tasks={["Portal"]} profession={"Chronomancer"} player={"Yasi"}/>
                     </Setup>
@@ -157,12 +161,12 @@ class Marvin extends Component {
                 <Boss name={"Qadim 2"} iconMiniId={"91232"} bossId={24}>
                     <Setup name={"Normal"} setupId={0}>
                         <Role tasks={["Quickness", "Tank"]} profession={"Chronomancer"} player={"Kalell"}/>
-                        <Role tasks={["Quickness", "Stability"]} profession={"Firebrand"} player={"Yasi"}/>
+                        <Role tasks={["Quickness", "Stability"]} profession={"Firebrand"} player={"Yasi"} replacement={"Lumi"}/>
                         <Role tasks={["Heal", "Buffs"]} profession={"Tempest"} player={"Shrotty"}/>
                         <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"}/>
                         <Role tasks={["Soulcleave"]} profession={"Renegade"} player={"Alex"}/>
                         <Role tasks={["Anomaly CC"]} profession={"Berserker"} player={"David"}/>
-                        <Role tasks={["Pylon N"]} profession={"Scourge"} player={"Lumi"}/>
+                        <Role tasks={["Pylon N"]} profession={"Scourge"} player={"Lumi"} replacement={"Yasi"}/>
                         <Role tasks={["Pylon W"]} profession={"Scourge"} player={"Nevra"}/>
                         <Role tasks={["Pylon E"]} profession={"Deadeye"} player={"Assa"}/>
                     </Setup>
@@ -204,7 +208,7 @@ class Marvin extends Component {
                         <Role tasks={["Alacrity"]} profession={"Renegade"} player={"Ely"}/>
                         <Role tasks={["Mushroom 1"]} profession={"Berserker"} player={"David"}/>
                         <Role tasks={["Mushroom 2"]} profession={"Daredevil"} player={"Nevra"}/>
-                        <Role tasks={["Mushroom 3"]} profession={"Daredevil"} player={"Lumi"}/>
+                        <Role tasks={["Mushroom 3"]} profession={"Weaver"} player={"Lumi"} replacement={"Fynn"}/>
                         <Role tasks={["Mushroom 4"]} profession={"Weaver"} player={"Alex"}/>
                     </Setup>
                 </Boss>
