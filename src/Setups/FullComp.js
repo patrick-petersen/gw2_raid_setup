@@ -365,6 +365,11 @@ class FullComp extends Component {
                                             "tasks": ["Green 3"],
                                             "player": "Nevra"
                                         },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["First Green 2"],
+                                            "player": "Lumi"
+                                        },
                                     ]
                                 },
                             ]
