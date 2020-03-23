@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import './Setup.css';
-import HistoryManager from "../helper/HistoryManager";
+import Role from "./Role";
 
 class Setup extends Component {
     static setupStates = ["main-setup", "backup-setup", "missing-setup"];
@@ -12,34 +12,12 @@ class Setup extends Component {
             setupState: Setup.setupStates[0],
         };
 
-        this.cloneChildren = this.cloneChildren.bind(this);
         this.addSaveCallback = this.addSaveCallback.bind(this);
         this.saveChildren = this.saveChildren.bind(this);
-
-        this.children = this.cloneChildren();
 
         this.saveCallbacks = [];
 
         this.props.saveCallback(this.saveChildren);
-    }
-
-    cloneChildren() {
-        let getSelectedPlayer = HistoryManager.getInstance().getPlayerSettings(this.props.bossId, this.props.setupId);
-
-        return React.Children.map(this.props.children, (child, index) => {
-            let props = Object.assign({}, child.props);
-            Object.assign(props, {
-                bossId: this.props.bossId,
-                setupId: this.props.setupId,
-                addSaveCallback: this.addSaveCallback,
-                selectedPlayer: getSelectedPlayer(index),
-                roleNumber: index,
-                wantToChangePlayer: this.props.wantToChangePlayer(index),
-                wantToShowChangePlayer: this.props.wantToShowChangePlayer(index),
-            });
-
-            return React.cloneElement(child, props);
-        });
     }
 
     addSaveCallback(callback) {
@@ -55,7 +33,12 @@ class Setup extends Component {
     render() {
         return (
             <div className={"setup-roles"}>
-                {this.children}
+            {
+                this.props.roles.map((roleValue, roleIndex) => {
+                        return (<Role {... roleValue} key={roleIndex}></Role>);
+                    }
+                )
+            }
             </div>
         )
     }

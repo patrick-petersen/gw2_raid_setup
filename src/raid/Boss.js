@@ -4,6 +4,7 @@ import ItemIcon from "../helper/ItemIcon";
 
 import './Boss.css';
 import SetupSelector from "./SetupSelector";
+import Setup from "./Setup";
 
 class Boss extends Component {
 
@@ -32,7 +33,11 @@ class Boss extends Component {
                 }
                 <span className={"boss-name"} onClick={this.toggleSize}>{this.props.name}</span>
                 <SetupSelector bossId={this.props.bossId}>
-                    {this.props.children}
+                    {
+                        this.props.setups.map((setupValue, setupIndex) => {
+                            return (<Setup {... setupValue} key={setupIndex}></Setup>);
+                        }
+                    )}
                 </SetupSelector>
             </section>
         )

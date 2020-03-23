@@ -3,18 +3,44 @@ import Boss from "../raid/Boss";
 import Setup from "../raid/Setup";
 import Role from "../raid/Role";
 import React, {Component} from "react";
+import SetupRenderer from "./SetupRenderer";
 
 
 class FullComp extends Component {
     constructor(props) {
         super(props);
-        global.settings = {
-            "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
-            "missing": []
-        };
+        this.settings = {
+            "players": ["Kalell", "Shrotty"],
+            "list": [
+                {
+                    "name": "Wing 1",
+                    "bosses": [
+                        {
+                            "name": "Valeguardian",
+                            "iconMiniId": 77334,
+                            "setups": [
+                                {
+                                    "name": "Center",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
+            ]
+        }
     }
 
     render() {
+
+        return <SetupRenderer {... this.settings}></SetupRenderer>;
+        /*
         return [
             <Wing name={"Wing 1"} key={0}>
                 <Boss name={"Valeguardian"} iconMiniId={"77334"} bossId={0}>
@@ -275,6 +301,7 @@ class FullComp extends Component {
                     </Boss>
                 </Wing>
         ];
+         */
     }
 }
 
