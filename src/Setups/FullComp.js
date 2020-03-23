@@ -27,6 +27,118 @@ class FullComp extends Component {
                                             "tasks": ["Tank", "Quickness"],
                                             "player": "Kalell"
                                         },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Seeker Root"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Seeker Root"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Rand",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Gorseval",
+                            "iconMiniId": 77296,
+                            "setups": [
+                                {
+                                    "name": "No Updraft",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Stability"],
+                                            "player": "Yasi"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Sabetha",
+                            "iconMiniId": 77339,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Kiter"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Cannon 1 & 3"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Cannon 2 & 4"],
+                                            "player": "Lumi"
+                                        },
                                     ]
                                 },
                             ]
@@ -40,7 +152,7 @@ class FullComp extends Component {
     render() {
 
         return <SetupRenderer {... this.settings}></SetupRenderer>;
-        /*
+/*
         return [
             <Wing name={"Wing 1"} key={0}>
                 <Boss name={"Valeguardian"} iconMiniId={"77334"} bossId={0}>
