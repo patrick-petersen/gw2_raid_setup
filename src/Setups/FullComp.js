@@ -494,6 +494,144 @@ class FullComp extends Component {
                         },
                     ]
                 },
+                {
+                    "name": "Wing 7",
+                    "bosses": [
+                        {
+                            "name": "Adina",
+                            "iconMiniId": 82686,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons", "Pillar"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Pillar"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Dragonhunter",
+                                            "tasks": ["Pillar"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Pillar"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Pillar"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Sabir",
+                            "iconMiniId": 83551,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Whisps"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Qadim 2",
+                            "iconMiniId": 91232,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Soulcleave"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Anomaly CC"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Pylon N"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Pylon W"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Deadeye",
+                                            "tasks": ["Pylon E"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
             ]
         }
     }
