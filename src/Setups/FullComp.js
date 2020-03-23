@@ -730,6 +730,129 @@ class FullComp extends Component {
                         },
                     ]
                 },
+                {
+                    "name": "Wing 2",
+                    "bosses": [
+                        {
+                            "name": "Slothasor",
+                            "iconMiniId": 77870,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Solo Cap"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Mushroom 1"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["Mushroom 2"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["Mushroom 3"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Weaver",
+                                            "tasks": ["Mushroom 4"],
+                                            "player": "Alex"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Trio",
+                            "iconMiniId": 77820,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Mortar"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Saboteur"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Mathias",
+                            "iconMiniId": 78815,
+                            "setups": [
+                                {
+                                    "name": "Mid",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Healing", "Reviving"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Mirage",
+                                            "tasks": ["Reflect"],
+                                            "player": "Nevra"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
             ]
         }
     }
