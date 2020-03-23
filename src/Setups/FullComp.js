@@ -145,6 +145,232 @@ class FullComp extends Component {
                         },
                     ]
                 },
+                {
+                    "name": "Wing 5",
+                    "bosses": [
+                        {
+                            "name": "Desmina",
+                            "iconMiniId": 86076,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Pusher"],
+                                            "player": "Fynn"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Epi"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "River",
+                            "iconMiniId": 85785,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Desmina Aegis"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Holosmith",
+                                            "tasks": ["Desmina Superspeed"],
+                                            "player": "Fynn"
+                                        },
+                                        {
+                                            "profession": "Herald",
+                                            "tasks": ["Desmina Healing"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness", "Aegis"],
+                                            "player": "Yasi"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Statue of Ice",
+                            "iconMiniId": 85667,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Cannon 2 & 4"],
+                                            "player": "Lumi"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Statue of Death",
+                            /*"iconMiniId": 0,*/
+                            "setups": [
+                                {
+                                    "name": "0 - 5",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs", "Tank"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Statue of Darkness",
+                            /*"iconMiniId": 0,*/
+                            "setups": [
+                                {
+                                    "name": "Portal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Portal"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs", "Tank"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Orb"],
+                                            "player": "Fynn"
+                                        },
+                                        {
+                                            "profession": "Deadeye",
+                                            "tasks": ["Adds"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Dhuum",
+                            "iconMiniId": 85998,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Green 1"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Kiter", "Green 2"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Green 3"],
+                                            "player": "Nevra"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
             ]
         }
     }
