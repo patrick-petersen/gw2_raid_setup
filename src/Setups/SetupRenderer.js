@@ -8,10 +8,6 @@ import React, {Component} from "react";
 class SetupRenderer extends Component {
     constructor(props) {
         super(props);
-        global.settings = {
-            "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
-            "missing": []
-        };
 
         this.state = {
             list: this.props.list,
