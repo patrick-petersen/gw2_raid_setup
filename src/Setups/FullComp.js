@@ -632,6 +632,104 @@ class FullComp extends Component {
                         },
                     ]
                 },
+                {
+                    "name": "Wing 3",
+                    "bosses": [
+                        {
+                            "name": "Escort",
+                            "iconMiniId": 78828,
+                            "setups": [
+                                {
+                                    "name": "Solo Cap",
+                                    "roles": [
+                                        {
+                                            "profession": "Mirage",
+                                            "tasks": ["Solo Cap"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Warg"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Keep Construct",
+                            "iconMiniId": 78890,
+                            "setups": [
+                                {
+                                    "name": "2-2-3",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Pusher"],
+                                            "player": "Yasi"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Xera",
+                            "iconMiniId": 78815,
+                            "setups": [
+                                {
+                                    "name": "Mid",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
             ]
         }
     }
