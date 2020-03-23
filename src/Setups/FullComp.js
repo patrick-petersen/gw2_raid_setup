@@ -10,9 +10,11 @@ class FullComp extends Component {
     constructor(props) {
         super(props);
         this.settings = {
-            "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
-            "missing": [],
-            "replacements": {},
+            "playerSettings": {
+                "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
+                "missing": [],
+                "replacements": {},
+            },
             "list": [
                 {
                     "name": "Wing 1",

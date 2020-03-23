@@ -11,23 +11,6 @@ class Setup extends Component {
         this.state = {
             setupState: Setup.setupStates[0],
         };
-
-        this.addSaveCallback = this.addSaveCallback.bind(this);
-        this.saveChildren = this.saveChildren.bind(this);
-
-        this.saveCallbacks = [];
-
-        this.props.saveCallback(this.saveChildren);
-    }
-
-    addSaveCallback(callback) {
-        this.saveCallbacks.push(callback);
-    }
-
-    saveChildren() {
-        this.saveCallbacks.forEach(callback => {
-            callback();
-        });
     }
 
     render() {
@@ -35,7 +18,7 @@ class Setup extends Component {
             <div className={"setup-roles"}>
             {
                 this.props.roles.map((roleValue, roleIndex) => {
-                        return (<Role {... roleValue} key={roleIndex}></Role>);
+                        return (<Role {... roleValue} playerSettings={this.props.playerSettings} key={roleIndex}></Role>);
                     }
                 )
             }

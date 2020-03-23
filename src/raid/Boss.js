@@ -35,7 +35,7 @@ class Boss extends Component {
                 <SetupSelector bossId={this.props.bossId}>
                     {
                         this.props.setups.map((setupValue, setupIndex) => {
-                            return (<Setup {... setupValue} key={setupIndex}></Setup>);
+                            return (<Setup {... setupValue} playerSettings={this.props.playerSettings} key={setupIndex}></Setup>);
                         }
                     )}
                 </SetupSelector>

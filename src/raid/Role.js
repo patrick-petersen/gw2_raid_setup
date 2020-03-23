@@ -9,10 +9,7 @@ class Role extends Component {
 
         let player = this.props.player;
 
-        if("selectedPlayer" in this.props && this.props.selectedPlayer in global.settings.players) {
-            player = global.settings.players[this.props.selectedPlayer];
-        }
-        else if("replacement" in this.props) {
+        if("replacement" in this.props) {
             player = this.props.replacement;
         }
 
@@ -42,11 +39,17 @@ class Role extends Component {
     }
 
     render() {
-        let players = this.props.player.concat([this.props.backups]);
+        let players;
+        if(this.props.backups) {
+            players = this.props.player.concat([this.props.backups]);
+        }
+        else {
+            players = this.props.playerSettings.players;
+        }
         return (
             <div className={"role"
             + (this.state.player !== this.props.player?" replacement":"")
-            /*+ (global.settings.missing.includes(this.state.player )?" missing":"")*/}>
+            + (this.props.playerSettings.missing.includes(this.state.player )?" missing":"")}>
                 <div className={"profession"}><Profession name={this.props.profession} /></div>
                 <div className={"task"}>{this.props.tasks.join(", ")}</div>
                 {

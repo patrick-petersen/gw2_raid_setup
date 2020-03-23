@@ -14,32 +14,16 @@ class SetupSelector extends Component {
             setupSelection: false
         };
 
-        this.saveCallbacks = [];
 
         this.openSetupSelect = this.openSetupSelect.bind(this);
         this.cloneChildren = this.cloneChildren.bind(this);
         this.selectSetup = this.selectSetup.bind(this);
         this.childClick = this.childClick.bind(this);
-        this.addSaveCallback = this.addSaveCallback.bind(this);
-        this.saveSetup = this.saveSetup.bind(this);
         this.wantToChangePlayerCallback = this.wantToChangePlayerCallback.bind(this);
         this.wantToShowChangePlayerCallback = this.wantToShowChangePlayerCallback.bind(this);
 
 
-        this.popStateCallback = this.popStateCallback.bind(this);
-        HistoryManager.getInstance().addPopstateCallback(this.popStateCallback);
-
         this.children = this.cloneChildren();
-    }
-
-    componentDidMount() {
-        this.saveSetup(this.state.activeSetup, true);
-    }
-
-    popStateCallback() {
-        this.setState({
-            activeSetup: HistoryManager.getInstance().getSetupSettings(this.props.bossId)
-        })
     }
 
     cloneChildren() {
@@ -47,7 +31,6 @@ class SetupSelector extends Component {
             let props = Object.assign({}, child.props);
             Object.assign(props, {
                 bossId: this.props.bossId,
-                saveCallback: this.addSaveCallback(index),
                 wantToChangePlayer: this.wantToChangePlayerCallback(index),
                 wantToShowChangePlayer: this.wantToShowChangePlayerCallback(index),
             });
@@ -87,14 +70,6 @@ class SetupSelector extends Component {
             setupSelection: false,
             activeSetup: setupKey
         });
-
-        this.saveSetup(setupKey, false, true);
-        this.saveCallbacks[setupKey]();
-        HistoryManager.getInstance().updateCurrentUrl();
-    }
-
-    saveSetup(setupKey, dontClearPlayers, dontSave) {
-        HistoryManager.getInstance().saveSetupSettings(this.props.bossId, setupKey, dontClearPlayers, dontSave);
     }
 
     childClick(setupKey) {
@@ -106,12 +81,6 @@ class SetupSelector extends Component {
             else {
                 this.openSetupSelect();
             }
-        })
-    }
-
-    addSaveCallback(index) {
-        return ((callback) => {
-            this.saveCallbacks[index] = callback;
         })
     }
 

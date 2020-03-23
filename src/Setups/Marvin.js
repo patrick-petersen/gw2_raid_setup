@@ -10,9 +10,11 @@ class Marvin extends Component {
     constructor(props) {
         super(props);
         this.settings = {
-            "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
-            "missing": ["Lumi"],
-            "replacements": {"Lumi": "Marvin"},
+            "playerSettings": {
+                "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
+                "missing": ["Lumi"],
+                "replacements": {"Lumi": "Marvin"},
+            },
             "list": [
                 {
                     "name": "Wing 1",
