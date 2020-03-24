@@ -3,7 +3,6 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    overflow: hidden;
 }
 
 .boss.big .setupSelector.closed .setup.active {

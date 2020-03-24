@@ -40,7 +40,7 @@ class Role extends Component {
 
     render() {
         let players;
-        if(this.props.backups) {
+        if(this.props.hasOwnProperty("backups")) {
             players = this.props.player.concat([this.props.backups]);
         }
         else {

@@ -22,7 +22,6 @@ class SetupSelector extends Component {
         this.wantToChangePlayerCallback = this.wantToChangePlayerCallback.bind(this);
         this.wantToShowChangePlayerCallback = this.wantToShowChangePlayerCallback.bind(this);
 
-
         this.children = this.cloneChildren();
     }
 
