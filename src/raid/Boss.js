@@ -32,7 +32,7 @@ class Boss extends Component {
                     : null
                 }
                 <span className={"boss-name"} onClick={this.toggleSize}>{this.props.name}</span>
-                <SetupSelector bossId={this.props.bossId}>
+                <SetupSelector {... this.props}>
                     {
                         this.props.setups.map((setupValue, setupIndex) => {
                             return (<Setup {... setupValue} playerSettings={this.props.playerSettings} key={setupIndex}></Setup>);

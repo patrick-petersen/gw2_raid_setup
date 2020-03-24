@@ -1,7 +1,3 @@
-import Wing from "../raid/Wing";
-import Boss from "../raid/Boss";
-import Setup from "../raid/Setup";
-import Role from "../raid/Role";
 import React, {Component} from "react";
 import SetupRenderer from "./SetupRenderer";
 
@@ -22,6 +18,7 @@ class FullComp extends Component {
                         {
                             "name": "Valeguardian",
                             "iconMiniId": 77334,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -78,6 +75,7 @@ class FullComp extends Component {
                         {
                             "name": "Gorseval",
                             "iconMiniId": 77296,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "No Updraft",
@@ -109,6 +107,7 @@ class FullComp extends Component {
                         {
                             "name": "Sabetha",
                             "iconMiniId": 77339,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -155,6 +154,7 @@ class FullComp extends Component {
                         {
                             "name": "Desmina",
                             "iconMiniId": 86076,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -196,6 +196,7 @@ class FullComp extends Component {
                         {
                             "name": "River",
                             "iconMiniId": 85785,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -237,6 +238,7 @@ class FullComp extends Component {
                         {
                             "name": "Statue of Ice",
                             "iconMiniId": 85667,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -268,6 +270,7 @@ class FullComp extends Component {
                         {
                             "name": "Statue of Death",
                             /*"iconMiniId": 0,*/
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "0 - 5",
@@ -294,6 +297,7 @@ class FullComp extends Component {
                         {
                             "name": "Statue of Darkness",
                             /*"iconMiniId": 0,*/
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Portal",
@@ -335,6 +339,7 @@ class FullComp extends Component {
                         {
                             "name": "Dhuum",
                             "iconMiniId": 85998,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -386,6 +391,7 @@ class FullComp extends Component {
                         {
                             "name": "Conjured Amalgamate",
                             /*"iconMiniId": 0,*/
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -427,6 +433,7 @@ class FullComp extends Component {
                         {
                             "name": "Twin Largos",
                             "iconMiniId": 88868,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Portal",
@@ -463,6 +470,7 @@ class FullComp extends Component {
                         {
                             "name": "Qadim",
                             "iconMiniId": 88587,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -509,6 +517,7 @@ class FullComp extends Component {
                         {
                             "name": "Adina",
                             "iconMiniId": 82686,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -555,6 +564,7 @@ class FullComp extends Component {
                         {
                             "name": "Sabir",
                             "iconMiniId": 83551,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -586,6 +596,7 @@ class FullComp extends Component {
                         {
                             "name": "Qadim 2",
                             "iconMiniId": 91232,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -647,6 +658,7 @@ class FullComp extends Component {
                         {
                             "name": "Escort",
                             "iconMiniId": 78828,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Solo Cap",
@@ -683,6 +695,7 @@ class FullComp extends Component {
                         {
                             "name": "Keep Construct",
                             "iconMiniId": 78890,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "2-2-3",
@@ -714,6 +727,7 @@ class FullComp extends Component {
                         {
                             "name": "Xera",
                             "iconMiniId": 78815,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Mid",
@@ -745,6 +759,7 @@ class FullComp extends Component {
                         {
                             "name": "Slothasor",
                             "iconMiniId": 77870,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -791,6 +806,7 @@ class FullComp extends Component {
                         {
                             "name": "Trio",
                             "iconMiniId": 77820,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -827,6 +843,7 @@ class FullComp extends Component {
                         {
                             "name": "Mathias",
                             "iconMiniId": 78815,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Mid",
@@ -868,6 +885,7 @@ class FullComp extends Component {
                         {
                             "name": "Cairn",
                             "iconMiniId": 80562,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -899,6 +917,7 @@ class FullComp extends Component {
                         {
                             "name": "Mursaat Overseer",
                             "iconMiniId": 80224,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "2-2-3",
@@ -935,6 +954,7 @@ class FullComp extends Component {
                         {
                             "name": "Samarog",
                             "iconMiniId": 80218,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -966,6 +986,7 @@ class FullComp extends Component {
                         {
                             "name": "Deimos",
                             "iconMiniId": 80327,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Mid",

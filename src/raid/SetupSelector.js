@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 
 import './SetupSelector.css';
-import HistoryManager from "../helper/HistoryManager";
 
 class SetupSelector extends Component {
     static setupStates = ["main-setup", "backup-setup", "missing-setup"];
@@ -10,7 +9,7 @@ class SetupSelector extends Component {
         super(props);
         this.state = {
             setupState: SetupSelector.setupStates[0],
-            activeSetup: HistoryManager.getInstance().getSetupSettings(this.props.bossId),
+            selectedSetup: props.selectedSetup,
             setupSelection: false
         };
 
@@ -29,7 +28,6 @@ class SetupSelector extends Component {
         return React.Children.map(this.props.children, (child, index) => {
             let props = Object.assign({}, child.props);
             Object.assign(props, {
-                bossId: this.props.bossId,
                 wantToChangePlayer: this.wantToChangePlayerCallback(index),
                 wantToShowChangePlayer: this.wantToShowChangePlayerCallback(index),
             });
@@ -67,7 +65,7 @@ class SetupSelector extends Component {
         console.log("selected: ", setupKey);
         this.setState({
             setupSelection: false,
-            activeSetup: setupKey
+            selectedSetup: setupKey
         });
     }
 
@@ -86,7 +84,7 @@ class SetupSelector extends Component {
     renderSetup(child, index) {
         return (
             <div className={"setup " + this.state.setupState + (
-                (this.state.setupSelection || this.state.activeSetup === index)? " active" : " inactive")}>
+                (this.state.setupSelection || this.state.selectedSetup === index)? " active" : " inactive")}>
                 <div className={"setup-name"}>
                     <h3 onClick={this.childClick(index)}>{child.props.name}</h3>
                 </div>
@@ -103,13 +101,13 @@ class SetupSelector extends Component {
             + (this.state.setupSelection ? " open": " closed")}>
                 {
                     React.Children.map(this.children, (child, index) => {
-                        if(this.state.activeSetup !== index) return null;
+                        if(this.state.selectedSetup !== index) return null;
                         return this.renderSetup(child, index);
                     })
                 }
                 {
                     React.Children.map(this.children, (child, index) => {
-                        if(this.state.activeSetup === index) return null;
+                        if(this.state.selectedSetup === index) return null;
                         return this.renderSetup(child, index);
                     })
                 }

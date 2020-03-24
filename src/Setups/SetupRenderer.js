@@ -1,7 +1,4 @@
 import Wing from "../raid/Wing";
-import Boss from "../raid/Boss";
-import Setup from "../raid/Setup";
-import Role from "../raid/Role";
 import React, {Component} from "react";
 
 
