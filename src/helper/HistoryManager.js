@@ -1,56 +1,119 @@
 export default class HistoryManager {
-    static myInstance = null;
-
     _startUrl = window.location.hash;
     _currentUrl = this._startUrl;
-    _setups = [];
-    _players = [];
+    _playerSettings = {};
+    _list = [];
 
-    _popstateCallbacks = [];
+    _onChangeCallbacks = [];
 
-    _defaultSetup = "007981;00792;0079168;00796153;002796;087091;007926;00795;0079;00279;0087976;00796;0027968;0027958;0053792;00792;0079;00795;02796012;0079635;007892;007921;08791026;00796;0047936218;";
-
-    constructor() {
+    constructor(list, playerSettings) {
+        this._playerSettings = playerSettings;
         const hash = window.location.hash.substr(1);
+
+        this.saveList(list);
+
         let setup = "";
         if(hash.length >= 1) {
             setup = hash;
         }
-        this.loadSetupFromString(setup);
+
+        this.updateListFromUrl(setup);
 
         window.onpopstate = (event) => {
             console.log("location:", window.location.hash, "state:", event);
+            const hash = window.location.hash.substr(1);
             const historyObject = event.state;
             if(historyObject !== null) {
-                this._setups = historyObject._setups;
-                this._players = historyObject._players;
+                this._list = historyObject._list;
                 this._currentUrl = historyObject._currentUrl;
             }
             else {
-                this._setups = [];
-                this._players = [];
-                this._currentUrl = "#";
+                //In case there is no history object
+                let setup = "";
+                if(hash.length >= 1) {
+                    setup = hash;
+                }
+                this.updateListFromUrl(setup);
+                this._currentUrl = hash;
             }
 
-            this._popstateCallbacks.forEach(value => value());
+            this.callOnChangeCallbacks();
         };
-
-        console.log("generate: ", this.generateUrl());
     }
 
-    /**
-     * @returns {HistoryManager}
-     */
-    static getInstance() {
-        if (HistoryManager.myInstance == null) {
-            HistoryManager.myInstance = new HistoryManager();
+    saveList(list) {
+        this._list = list;
+        this._currentUrl = this.generateUrlFromList(list);
+        console.log("updated url:", this._currentUrl);
+    }
+
+    generateUrlFromList(list) {
+        let url = "";
+        console.log(list);
+        
+        function concatWith(delimiter) {
+            return (total, currentValue, currentIndex, arr)=> {
+                return total += "" + (currentIndex === 0?"":delimiter) + currentValue;
+            }
         }
+        
+        return list.map((wingValue, wingIndex) => {
+            console.log(wingValue);
+            return wingValue.bosses.map((bossValue, bossIndex) => {
+                console.log(bossValue);
+                const selectedSetup = bossValue.selectedSetup;
+                const roles = bossValue.setups[selectedSetup].roles;
+                return "" + selectedSetup + roles.map((roleValue, roleIndex) => {
+                    console.log(roleValue);
+                    return this._playerSettings.players.indexOf(roleValue.player);
+                }).reduce(concatWith(""));
+            }).reduce(concatWith(";"));
+        }).reduce(concatWith(";"));
+    }
+    
+    updateListFromUrl(url) {
+        if(url.length <= 1) return;
+        const encounters = url.split(";");
+        let wingIndex = 0;
+        let bossIndex = 0;
+        encounters.forEach((value, index) => {
+            console.log(wingIndex, bossIndex);
+            const roles = value.substring(1);
 
-        return this.myInstance;
+            const selectedSetup = parseInt(value.charAt(0));
+
+            const wing = this._list[wingIndex];
+            const boss  = wing.bosses[bossIndex];
+            const setup = boss.setups[selectedSetup];
+            const rolesObject = setup.roles;
+
+            boss.selectedSetup = selectedSetup;
+
+            for(let i = 0; i < roles.length; i++) {
+               const player = this._playerSettings.players[roles.charAt(i)];
+               if(rolesObject.length > i) {
+                   rolesObject[i].player = player;
+               }
+               else {
+                   console.error("Could not save player!", wingIndex, bossIndex, i, player);
+               }
+            }
+
+            bossIndex++;
+            if(wing.bosses.length <= bossIndex) {
+               wingIndex++;
+               bossIndex = 0;
+            }
+        });
+        this.callOnChangeCallbacks();
     }
 
-    addPopstateCallback(callback) {
-        this._popstateCallbacks.push(callback);
+    callOnChangeCallbacks() {
+        this._onChangeCallbacks.forEach(value => value(this._list));
+    }
+
+    addOnChangeCallback(callback) {
+        this._onChangeCallbacks.push(callback);
     }
 
 
@@ -75,55 +138,6 @@ export default class HistoryManager {
         });
     }
 
-    getSetupSettings(boss) {
-        console.log("loading setup for boss:", boss, this._setups[boss]);
-        return (boss in this._setups)?this._setups[boss] : 0;
-    }
-
-    saveSetupSettings(boss, value, dontClearPlayers, dontSave) {
-        console.log("saving setup for boss:", boss, value, dontClearPlayers);
-        this._setups[boss] = value;
-        //clear the setup settings after the setup was changed, as these were for a different setup
-        if((typeof dontClearPlayers == "undefined") || !dontClearPlayers) {
-            console.log("clearing _player[boss]: ", boss);
-            this._players[boss] = [];
-            if((typeof dontSave == "undefined") || !dontSave) {
-                this.updateCurrentUrl();
-            }
-        }
-
-    }
-
-    getPlayerSettings(boss, setupId) {
-        return (role) => {
-            if(setupId === this._setups[boss]) {
-                return (boss in this._players && role in this._players[boss])?this._players[boss][role]:null;
-            }
-            else {
-                return null;
-            }
-
-        }
-    }
-
-    savePlayerSettings(boss) {
-        return (role) => {
-            return (value, dontUpdateUrl) => {
-                console.log("save player setting", boss, role, value);
-                if(!(boss in this._players)) {
-                    this._players[boss] = [];
-                }
-                this._players[boss][role] = value;
-
-                console.log("dontUpdateUrl:", dontUpdateUrl);
-
-                if((typeof dontUpdateUrl == "undefined") || !dontUpdateUrl) {
-                    this.updateCurrentUrl();
-                }
-            }
-        }
-    }
-
     updateCurrentUrl() {
         const url = this.generateUrl();
 
@@ -137,29 +151,5 @@ export default class HistoryManager {
         }
 
         window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+url)
-    }
-
-    generateUrl() {
-        let url = "";
-        for(let currentSetupIndex=0; currentSetupIndex < this._setups.length; currentSetupIndex++) {
-            let currentSetup = this._setups[currentSetupIndex];
-            let thisUrlPart = "" + currentSetup;
-
-            if(currentSetupIndex in this._players) {
-                for(let currentPlayerIndex=0; currentPlayerIndex < this._players[currentSetupIndex].length; currentPlayerIndex++) {
-                    let currentPlayer = this._players[currentSetupIndex][currentPlayerIndex];
-                    //console.log("currentPlayer: ", currentPlayer);
-                    thisUrlPart += currentPlayer;
-                }
-            }
-
-            thisUrlPart += ";";
-            url += thisUrlPart;
-        }
-        return url;
-    }
-
-    getCurrentUrl() {
-        return this._currentUrl;
     }
 }

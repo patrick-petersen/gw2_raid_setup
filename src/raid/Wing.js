@@ -8,9 +8,6 @@ class Wing extends Component {
         this.state = {
 
         }
-        window.setTimeout(() => {
-            this.props.wingValue.name += "1";
-        }, 1000);
     }
 
     render() {
