@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import './SetupSelector.css';
+import Setup from "./Setup";
 
 class SetupSelector extends Component {
     static setupStates = ["main-setup", "backup-setup", "missing-setup"];
@@ -15,26 +16,12 @@ class SetupSelector extends Component {
 
 
         this.openSetupSelect = this.openSetupSelect.bind(this);
-        this.cloneChildren = this.cloneChildren.bind(this);
         this.selectSetup = this.selectSetup.bind(this);
         this.childClick = this.childClick.bind(this);
         this.wantToChangePlayerCallback = this.wantToChangePlayerCallback.bind(this);
         this.wantToShowChangePlayerCallback = this.wantToShowChangePlayerCallback.bind(this);
-
-        this.children = this.cloneChildren();
     }
 
-    cloneChildren() {
-        return React.Children.map(this.props.children, (child, index) => {
-            let props = Object.assign({}, child.props);
-            Object.assign(props, {
-                wantToChangePlayer: this.wantToChangePlayerCallback(index),
-                wantToShowChangePlayer: this.wantToShowChangePlayerCallback(index),
-            });
-
-            return React.cloneElement(child, props);
-        });
-    }
 
     wantToChangePlayerCallback(setup) {
         return (role) => {
@@ -53,8 +40,9 @@ class SetupSelector extends Component {
     }
 
     openSetupSelect() {
+        const bossValue = this.props.bossValue;
         console.log("openSelect");
-        if(this.children.length > 1) {
+        if(bossValue.setups.length > 1) {
             this.setState({
                 setupSelection: true
             });
@@ -67,7 +55,7 @@ class SetupSelector extends Component {
             setupSelection: false,
             selectedSetup: setupKey
         });
-        this.props.bossValue.selectedIndex = setupKey;
+        this.props.bossValue.selectedSetup = setupKey;
         this.props.onChange();
     }
 
@@ -98,17 +86,26 @@ class SetupSelector extends Component {
     }
 
     render() {
+        const bossValue = this.props.bossValue;
+        const setups =  bossValue.setups.map((setupValue, setupIndex) => {
+                    return (<Setup setupValue={setupValue} playerSettings={this.props.playerSettings}
+                                   onChange={this.props.onChange} key={setupIndex}
+                                   cheatString={JSON.stringify(setupValue)}
+                                   wantToChangePlayer={this.wantToChangePlayerCallback(setupIndex)}
+                                   wantToShowChangePlayer={this.wantToShowChangePlayerCallback(setupIndex)}>
+                    </Setup>);
+                });
         return (
             <div className={"setupSelector"
             + (this.state.setupSelection ? " open": " closed")}>
                 {
-                    React.Children.map(this.children, (child, index) => {
+                    React.Children.map(setups, (child, index) => {
                         if(this.state.selectedSetup !== index) return null;
                         return this.renderSetup(child, index);
                     })
                 }
                 {
-                    React.Children.map(this.children, (child, index) => {
+                    React.Children.map(setups, (child, index) => {
                         if(this.state.selectedSetup === index) return null;
                         return this.renderSetup(child, index);
                     })

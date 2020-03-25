@@ -18,7 +18,8 @@ class Wing extends Component {
                 {
                     wingValue.bosses.map((bossValue, bossIndex) => {
                             return (<Boss bossValue={bossValue} playerSettings={this.props.playerSettings}
-                                          onChange={this.props.onChange} key={bossIndex}></Boss>);
+                                            onChange={this.props.onChange} key={bossIndex}
+                                            cheatString={JSON.stringify(bossValue)}></Boss>);
                         }
                     )}
             </article>

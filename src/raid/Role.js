@@ -36,8 +36,23 @@ class Role extends Component {
             playerSelection: false,
             player: player
         });
-        this.props.roleValue.player = player;
+        this.props.roleValue.replacement = player;
         this.props.onChange();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        if(prevProps != this.props) {
+            let player = this.props.roleValue.player;
+
+            if("replacement" in this.props.roleValue) {
+                player = this.props.roleValue.replacement;
+            }
+
+            this.setState({
+                playerSelection: false,
+                player: player,
+            });
+        }
     }
 
     render() {

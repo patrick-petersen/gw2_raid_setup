@@ -26,9 +26,11 @@ export default class HistoryManager {
             if(historyObject !== null) {
                 this._list = historyObject._list;
                 this._currentUrl = historyObject._currentUrl;
+                this.callOnChangeCallbacks();
             }
             else {
                 //In case there is no history object
+                //i.e. back to initial load, or manually editing the hash
                 let setup = "";
                 if(hash.length >= 1) {
                     setup = hash;
@@ -36,19 +38,15 @@ export default class HistoryManager {
                 this.updateListFromUrl(setup);
                 this._currentUrl = hash;
             }
-
-            this.callOnChangeCallbacks();
         };
     }
 
     saveList(list) {
         this._list = list;
-        this._currentUrl = this.generateUrlFromList(list);
-        console.log("updated url:", this._currentUrl);
+        this.listChanged();
     }
 
     generateUrlFromList(list) {
-        let url = "";
         console.log(list);
         
         function concatWith(delimiter) {
@@ -57,7 +55,7 @@ export default class HistoryManager {
             }
         }
         
-        return list.map((wingValue, wingIndex) => {
+        const url = list.map((wingValue, wingIndex) => {
             console.log(wingValue);
             return wingValue.bosses.map((bossValue, bossIndex) => {
                 console.log(bossValue);
@@ -65,10 +63,13 @@ export default class HistoryManager {
                 const roles = bossValue.setups[selectedSetup].roles;
                 return "" + selectedSetup + roles.map((roleValue, roleIndex) => {
                     console.log(roleValue);
-                    return this._playerSettings.players.indexOf(roleValue.player);
+                    const player = (roleValue.hasOwnProperty("replacement")?roleValue.replacement:roleValue.player)
+                    return this._playerSettings.players.indexOf(player);
                 }).reduce(concatWith(""));
             }).reduce(concatWith(";"));
         }).reduce(concatWith(";"));
+
+        return url;
     }
     
     updateListFromUrl(url) {
@@ -92,7 +93,7 @@ export default class HistoryManager {
             for(let i = 0; i < roles.length; i++) {
                const player = this._playerSettings.players[roles.charAt(i)];
                if(rolesObject.length > i) {
-                   rolesObject[i].player = player;
+                   rolesObject[i].replacement = player;
                }
                else {
                    console.error("Could not save player!", wingIndex, bossIndex, i, player);
@@ -109,6 +110,7 @@ export default class HistoryManager {
     }
 
     callOnChangeCallbacks() {
+        console.log("list:", this._list);
         this._onChangeCallbacks.forEach(value => value(this._list));
     }
 
@@ -116,40 +118,20 @@ export default class HistoryManager {
         this._onChangeCallbacks.push(callback);
     }
 
-
-    loadSetupFromString(source) {
-        source.split(";").forEach((value, index) => {
-           //Looping through bosses
-           let bossNumber = index;
-           if(value.length <= 0) {
-               this._setups[bossNumber] = 0;
-           }
-           else {
-               let setup = value.charAt(0);
-               this._setups[bossNumber] = parseInt(setup);
-
-               if(value.length > 1) {
-                   this._players[index] = [];
-                   for (let i = 1; i < value.length; i++) {
-                       this._players[index][i-1] = parseInt(value.charAt(i));
-                   }
-               }
-           }
-        });
-    }
-
-    updateCurrentUrl() {
-        const url = this.generateUrl();
-
+    updateCurrentUrl(url) {
         console.log("new url:", url);
 
         this._currentUrl = url;
         const historyObject = {
             _currentUrl: this._currentUrl,
-            _setups: this._setups,
-            _players: this._players,
-        }
+            _list: this._list,
+        };
 
-        window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+url)
+        window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+url);
+    }
+
+    listChanged() {
+        const url = this.generateUrlFromList(this._list);
+        this.updateCurrentUrl(url);
     }
 }

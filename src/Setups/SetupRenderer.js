@@ -23,18 +23,22 @@ class SetupRenderer extends Component {
 
     listChanged() {
         console.log("list changed", this.state.list);
+        this.historyManager.listChanged();
     }
     listChangedCallback(list) {
+        console.log("list change callback");
         this.setState({
-            list: list
+            list: list,
+            cheatString: list.toString(),
         });
-        this.forceUpdate();
     }
 
     render() {
+        console.log("rendering");
         const temp = [this.state.list.map((wingValue, wingIndex) => {
             return (<Wing wingValue={wingValue} playerSettings={this.props.playerSettings}
-                          onChange={this.listChanged} key={wingIndex}></Wing>);
+                            onChange={this.listChanged} key={wingIndex}
+                            cheatString={JSON.stringify(wingValue)}></Wing>);
         })];
         return temp;
     }
