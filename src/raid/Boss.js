@@ -24,18 +24,19 @@ class Boss extends Component {
     }
 
     render() {
+        const bossValue = this.props.bossValue;
         return (
             <section className={"boss"
             + (this.state.big?" big" : " small")}>
-                {this.props.iconMiniId
-                    ? <ItemIcon itemId={this.props.iconMiniId} />
+                {bossValue.iconMiniId
+                    ? <ItemIcon itemId={bossValue.iconMiniId} />
                     : null
                 }
-                <span className={"boss-name"} onClick={this.toggleSize}>{this.props.name}</span>
-                <SetupSelector {... this.props}>
+                <span className={"boss-name"} onClick={this.toggleSize}>{bossValue.name}</span>
+                <SetupSelector bossValue={bossValue}>
                     {
-                        this.props.setups.map((setupValue, setupIndex) => {
-                            return (<Setup {... setupValue} playerSettings={this.props.playerSettings} key={setupIndex}></Setup>);
+                        bossValue.setups.map((setupValue, setupIndex) => {
+                            return (<Setup setupValue={setupValue} playerSettings={this.props.playerSettings} key={setupIndex}></Setup>);
                         }
                     )}
                 </SetupSelector>

@@ -7,10 +7,10 @@ class Role extends Component {
     constructor(props) {
         super(props);
 
-        let player = this.props.player;
+        let player = this.props.roleValue.player;
 
-        if("replacement" in this.props) {
-            player = this.props.replacement;
+        if("replacement" in this.props.roleValue) {
+            player = this.props.roleValue.replacement;
         }
 
         this.state = {
@@ -39,19 +39,20 @@ class Role extends Component {
     }
 
     render() {
+        const roleValue = this.props.roleValue;
         let players;
-        if(this.props.hasOwnProperty("backups")) {
-            players = this.props.player.concat([this.props.backups]);
+        if(roleValue.hasOwnProperty("backups")) {
+            players = roleValue.player.concat([roleValue.backups]);
         }
         else {
             players = this.props.playerSettings.players;
         }
         return (
             <div className={"role"
-            + (this.state.player !== this.props.player?" replacement":"")
+            + (this.state.player !== roleValue.player?" replacement":"")
             + (this.props.playerSettings.missing.includes(this.state.player )?" missing":"")}>
-                <div className={"profession"}><Profession name={this.props.profession} /></div>
-                <div className={"task"}>{this.props.tasks.join(", ")}</div>
+                <div className={"profession"}><Profession name={roleValue.profession} /></div>
+                <div className={"task"}>{roleValue.tasks.join(", ")}</div>
                 {
                     this.state.playerSelection
                         ?

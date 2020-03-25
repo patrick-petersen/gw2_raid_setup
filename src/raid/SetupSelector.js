@@ -9,7 +9,7 @@ class SetupSelector extends Component {
         super(props);
         this.state = {
             setupState: SetupSelector.setupStates[0],
-            selectedSetup: props.selectedSetup,
+            selectedSetup: props.bossValue.selectedSetup,
             setupSelection: false
         };
 
@@ -67,6 +67,7 @@ class SetupSelector extends Component {
             setupSelection: false,
             selectedSetup: setupKey
         });
+        this.props.bossValue.selectedIndex = setupKey;
     }
 
     childClick(setupKey) {
@@ -86,7 +87,7 @@ class SetupSelector extends Component {
             <div className={"setup " + this.state.setupState + (
                 (this.state.setupSelection || this.state.selectedSetup === index)? " active" : " inactive")}>
                 <div className={"setup-name"}>
-                    <h3 onClick={this.childClick(index)}>{child.props.name}</h3>
+                    <h3 onClick={this.childClick(index)}>{child.props.setupValue.name}</h3>
                 </div>
                 <div className={"setup-roles"}>
                     {child}

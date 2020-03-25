@@ -6,16 +6,21 @@ class Wing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-        };
+
+        }
+        window.setTimeout(() => {
+            this.props.wingValue.name += "1";
+        }, 1000);
     }
 
     render() {
+        const wingValue = this.props.wingValue;
         return (
             <article className={"wing"}>
-                <div className={"wing-name-wrapper"}><span className={"wing-name"}>Raid: {this.props.name}</span></div>
+                <div className={"wing-name-wrapper"}><span className={"wing-name"}>Raid: {wingValue.name}</span></div>
                 {
-                    this.props.bosses.map((bossValue, bossIndex) => {
-                            return (<Boss {... bossValue} playerSettings={this.props.playerSettings} key={bossIndex}></Boss>);
+                    wingValue.bosses.map((bossValue, bossIndex) => {
+                            return (<Boss bossValue={bossValue} playerSettings={this.props.playerSettings} key={bossIndex}></Boss>);
                         }
                     )}
             </article>
