@@ -33,10 +33,11 @@ class Boss extends Component {
                     : null
                 }
                 <span className={"boss-name"} onClick={this.toggleSize}>{bossValue.name}</span>
-                <SetupSelector bossValue={bossValue}>
+                <SetupSelector bossValue={bossValue} onChange={this.props.onChange}>
                     {
                         bossValue.setups.map((setupValue, setupIndex) => {
-                            return (<Setup setupValue={setupValue} playerSettings={this.props.playerSettings} key={setupIndex}></Setup>);
+                            return (<Setup setupValue={setupValue} playerSettings={this.props.playerSettings}
+                                           onChange={this.props.onChange} key={setupIndex}></Setup>);
                         }
                     )}
                 </SetupSelector>

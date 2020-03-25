@@ -68,6 +68,7 @@ class SetupSelector extends Component {
             selectedSetup: setupKey
         });
         this.props.bossValue.selectedIndex = setupKey;
+        this.props.onChange();
     }
 
     childClick(setupKey) {

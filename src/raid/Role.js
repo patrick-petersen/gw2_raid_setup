@@ -36,6 +36,8 @@ class Role extends Component {
             playerSelection: false,
             player: player
         });
+        this.props.roleValue.player = player;
+        this.props.onChange();
     }
 
     render() {

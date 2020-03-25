@@ -20,7 +20,8 @@ class Wing extends Component {
                 <div className={"wing-name-wrapper"}><span className={"wing-name"}>Raid: {wingValue.name}</span></div>
                 {
                     wingValue.bosses.map((bossValue, bossIndex) => {
-                            return (<Boss bossValue={bossValue} playerSettings={this.props.playerSettings} key={bossIndex}></Boss>);
+                            return (<Boss bossValue={bossValue} playerSettings={this.props.playerSettings}
+                                          onChange={this.props.onChange} key={bossIndex}></Boss>);
                         }
                     )}
             </article>

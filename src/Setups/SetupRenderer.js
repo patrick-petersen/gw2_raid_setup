@@ -9,18 +9,20 @@ class SetupRenderer extends Component {
         this.state = {
             list: this.props.list,
         }
-        window.setInterval(() => {
-            console.log(this.state);
-        },10000)
+
+        this.listChanged = this.listChanged.bind(this);
+    }
+
+    listChanged() {
+        console.log("list changed", this.state.list);
     }
 
     render() {
-        const a = [this.state.list.map((wingValue, wingIndex) => {
-            console.log(wingValue);
-            return (<Wing wingValue={wingValue} playerSettings={this.props.playerSettings} key={wingIndex}></Wing>);
+        const temp = [this.state.list.map((wingValue, wingIndex) => {
+            return (<Wing wingValue={wingValue} playerSettings={this.props.playerSettings}
+                          onChange={this.listChanged} key={wingIndex}></Wing>);
         })];
-        console.log(a);
-        return a;
+        return temp;
     }
 }
 

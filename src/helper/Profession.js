@@ -63,7 +63,7 @@ class Profession extends Component {
     }
 
     loadProfessions() {
-        console.log("loading professions");
+        console.debug("loading professions");
         if(!Profession.loading && !Profession.error) {
             Profession.loading = true;
             console.debug("Loading!");

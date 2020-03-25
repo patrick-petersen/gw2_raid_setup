@@ -19,7 +19,8 @@ class Setup extends Component {
             <div className={"setup-roles"}>
             {
                 setupValue.roles.map((roleValue, roleIndex) => {
-                        return (<Role roleValue={roleValue} playerSettings={this.props.playerSettings} key={roleIndex}></Role>);
+                        return (<Role roleValue={roleValue} playerSettings={this.props.playerSettings}
+                                      onChange={this.props.onChange} key={roleIndex}></Role>);
                     }
                 )
             }
