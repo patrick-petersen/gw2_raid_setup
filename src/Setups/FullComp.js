@@ -176,7 +176,7 @@ class FullComp extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Some Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -228,7 +228,7 @@ class FullComp extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Aegis"],
+                                            "tasks": ["Full Quickness", "Aegis"],
                                             "player": "Yasi"
                                         },
                                     ]
@@ -319,7 +319,7 @@ class FullComp extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -356,7 +356,7 @@ class FullComp extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -618,7 +618,7 @@ class FullComp extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness", "Stability"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -680,7 +680,7 @@ class FullComp extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -828,7 +828,7 @@ class FullComp extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -907,7 +907,7 @@ class FullComp extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Stability"],
+                                            "tasks": ["Some Quickness", "Stability"],
                                             "player": "Yasi"
                                         },
                                     ]
@@ -1005,6 +1005,11 @@ class FullComp extends Component {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
                                             "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness"],
+                                            "player": "Yasi"
                                         },
                                         {
                                             "profession": "Revenant",

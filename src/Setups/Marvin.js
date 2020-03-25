@@ -177,7 +177,7 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Some Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -229,7 +229,7 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Aegis"],
+                                            "tasks": ["Full Quickness", "Aegis"],
                                             "player": "Yasi"
                                         },
                                     ]
@@ -246,7 +246,7 @@ class Marvin extends Component {
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -278,7 +278,7 @@ class Marvin extends Component {
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Some Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -320,7 +320,7 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -357,7 +357,7 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -495,7 +495,7 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Wyvern Tank"],
+                                            "tasks": ["Full Quickness", "Wyvern Tank"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -621,7 +621,7 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi",
                                             "replacement": "Lumi"
                                         },
@@ -685,7 +685,7 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -834,7 +834,7 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -913,7 +913,7 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Stability"],
+                                            "tasks": ["Some Quickness", "Stability"],
                                             "player": "Yasi"
                                         },
                                     ]
@@ -1011,6 +1011,11 @@ class Marvin extends Component {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
                                             "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness"],
+                                            "player": "Yasi"
                                         },
                                         {
                                             "profession": "Revenant",
