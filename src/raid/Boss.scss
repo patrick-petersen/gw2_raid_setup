@@ -4,28 +4,27 @@ section.boss {
     margin-bottom: 15px;
     box-shadow: 2px 2px darkgray;
     padding: 1px;
-}
 
-section.boss > img {
-    display: inline-block;
-    height: 50px;
-    margin-left: 22px;
-    border-radius: 3px;
-    vertical-align: top;
-}
+    &.no-icon {
+        padding-left: 72px;
+    }
 
-section.boss span.boss-name {
-    display: inline-block;
-    line-height: 50px;
-    font-size: 20px;
-    margin-left: 10px;
+    > img {
+        display: inline-block;
+        height: 50px;
+        margin-left: 22px;
+        border-radius: 3px;
+        vertical-align: top;
+    }
+    span.boss-name {
+        display: inline-block;
+        line-height: 50px;
+        font-size: 20px;
+        margin-left: 10px;
 
-    cursor: pointer;
-    user-select: none;
-    vertical-align: top;
-    width: 200px;
-}
-
-section.boss.no-icon {
-    padding-left: 72px;
+        cursor: pointer;
+        user-select: none;
+        vertical-align: top;
+        width: 200px;
+    }
 }

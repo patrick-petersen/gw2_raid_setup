@@ -3,50 +3,45 @@
     text-align: center;
     position: relative;
     user-select: none;
+
+    &.replacement {
+        background-color: yellow;
+    }
+
+    &.missing {
+        background-color: red;
+    }
+
+    .task, .profession, .player {
+
+    }
+    .profession img {
+        height: 50px;
+    }
+    .player {
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .player-select {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        background-color: beige;
+        border-radius: 5px;
+        cursor: auto;
+        width: calc(100% - 20px);
+        z-index: 10;
+    }
+    .player-select span {
+        cursor: pointer;
+        border: grey 1px solid;
+        margin: 2px;
+        border-radius: 5px;
+        user-select: none;
+    }
 }
 
-.role.replacement {
-    background-color: yellow;
-}
-
-.role.missing {
-    background-color: red;
-}
-
-.role .task, .role .profession, .role .player {
-
-}
-.role .task {
-
-}
-.role .profession {
-
-}
-.role .profession img{
-    height: 50px;
-}
-.role .player {
-    cursor: pointer;
-    user-select: none;
-}
-
-.role .player-select {
-    display: flex;
-    position: absolute;
-    flex-direction: column;
-    background-color: beige;
-    border-radius: 5px;
-    cursor: auto;
-    width: calc(100% - 20px);
-    z-index: 10;
-}
-.role .player-select span {
-    cursor: pointer;
-    border: grey 1px solid;
-    margin: 2px;
-    border-radius: 5px;
-    user-select: none;
-}
 
 .boss.small .task {
     display: none;
