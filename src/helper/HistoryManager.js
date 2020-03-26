@@ -50,12 +50,12 @@ export default class HistoryManager {
         console.log(list);
         
         function concatWith(delimiter) {
-            return (total, currentValue, currentIndex, arr)=> {
+            return (total, currentValue, currentIndex)=> {
                 return total += "" + (currentIndex === 0?"":delimiter) + currentValue;
             }
         }
         
-        const url = list.map((wingValue, wingIndex) => {
+        return list.map((wingValue, wingIndex) => {
             console.log(wingValue);
             return wingValue.bosses.map((bossValue, bossIndex) => {
                 console.log(bossValue);
@@ -63,13 +63,11 @@ export default class HistoryManager {
                 const roles = bossValue.setups[selectedSetup].roles;
                 return "" + selectedSetup + roles.map((roleValue, roleIndex) => {
                     console.log(roleValue);
-                    const player = (roleValue.hasOwnProperty("replacement")?roleValue.replacement:roleValue.player)
+                    const player = (roleValue.hasOwnProperty("replacement")?roleValue.replacement:roleValue.player);
                     return this._playerSettings.players.indexOf(player);
                 }).reduce(concatWith(""));
             }).reduce(concatWith(";"));
         }).reduce(concatWith(";"));
-
-        return url;
     }
     
     updateListFromUrl(url) {

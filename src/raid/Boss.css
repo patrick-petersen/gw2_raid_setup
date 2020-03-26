@@ -8,7 +8,6 @@ section.boss {
 section.boss > img {
     display: inline-block;
     height: 50px;
-    vertical-align:middle;
     margin-left: 12px;
     border-radius: 3px;
     vertical-align: top;

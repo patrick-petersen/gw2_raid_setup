@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import ItemIcon from "../helper/ItemIcon";
 
-
 import './Boss.css';
 import SetupSelector from "./SetupSelector";
-import Setup from "./Setup";
 
 class Boss extends Component {
 

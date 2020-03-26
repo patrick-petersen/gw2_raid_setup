@@ -28,18 +28,21 @@ class Profession extends Component {
     }
 
     didLoadProfession(profession) {
-        let outsideResolve;
-        //let outsideReject;
 
-        let promise = new Promise((resolve, reject) => {
-            outsideResolve = resolve;
-            //outsideReject = reject;
-        });
+        let promise;
 
         if(Profession.professions.hasOwnProperty(profession)) {
-            outsideResolve(Profession.professions[profession]);
+            promise = new Promise((resolve, reject) => {
+                resolve(Profession.professions[profession]);
+            });
         }
         else {
+            let outsideResolve;
+            //let outsideReject;
+            promise = new Promise((resolve, reject) => {
+                outsideResolve = resolve;
+                //outsideReject = reject;
+            });
             if(!Profession.promises.hasOwnProperty(profession)) {
                 Profession.promises[profession] = [];
             }
@@ -73,6 +76,9 @@ class Profession extends Component {
                     // jsonData is parsed json object received from url
                     console.debug(jsonData);
                     for(let index in jsonData) {
+                        if(!jsonData.hasOwnProperty(index)) {
+                            continue;
+                        }
                         let profession = jsonData[index];
                         fetch("https://api.guildwars2.com/v2/professions/" + profession + "?lang=en")
                             .then(response => response.json())
@@ -105,8 +111,11 @@ class Profession extends Component {
 
     loadSpecs(ids) {
         for(let index in ids) {
-        let spec = ids[index];
-        fetch("https://api.guildwars2.com/v2/specializations/" + spec + "?lang=en")
+            if(!ids.hasOwnProperty(index)) {
+                continue;
+            }
+            let spec = ids[index];
+            fetch("https://api.guildwars2.com/v2/specializations/" + spec + "?lang=en")
             .then(response => response.json())
             .then((jsonData) => {
                 // jsonData is parsed json object received from url

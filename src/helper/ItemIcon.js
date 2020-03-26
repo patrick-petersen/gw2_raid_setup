@@ -28,18 +28,22 @@ class ItemIcon extends Component {
     }
 
     didLoadItem(itemId) {
-        let outsideResolve = () => {};
-        //let outsideReject;
 
-        let promise = new Promise((resolve, reject) => {
-            outsideResolve = resolve;
-            //outsideReject = reject;
-        });
+        // eslint-disable-next-line
+        let promise;
 
         if(ItemIcon.items.hasOwnProperty(itemId)) {
-            outsideResolve(ItemIcon.items[itemId]);
+            promise = new Promise((resolve, reject) => {
+                resolve(ItemIcon.items[itemId]);
+            });
         }
         else {
+            let outsideResolve = () => {};
+            //let outsideReject;
+            promise = new Promise((resolve, reject) => {
+                outsideResolve = resolve;
+                //outsideReject = reject;
+            });
             if(!ItemIcon.promises.hasOwnProperty(itemId)) {
                 ItemIcon.promises[itemId] = [];
             }

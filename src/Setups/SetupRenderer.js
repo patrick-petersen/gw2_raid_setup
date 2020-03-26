@@ -35,12 +35,11 @@ class SetupRenderer extends Component {
 
     render() {
         console.log("rendering");
-        const temp = [this.state.list.map((wingValue, wingIndex) => {
+        return [this.state.list.map((wingValue, wingIndex) => {
             return (<Wing wingValue={wingValue} playerSettings={this.props.playerSettings}
                             onChange={this.listChanged} key={wingIndex}
                             cheatString={JSON.stringify(wingValue)}></Wing>);
         })];
-        return temp;
     }
 }
 

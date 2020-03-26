@@ -41,7 +41,7 @@ class Role extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if(prevProps != this.props) {
+        if(prevProps !== this.props) {
             let player = this.props.roleValue.player;
 
             if("replacement" in this.props.roleValue) {
