@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Wing.css';
+import './Wing.scss';
 import Boss from './Boss';
 
 class Wing extends Component {

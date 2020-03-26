@@ -3,15 +3,15 @@ section.boss {
     border-radius: 25px;
     margin-bottom: 15px;
     box-shadow: 2px 2px darkgray;
+    padding: 1px;
 }
 
 section.boss > img {
     display: inline-block;
     height: 50px;
-    margin-left: 12px;
+    margin-left: 22px;
     border-radius: 3px;
     vertical-align: top;
-    margin-top: 5px;
 }
 
 section.boss span.boss-name {
@@ -23,5 +23,9 @@ section.boss span.boss-name {
     cursor: pointer;
     user-select: none;
     vertical-align: top;
-    margin-top: 5px;
+    width: 200px;
+}
+
+section.boss.no-icon {
+    padding-left: 72px;
 }

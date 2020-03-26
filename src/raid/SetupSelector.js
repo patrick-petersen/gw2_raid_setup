@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import './SetupSelector.css';
+import './SetupSelector.scss';
 import Setup from "./Setup";
 
 class SetupSelector extends Component {

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import './Role.css';
+import './Role.scss';
 import Profession from "../helper/Profession.js";
 
 class Role extends Component {

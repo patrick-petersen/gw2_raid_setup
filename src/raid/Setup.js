@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import './Setup.css';
+import './Setup.scss';
 import Role from "./Role";
 
 class Setup extends Component {
