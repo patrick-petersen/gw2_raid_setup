@@ -47,25 +47,22 @@ export default class HistoryManager {
     }
 
     generateUrlFromList(list) {
-        console.log(list);
-        
         function concatWith(delimiter) {
             return (total, currentValue, currentIndex)=> {
-                return total += "" + (currentIndex === 0?"":delimiter) + currentValue;
+                return total + "" + (currentIndex === 0?"":delimiter) + currentValue;
             }
         }
         
         return list.map((wingValue, wingIndex) => {
-            console.log(wingValue);
             return wingValue.bosses.map((bossValue, bossIndex) => {
-                console.log(bossValue);
                 const selectedSetup = bossValue.selectedSetup;
                 const roles = bossValue.setups[selectedSetup].roles;
-                return "" + selectedSetup + roles.map((roleValue, roleIndex) => {
-                    console.log(roleValue);
+                const decoded = "" + (parseInt(selectedSetup)+1) + roles.map((roleValue, roleIndex) => {
                     const player = (roleValue.hasOwnProperty("replacement")?roleValue.replacement:roleValue.player);
                     return this._playerSettings.players.indexOf(player);
                 }).reduce(concatWith(""));
+                const encoded = Base64.fromInt(parseInt(decoded));
+                return encoded;
             }).reduce(concatWith(";"));
         }).reduce(concatWith(";"));
     }
@@ -76,11 +73,9 @@ export default class HistoryManager {
         let wingIndex = 0;
         let bossIndex = 0;
         encounters.forEach((value, index) => {
-            console.log(wingIndex, bossIndex);
-            const roles = value.substring(1);
-
-            const selectedSetup = parseInt(value.charAt(0));
-
+            const decodedValue = Base64.toInt(value).toString();
+            const roles = decodedValue.substring(1);
+            const selectedSetup = parseInt(decodedValue.charAt(0)) - 1;
             const wing = this._list[wingIndex];
             const boss  = wing.bosses[bossIndex];
             const setup = boss.setups[selectedSetup];
@@ -108,7 +103,6 @@ export default class HistoryManager {
     }
 
     callOnChangeCallbacks() {
-        console.log("list:", this._list);
         this._onChangeCallbacks.forEach(value => value(this._list));
     }
 
@@ -117,8 +111,6 @@ export default class HistoryManager {
     }
 
     updateCurrentUrl(url) {
-        console.log("new url:", url);
-
         this._currentUrl = url;
         const historyObject = {
             _currentUrl: this._currentUrl,
@@ -133,3 +125,36 @@ export default class HistoryManager {
         this.updateCurrentUrl(url);
     }
 }
+
+//source: https://stackoverflow.com/a/27696695/2754830
+const Base64 = (function () {
+    var digitsStr =
+        //   0       8       16      24      32      40      48      56     63
+        //   v       v       v       v       v       v       v       v      v
+        "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+-";
+    var digits = digitsStr.split('');
+    var digitsMap = {};
+    for (var i = 0; i < digits.length; i++) {
+        digitsMap[digits[i]] = i;
+    }
+    return {
+        fromInt: function(int32) {
+            var result = '';
+            while (true) {
+                result = digits[int32 & 0x3f] + result;
+                int32 >>>= 6;
+                if (int32 === 0)
+                    break;
+            }
+            return result;
+        },
+        toInt: function(digitsStr) {
+            var result = 0;
+            var digits = digitsStr.split('');
+            for (var i = 0; i < digits.length; i++) {
+                result = (result << 6) + digitsMap[digits[i]];
+            }
+            return result;
+        }
+    };
+})();
