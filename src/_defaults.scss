@@ -1,0 +1,10 @@
+// _defaults.scss
+$box-shadow-width: 2px !default;
+
+
+@mixin box {
+  background-color: rgba(220,220,220,0.4);
+  box-shadow: $box-shadow-width $box-shadow-width darkgray;
+  padding: 1px;
+  border-radius: 25px;
+}

@@ -1,0 +1,8 @@
+@import "../defaults";
+
+
+.players {
+  @include box;
+  margin: 25px auto auto;
+  width: 450px;
+}
