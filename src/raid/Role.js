@@ -20,6 +20,7 @@ class Role extends Component {
 
         this.openPlayerSelect = this.openPlayerSelect.bind(this);
         this.selectPlayer = this.selectPlayer.bind(this);
+        this.insertReplacementName = this.insertReplacementName.bind(this);
     }
 
     componentDidMount() {
@@ -55,6 +56,14 @@ class Role extends Component {
         }
     }
 
+    insertReplacementName(name) {
+        const replacements = this.props.playerSettings.replacements;
+        if(replacements.hasOwnProperty(name)) {
+            return replacements[name];
+        }
+        return name;
+    }
+
     render() {
         const roleValue = this.props.roleValue;
         let players;
@@ -83,12 +92,14 @@ class Role extends Component {
                                     (player !== this.state.player)
                                         ? <span key={player} onClick={
                                             (e) => this.selectPlayer(player, e)
-                                        }>{player} </span>
+                                        }>{this.insertReplacementName(player)}</span>
                                     : null
                                 )
                             }
                         </div>
-                        : <div className={"player"} onClick={this.openPlayerSelect}>{this.state.player}</div>
+                        : <div className={"player"} onClick={this.openPlayerSelect}>
+                            {this.insertReplacementName(this.state.player)}
+                        </div>
                 }
             </div>
         )

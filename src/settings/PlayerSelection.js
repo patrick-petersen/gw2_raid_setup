@@ -14,6 +14,7 @@ class PlayerSelection extends Component {
         this.selectPlayer = this.selectPlayer.bind(this);
         this.filterList = this.filterList.bind(this);
         this.hideList = this.hideList.bind(this);
+        this.insertReplacementName = this.insertReplacementName.bind(this);
     }
 
     selectPlayer(player) {
@@ -26,6 +27,14 @@ class PlayerSelection extends Component {
             //this.props.filterListCallback(this.filterList(player));
             this.props.filterListCallback(this.hideList(player));
         };
+    }
+
+    insertReplacementName(name) {
+        const replacements = this.props.playerSettings.replacements;
+        if(replacements.hasOwnProperty(name)) {
+            return replacements[name];
+        }
+        return name;
     }
 
     filterList(filterPlayer) {
@@ -107,7 +116,7 @@ class PlayerSelection extends Component {
                     selection.map((value) => {
                         return (<span className={"playerName" + (value === this.state.selected?" selected":"")}
                                         onClick={this.selectPlayer(value)}
-                                        key={value}>{value}</span>);
+                                        key={value}>{this.insertReplacementName(value)}</span>);
                     })
                 }
             </div>
