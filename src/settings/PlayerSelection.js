@@ -9,19 +9,10 @@ class PlayerSelection extends Component {
 
         this.state = {
             selected: "All",
-            selectionOpen:false,
         };
 
-        this.openSelection = this.openSelection.bind(this);
         this.selectPlayer = this.selectPlayer.bind(this);
         this.filterList = this.filterList.bind(this);
-    }
-
-    openSelection() {
-        this.setState({
-            selectionOpen: true
-        });
-
     }
 
     selectPlayer(player) {
@@ -58,17 +49,14 @@ class PlayerSelection extends Component {
     }
 
     render() {
-        const {players} = this.props.playerSettings;
+        const selection = ["All"].concat(this.props.playerSettings.players);
         return (
             <div className="players">
                 {
-                    this.state.selectionOpen
-                        ?
-                            [<span onClick={this.selectPlayer("All")}>All</span>, players.map((value) => {
-                                return (<span onClick={this.selectPlayer(value)}>{value}</span>);
-                            })]
-                        : <span onClick={this.openSelection}>{this.state.selected}</span>
-
+                    selection.map((value) => {
+                        return (<span className={"playerName" + (value === this.state.selected?" selected":"")}
+                                      onClick={this.selectPlayer(value)}>{value}</span>);
+                    })
                 }
             </div>
         );

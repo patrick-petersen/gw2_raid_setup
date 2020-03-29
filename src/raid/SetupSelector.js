@@ -89,7 +89,7 @@ class SetupSelector extends Component {
         const bossValue = this.props.bossValue;
         const setups =  bossValue.setups.map((setupValue, setupIndex) => {
                     return (<Setup setupValue={setupValue} playerSettings={this.props.playerSettings}
-                                   onChange={this.props.onChange} key={setupIndex}
+                                   onChange={this.props.onChange} key={setupValue.name}
                                    cheatString={JSON.stringify(setupValue)}
                                    wantToChangePlayer={this.wantToChangePlayerCallback(setupIndex)}
                                    wantToShowChangePlayer={this.wantToShowChangePlayerCallback(setupIndex)}>

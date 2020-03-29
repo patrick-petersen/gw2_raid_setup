@@ -20,7 +20,7 @@ class Setup extends Component {
             {
                 setupValue.roles.map((roleValue, roleIndex) => {
                         return (<Role roleValue={roleValue} playerSettings={this.props.playerSettings}
-                                        onChange={this.props.onChange} key={roleIndex}
+                                        onChange={this.props.onChange} key={roleValue.player}
                                         cheatString={JSON.stringify(roleValue)}></Role>);
                     }
                 )

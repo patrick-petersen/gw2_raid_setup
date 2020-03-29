@@ -49,7 +49,7 @@ class SetupRenderer extends Component {
         return [<PlayerSelection playerSettings={this.props.playerSettings} filterListCallback={this.filterListCallback}></PlayerSelection>,
             this.state.list.map((wingValue, wingIndex) => {
             return (<Wing wingValue={wingValue} playerSettings={this.props.playerSettings}
-                            onChange={this.listChanged} key={wingIndex}
+                            onChange={this.listChanged} key={wingValue.name}
                             cheatString={JSON.stringify(wingValue)}></Wing>);
         })];
     }
