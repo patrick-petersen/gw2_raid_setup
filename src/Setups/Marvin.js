@@ -261,9 +261,8 @@ class Marvin extends Component {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Cannon 2 & 4"],
-                                            "player": "Lumi",
-                                            "replacement": "Yasi"
+                                            "tasks": ["Full Quickness"],
+                                            "player": "Yasi"
                                         },
                                     ]
                                 },
