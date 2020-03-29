@@ -36,9 +36,12 @@ class SetupRenderer extends Component {
     }
 
     filterListCallback(filter) {
+        const filteredList = filter(this.props.list);
         this.setState({
-            list: filter(this.props.list),
+            list: filteredList,
         });
+        console.log("org: ", this.props.list);
+        console.log("filtered: ", filteredList);
     }
 
     render() {

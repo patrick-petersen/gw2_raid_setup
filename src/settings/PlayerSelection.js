@@ -30,12 +30,31 @@ class PlayerSelection extends Component {
                 selected: player,
                 selectionOpen: false
             });
-        }
-        this.props.filterListCallback(this.filterList);
+            console.log("filterSelected", player);
+            this.props.filterListCallback(this.filterList(player));
+        };
     }
 
-    filterList(list) {
-        return list;
+    filterList(filterPlayer) {
+        console.log("filterPlayer", filterPlayer);
+        return (list) => {
+            console.log("filterList", list);
+            let newList = JSON.parse(JSON.stringify(list)).filter(wing => {
+                wing.bosses = wing.bosses.filter(boss => {
+                    boss.setups = boss.setups.filter(setup => {
+                        setup.roles = setup.roles.filter(role => {
+                            const player = role.hasOwnProperty("replacement")?role.replacement:role.player;
+                            return (filterPlayer === "All") || (filterPlayer === player);
+                        });
+                        return setup.roles.length >= 1;
+                    });
+                    return boss.setups.length >= 1;
+                });
+                return wing.bosses.length >= 1;
+            });
+
+            return newList;
+        };
     }
 
     render() {
