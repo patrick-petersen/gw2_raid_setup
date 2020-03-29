@@ -262,7 +262,8 @@ class Marvin extends Component {
                                         {
                                             "profession": "Firebrand",
                                             "tasks": ["Cannon 2 & 4"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Yasi"
                                         },
                                     ]
                                 },
@@ -585,7 +586,8 @@ class Marvin extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Berserker",
