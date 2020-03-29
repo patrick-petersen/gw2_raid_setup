@@ -45,12 +45,16 @@ class SetupRenderer extends Component {
     }
 
     render() {
-        console.log("rendering");
-        return [<PlayerSelection playerSettings={this.props.playerSettings} filterListCallback={this.filterListCallback}></PlayerSelection>,
+        console.log("rendering", this.state.list);
+        return [<PlayerSelection playerSettings={this.props.playerSettings}
+                                 filterListCallback={this.filterListCallback} key={"settings"}></PlayerSelection>,
             this.state.list.map((wingValue, wingIndex) => {
-            return (<Wing wingValue={wingValue} playerSettings={this.props.playerSettings}
-                            onChange={this.listChanged} key={wingValue.name}
-                            cheatString={JSON.stringify(wingValue)}></Wing>);
+                console.log("Wing: hidden?", wingValue.hidden);
+                if(!wingValue.hidden) {
+                    return (<Wing wingValue={wingValue} playerSettings={this.props.playerSettings}
+                                  onChange={this.listChanged} key={wingValue.name}
+                                  cheatString={JSON.stringify(wingValue)}></Wing>);
+                }
         })];
     }
 }

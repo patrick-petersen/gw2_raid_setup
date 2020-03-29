@@ -72,29 +72,34 @@ class SetupSelector extends Component {
     }
 
     renderSetup(child, index) {
-        return (
-            <div className={"setup " + this.state.setupState + (
-                (this.state.setupSelection || this.state.selectedSetup === index)? " active" : " inactive")}>
-                <div className={"setup-name"}>
-                    <h3 onClick={this.childClick(index)}>{child.props.setupValue.name}</h3>
+        if(child) {
+            return (
+                <div className={"setup " + this.state.setupState + (
+                    (this.state.setupSelection || this.state.selectedSetup === index)? " active" : " inactive")}>
+                    <div className={"setup-name"}>
+                        <h3 onClick={this.childClick(index)}>{child.props.setupValue.name}</h3>
+                    </div>
+                    <div className={"setup-roles"}>
+                        {child}
+                    </div>
                 </div>
-                <div className={"setup-roles"}>
-                    {child}
-                </div>
-            </div>
-        );
+            );
+        }
     }
 
     render() {
         const bossValue = this.props.bossValue;
         const setups =  bossValue.setups.map((setupValue, setupIndex) => {
-                    return (<Setup setupValue={setupValue} playerSettings={this.props.playerSettings}
-                                   onChange={this.props.onChange} key={setupValue.name}
-                                   cheatString={JSON.stringify(setupValue)}
-                                   wantToChangePlayer={this.wantToChangePlayerCallback(setupIndex)}
-                                   wantToShowChangePlayer={this.wantToShowChangePlayerCallback(setupIndex)}>
-                    </Setup>);
-                });
+            if(!setupValue.hidden) {
+                return (<Setup setupValue={setupValue} playerSettings={this.props.playerSettings}
+                               onChange={this.props.onChange} key={setupValue.name}
+                               cheatString={JSON.stringify(setupValue)}
+                               wantToChangePlayer={this.wantToChangePlayerCallback(setupIndex)}
+                               wantToShowChangePlayer={this.wantToShowChangePlayerCallback(setupIndex)}>
+                </Setup>);
+            }
+        });
+
         return (
             <div className={"setupSelector"
             + (this.state.setupSelection ? " open": " closed")}>
