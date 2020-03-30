@@ -585,8 +585,7 @@ class Marvin extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Lumi",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Berserker",

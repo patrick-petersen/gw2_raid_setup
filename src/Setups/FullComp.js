@@ -582,7 +582,7 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Lumi"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Berserker",
