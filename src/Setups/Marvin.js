@@ -853,7 +853,7 @@ class Marvin extends Component {
                             "selectedSetup": 0,
                             "setups": [
                                 {
-                                    "name": "Mid",
+                                    "name": "Normal",
                                     "roles": [
                                         {
                                             "profession": "Thief",
@@ -927,7 +927,7 @@ class Marvin extends Component {
                             "selectedSetup": 0,
                             "setups": [
                                 {
-                                    "name": "2-2-3",
+                                    "name": "Normal",
                                     "roles": [
                                         {
                                             "profession": "Thief",
@@ -996,7 +996,7 @@ class Marvin extends Component {
                             "selectedSetup": 0,
                             "setups": [
                                 {
-                                    "name": "Mid",
+                                    "name": "Melee",
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
