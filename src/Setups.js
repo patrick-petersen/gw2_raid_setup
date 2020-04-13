@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import FullComp from "./Setups/FullComp";
 import Marvin from "./Setups/Marvin";
+import LumiEly from "./Setups/LumiEly";
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -15,9 +17,12 @@ class Setups extends Component {
                 <Route exact path="/">
                     <FullComp />
                 </Route>
-                <Route path="/marvin">
-                    <Marvin />
-                </Route>
+                    <Route path="/marvin">
+                        <Marvin />
+                    </Route>
+                    <Route path="/1304">
+                        <LumiEly />
+                    </Route>
                 <Route>
                     <FullComp />
                 </Route>
