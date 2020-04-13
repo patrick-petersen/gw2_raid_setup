@@ -455,7 +455,7 @@ class FullComp extends Component {
                                         },
                                         {
                                             "profession": "Scourge",
-                                            "tasks": ["Alacrity"],
+                                            "tasks": ["Heal"],
                                             "player": "Ely"
                                         },
                                         {
