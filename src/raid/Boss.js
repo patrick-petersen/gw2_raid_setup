@@ -9,24 +9,33 @@ class Boss extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            big: false,
+            big: this.props.big,
+            bigTime: Date.now(),
         };
 
         this.toggleSize = this.toggleSize.bind(this);
+        this.getBig = this.getBig.bind(this);
     }
 
     toggleSize() {
         this.setState({
-            big: !this.state.big,
+            big: !this.getBig(),
+            bigTime: Date.now(),
         })
     }
 
+    getBig() {
+        return this.props.bigTime > this.state.bigTime ? this.props.big : this.state.big;
+    }
+
     render() {
+        console.debug("render boss");
         const bossValue = this.props.bossValue;
         const hasIcon = bossValue.hasOwnProperty("iconMiniId");
+        const big = this.getBig();
         return (
             <section className={"boss"
-            + (this.state.big?" big" : " small")
+            + (big?" big" : " small")
             + (hasIcon?"":" no-icon")}>
                 {hasIcon
                     ? <ItemIcon itemId={bossValue.iconMiniId} />

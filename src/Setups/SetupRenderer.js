@@ -11,16 +11,27 @@ class SetupRenderer extends Component {
         const playerSettings = this.props.playerSettings;
 
         this.state = {
-            list: list
+            list: list,
+            big: false,
+            bigTime: Date.now(),
         };
 
         this.listChanged = this.listChanged.bind(this);
         this.listChangedCallback = this.listChangedCallback.bind(this);
         this.filterListCallback = this.filterListCallback.bind(this);
+        this.toggleBig = this.toggleBig.bind(this);
 
         this.historyManager = new HistoryManager(list, playerSettings);
         this.historyManager.saveList(this.props.list);
         this.historyManager.addOnChangeCallback(this.listChangedCallback);
+    }
+
+    toggleBig() {
+        console.log("toggle big");
+        this.setState({
+            big: !this.state.big,
+            bigTime: Date.now(),
+        })
     }
 
     listChanged() {
@@ -46,13 +57,17 @@ class SetupRenderer extends Component {
 
     render() {
         console.log("rendering", this.state.list);
-        return [<PlayerSelection playerSettings={this.props.playerSettings}
+        const big = this.state.big;
+        const bigTime = this.state.bigTime;
+        return [<div onClick={this.toggleBig} key={"toggle big"}>toggle big</div>,
+            <PlayerSelection playerSettings={this.props.playerSettings}
                                  filterListCallback={this.filterListCallback} key={"settings"}></PlayerSelection>,
             this.state.list.map((wingValue, wingIndex) => {
                 console.log("Wing: hidden?", wingValue.hidden);
                 if(!wingValue.hidden) {
                     return (<Wing wingValue={wingValue} playerSettings={this.props.playerSettings}
                                   onChange={this.listChanged} key={wingValue.name}
+                                  big={big} bigTime={bigTime}
                                   cheatString={JSON.stringify(wingValue)}></Wing>);
                 }
         })];

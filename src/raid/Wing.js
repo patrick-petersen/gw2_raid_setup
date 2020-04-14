@@ -6,11 +6,11 @@ class Wing extends Component {
     constructor(props) {
         super(props);
         this.state = {
-
         }
     }
 
     render() {
+        console.debug("rendering wing")
         const wingValue = this.props.wingValue;
         return (
             <article className={"wing"}>
@@ -20,6 +20,7 @@ class Wing extends Component {
                             if(!bossValue.hidden) {
                                 return (<Boss bossValue={bossValue} playerSettings={this.props.playerSettings}
                                               onChange={this.props.onChange} key={bossValue.name}
+                                              big={this.props.big} bigTime={this.props.bigTime}
                                               cheatString={JSON.stringify(bossValue)}></Boss>);
                             }
                         }
