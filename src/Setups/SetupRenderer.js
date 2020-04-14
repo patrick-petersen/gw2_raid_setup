@@ -2,6 +2,7 @@ import Wing from "../raid/Wing";
 import React, {Component} from "react";
 import HistoryManager from "../helper/HistoryManager";
 import PlayerSelection from "../settings/PlayerSelection";
+import GlobalMenu from "../settings/GlobalMenu";
 
 
 class SetupRenderer extends Component {
@@ -20,6 +21,7 @@ class SetupRenderer extends Component {
         this.listChangedCallback = this.listChangedCallback.bind(this);
         this.filterListCallback = this.filterListCallback.bind(this);
         this.toggleBig = this.toggleBig.bind(this);
+        this.clickCallback = this.clickCallback.bind(this);
 
         this.historyManager = new HistoryManager(list, playerSettings);
         this.historyManager.saveList(this.props.list);
@@ -55,11 +57,17 @@ class SetupRenderer extends Component {
         console.log("filtered: ", filteredList);
     }
 
+    clickCallback(menu) {
+        console.log("callback called");
+        this.toggleBig();
+    }
+
     render() {
         console.log("rendering", this.state.list);
         const big = this.state.big;
         const bigTime = this.state.bigTime;
-        return [<div onClick={this.toggleBig} key={"toggle big"}>toggle big</div>,
+        return [<GlobalMenu clickCallback={this.clickCallback} key={"global menu"}
+                        menuItems={[big?"collapse all":"expand all"]}></GlobalMenu>,
             <PlayerSelection playerSettings={this.props.playerSettings}
                                  filterListCallback={this.filterListCallback} key={"settings"}></PlayerSelection>,
             this.state.list.map((wingValue, wingIndex) => {

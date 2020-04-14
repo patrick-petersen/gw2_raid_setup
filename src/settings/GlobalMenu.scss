@@ -1,0 +1,25 @@
+@import "../defaults";
+
+
+.menu {
+  @include box;
+  margin: 25px auto auto;
+  width: 650px;
+  padding: 7px 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  user-select: none;
+
+  .menu-item {
+    border: 1px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    margin: 5px 2px;
+    cursor: pointer;
+
+    flex-grow: 1;
+  }
+}
