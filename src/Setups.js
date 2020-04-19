@@ -17,7 +17,7 @@ import {
     useParams
 } from "react-router-dom";
 
-const currentWeek = functions.getWeekNumber();
+const currentWeek = functions.getWeekNumberOfNextMonday();
 
 const weeklySetups = [
     {
@@ -25,6 +25,11 @@ const weeklySetups = [
         setup: () => <Marvin/>,
     }
 ];
+
+let weekIndex = {};
+weeklySetups.forEach((value, index) => {
+    weekIndex[value.week] = value;
+})
 
 class Setups extends Component {
     render() {
@@ -53,9 +58,7 @@ function AutomatedSetup() {
     let { id } = useParams();
 
     return (
-        <GenericSetup id={id}>
-            <FullComp />
-        </GenericSetup>
+        <GenericSetup id={id} />
     );
 }
 
@@ -63,24 +66,28 @@ function DefaultSetup() {
     const id = currentWeek;
 
     return (
-        <GenericSetup id={id}>
-            <FullComp />
-        </GenericSetup>
+        <GenericSetup id={id} />
     );
 }
 
 class GenericSetup extends Component {
     render() {
-        const d = functions.getDateOfISOWeek(this.props.id, 2020);
+        const week = this.props.id;
+        const d = functions.getDateOfISOWeek(week, 2020);
         const dayString =  d.getDate()  + "." + (d.getMonth()+1) + ".";
+
+        console.log("Week", week, weekIndex.hasOwnProperty(week));
 
         return (
             <div className={"body"}>
                 <Sidebar />
                 <div className={"content"}>
                     <h3>
-                        <LinkTo id={this.props.id - 1} /> Setup for week: {this.props.id} ({dayString}) <LinkTo id={this.props.id - 1 + 2 } /></h3>
-                    {this.props.children}
+                        <LinkTo id={week - 1} /> Setup for week: {week} ({dayString}) <LinkTo id={week - 1 + 2 } /></h3>
+                    {weekIndex.hasOwnProperty(week)?
+                        weekIndex[this.props.id].setup():
+                        <FullComp />
+                    }
                 </div>
             </div>
         );
