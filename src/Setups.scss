@@ -1,0 +1,15 @@
+@import "./defaults";
+
+.body {
+  display: flex;
+  flex-direction: row;
+
+  .content {
+
+    >h3 {
+      @include box;
+
+      text-align: center;
+    }
+  }
+}
