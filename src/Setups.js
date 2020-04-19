@@ -78,12 +78,19 @@ class GenericSetup extends Component {
             <div className={"body"}>
                 <Sidebar />
                 <div className={"content"}>
-                    <h3>Setup for week: {this.props.id} ({dayString})</h3>
+                    <h3>
+                        <LinkTo id={this.props.id - 1} /> Setup for week: {this.props.id} ({dayString}) <LinkTo id={this.props.id - 1 + 2 } /></h3>
                     {this.props.children}
                 </div>
             </div>
         );
 
+    }
+}
+
+class LinkTo extends Component {
+    render() {
+        return (<Link to={"/" + this.props.id}>{this.props.id}</Link>);
     }
 }
 
