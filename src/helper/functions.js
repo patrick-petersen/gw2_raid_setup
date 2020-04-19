@@ -6,6 +6,13 @@ module.exports = {
         const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
         return Math.ceil((((d - yearStart) / 86400000) + 1)/7)
     },
+    getWeekNumberOfNextMonday : function() {
+        const d = new Date();
+        const dayNum = d.getUTCDay() || 7;
+        d.setUTCDate(d.getUTCDate() + 4 - dayNum);
+        const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+        return Math.ceil((((d - yearStart + 60*60*24) / 86400000) + 1)/7) + 1
+    },
 
     getDateOfISOWeek: function(w, y) {
         const simple = new Date(y, 0, 1 + (w - 1) * 7);
@@ -16,7 +23,6 @@ module.exports = {
         else
             ISOweekStart.setDate(simple.getDate() + 8 - simple.getDay());
 
-        console.log(w,y,ISOweekStart);
         return ISOweekStart;
-    }
+    },
 };
