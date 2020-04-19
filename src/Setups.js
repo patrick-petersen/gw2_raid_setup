@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import functions from "./helper/functions";
-import Sidebar from "./settings/Sidebar";
+//import Sidebar from "./settings/Sidebar";
 
 import "./Setups.scss";
 
@@ -80,7 +80,6 @@ class GenericSetup extends Component {
 
         return (
             <div className={"body"}>
-                <Sidebar />
                 <div className={"content"}>
                     <h3>
                         <LinkTo id={week - 1} /> Setup for week: {week} ({dayString}) <LinkTo id={week - 1 + 2 } /></h3>
