@@ -52,8 +52,8 @@ class Setups extends Component {
     render() {
         return (
             <div className={"body"}>
-                <Sidebar namedSetups={namedSetups} weeklySetups={weeklySetups} />
                 <Router>
+                <Sidebar currentWeek={currentWeek} namedSetups={namedSetups} weeklySetups={weeklySetups} />
                     <Switch>
                         {weeklySetups.map((setup, index) => (
                             <Route

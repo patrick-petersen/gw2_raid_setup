@@ -20,14 +20,23 @@ class Sidebar extends Component {
 
     render() {
         return <div className={"sidebar"}>
-            <Router>
-                <h3>Sidebar</h3>
-                <ul>
-                    {this.props.namedSetups.map(setup => {
-                        return <li><Link to={"/" + setup.shortcut}>{setup.name}</Link></li>
-                    })}
-                </ul>
-            </Router>
+            <h3>Sidebar</h3>
+            <h4>Meta:</h4>
+            <ul>
+                <li><Link to={"/" + this.props.currentWeek}>Current Week</Link></li>
+            </ul>
+            <h4>By Name:</h4>
+            <ul>
+                {this.props.namedSetups.map(setup => {
+                    return <li><Link to={"/" + setup.shortcut}>{setup.name}</Link></li>
+                })}
+            </ul>
+            <h4>By Week:</h4>
+            <ul>
+                {this.props.weeklySetups.map(setup => {
+                    return <li><Link to={"/" + setup.week}>Week {setup.week}</Link></li>
+                })}
+            </ul>
         </div>
     }
 }
