@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import functions from "./helper/functions";
-//import Sidebar from "./settings/Sidebar";
+import Sidebar from "./settings/Sidebar";
 
 import NamedSetup from "./Setups/SetupConfigs/NamedSetup";
 
@@ -38,7 +38,7 @@ const namedSetups = [
     {
         name: "Marvin replacing Lumi",
         shortcut: "marvin",
-        setup: () => <Marvin/>,
+        setup: () => <Marvin />,
     }
 ];
 
@@ -51,30 +51,33 @@ namedSetups.forEach((value, index) => {
 class Setups extends Component {
     render() {
         return (
-            <Router>
-                <Switch>
-                    {weeklySetups.map((setup, index) => (
-                        <Route
-                            key={index}
-                            path={'/'+setup.week}
-                            exact={setup.exact}
-                            children={<WeeklySetup id={setup.week}><setup.setup /></WeeklySetup>}
-                        />))
-                    }
-                    {namedSetups.map((setup, index) => (
-                        <Route
-                            key={index}
-                            path={'/'+setup.shortcut}
-                            exact={setup.exact}
-                            children={<NamedSetup name={setup.name}><setup.setup /></NamedSetup>}
-                        />))
-                    }
-                    <Route path="/:id" children={<AutomatedSetup />} />
-                    <Route>
-                        <DefaultSetup />
-                    </Route>
-                </Switch>
-            </Router>);
+            <div className={"body"}>
+                <Sidebar namedSetups={namedSetups} weeklySetups={weeklySetups} />
+                <Router>
+                    <Switch>
+                        {weeklySetups.map((setup, index) => (
+                            <Route
+                                key={index}
+                                path={'/'+setup.week}
+                                exact={setup.exact}
+                                children={<WeeklySetup id={setup.week}><setup.setup /></WeeklySetup>}
+                            />))
+                        }
+                        {namedSetups.map((setup, index) => (
+                            <Route
+                                key={index}
+                                path={'/'+setup.shortcut}
+                                exact={setup.exact}
+                                children={<NamedSetup name={setup.name}><setup.setup /></NamedSetup>}
+                            />))
+                        }
+                        <Route path="/:id" children={<AutomatedSetup />} />
+                        <Route>
+                            <DefaultSetup />
+                        </Route>
+                    </Switch>
+                </Router>
+            </div>);
     }
 }
 function AutomatedSetup() {

@@ -3,8 +3,11 @@
 .body {
   display: flex;
   flex-direction: row;
+  height: 100%;
 
   .content {
+    height: 100%;
+    overflow: auto;
 
     >h3 {
       @include box;

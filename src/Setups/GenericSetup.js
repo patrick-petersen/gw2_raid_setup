@@ -11,10 +11,8 @@ class GenericSetup extends Component {
         const dayString =  d.getDate()  + "." + (d.getMonth()+1) + ".";
 
         return (
-            <div className={"body"}>
-                <div className={"content"}>
-                    {this.props.children}
-                </div>
+            <div className={"content"}>
+                {this.props.children}
             </div>
         );
 

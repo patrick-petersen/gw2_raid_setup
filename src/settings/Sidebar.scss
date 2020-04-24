@@ -1,0 +1,7 @@
+@import "../defaults";
+
+
+.sidebar {
+  @include box;
+  height: 100%;
+}
