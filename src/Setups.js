@@ -36,7 +36,7 @@ weeklySetups.forEach((value, index) => {
 
 const namedSetups = [
     {
-        name: "Marvin replacing Lumi",
+        name: "Lumi -> Marvin",
         shortcut: "marvin",
         setup: () => <Marvin />,
     }

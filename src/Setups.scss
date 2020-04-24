@@ -8,6 +8,7 @@
   .content {
     height: 100%;
     overflow: auto;
+    padding-right: 40px;
 
     >h3 {
       @include box;
