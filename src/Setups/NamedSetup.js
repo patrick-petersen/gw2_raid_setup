@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import GenericSetup from "../GenericSetup";
+import GenericSetup from "./GenericSetup";
 
 
 class NamedSetup extends Component {

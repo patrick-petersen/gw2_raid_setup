@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import functions from "./helper/functions";
 import Sidebar from "./settings/Sidebar";
 
-import NamedSetup from "./Setups/SetupConfigs/NamedSetup";
+import NamedSetup from "./Setups/NamedSetup";
 
 import "./Setups.scss";
 
@@ -18,7 +18,7 @@ import {
     Link,
     useParams
 } from "react-router-dom";
-import WeeklySetup from "./Setups/SetupConfigs/WeeklySetup";
+import WeeklySetup from "./Setups/WeeklySetup";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 

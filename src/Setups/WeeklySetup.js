@@ -1,7 +1,7 @@
-import LinkTo from "../LinkTo";
+import LinkTo from "./LinkTo";
 import React, {Component} from "react";
-import functions from "../../helper/functions";
-import GenericSetup from "../GenericSetup";
+import functions from "../helper/functions";
+import GenericSetup from "./GenericSetup";
 
 
 class WeeklySetup extends Component {
