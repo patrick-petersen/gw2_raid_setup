@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import functions from "./helper/functions";
 //import Sidebar from "./settings/Sidebar";
 
-import GenericSetup from "./Setups/GenericSetup";
+import NamedSetup from "./Setups/SetupConfigs/NamedSetup";
 
 import "./Setups.scss";
 
@@ -66,7 +66,7 @@ class Setups extends Component {
                             key={index}
                             path={'/'+setup.shortcut}
                             exact={setup.exact}
-                            children={<GenericSetup id={setup.shortcut}><setup.setup /></GenericSetup>}
+                            children={<NamedSetup name={setup.name}><setup.setup /></NamedSetup>}
                         />))
                     }
                     <Route path="/:id" children={<AutomatedSetup />} />
