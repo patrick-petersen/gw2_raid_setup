@@ -19,6 +19,7 @@ import {
     useParams
 } from "react-router-dom";
 import WeeklySetup from "./Setups/WeeklySetup";
+import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
@@ -39,7 +40,12 @@ const namedSetups = [
         name: "Lumi -> Marvin",
         shortcut: "marvin",
         setup: () => <Marvin />,
-    }
+    },
+    {
+        name: "Dhuum CM",
+        shortcut: "dhuum",
+        setup: () => <DhuumCM />,
+    },
 ];
 
 let namedSetupsIndex = {};
