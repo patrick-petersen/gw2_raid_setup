@@ -1,15 +1,15 @@
 import React, {Component} from "react";
-import SetupRenderer from "./SetupRenderer";
+import SetupRenderer from "../SetupRenderer";
 
 
-class FullComp extends Component {
+class LumiEly extends Component {
     constructor(props) {
         super(props);
         this.settings = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
-                "missing": [],
-                "replacements": {},
+                "missing": ["Lumi", "Ely"],
+                "replacements": {"Lumi": "Tasmosuth", "Ely": "Marvin"},
             },
             "list": [
                 {
@@ -18,7 +18,7 @@ class FullComp extends Component {
                         {
                             "name": "Valeguardian",
                             "iconMiniId": 77334,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -36,7 +36,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -66,7 +67,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                     ]
                                 },
@@ -93,7 +95,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -125,12 +128,14 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Kiter"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "Nevra"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -140,7 +145,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Firebrand",
                                             "tasks": ["Cannon 2 & 4"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Yasi"
                                         },
                                     ]
                                 },
@@ -172,7 +178,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -187,7 +194,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Epi"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "Nevra"
                                         },
                                     ]
                                 },
@@ -224,7 +232,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -256,7 +265,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -288,7 +298,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                     ]
                                 },
@@ -315,7 +326,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -330,7 +342,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Deadeye",
                                             "tasks": ["Adds"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "David"
                                         },
                                     ]
                                 },
@@ -352,7 +365,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -365,7 +379,7 @@ class FullComp extends Component {
                                             "player": "David"
                                         },
                                         {
-                                            "profession": "Scourge",
+                                            "profession": "Druid",
                                             "tasks": ["Kiter", "Green 2"],
                                             "player": "Kalell"
                                         },
@@ -377,7 +391,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Firebrand",
                                             "tasks": ["First Green 2"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Yasi"
                                         },
                                     ]
                                 },
@@ -409,7 +424,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -451,17 +467,20 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Heal"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Yasi"
                                         },
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["Portal"],
-                                            "player": "Yasi"
+                                            "player": "Yasi",
+                                            "replacement": "David"
                                         },
                                     ]
                                 },
@@ -488,7 +507,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -535,7 +555,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Kalell"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -582,7 +603,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -614,17 +636,20 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
                                             "tasks": ["Full Quickness", "Stability"],
-                                            "player": "Yasi"
+                                            "player": "Yasi",
+                                            "replacement": "Ely"
                                         },
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Soulcleave"],
-                                            "player": "Alex"
+                                            "player": "Alex",
+                                            "replacement": "Fynn"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -634,7 +659,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Pylon N"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Alex"
                                         },
                                         {
                                             "profession": "Scourge",
@@ -644,7 +670,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Deadeye",
                                             "tasks": ["Pylon E"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "Yasi"
                                         },
                                     ]
                                 },
@@ -676,7 +703,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -713,7 +741,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -745,7 +774,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                     ]
                                 },
@@ -777,7 +807,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -792,7 +823,7 @@ class FullComp extends Component {
                                         {
                                             "profession": "Daredevil",
                                             "tasks": ["Mushroom 3"],
-                                            "player": "Lumi"
+                                            "player": "Fynn"
                                         },
                                         {
                                             "profession": "Weaver",
@@ -824,7 +855,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -866,7 +898,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Healing", "Reviving"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Yasi"
                                         },
                                         {
                                             "profession": "Mirage",
@@ -903,7 +936,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -940,7 +974,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Kalell"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -972,7 +1007,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -1004,7 +1040,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -1019,7 +1056,8 @@ class FullComp extends Component {
                                         {
                                             "profession": "Berserker",
                                             "tasks": ["Banner"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "Lumi"
                                         },
                                     ]
                                 },
@@ -1037,4 +1075,4 @@ class FullComp extends Component {
     }
 }
 
-export default FullComp;
+export default LumiEly;

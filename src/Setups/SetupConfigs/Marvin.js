@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import SetupRenderer from "./SetupRenderer";
+import SetupRenderer from "../SetupRenderer";
 
 
 class Marvin extends Component {

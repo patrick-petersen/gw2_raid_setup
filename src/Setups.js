@@ -2,12 +2,14 @@ import React, {Component} from "react";
 import functions from "./helper/functions";
 //import Sidebar from "./settings/Sidebar";
 
+import GenericSetup from "./Setups/GenericSetup";
+
 import "./Setups.scss";
 
 //Setups:
-import FullComp from "./Setups/FullComp";
-import Marvin from "./Setups/Marvin";
-import LumiEly from "./Setups/LumiEly";
+import FullComp from "./Setups/SetupConfigs/FullComp";
+import Marvin from "./Setups/SetupConfigs/Marvin";
+import LumiEly from "./Setups/SetupConfigs/LumiEly";
 
 import {
     BrowserRouter as Router,
@@ -16,6 +18,7 @@ import {
     Link,
     useParams
 } from "react-router-dom";
+import WeeklySetup from "./Setups/SetupConfigs/WeeklySetup";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
@@ -26,10 +29,24 @@ const weeklySetups = [
     }
 ];
 
-let weekIndex = {};
+let weeklySetupsIndex = {};
 weeklySetups.forEach((value, index) => {
-    weekIndex[value.week] = value;
-})
+    weeklySetupsIndex[value.week] = value;
+});
+
+const namedSetups = [
+    {
+        name: "Marvin replacing Lumi",
+        shortcut: "marvin",
+        setup: () => <Marvin/>,
+    }
+];
+
+let namedSetupsIndex = {};
+namedSetups.forEach((value, index) => {
+    namedSetupsIndex[value.shortcut] = value;
+});
+
 
 class Setups extends Component {
     render() {
@@ -37,14 +54,20 @@ class Setups extends Component {
             <Router>
                 <Switch>
                     {weeklySetups.map((setup, index) => (
-                            // Render more <Route>s with the same paths as
-                            // above, but different components this time.
-                            <Route
-                                key={index}
-                                path={'/'+setup.week}
-                                exact={setup.exact}
-                                children={<GenericSetup id={setup.week}><setup.setup /></GenericSetup>}
-                            />))
+                        <Route
+                            key={index}
+                            path={'/'+setup.week}
+                            exact={setup.exact}
+                            children={<WeeklySetup id={setup.week}><setup.setup /></WeeklySetup>}
+                        />))
+                    }
+                    {namedSetups.map((setup, index) => (
+                        <Route
+                            key={index}
+                            path={'/'+setup.shortcut}
+                            exact={setup.exact}
+                            children={<GenericSetup id={setup.shortcut}><setup.setup /></GenericSetup>}
+                        />))
                     }
                     <Route path="/:id" children={<AutomatedSetup />} />
                     <Route>
@@ -58,7 +81,9 @@ function AutomatedSetup() {
     let { id } = useParams();
 
     return (
-        <GenericSetup id={id} />
+        <WeeklySetup id={id}>
+            {getSetupForKey(id)}
+        </WeeklySetup>
     );
 }
 
@@ -66,37 +91,21 @@ function DefaultSetup() {
     const id = currentWeek;
 
     return (
-        <GenericSetup id={id} />
+        <WeeklySetup id={id} >
+            {getSetupForKey(id)}
+        </WeeklySetup>
     );
 }
 
-class GenericSetup extends Component {
-    render() {
-        const week = this.props.id;
-        const d = functions.getDateOfISOWeek(week, 2020);
-        const dayString =  d.getDate()  + "." + (d.getMonth()+1) + ".";
-
-        console.log("Week", week, weekIndex.hasOwnProperty(week));
-
-        return (
-            <div className={"body"}>
-                <div className={"content"}>
-                    <h3>
-                        <LinkTo id={week - 1} /> Setup for week: {week} ({dayString}) <LinkTo id={week - 1 + 2 } /></h3>
-                    {weekIndex.hasOwnProperty(week)?
-                        weekIndex[this.props.id].setup():
-                        <FullComp />
-                    }
-                </div>
-            </div>
-        );
-
+function getSetupForKey(id) {
+    if(namedSetups.hasOwnProperty(id)) {
+        return namedSetups[id];
     }
-}
-
-class LinkTo extends Component {
-    render() {
-        return (<Link to={"/" + this.props.id}>{this.props.id}</Link>);
+    else if (weeklySetups.hasOwnProperty(id)) {
+        return weeklySetups[id];
+    }
+    else {
+        return <FullComp />
     }
 }
 
