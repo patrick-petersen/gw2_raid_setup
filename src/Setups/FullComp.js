@@ -365,7 +365,7 @@ class FullComp extends Component {
                                             "player": "David"
                                         },
                                         {
-                                            "profession": "Druid",
+                                            "profession": "Scourge",
                                             "tasks": ["Kiter", "Green 2"],
                                             "player": "Kalell"
                                         },
