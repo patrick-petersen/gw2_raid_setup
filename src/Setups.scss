@@ -9,6 +9,7 @@
     height: 100%;
     overflow: auto;
     padding-right: 40px;
+    flex-grow: 1;
 
     >h3 {
       @include box;

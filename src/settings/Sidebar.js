@@ -58,7 +58,8 @@ class Sidebar extends Component {
 
         }
         return <div className={"sidebar"}>
-            <h3>Sidebar</h3>
+            <div className={"expand-all"}>expand all</div>
+            <h3>Quicklinks</h3>
             <div className={"sidebar-menu"}>
                 <div className={"menu-selector"}>
                     {menus.map(menu => {
