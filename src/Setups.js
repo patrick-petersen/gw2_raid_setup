@@ -20,6 +20,7 @@ import {
 } from "react-router-dom";
 import WeeklySetup from "./Setups/WeeklySetup";
 import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
+import QadimCC from "./Setups/SetupConfigs/QadimCC";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
@@ -45,6 +46,11 @@ const namedSetups = [
         name: "Dhuum CM",
         shortcut: "dhuum",
         setup: () => <DhuumCM />,
+    },
+    {
+        name: "Qadim no CC",
+        shortcut: "qadim",
+        setup: () => <QadimCC />,
     },
 ];
 
