@@ -21,13 +21,14 @@ import {
 import WeeklySetup from "./Setups/WeeklySetup";
 import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
 import QadimCC from "./Setups/SetupConfigs/QadimCC";
+import SetupRenderer from "./Setups/SetupRenderer";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
 const weeklySetups = [
     {
         week: 17,
-        setup: () => <Marvin/>,
+        setup: Marvin,
     }
 ];
 
@@ -40,17 +41,17 @@ const namedSetups = [
     {
         name: "Lumi -> Marvin",
         shortcut: "marvin",
-        setup: () => <Marvin />,
+        setup: Marvin,
     },
     {
         name: "Dhuum CM",
         shortcut: "dhuum",
-        setup: () => <DhuumCM />,
+        setup: DhuumCM,
     },
     {
         name: "Qadim no CC",
         shortcut: "qadim",
-        setup: () => <QadimCC />,
+        setup: QadimCC,
     },
 ];
 
@@ -72,7 +73,9 @@ class Setups extends Component {
                                 key={index}
                                 path={'/'+setup.week}
                                 exact={setup.exact}
-                                children={<WeeklySetup id={setup.week}><setup.setup /></WeeklySetup>}
+                                children={<WeeklySetup id={setup.week}>
+                                    <SetupRenderer {... setup.setup} />
+                                </WeeklySetup>}
                             />))
                         }
                         {namedSetups.map((setup, index) => (
@@ -80,7 +83,9 @@ class Setups extends Component {
                                 key={index}
                                 path={'/'+setup.shortcut}
                                 exact={setup.exact}
-                                children={<NamedSetup name={setup.name}><setup.setup /></NamedSetup>}
+                                children={<NamedSetup name={setup.name}>
+                                    <SetupRenderer {... setup.setup} />
+                                </NamedSetup>}
                             />))
                         }
                         <Route path="/:id" children={<AutomatedSetup />} />
@@ -114,13 +119,13 @@ function DefaultSetup() {
 
 function getSetupForKey(id) {
     if(namedSetups.hasOwnProperty(id)) {
-        return namedSetups[id];
+        return <SetupRenderer {... namedSetups[id]} />;
     }
     else if (weeklySetups.hasOwnProperty(id)) {
-        return weeklySetups[id];
+        return <SetupRenderer {... weeklySetups[id]} />;
     }
     else {
-        return <FullComp />
+        return <SetupRenderer {... FullComp} />
     }
 }
 

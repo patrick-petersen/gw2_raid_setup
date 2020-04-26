@@ -1,11 +1,5 @@
-import React, {Component} from "react";
-import SetupRenderer from "../SetupRenderer";
 
-
-class DhuumCM extends Component {
-    constructor(props) {
-        super(props);
-        this.settings = {
+const DhuumCM = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": [],
@@ -65,13 +59,6 @@ class DhuumCM extends Component {
                     ]
                 },
             ]
-        }
-    }
-
-    render() {
-
-        return <SetupRenderer {... this.settings}></SetupRenderer>;
-    }
-}
+        };
 
 export default DhuumCM;

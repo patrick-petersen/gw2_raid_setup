@@ -1,11 +1,5 @@
-import React, {Component} from "react";
-import SetupRenderer from "../SetupRenderer";
 
-
-class QadimCC extends Component {
-    constructor(props) {
-        super(props);
-        this.settings = {
+const QadimCC = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": [],
@@ -60,13 +54,6 @@ class QadimCC extends Component {
                     ]
                 },
             ]
-        }
-    }
-
-    render() {
-
-        return <SetupRenderer {... this.settings}></SetupRenderer>;
-    }
-}
+        };
 
 export default QadimCC;
