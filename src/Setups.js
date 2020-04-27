@@ -76,6 +76,10 @@ class Setups extends Component {
             bigTime: Date.now(),
         };
         this.toggleBig = this.toggleBig.bind(this);
+        this.customSetupRenderer = this.customSetupRenderer.bind(this);
+        this.getSetupForKey = this.getSetupForKey.bind(this);
+        this.AutomatedSetup = this.AutomatedSetup.bind(this);
+        this.DefaultSetup = this.DefaultSetup.bind(this);
     }
 
     toggleBig() {
@@ -84,45 +88,6 @@ class Setups extends Component {
             big: !this.state.big,
             bigTime: Date.now(),
         })
-    }
-
-    render() {
-        return (
-            <div className={"body"}>
-                <Router>
-                <Sidebar currentWeek={currentWeek}
-                         namedSetups={namedSetups}
-                         weeklySetups={weeklySetups}
-                         toggleBigCallback={this.toggleBig}
-                />
-                    <Switch>
-                        {weeklySetups.map((setup, index) => (
-                            <Route
-                                key={index}
-                                path={'/'+setup.week}
-                                exact={setup.exact}
-                                children={<WeeklySetup id={setup.week}>
-                                    {this.customSetupRenderer(setup.setup)}
-                                </WeeklySetup>}
-                            />))
-                        }
-                        {namedSetups.map((setup, index) => (
-                            <Route
-                                key={index}
-                                path={'/'+setup.shortcut}
-                                exact={setup.exact}
-                                children={<NamedSetup name={setup.name}>
-                                    {this.customSetupRenderer(setup.setup)}
-                                </NamedSetup>}
-                            />))
-                        }
-                        <Route path="/:id" children={<this.AutomatedSetup />} />
-                        <Route>
-                            <this.DefaultSetup />
-                        </Route>
-                    </Switch>
-                </Router>
-            </div>);
     }
 
     customSetupRenderer(params) {
@@ -158,6 +123,44 @@ class Setups extends Component {
                 {this.getSetupForKey(id)}
             </WeeklySetup>
         );
+    }
+    render() {
+        return (
+            <div className={"body"}>
+                <Router>
+                    <Sidebar currentWeek={currentWeek}
+                             namedSetups={namedSetups}
+                             weeklySetups={weeklySetups}
+                             toggleBigCallback={this.toggleBig}
+                    />
+                    <Switch>
+                        {weeklySetups.map((setup, index) => (
+                            <Route
+                                key={index}
+                                path={'/'+setup.week}
+                                exact={setup.exact}
+                                children={<WeeklySetup id={setup.week}>
+                                    {this.customSetupRenderer(setup.setup)}
+                                </WeeklySetup>}
+                            />))
+                        }
+                        {namedSetups.map((setup, index) => (
+                            <Route
+                                key={index}
+                                path={'/'+setup.shortcut}
+                                exact={setup.exact}
+                                children={<NamedSetup name={setup.name}>
+                                    {this.customSetupRenderer(setup.setup)}
+                                </NamedSetup>}
+                            />))
+                        }
+                        <Route path="/:id" children={<this.AutomatedSetup />} />
+                        <Route>
+                            <this.DefaultSetup />
+                        </Route>
+                    </Switch>
+                </Router>
+            </div>);
     }
 
 }
