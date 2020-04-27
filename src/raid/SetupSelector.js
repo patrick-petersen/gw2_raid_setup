@@ -76,8 +76,8 @@ class SetupSelector extends Component {
             return (
                 <div className={"setup " + this.state.setupState + (
                     (this.state.setupSelection || this.state.selectedSetup === index)? " active" : " inactive")}>
-                    <div className={"setup-name"}>
-                        <h3 onClick={this.childClick(index)}>{child.props.setupValue.name}</h3>
+                    <div className={"setup-name"} onClick={this.childClick(index)}>
+                        <h3>{child.props.setupValue.name}</h3>
                     </div>
                     <div className={"setup-roles"}>
                         {child}
