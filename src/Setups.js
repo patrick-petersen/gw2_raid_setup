@@ -3,13 +3,14 @@ import functions from "./helper/functions";
 import Sidebar from "./settings/Sidebar";
 
 import NamedSetup from "./Setups/NamedSetup";
-
 import "./Setups.scss";
 
 //Setups:
 import FullComp from "./Setups/SetupConfigs/FullComp";
 import Marvin from "./Setups/SetupConfigs/Marvin";
-import LumiEly from "./Setups/SetupConfigs/LumiEly";
+import Week18 from "./Setups/SetupConfigs/Week18";
+import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
+import QadimCC from "./Setups/SetupConfigs/QadimCC";
 
 import {
     BrowserRouter as Router,
@@ -19,10 +20,7 @@ import {
     useParams
 } from "react-router-dom";
 import WeeklySetup from "./Setups/WeeklySetup";
-import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
-import QadimCC from "./Setups/SetupConfigs/QadimCC";
 import SetupRenderer from "./Setups/SetupRenderer";
-import Week18 from "./Setups/SetupConfigs/Week18";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
@@ -95,19 +93,24 @@ class Setups extends Component {
     }
 
     getSetupForKey(id) {
-        if(namedSetups.hasOwnProperty(id)) {
-            return this.customSetupRenderer(namedSetups[id]);
+        console.log("setupForId", id);
+        if(namedSetupsIndex.hasOwnProperty(id)) {
+            console.log("named", id);
+            return this.customSetupRenderer(namedSetupsIndex[id].setup);
         }
-        else if (weeklySetups.hasOwnProperty(id)) {
-            return this.customSetupRenderer(weeklySetups[id]);
+        else if (weeklySetupsIndex.hasOwnProperty(id)) {
+            console.log("weekly", id);
+            return this.customSetupRenderer(weeklySetupsIndex[id].setup);
         }
         else {
+            console.log("full", id);
             return this.customSetupRenderer(FullComp);
         }
     }
     AutomatedSetup() {
         let { id } = useParams();
 
+        console.log("autoId", id);
         return (
             <WeeklySetup id={id}>
                 {this.getSetupForKey(id)}
@@ -154,7 +157,6 @@ class Setups extends Component {
                                 </NamedSetup>}
                             />))
                         }
-                        <Route path="/:id" children={<this.AutomatedSetup />} />
                         <Route>
                             <this.DefaultSetup />
                         </Route>
