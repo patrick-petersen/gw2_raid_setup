@@ -10,14 +10,14 @@ import {
     useParams
 } from "react-router-dom";
 
-const menus = ["Meta", "Name", "Week"];
+const menus = [ "Week", "Name"];
 
 class Sidebar extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            selected: "Meta",
+            selected: "Week",
             big: false,
         };
 
@@ -42,12 +42,6 @@ class Sidebar extends Component {
         let submenu;
         switch (this.state.selected) {
             default:
-            case "Meta":
-                submenu =
-                    <ul>
-                        <li><Link to={"/" + this.props.currentWeek}>Current Week</Link></li>
-                    </ul>;
-                break;
             case "Name":
                 submenu =
                     <ul>
@@ -59,6 +53,7 @@ class Sidebar extends Component {
             case "Week":
                 submenu =
                     <ul>
+                        <li><Link to={"/" + this.props.currentWeek}>Current Week</Link></li>
                         {this.props.weeklySetups.map(setup => {
                             return <li><Link to={"/" + setup.week}>Week {setup.week}</Link></li>
                         })}
