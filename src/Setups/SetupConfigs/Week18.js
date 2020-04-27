@@ -603,7 +603,7 @@ const Week18 = {
                             "selectedSetup": 0,
                             "setups": [
                                 {
-                                    "name": "2-2-3",
+                                    "name": "1-1-2",
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
