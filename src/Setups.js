@@ -22,6 +22,7 @@ import WeeklySetup from "./Setups/WeeklySetup";
 import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
 import QadimCC from "./Setups/SetupConfigs/QadimCC";
 import SetupRenderer from "./Setups/SetupRenderer";
+import Week18 from "./Setups/SetupConfigs/Week18";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
@@ -29,6 +30,10 @@ const weeklySetups = [
     {
         week: 17,
         setup: Marvin,
+    },
+    {
+        week: 18,
+        setup: Week18,
     }
 ];
 
