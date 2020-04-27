@@ -67,11 +67,34 @@ namedSetups.forEach((value, index) => {
 
 
 class Setups extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            big: false,
+            bigTime: Date.now(),
+        };
+        this.toggleBig = this.toggleBig.bind(this);
+    }
+
+    toggleBig() {
+        console.log("toggle big");
+        this.setState({
+            big: !this.state.big,
+            bigTime: Date.now(),
+        })
+    }
+
     render() {
         return (
             <div className={"body"}>
                 <Router>
-                <Sidebar currentWeek={currentWeek} namedSetups={namedSetups} weeklySetups={weeklySetups} />
+                <Sidebar currentWeek={currentWeek}
+                         namedSetups={namedSetups}
+                         weeklySetups={weeklySetups}
+                         toggleBigCallback={this.toggleBig}
+                />
                     <Switch>
                         {weeklySetups.map((setup, index) => (
                             <Route
@@ -79,7 +102,7 @@ class Setups extends Component {
                                 path={'/'+setup.week}
                                 exact={setup.exact}
                                 children={<WeeklySetup id={setup.week}>
-                                    <SetupRenderer {... setup.setup} />
+                                    {this.customSetupRenderer(setup.setup)}
                                 </WeeklySetup>}
                             />))
                         }
@@ -89,49 +112,53 @@ class Setups extends Component {
                                 path={'/'+setup.shortcut}
                                 exact={setup.exact}
                                 children={<NamedSetup name={setup.name}>
-                                    <SetupRenderer {... setup.setup} />
+                                    {this.customSetupRenderer(setup.setup)}
                                 </NamedSetup>}
                             />))
                         }
-                        <Route path="/:id" children={<AutomatedSetup />} />
+                        <Route path="/:id" children={<this.AutomatedSetup />} />
                         <Route>
-                            <DefaultSetup />
+                            <this.DefaultSetup />
                         </Route>
                     </Switch>
                 </Router>
             </div>);
     }
-}
-function AutomatedSetup() {
-    let { id } = useParams();
 
-    return (
-        <WeeklySetup id={id}>
-            {getSetupForKey(id)}
-        </WeeklySetup>
-    );
-}
-
-function DefaultSetup() {
-    const id = currentWeek;
-
-    return (
-        <WeeklySetup id={id} >
-            {getSetupForKey(id)}
-        </WeeklySetup>
-    );
-}
-
-function getSetupForKey(id) {
-    if(namedSetups.hasOwnProperty(id)) {
-        return <SetupRenderer {... namedSetups[id]} />;
+    customSetupRenderer(params) {
+        return <SetupRenderer big={this.state.big} bigTime={this.state.bigTime} {... params} />;
     }
-    else if (weeklySetups.hasOwnProperty(id)) {
-        return <SetupRenderer {... weeklySetups[id]} />;
-    }
-    else {
-        return <SetupRenderer {... FullComp} />
-    }
-}
 
+    getSetupForKey(id) {
+        if(namedSetups.hasOwnProperty(id)) {
+            return this.customSetupRenderer(namedSetups[id]);
+        }
+        else if (weeklySetups.hasOwnProperty(id)) {
+            return this.customSetupRenderer(weeklySetups[id]);
+        }
+        else {
+            return this.customSetupRenderer(FullComp);
+        }
+    }
+    AutomatedSetup() {
+        let { id } = useParams();
+
+        return (
+            <WeeklySetup id={id}>
+                {this.getSetupForKey(id)}
+            </WeeklySetup>
+        );
+    }
+
+    DefaultSetup() {
+        const id = currentWeek;
+
+        return (
+            <WeeklySetup id={id} >
+                {this.getSetupForKey(id)}
+            </WeeklySetup>
+        );
+    }
+
+}
 export default Setups;

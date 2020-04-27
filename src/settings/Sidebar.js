@@ -9,6 +9,7 @@ import {
     Link,
     useParams
 } from "react-router-dom";
+import GlobalMenu from "./GlobalMenu";
 
 const menus = ["Meta", "Name", "Week"];
 
@@ -18,15 +19,24 @@ class Sidebar extends Component {
 
         this.state = {
             selected: "Meta",
+            big: false,
         };
 
         this.selectSubmenu = this.selectSubmenu.bind(this);
+        this.toggleBig = this.toggleBig.bind(this);
     }
 
     selectSubmenu(index) {
         this.setState({
             selected: index,
         })
+    }
+
+    toggleBig() {
+        this.setState({
+            big: !this.state.big
+        });
+        this.props.toggleBigCallback();
     }
 
     render() {
@@ -57,8 +67,10 @@ class Sidebar extends Component {
             break;
 
         }
+        const big = this.state.big;
+
         return <div className={"sidebar"}>
-            <div className={"expand-all"}>expand all</div>
+            <div className={"expand-all"} onClick={this.toggleBig}>{big?"collapse all":"expand all"}</div>
             <h3>Quicklinks</h3>
             <div className={"sidebar-menu"}>
                 <div className={"menu-selector"}>

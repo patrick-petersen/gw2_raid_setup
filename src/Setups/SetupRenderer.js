@@ -13,28 +13,17 @@ class SetupRenderer extends Component {
 
         this.state = {
             list: list,
-            big: false,
-            bigTime: Date.now(),
         };
 
         this.listChanged = this.listChanged.bind(this);
         this.listChangedCallback = this.listChangedCallback.bind(this);
         this.filterListCallback = this.filterListCallback.bind(this);
-        this.toggleBig = this.toggleBig.bind(this);
-        this.clickCallback = this.clickCallback.bind(this);
 
         this.historyManager = new HistoryManager(list, playerSettings);
         this.historyManager.saveList(this.props.list);
         this.historyManager.addOnChangeCallback(this.listChangedCallback);
     }
 
-    toggleBig() {
-        console.log("toggle big");
-        this.setState({
-            big: !this.state.big,
-            bigTime: Date.now(),
-        })
-    }
 
     listChanged() {
         console.log("list changed", this.state.list);
@@ -57,18 +46,11 @@ class SetupRenderer extends Component {
         console.log("filtered: ", filteredList);
     }
 
-    clickCallback(menu) {
-        console.log("callback called");
-        this.toggleBig();
-    }
-
     render() {
         console.log("rendering", this.state.list);
-        const big = this.state.big;
-        const bigTime = this.state.bigTime;
-        return [<GlobalMenu clickCallback={this.clickCallback} key={"global menu"}
-                        menuItems={[big?"collapse all":"expand all"]}></GlobalMenu>,
-            <PlayerSelection playerSettings={this.props.playerSettings}
+        const big = this.props.big;
+        const bigTime = this.props.bigTime;
+        return [<PlayerSelection playerSettings={this.props.playerSettings}
                                  filterListCallback={this.filterListCallback} key={"settings"}></PlayerSelection>,
             this.state.list.map((wingValue, wingIndex) => {
                 console.log("Wing: hidden?", wingValue.hidden);
