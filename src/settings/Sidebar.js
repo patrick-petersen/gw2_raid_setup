@@ -64,7 +64,6 @@ class Sidebar extends Component {
         const big = this.state.big;
 
         return <div className={"sidebar"}>
-            <div className={"expand-all"} onClick={this.toggleBig}>{big?"collapse all":"expand all"}</div>
             <h3>Quicklinks</h3>
             <div className={"sidebar-menu"}>
                 <div className={"menu-selector"}>
@@ -79,6 +78,7 @@ class Sidebar extends Component {
                     {submenu}
                 </div>
             </div>
+            <div className={"expand-all"} onClick={this.toggleBig}>{big?"collapse all":"expand all"}</div>
         </div>
     }
 }

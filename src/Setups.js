@@ -32,7 +32,7 @@ const weeklySetups = [
     {
         week: 18,
         setup: Week18,
-    }
+    },
 ];
 
 let weeklySetupsIndex = {};
