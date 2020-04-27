@@ -9,7 +9,6 @@ import {
     Link,
     useParams
 } from "react-router-dom";
-import GlobalMenu from "./GlobalMenu";
 
 const menus = ["Meta", "Name", "Week"];
 

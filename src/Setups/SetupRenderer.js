@@ -2,7 +2,6 @@ import Wing from "../raid/Wing";
 import React, {Component} from "react";
 import HistoryManager from "../helper/HistoryManager";
 import PlayerSelection from "../settings/PlayerSelection";
-import GlobalMenu from "../settings/GlobalMenu";
 
 
 class SetupRenderer extends Component {
