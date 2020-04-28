@@ -464,7 +464,7 @@ const FullComp = {
                         {
                             "name": "Qadim",
                             "iconMiniId": 88587,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -498,6 +498,46 @@ const FullComp = {
                                             "profession": "Reaper",
                                             "tasks": ["Lampe"],
                                             "player": "Nevra"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "No CC",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["Portal"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["Solo Kiter"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Reaper",
+                                            "tasks": ["Lampe"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner", "Wyvern Tank"],
+                                            "player": "David"
                                         },
                                     ]
                                 },
