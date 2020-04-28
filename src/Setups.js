@@ -157,6 +157,7 @@ class Setups extends Component {
                                 </NamedSetup>}
                             />))
                         }
+                        <Route path="/:id" children={<this.AutomatedSetup />} />
                         <Route>
                             <this.DefaultSetup />
                         </Route>
