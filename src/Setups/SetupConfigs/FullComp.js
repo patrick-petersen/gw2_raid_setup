@@ -922,18 +922,13 @@ const FullComp = {
                                             "player": "Assa"
                                         },
                                         {
-                                            "profession": "Weaver",
-                                            "tasks": ["Claim"],
-                                            "player": "Kalell"
-                                        },
-                                        {
                                             "profession": "Tempest",
                                             "tasks": ["Heal", "Buffs", "Dispel"],
                                             "player": "Shrotty"
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
+                                            "tasks": ["Alacrity", "Claim"],
                                             "player": "Ely"
                                         },
                                         {
