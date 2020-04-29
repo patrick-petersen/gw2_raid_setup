@@ -8,10 +8,11 @@ module.exports = {
     },
     getWeekNumberOfNextMonday : function() {
         const d = new Date();
-        const dayNum = d.getUTCDay() || 7;
+        const dayNum = ((d.getUTCDay() + 6) % 7 ) || 7;
         d.setUTCDate(d.getUTCDate() + 4 - dayNum);
         const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
-        return Math.ceil((((d - yearStart) / 86400000) )/7)
+        console.log((((d - yearStart) / 86400000))/7);
+        return Math.ceil((((d - yearStart) / 86400000) + 1)/7) + 1
     },
 
     getDateOfISOWeek: function(w, y) {
