@@ -1,29 +1,38 @@
 
 .boss {
-    .setup {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
+    .setupSelector {
 
-        &.inactive {
-            display: none;
-        }
-        &.backup-setup {
-            background-color: #ffc135;
-        }
-        &.missing-setup {
-            background-color: #ff1300;
-        }
-
-        .setup-name {
-            order: 0;
+        .setup {
             display: flex;
-            width: 175px;
-            cursor: pointer;
-            user-select: none;
-            >* {
-                margin: auto;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+
+            &.inactive {
+                display: none;
+            }
+            &.backup-setup {
+                background-color: #ffc135;
+            }
+            &.missing-setup {
+                background-color: #ff1300;
+            }
+
+            .setup-name {
+                order: 0;
+                display: flex;
+                width: 175px;
+                cursor: pointer;
+                user-select: none;
+                >* {
+                    margin: auto;
+                }
+            }
+        }
+
+        &.changed {
+            .setup-name {
+                background-color: #ffc135;
             }
         }
     }
@@ -45,7 +54,7 @@
         }
     }
     &.small {
-        .setupSelector{
+        .setupSelector {
             &.closed {
             }
             .setup.active {

@@ -100,9 +100,14 @@ class SetupSelector extends Component {
             }
         });
 
+        const isDefaultSetup = !(bossValue.hasOwnProperty("defaultSetup")
+            && (bossValue.defaultSetup != this.state.selectedSetup));
+
+
         return (
             <div className={"setupSelector"
-            + (this.state.setupSelection ? " open": " closed")}>
+            + (this.state.setupSelection ? " open": " closed")
+            + (isDefaultSetup ? " default" : " changed")}>
                 {
                     React.Children.map(setups, (child, index) => {
                         if(this.state.selectedSetup !== index) return null;
