@@ -800,7 +800,7 @@ const FullComp = {
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Solo Cap"],
+                                            "tasks": ["Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
