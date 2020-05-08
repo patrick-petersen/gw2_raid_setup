@@ -13,6 +13,7 @@ const FullComp = {
                             "name": "Valeguardian",
                             "iconMiniId": 77334,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -70,6 +71,7 @@ const FullComp = {
                             "name": "Gorseval",
                             "iconMiniId": 77296,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "No Updraft",
@@ -96,12 +98,43 @@ const FullComp = {
                                         },
                                     ]
                                 },
-                            ]
+                                {
+                                    "name": "No Updraft 2",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Stability", "Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                    ]
+                                },
+                        ]
                         },
                         {
                             "name": "Sabetha",
                             "iconMiniId": 77339,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -138,6 +171,51 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Condi Supps",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Kiter"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Cannon 1 & 3"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Cannon 2 & 4"],
+                                            "player": "Lumi"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                     ]
@@ -149,6 +227,7 @@ const FullComp = {
                             "name": "Desmina",
                             "iconMiniId": 86076,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -191,6 +270,7 @@ const FullComp = {
                             "name": "River",
                             "iconMiniId": 85785,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -233,6 +313,7 @@ const FullComp = {
                             "name": "Statue of Ice",
                             "iconMiniId": 85667,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -265,6 +346,7 @@ const FullComp = {
                             "name": "Statue of Death",
                             /*"iconMiniId": 0,*/
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "0 - 5",
@@ -292,6 +374,7 @@ const FullComp = {
                             "name": "Statue of Darkness",
                             /*"iconMiniId": 0,*/
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Portal",
@@ -334,6 +417,7 @@ const FullComp = {
                             "name": "Dhuum",
                             "iconMiniId": 85998,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -386,6 +470,7 @@ const FullComp = {
                             "name": "Conjured Amalgamate",
                             /*"iconMiniId": 0,*/
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -428,6 +513,7 @@ const FullComp = {
                             "name": "Twin Largos",
                             "iconMiniId": 88868,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Portal",
@@ -465,6 +551,7 @@ const FullComp = {
                             "name": "Qadim",
                             "iconMiniId": 88587,
                             "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -552,6 +639,7 @@ const FullComp = {
                             "name": "Adina",
                             "iconMiniId": 82686,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -599,6 +687,7 @@ const FullComp = {
                             "name": "Sabir",
                             "iconMiniId": 83551,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -631,6 +720,7 @@ const FullComp = {
                             "name": "Qadim 2",
                             "iconMiniId": 91232,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -693,6 +783,7 @@ const FullComp = {
                             "name": "Escort",
                             "iconMiniId": 78828,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Solo Cap",
@@ -730,6 +821,7 @@ const FullComp = {
                             "name": "Keep Construct",
                             "iconMiniId": 78890,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "1-1-2",
@@ -762,6 +854,7 @@ const FullComp = {
                             "name": "Xera",
                             "iconMiniId": 78815,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Mid",
@@ -794,6 +887,7 @@ const FullComp = {
                             "name": "Slothasor",
                             "iconMiniId": 77870,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -841,6 +935,7 @@ const FullComp = {
                             "name": "Trio",
                             "iconMiniId": 77820,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -878,6 +973,7 @@ const FullComp = {
                             "name": "Mathias",
                             "iconMiniId": 78815,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -920,6 +1016,7 @@ const FullComp = {
                             "name": "Cairn",
                             "iconMiniId": 80562,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -946,12 +1043,43 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Condi Supps",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Stability", "Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                         {
                             "name": "Mursaat Overseer",
                             "iconMiniId": 80224,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -978,12 +1106,43 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Condi Alac",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs", "Dispel"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["condition", "Alacrity", "Claim"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Protect"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                         {
                             "name": "Samarog",
                             "iconMiniId": 80218,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -1016,6 +1175,7 @@ const FullComp = {
                             "name": "Deimos",
                             "iconMiniId": 80327,
                             "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Melee",

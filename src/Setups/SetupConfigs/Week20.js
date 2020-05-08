@@ -13,6 +13,7 @@ const Week20 = {
                     "name": "Valeguardian",
                     "iconMiniId": 77334,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Center",
@@ -69,10 +70,36 @@ const Week20 = {
                 {
                     "name": "Gorseval",
                     "iconMiniId": 77296,
-                    "selectedSetup": 0,
+                    "selectedSetup": 1,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "No Updraft",
+                            "roles": [
+                                {
+                                    "profession": "Chronomancer",
+                                    "tasks": ["Quickness"],
+                                    "player": "Kalell"
+                                },
+                                {
+                                    "profession": "Tempest",
+                                    "tasks": ["Tank", "Heal", "Buffs"],
+                                    "player": "Shrotty"
+                                },
+                                {
+                                    "profession": "Renegade",
+                                    "tasks": ["Alacrity"],
+                                    "player": "Ely"
+                                },
+                                {
+                                    "profession": "Firebrand",
+                                    "tasks": ["Stability"],
+                                    "player": "Yasi"
+                                },
+                            ]
+                        },
+                        {
+                            "name": "No Updraft 2",
                             "roles": [
                                 {
                                     "profession": "Tempest",
@@ -106,10 +133,46 @@ const Week20 = {
                 {
                     "name": "Sabetha",
                     "iconMiniId": 77339,
-                    "selectedSetup": 0,
+                    "selectedSetup": 1,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
+                            "roles": [
+                                {
+                                    "profession": "Chronomancer",
+                                    "tasks": ["Quickness"],
+                                    "player": "Kalell"
+                                },
+                                {
+                                    "profession": "Tempest",
+                                    "tasks": ["Heal", "Buffs"],
+                                    "player": "Shrotty"
+                                },
+                                {
+                                    "profession": "Renegade",
+                                    "tasks": ["Alacrity"],
+                                    "player": "Ely"
+                                },
+                                {
+                                    "profession": "Scourge",
+                                    "tasks": ["Kiter"],
+                                    "player": "Assa"
+                                },
+                                {
+                                    "profession": "Berserker",
+                                    "tasks": ["Cannon 1 & 3"],
+                                    "player": "David"
+                                },
+                                {
+                                    "profession": "Firebrand",
+                                    "tasks": ["Cannon 2 & 4"],
+                                    "player": "Lumi"
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Condi Supps",
                             "roles": [
                                 {
                                     "profession": "Tempest",
@@ -164,6 +227,7 @@ const Week20 = {
                     "name": "Desmina",
                     "iconMiniId": 86076,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -206,6 +270,7 @@ const Week20 = {
                     "name": "River",
                     "iconMiniId": 85785,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -248,6 +313,7 @@ const Week20 = {
                     "name": "Statue of Ice",
                     "iconMiniId": 85667,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -280,6 +346,7 @@ const Week20 = {
                     "name": "Statue of Death",
                     /*"iconMiniId": 0,*/
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "0 - 5",
@@ -307,6 +374,7 @@ const Week20 = {
                     "name": "Statue of Darkness",
                     /*"iconMiniId": 0,*/
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Portal",
@@ -349,6 +417,7 @@ const Week20 = {
                     "name": "Dhuum",
                     "iconMiniId": 85998,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -401,6 +470,7 @@ const Week20 = {
                     "name": "Conjured Amalgamate",
                     /*"iconMiniId": 0,*/
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -443,6 +513,7 @@ const Week20 = {
                     "name": "Twin Largos",
                     "iconMiniId": 88868,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Portal",
@@ -480,6 +551,7 @@ const Week20 = {
                     "name": "Qadim",
                     "iconMiniId": 88587,
                     "selectedSetup": 1,
+                    "defaultSetup": 1,
                     "setups": [
                         {
                             "name": "Normal",
@@ -567,6 +639,7 @@ const Week20 = {
                     "name": "Adina",
                     "iconMiniId": 82686,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -614,6 +687,7 @@ const Week20 = {
                     "name": "Sabir",
                     "iconMiniId": 83551,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -646,6 +720,7 @@ const Week20 = {
                     "name": "Qadim 2",
                     "iconMiniId": 91232,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -708,6 +783,7 @@ const Week20 = {
                     "name": "Escort",
                     "iconMiniId": 78828,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Solo Cap",
@@ -745,6 +821,7 @@ const Week20 = {
                     "name": "Keep Construct",
                     "iconMiniId": 78890,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "1-1-2",
@@ -777,6 +854,7 @@ const Week20 = {
                     "name": "Xera",
                     "iconMiniId": 78815,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Mid",
@@ -809,6 +887,7 @@ const Week20 = {
                     "name": "Slothasor",
                     "iconMiniId": 77870,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -856,6 +935,7 @@ const Week20 = {
                     "name": "Trio",
                     "iconMiniId": 77820,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -893,6 +973,7 @@ const Week20 = {
                     "name": "Mathias",
                     "iconMiniId": 78815,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -934,10 +1015,36 @@ const Week20 = {
                 {
                     "name": "Cairn",
                     "iconMiniId": 80562,
-                    "selectedSetup": 0,
+                    "selectedSetup": 1,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Center",
+                            "roles": [
+                                {
+                                    "profession": "Chronomancer",
+                                    "tasks": ["Quickness"],
+                                    "player": "Kalell"
+                                },
+                                {
+                                    "profession": "Tempest",
+                                    "tasks": ["Heal", "Buffs"],
+                                    "player": "Shrotty"
+                                },
+                                {
+                                    "profession": "Renegade",
+                                    "tasks": ["Alacrity"],
+                                    "player": "Ely"
+                                },
+                                {
+                                    "profession": "Firebrand",
+                                    "tasks": ["Some Quickness", "Stability"],
+                                    "player": "Yasi"
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Condi Supps",
                             "roles": [
                                 {
                                     "profession": "Tempest",
@@ -971,10 +1078,36 @@ const Week20 = {
                 {
                     "name": "Mursaat Overseer",
                     "iconMiniId": 80224,
-                    "selectedSetup": 0,
+                    "selectedSetup": 1,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
+                            "roles": [
+                                {
+                                    "profession": "Thief",
+                                    "tasks": ["Boons"],
+                                    "player": "Assa"
+                                },
+                                {
+                                    "profession": "Tempest",
+                                    "tasks": ["Heal", "Buffs", "Dispel"],
+                                    "player": "Shrotty"
+                                },
+                                {
+                                    "profession": "Renegade",
+                                    "tasks": ["Alacrity", "Claim"],
+                                    "player": "Ely"
+                                },
+                                {
+                                    "profession": "Berserker",
+                                    "tasks": ["Protect"],
+                                    "player": "David"
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Condi Alac",
                             "roles": [
                                 {
                                     "profession": "Thief",
@@ -1009,6 +1142,7 @@ const Week20 = {
                     "name": "Samarog",
                     "iconMiniId": 80218,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Normal",
@@ -1041,6 +1175,7 @@ const Week20 = {
                     "name": "Deimos",
                     "iconMiniId": 80327,
                     "selectedSetup": 0,
+                    "defaultSetup": 0,
                     "setups": [
                         {
                             "name": "Melee",
