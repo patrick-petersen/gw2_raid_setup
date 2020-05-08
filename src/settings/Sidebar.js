@@ -46,16 +46,16 @@ class Sidebar extends Component {
                 submenu =
                     <ul>
                         {this.props.namedSetups.map(setup => {
-                            return <li><Link to={"/" + setup.shortcut}>{setup.name}</Link></li>
+                            return <li key={setup.shortcut}><Link to={"/" + setup.shortcut}>{setup.name}</Link></li>
                         })}
                     </ul>;
                 break;
             case "Week":
                 submenu =
                     <ul>
-                        <li><Link to={"/" + this.props.currentWeek}>Current Week</Link></li>
+                        <li key={"currentWeek"}><Link to={"/" + this.props.currentWeek}>Current Week</Link></li>
                         {this.props.weeklySetups.map(setup => {
-                            return <li><Link to={"/" + setup.week}>Week {setup.week}</Link></li>
+                            return <li key={setup.week}><Link to={"/" + setup.week}>Week {setup.week}</Link></li>
                         })}
                     </ul>;
             break;
@@ -69,7 +69,8 @@ class Sidebar extends Component {
                 <div className={"menu-selector"}>
                     {menus.map(menu => {
                         return <span onClick={() => this.selectSubmenu(menu)}
-                            className={"selector" + (menu === this.state.selected?" active":"")}>
+                            className={"selector" + (menu === this.state.selected?" active":"")}
+                        key={menu}>
                             {menu}
                         </span>;
                     })}
