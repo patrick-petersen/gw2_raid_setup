@@ -21,6 +21,7 @@ import {
 } from "react-router-dom";
 import WeeklySetup from "./Setups/WeeklySetup";
 import SetupRenderer from "./Setups/SetupRenderer";
+import Week20 from "./Setups/SetupConfigs/Week20";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
@@ -32,6 +33,10 @@ const weeklySetups = [
     {
         week: 18,
         setup: Week18,
+    },
+    {
+        week: 20,
+        setup: Week20,
     },
 ];
 
