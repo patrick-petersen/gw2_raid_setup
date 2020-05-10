@@ -22,6 +22,7 @@ import {
 import WeeklySetup from "./Setups/WeeklySetup";
 import SetupRenderer from "./Setups/SetupRenderer";
 import Week20 from "./Setups/SetupConfigs/Week20";
+import League01 from "./Setups/SetupConfigs/League01";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
@@ -60,6 +61,11 @@ const namedSetups = [
         name: "Qadim no CC",
         shortcut: "qadim",
         setup: QadimCC,
+    },
+    {
+        name: "Silver League",
+        shortcut: "league",
+        setup: League01,
     },
 ];
 
