@@ -2,11 +2,18 @@
 .boss {
     .setupSelector {
 
+        &.closed.changed {
+            .setup-name {
+                background-color: #ffc135;
+            }
+        }
+
         .setup {
             display: flex;
             flex-direction: row;
             flex-wrap: nowrap;
             justify-content: flex-start;
+            overflow: hidden;
 
             &.inactive {
                 display: none;
@@ -29,26 +36,23 @@
                 }
             }
         }
-
-        &.changed {
-            .setup-name {
-                background-color: #ffc135;
-            }
-        }
     }
 
     &.big {
-        .setupSelector.closed {
-            .setup.active {
-                border-bottom-left-radius: 25px;
-                border-bottom-right-radius: 25px;
-            }
-        }
-        .setupSelector.open {
-            .setup.active {
-                &:last-child {
+        .setupSelector {
+
+            &.closed {
+                .setup.active {
                     border-bottom-left-radius: 25px;
                     border-bottom-right-radius: 25px;
+                }
+            }
+            &.open {
+                .setup.active {
+                    &:last-child {
+                        border-bottom-left-radius: 25px;
+                        border-bottom-right-radius: 25px;
+                    }
                 }
             }
         }
