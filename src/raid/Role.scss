@@ -17,6 +17,10 @@
     }
     .profession {
         height: 54px;
+        vertical-align: middle;
+        display: inline-flex;
+        justify-content: space-around;
+        flex-direction: column;
 
         img {
             height: 50px;
