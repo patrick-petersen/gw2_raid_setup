@@ -15,8 +15,12 @@
     .task, .profession, .player {
 
     }
-    .profession img {
-        height: 50px;
+    .profession {
+        height: 54px;
+
+        img {
+            height: 50px;
+        }
     }
     .player {
         cursor: pointer;
