@@ -57,14 +57,19 @@ export default class HistoryManager {
             return wingValue.bosses.map((bossValue, bossIndex) => {
                 const selectedSetup = bossValue.selectedSetup;
                 const roles = bossValue.setups[selectedSetup].roles;
-                const decoded = "" + (parseInt(selectedSetup)+1) + roles.map((roleValue, roleIndex) => {
+                const decoded = "" + (this.stringToInt(selectedSetup) + 1n) + roles.map((roleValue, roleIndex) => {
                     const player = (roleValue.hasOwnProperty("replacement")?roleValue.replacement:roleValue.player);
                     return this._playerSettings.players.indexOf(player);
                 }).reduce(concatWith(""));
-                const encoded = Base64.fromInt(parseInt(decoded));
+                const encoded = Base64.fromBigInt(this.stringToInt(decoded));
                 return encoded;
             }).reduce(concatWith(";"));
         }).reduce(concatWith(";"));
+    }
+
+    stringToInt(string) {
+        // eslint-disable-next-line
+        return BigInt(string);
     }
     
     updateListFromUrl(url) {
@@ -73,7 +78,7 @@ export default class HistoryManager {
         let wingIndex = 0;
         let bossIndex = 0;
         encounters.forEach((value, index) => {
-            const decodedValue = Base64.toInt(value).toString();
+            const decodedValue = Base64.toBigInt(value).toString();
             const roles = decodedValue.substring(1);
             const selectedSetup = parseInt(decodedValue.charAt(0)) - 1;
             const wing = this._list[wingIndex];
@@ -137,6 +142,10 @@ const Base64 = (function () {
     for (var i = 0; i < digits.length; i++) {
         digitsMap[digits[i]] = i;
     }
+    var digitsMap64 = {};
+    for (var i = 0n; i < digits.length; i++) {
+        digitsMap64[digits[i]] = i;
+    }
     return {
         fromInt: function(int32) {
             var result = '';
@@ -153,6 +162,24 @@ const Base64 = (function () {
             var digits = digitsStr.split('');
             for (var i = 0; i < digits.length; i++) {
                 result = (result << 6) + digitsMap[digits[i]];
+            }
+            return result;
+        },
+        fromBigInt: function(int64) {
+            var result = '';
+            while (true) {
+                result = digits[int64 & 0x3fn] + result;
+                int64 >>= 6n;
+                if (int64 === 0n)
+                    break;
+            }
+            return result;
+        },
+        toBigInt: function(digitsStr) {
+            var result = 0n;
+            var digits = digitsStr.split('');
+            for (var i = 0; i < digits.length; i++) {
+                result = (result << 6n) + digitsMap64[digits[i]];
             }
             return result;
         }
