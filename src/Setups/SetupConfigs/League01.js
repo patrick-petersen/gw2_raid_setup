@@ -16,62 +16,12 @@ const League01 = {
                     "defaultSetup": 0,
                     "setups": [
                         {
-                            "name": "3 Shrooms",
+                            "name": "2 Shrooms",
                             "roles": [
                                 {
-                                    "profession": "Firebrand",
-                                    "tasks": ["Quickness", "Stability"],
-                                    "player": "Assa"
-                                },
-                                {
-                                    "profession": "Firebrand",
-                                    "tasks": ["Quickness", "Stability"],
-                                    "player": "Yasi"
-                                },
-                                {
-                                    "profession": "Tempest",
-                                    "tasks": ["Heal", "Buffs"],
-                                    "player": "Shrotty"
-                                },
-                                {
-                                    "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
-                                    "player": "Ely"
-                                },
-                                {
-                                    "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
+                                    "profession": "Chronomancer",
+                                    "tasks": ["Quickness", "CC"],
                                     "player": "Kalell"
-                                },
-                                {
-                                    "profession": "Berserker",
-                                    "tasks": ["Mushroom 1"],
-                                    "player": "David"
-                                },
-                                {
-                                    "profession": "DPS",
-                                    "tasks": ["Mushroom 2"],
-                                    "player": "Nevra"
-                                },
-                                {
-                                    "profession": "DPS",
-                                    "tasks": ["Mushroom 3"],
-                                    "player": "Lumi"
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Druid 2 Shrooms",
-                            "roles": [
-                                {
-                                    "profession": "Firebrand",
-                                    "tasks": ["Quickness", "Stability"],
-                                    "player": "Assa"
-                                },
-                                {
-                                    "profession": "Firebrand",
-                                    "tasks": ["Quickness", "Stability"],
-                                    "player": "Yasi"
                                 },
                                 {
                                     "profession": "Druid",
@@ -79,24 +29,99 @@ const League01 = {
                                     "player": "Shrotty"
                                 },
                                 {
+                                    "profession": "Berserker",
+                                    "tasks": ["1 Banner", "CC"],
+                                    "player": "David"
+                                },
+                                {
+                                    "profession": "Berserker",
+                                    "tasks": ["1 Banner", "CC", "Mushroom 2"],
+                                    "player": "Lumi"
+                                },
+                                {
+                                    "profession": "Daredevil",
+                                    "tasks": ["Mushroom 1", "Condi Clear"],
+                                    "player": "Nevra"
+                                },
+                                {
                                     "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
+                                    "tasks": ["Alacrity", "CC"],
                                     "player": "Ely"
                                 },
                                 {
-                                    "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
+                                    "player": "Yasi"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
+                                    "player": "Alex"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
+                                    "player": "Fynn"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
+                                    "player": "Assa"
+                                },
+                            ]
+                        },
+                        {
+                            "name": "2 Shrooms wih DH",
+                            "roles": [
+                                {
+                                    "profession": "Chronomancer",
+                                    "tasks": ["Quickness", "CC"],
                                     "player": "Kalell"
                                 },
                                 {
-                                    "profession": "DPS",
+                                    "profession": "Druid",
+                                    "tasks": ["Heal", "Buffs", "Spirits"],
+                                    "player": "Shrotty"
+                                },
+                                {
+                                    "profession": "Berserker",
+                                    "tasks": ["1 Banner", "CC"],
+                                    "player": "David"
+                                },
+                                {
+                                    "profession": "Berserker",
+                                    "tasks": ["1 Banner", "CC", "Mushroom 2"],
+                                    "player": "Lumi"
+                                },
+                                {
+                                    "profession": "Dragonhunter",
                                     "tasks": ["Mushroom 1"],
                                     "player": "Nevra"
                                 },
                                 {
-                                    "profession": "DPS",
-                                    "tasks": ["Mushroom 2"],
-                                    "player": "Lumi"
+                                    "profession": "Renegade",
+                                    "tasks": ["Alacrity", "CC"],
+                                    "player": "Ely"
+                                },
+                                {
+                                    "profession": "Dragonhunter",
+                                    "tasks": ["DPS"],
+                                    "player": "Yasi"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
+                                    "player": "Alex"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
+                                    "player": "Fynn"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
+                                    "player": "Assa"
                                 },
                             ]
                         },
@@ -122,98 +147,48 @@ const League01 = {
                                     "player": "Kalell"
                                 },
                                 {
-                                    "profession": "Firebrand",
-                                    "tasks": ["Quickness"],
-                                    "player": "Yasi"
-                                },
-                                {
-                                    "profession": "Tempest",
-                                    "tasks": ["Heal", "Buffs"],
+                                    "profession": "Druid",
+                                    "tasks": ["Heal", "Buffs", "Spirits"],
                                     "player": "Shrotty"
                                 },
                                 {
-                                    "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
-                                    "player": "Ely"
+                                    "profession": "Berserker",
+                                    "tasks": ["Banner"],
+                                    "player": "Lumi"
+                                },
+                                {
+                                    "profession": "Chronomancer",
+                                    "tasks": ["DPS", "Signet"],
+                                    "player": "Nevra"
+                                },
+                                {
+                                    "profession": "Firebrand",
+                                    "tasks": ["Quickness", "Aegis"],
+                                    "player": "Yasi"
                                 },
                                 {
                                     "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
+                                    "tasks": ["Alacrity"],
+                                    "player": "Ely"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
                                     "player": "Assa"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
+                                    "player": "Fynn"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS"],
+                                    "player": "Alex"
                                 },
                                 {
                                     "profession": "Revenant",
                                     "tasks": ["Handkiter"],
-                                    "player": "David"
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Melee no hk",
-                            "roles": [
-                                {
-                                    "profession": "Firebrand",
-                                    "tasks": ["Tank", "Quickness", "Aegis"],
-                                    "player": "Kalell"
-                                },
-                                {
-                                    "profession": "Firebrand",
-                                    "tasks": ["Quickness"],
-                                    "player": "Yasi"
-                                },
-                                {
-                                    "profession": "Tempest",
-                                    "tasks": ["Heal", "Buffs"],
-                                    "player": "Shrotty"
-                                },
-                                {
-                                    "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
-                                    "player": "Ely"
-                                },
-                                {
-                                    "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
-                                    "player": "Assa"
-                                },
-                                {
-                                    "profession": "Berserker",
-                                    "tasks": ["Banner"],
-                                    "player": "David"
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Melee & Druid",
-                            "roles": [
-                                {
-                                    "profession": "Firebrand",
-                                    "tasks": ["Tank", "Quickness", "Aegis"],
-                                    "player": "Kalell"
-                                },
-                                {
-                                    "profession": "Firebrand",
-                                    "tasks": ["Quickness"],
-                                    "player": "Yasi"
-                                },
-                                {
-                                    "profession": "Druid",
-                                    "tasks": ["Heal", "Buffs", "Spirits", "HK"],
-                                    "player": "Shrotty"
-                                },
-                                {
-                                    "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
-                                    "player": "Ely"
-                                },
-                                {
-                                    "profession": "Renegade",
-                                    "tasks": ["Condition", "Alacrity"],
-                                    "player": "Assa"
-                                },
-                                {
-                                    "profession": "Berserker",
-                                    "tasks": ["Banner"],
                                     "player": "David"
                                 },
                             ]
