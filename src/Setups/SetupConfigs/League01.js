@@ -12,7 +12,7 @@ const League01 = {
                 {
                     "name": "Slothasor",
                     "iconMiniId": 77870,
-                    "selectedSetup": 0,
+                    "selectedSetup": 2,
                     "defaultSetup": 0,
                     "setups": [
                         {
@@ -122,6 +122,61 @@ const League01 = {
                                     "profession": "Soulbeast",
                                     "tasks": ["DPS"],
                                     "player": "Assa"
+                                },
+                            ]
+                        },
+                        {
+                            "name": "2 Shrooms full DH",
+                            "roles": [
+                                {
+                                    "profession": "Chronomancer",
+                                    "tasks": ["Quickness", "CC"],
+                                    "player": "Kalell"
+                                },
+                                {
+                                    "profession": "Druid",
+                                    "tasks": ["Heal", "Buffs", "Spirits"],
+                                    "player": "Shrotty"
+                                },
+                                {
+                                    "profession": "Berserker",
+                                    "tasks": ["1 Banner", "CC", "Mushroom 1"],
+                                    "player": "David"
+                                },
+                                {
+                                    "profession": "Berserker",
+                                    "tasks": ["1 Banner", "CC", "Mushroom 2"],
+                                    "player": "Lumi"
+                                },
+                                {
+                                    "profession": "Renegade",
+                                    "tasks": ["Alacrity", "CC"],
+                                    "player": "Ely"
+                                },
+                                {
+                                    "profession": "Dragonhunter",
+                                    "tasks": ["DPS"],
+                                    "player": "Nevra"
+                                },
+                                {
+                                    "profession": "Dragonhunter",
+                                    "tasks": ["DPS"],
+                                    "player": "Yasi"
+                                },
+                                {
+                                    "profession": "Dragonhunter",
+                                    "tasks": ["DPS"],
+                                    "player": "Alex"
+                                },
+                                {
+                                    "profession": "Dragonhunter",
+                                    "tasks": ["DPS"],
+                                    "player": "Assa"
+                                },
+                                {
+                                    "profession": "Soulbeast",
+                                    "tasks": ["DPS", "Stance Share"],
+                                    "player": "Fynn"
                                 },
                             ]
                         },
