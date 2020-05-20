@@ -133,8 +133,8 @@ const FullComp = {
                         {
                             "name": "Sabetha",
                             "iconMiniId": 77339,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -972,8 +972,8 @@ const FullComp = {
                         {
                             "name": "Mathias",
                             "iconMiniId": 78815,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -997,6 +997,41 @@ const FullComp = {
                                             "profession": "Scourge",
                                             "tasks": ["Healing", "Reviving"],
                                             "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Mirage",
+                                            "tasks": ["Reflect"],
+                                            "player": "Nevra"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Condi Supps",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Healing", "Reviving"],
+                                            "player": "Yasi"
                                         },
                                         {
                                             "profession": "Mirage",
@@ -1078,8 +1113,8 @@ const FullComp = {
                         {
                             "name": "Mursaat Overseer",
                             "iconMiniId": 80224,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -1121,12 +1156,12 @@ const FullComp = {
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["condition", "Alacrity", "Claim"],
+                                            "tasks": ["Condition", "Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["Condition", "Alacrity"],
+                                            "tasks": ["Condition", "Alacrity", "Claim"],
                                             "player": "Kalell"
                                         },
                                         {
