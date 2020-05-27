@@ -70,7 +70,7 @@ const FullComp = {
                         {
                             "name": "Gorseval",
                             "iconMiniId": 77296,
-                            "selectedSetup": 0,
+                            "selectedSetup": 2,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -99,7 +99,7 @@ const FullComp = {
                                     ]
                                 },
                                 {
-                                    "name": "No Updraft 2",
+                                    "name": "Condi Supps",
                                     "roles": [
                                         {
                                             "profession": "Tempest",
@@ -125,6 +125,46 @@ const FullComp = {
                                             "profession": "Renegade",
                                             "tasks": ["Condition", "Alacrity"],
                                             "player": "Ely"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Condi qFB",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Stability", "Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["DPS", "CC"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["DPS", "CC"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner", "CC"],
+                                            "player": "David"
                                         },
                                     ]
                                 },
@@ -791,7 +831,8 @@ const FullComp = {
                                         {
                                             "profession": "Mirage",
                                             "tasks": ["Solo Cap"],
-                                            "player": "Kalell"
+                                            "player": "Kalell",
+                                            "replacement": "Fynn"
                                         },
                                         {
                                             "profession": "Tempest",
@@ -848,6 +889,36 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Boonthief",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons", "CC", "Pull"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Tank", "Heal", "Buffs", "Pusher"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["DPS", "CC"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["DPS", "CC", "Pull"],
+                                            "player": "Lumi"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                         {
@@ -873,6 +944,46 @@ const FullComp = {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
                                             "player": "Ely"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Condi Supps",
+                                    "roles": [
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banners", "CC"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Chronomander",
+                                            "tasks": ["DPS", "Pull"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity", "Condition"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity", "Condition"],
+                                            "player": "Kalell"
                                         },
                                     ]
                                 },
@@ -1050,7 +1161,7 @@ const FullComp = {
                         {
                             "name": "Cairn",
                             "iconMiniId": 80562,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -1063,6 +1174,31 @@ const FullComp = {
                                         },
                                         {
                                             "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness", "Stability"],
+                                            "player": "Yasi"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Center Druid",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
                                             "tasks": ["Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
@@ -1108,12 +1244,42 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Druid + Condi Supps",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Stability", "Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                         {
                             "name": "Mursaat Overseer",
                             "iconMiniId": 80224,
-                            "selectedSetup": 1,
+                            "selectedSetup": 2,
                             "defaultSetup": 1,
                             "setups": [
                                 {
@@ -1171,16 +1337,46 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Druid + Condi Alac",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs", "Dispel"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity", "Claim"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner", "Protect"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                         {
                             "name": "Samarog",
                             "iconMiniId": 80218,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "defaultSetup": 0,
                             "setups": [
                                 {
-                                    "name": "Normal",
+                                    "name": "Tempest",
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
@@ -1204,12 +1400,52 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Druid",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Pull"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner", "CC", "Extra Push"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["DPS", "CC"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["DPS", "CC"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["DPS", "CC"],
+                                            "player": "Lumi"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                         {
                             "name": "Deimos",
                             "iconMiniId": 80327,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -1222,6 +1458,41 @@ const FullComp = {
                                         },
                                         {
                                             "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs", "Black-kiter"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Revenant",
+                                            "tasks": ["Handkiter"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Druid, Melee",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
                                             "tasks": ["Heal", "Buffs", "Black-kiter"],
                                             "player": "Shrotty"
                                         },
