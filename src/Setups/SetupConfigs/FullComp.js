@@ -923,7 +923,7 @@ const FullComp = {
                         {
                             "name": "Xera",
                             "iconMiniId": 78815,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -970,7 +970,7 @@ const FullComp = {
                                             "player": "David"
                                         },
                                         {
-                                            "profession": "Chronomander",
+                                            "profession": "Chronomancer",
                                             "tasks": ["DPS", "Pull"],
                                             "player": "Lumi"
                                         },
