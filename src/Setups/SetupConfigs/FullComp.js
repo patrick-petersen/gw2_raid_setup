@@ -831,8 +831,7 @@ const FullComp = {
                                         {
                                             "profession": "Mirage",
                                             "tasks": ["Solo Cap"],
-                                            "player": "Kalell",
-                                            "replacement": "Fynn"
+                                            "player": "Kalell"
                                         },
                                         {
                                             "profession": "Tempest",
