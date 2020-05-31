@@ -23,9 +23,6 @@ class Role extends Component {
         this.insertReplacementName = this.insertReplacementName.bind(this);
     }
 
-    componentDidMount() {
-    }
-
     openPlayerSelect() {
         this.setState({
             playerSelection: true

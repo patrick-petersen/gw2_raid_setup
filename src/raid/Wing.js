@@ -15,16 +15,7 @@ class Wing extends Component {
         return (
             <article className={"wing"}>
                 <div className={"wing-name-wrapper"}><span className={"wing-name"}>Raid: {wingValue.name}</span></div>
-                    {
-                        wingValue.bosses.map((bossValue, bossIndex) => {
-                            if(!bossValue.hidden) {
-                                return (<Boss bossValue={bossValue} playerSettings={this.props.playerSettings}
-                                              onChange={this.props.onChange} key={bossValue.name}
-                                              big={this.props.big} bigTime={this.props.bigTime}
-                                              cheatString={JSON.stringify(bossValue)}></Boss>);
-                            }
-                        }
-                    )}
+                {this.props.children}
             </article>
         )
     }

@@ -44,6 +44,7 @@ class Boss extends Component {
                 <span className={"boss-name"} onClick={this.toggleSize}>{bossValue.name}</span>
                 <SetupSelector bossValue={bossValue} onChange={this.props.onChange} cheatString={JSON.stringify(bossValue)}
                                playerSettings={this.props.playerSettings}>
+                    {this.props.children}
                 </SetupSelector>
             </section>
         )

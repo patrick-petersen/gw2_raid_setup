@@ -18,25 +18,6 @@ class SetupSelector extends Component {
         this.openSetupSelect = this.openSetupSelect.bind(this);
         this.selectSetup = this.selectSetup.bind(this);
         this.childClick = this.childClick.bind(this);
-        this.wantToChangePlayerCallback = this.wantToChangePlayerCallback.bind(this);
-        this.wantToShowChangePlayerCallback = this.wantToShowChangePlayerCallback.bind(this);
-    }
-
-
-    wantToChangePlayerCallback(setup) {
-        return (role) => {
-            return (fromPlayer, toPlayer) => {
-                return true;
-            }
-        }
-    }
-
-    wantToShowChangePlayerCallback(setup) {
-        return (role) => {
-            return () => {
-                return !this.state.setupSelection;
-            }
-        }
     }
 
     openSetupSelect() {
@@ -89,16 +70,7 @@ class SetupSelector extends Component {
 
     render() {
         const bossValue = this.props.bossValue;
-        const setups =  bossValue.setups.map((setupValue, setupIndex) => {
-            if(!setupValue.hidden) {
-                return (<Setup setupValue={setupValue} playerSettings={this.props.playerSettings}
-                               onChange={this.props.onChange} key={setupValue.name}
-                               cheatString={JSON.stringify(setupValue)}
-                               wantToChangePlayer={this.wantToChangePlayerCallback(setupIndex)}
-                               wantToShowChangePlayer={this.wantToShowChangePlayerCallback(setupIndex)}>
-                </Setup>);
-            }
-        });
+        const setups =  this.props.children;
 
         const isDefaultSetup = !(bossValue.hasOwnProperty("defaultSetup")
             && (bossValue.defaultSetup != this.state.selectedSetup));

@@ -17,15 +17,7 @@ class Setup extends Component {
         const setupValue = this.props.setupValue;
         return (
             <div className={"setup-roles"}>
-                {
-                    setupValue.roles.map((roleValue, roleIndex) => {
-                        if(!roleValue.hidden) {
-                            return (<Role roleValue={roleValue} playerSettings={this.props.playerSettings}
-                                            onChange={this.props.onChange} key={roleValue.player}
-                                            cheatString={JSON.stringify(roleValue)}></Role>);
-                        }
-                    })
-                }
+                {this.props.children}
             </div>
         )
     }

@@ -2,6 +2,9 @@ import Wing from "../raid/Wing";
 import React, {Component} from "react";
 import HistoryManager from "../helper/HistoryManager";
 import PlayerSelection from "../settings/PlayerSelection";
+import Boss from "../raid/Boss";
+import Setup from "../raid/Setup";
+import Role from "../raid/Role";
 
 
 class SetupRenderer extends Component {
@@ -49,15 +52,52 @@ class SetupRenderer extends Component {
         console.log("rendering", this.state.list);
         const big = this.props.big;
         const bigTime = this.props.bigTime;
-        return [<PlayerSelection playerSettings={this.props.playerSettings}
+        const onChange = this.listChanged;
+        const playerSettings = this.props.playerSettings;
+
+        return [<PlayerSelection playerSettings={playerSettings}
                                  filterListCallback={this.filterListCallback} key={"settings"}></PlayerSelection>,
             this.state.list.map((wingValue, wingIndex) => {
                 console.log("Wing: hidden?", wingValue.hidden);
                 if(!wingValue.hidden) {
-                    return (<Wing wingValue={wingValue} playerSettings={this.props.playerSettings}
-                                  onChange={this.listChanged} key={wingValue.name}
-                                  big={big} bigTime={bigTime}
-                                  cheatString={JSON.stringify(wingValue)}></Wing>);
+                    return (
+                        <Wing wingValue={wingValue} playerSettings={playerSettings}
+                                  onChange={onChange} key={wingValue.name}
+                                  big={big} bigTime={bigTime}>
+                            {
+                                wingValue.bosses.map((bossValue, bossIndex) => {
+                                        if(!bossValue.hidden) {
+                                            return (<Boss bossValue={bossValue} playerSettings={playerSettings}
+                                                          onChange={onChange} key={bossValue.name}
+                                                          big={big} bigTime={bigTime}>
+                                                {
+                                                    bossValue.setups.map((setupValue, setupIndex) => {
+                                                        if(!setupValue.hidden) {
+                                                            return (<Setup setupValue={setupValue} playerSettings={playerSettings}
+                                                                           onChange={onChange} key={setupValue.name}>
+                                                                {
+                                                                    setupValue.roles.map((roleValue, roleIndex) => {
+                                                                        if(!roleValue.hidden) {
+                                                                            return (<Role roleValue={roleValue} playerSettings={playerSettings}
+                                                                                          onChange={onChange} key={roleValue.player}
+                                                                                          cheatString={JSON.stringify(roleValue)}>
+
+                                                                            </Role>);
+                                                                        }
+                                                                    })
+                                                                }
+
+                                                            </Setup>);
+                                                        }
+                                                    })
+                                                }
+
+                                            </Boss>);
+                                        }
+                                    }
+                                )
+                            }
+                    </Wing>);
                 }
         })];
     }
