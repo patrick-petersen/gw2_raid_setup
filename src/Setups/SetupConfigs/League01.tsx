@@ -1,5 +1,7 @@
+import {RaidSetup} from "./RaidSetup";
+import {Player} from "./DefaultPlayers";
 
-const League01 = {
+const League01 : RaidSetup<Player> = {
     "playerSettings": {
         "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
         "missing": [],

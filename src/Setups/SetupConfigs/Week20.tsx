@@ -1,5 +1,7 @@
+import {RaidSetup} from "./RaidSetup";
+import {Player} from "./DefaultPlayers";
 
-const Week20 = {
+const Week20 : RaidSetup<Player> = {
     "playerSettings": {
         "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
         "missing": [],

@@ -1,12 +1,7 @@
-interface Role {
-    profession: String;
-    tasks: String[];
-    player: String;
-    replacement?: String;
-}
+import {RaidSetup} from "./RaidSetup";
+import {Player} from "./DefaultPlayers";
 
-
-const DhuumCM = {
+const DhuumCM : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": [],
