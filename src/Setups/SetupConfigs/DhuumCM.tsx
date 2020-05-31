@@ -1,3 +1,10 @@
+interface Role {
+    profession: String;
+    tasks: String[];
+    player: String;
+    replacement?: String;
+}
+
 
 const DhuumCM = {
             "playerSettings": {
