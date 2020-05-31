@@ -1,10 +1,9 @@
-import React, {Component} from "react";
+import {Component} from "react";
+import * as React from "react";
 import functions from "../helper/functions";
 
-import LinkTo from "./LinkTo";
-import FullComp from "./SetupConfigs/FullComp";
 
-class GenericSetup extends Component {
+class GenericSetup extends Component<{id: number}> {
     render() {
         const week = this.props.id;
         const d = functions.getDateOfISOWeek(week, 2020);
