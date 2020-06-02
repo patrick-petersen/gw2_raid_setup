@@ -12,8 +12,8 @@ const FullComp = {
                         {
                             "name": "Valeguardian",
                             "iconMiniId": 77334,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -42,6 +42,31 @@ const FullComp = {
                                             "profession": "Soulbeast",
                                             "tasks": ["Seeker Root"],
                                             "player": "Assa"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "1 Root",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Seeker Root"],
+                                            "player": "Nevra"
                                         },
                                     ]
                                 },
@@ -1478,7 +1503,7 @@ const FullComp = {
                                         {
                                             "profession": "Berserker",
                                             "tasks": ["Banner"],
-                                            "player": "Assa"
+                                            "player": "Lumi"
                                         },
                                     ]
                                 },
@@ -1513,7 +1538,7 @@ const FullComp = {
                                         {
                                             "profession": "Berserker",
                                             "tasks": ["Banner"],
-                                            "player": "Assa"
+                                            "player": "Lumi"
                                         },
                                     ]
                                 },
