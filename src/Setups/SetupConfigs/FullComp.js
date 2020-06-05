@@ -856,7 +856,7 @@ const FullComp = {
                                         {
                                             "profession": "Mirage",
                                             "tasks": ["Solo Cap"],
-                                            "player": "Kalell"
+                                            "player": "Fynn"
                                         },
                                         {
                                             "profession": "Tempest",
@@ -885,8 +885,8 @@ const FullComp = {
                         {
                             "name": "Keep Construct",
                             "iconMiniId": 78890,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "1-1-2",
