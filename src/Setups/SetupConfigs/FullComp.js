@@ -95,7 +95,7 @@ const FullComp = {
                         {
                             "name": "Gorseval",
                             "iconMiniId": 77296,
-                            "selectedSetup": 2,
+                            "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -1186,7 +1186,7 @@ const FullComp = {
                             "name": "Cairn",
                             "iconMiniId": 80562,
                             "selectedSetup": 1,
-                            "defaultSetup": 0,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -1304,7 +1304,7 @@ const FullComp = {
                             "name": "Mursaat Overseer",
                             "iconMiniId": 80224,
                             "selectedSetup": 2,
-                            "defaultSetup": 1,
+                            "defaultSetup": 2,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -1397,7 +1397,7 @@ const FullComp = {
                             "name": "Samarog",
                             "iconMiniId": 80218,
                             "selectedSetup": 1,
-                            "defaultSetup": 0,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Tempest",
@@ -1470,7 +1470,7 @@ const FullComp = {
                             "name": "Deimos",
                             "iconMiniId": 80327,
                             "selectedSetup": 1,
-                            "defaultSetup": 0,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Melee",
