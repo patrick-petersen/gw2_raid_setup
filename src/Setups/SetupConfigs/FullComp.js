@@ -703,7 +703,7 @@ const FullComp = {
                         {
                             "name": "Adina",
                             "iconMiniId": 82686,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -728,6 +728,46 @@ const FullComp = {
                                             "profession": "Soulbeast",
                                             "tasks": ["Pillar"],
                                             "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Dragonhunter",
+                                            "tasks": ["Pillar"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Pillar"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Pillar"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Thief Tank",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons", "Tank"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Pillar"],
+                                            "player": "Lumi"
                                         },
                                         {
                                             "profession": "Dragonhunter",
