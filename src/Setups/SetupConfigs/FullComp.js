@@ -481,7 +481,7 @@ const FullComp = {
                         {
                             "name": "Dhuum",
                             "iconMiniId": 85998,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -520,6 +520,46 @@ const FullComp = {
                                         {
                                             "profession": "Firebrand",
                                             "tasks": ["First Green 2"],
+                                            "player": "Lumi"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Dual FB",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Green 1"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Kiter", "Green 2"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Green 3"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness", "First Green 2"],
                                             "player": "Lumi"
                                         },
                                     ]
@@ -1061,7 +1101,7 @@ const FullComp = {
                         {
                             "name": "Slothasor",
                             "iconMiniId": 77870,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -1104,16 +1144,71 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "DH",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Mushroom 1"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["CC", "DPS"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Dragonhunter",
+                                            "tasks": ["Mushroom 2"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Dragonhunter",
+                                            "tasks": ["Mushroom 3"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Dragonhunter",
+                                            "tasks": ["Mushroom 4"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Dragonhunter",
+                                            "tasks": ["DPS"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Stanceshare"],
+                                            "player": "Fynn"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                         {
                             "name": "Trio",
                             "iconMiniId": 77820,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "defaultSetup": 0,
                             "setups": [
                                 {
-                                    "name": "Normal",
+                                    "name": "Tempest",
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
@@ -1142,12 +1237,42 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Mortar"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Full Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Saboteur"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                         {
                             "name": "Mathias",
                             "iconMiniId": 78815,
-                            "selectedSetup": 1,
+                            "selectedSetup": 2,
                             "defaultSetup": 1,
                             "setups": [
                                 {
@@ -1190,6 +1315,41 @@ const FullComp = {
                                         },
                                         {
                                             "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Healing", "Reviving"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Mirage",
+                                            "tasks": ["Reflect"],
+                                            "player": "Nevra"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Condi Supps",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Druid",
                                             "tasks": ["Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
