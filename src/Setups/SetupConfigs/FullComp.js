@@ -95,8 +95,8 @@ const FullComp = {
                         {
                             "name": "Gorseval",
                             "iconMiniId": 77296,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 3,
+                            "defaultSetup": 3,
                             "setups": [
                                 {
                                     "name": "No Updraft",
@@ -193,13 +193,68 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Chronos",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs", "Entangle"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness", "Tank"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner", "CC"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Fynn"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
                         ]
                         },
                         {
                             "name": "Sabetha",
                             "iconMiniId": 77339,
-                            "selectedSetup": 1,
-                            "defaultSetup": 1,
+                            "selectedSetup": 2,
+                            "defaultSetup": 2,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -278,6 +333,61 @@ const FullComp = {
                                             "profession": "Firebrand",
                                             "tasks": ["Cannon 2 & 4"],
                                             "player": "Lumi"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Chronos",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner", "CC"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["cDPS", "Kiter"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "Quickness"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "Quickness"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "Quickness"],
+                                            "player": "Fynn"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS","Quickness"],
+                                            "player": "Assa"
                                         },
                                     ]
                                 },
@@ -965,8 +1075,8 @@ const FullComp = {
                         {
                             "name": "Keep Construct",
                             "iconMiniId": 78890,
-                            "selectedSetup": 1,
-                            "defaultSetup": 1,
+                            "selectedSetup": 2,
+                            "defaultSetup": 2,
                             "setups": [
                                 {
                                     "name": "1-1-2",
@@ -1023,13 +1133,68 @@ const FullComp = {
                                         },
                                     ]
                                 },
+                                {
+                                    "name": "Chronos",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner", "CC"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness", "Tank"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Fynn"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
                             ]
                         },
                         {
                             "name": "Xera",
                             "iconMiniId": 78815,
-                            "selectedSetup": 1,
-                            "defaultSetup": 0,
+                            "selectedSetup": 2,
+                            "defaultSetup": 2,
                             "setups": [
                                 {
                                     "name": "Mid",
@@ -1088,6 +1253,61 @@ const FullComp = {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity", "Condition"],
                                             "player": "Kalell"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Chronos",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs", "Tank"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner", "CC"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Fynn"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "player": "Assa"
                                         },
                                     ]
                                 },
