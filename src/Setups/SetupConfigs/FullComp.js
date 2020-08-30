@@ -202,8 +202,8 @@ const FullComp = {
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Tank"],
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
