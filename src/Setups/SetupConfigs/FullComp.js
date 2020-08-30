@@ -592,7 +592,7 @@ const FullComp = {
                             "name": "Dhuum",
                             "iconMiniId": 85998,
                             "selectedSetup": 1,
-                            "defaultSetup": 0,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -854,7 +854,7 @@ const FullComp = {
                             "name": "Adina",
                             "iconMiniId": 82686,
                             "selectedSetup": 1,
-                            "defaultSetup": 0,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -1322,7 +1322,7 @@ const FullComp = {
                             "name": "Slothasor",
                             "iconMiniId": 77870,
                             "selectedSetup": 1,
-                            "defaultSetup": 0,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -1424,7 +1424,7 @@ const FullComp = {
                         {
                             "name": "Trio",
                             "iconMiniId": 77820,
-                            "selectedSetup": 1,
+                            "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -1493,7 +1493,7 @@ const FullComp = {
                             "name": "Mathias",
                             "iconMiniId": 78815,
                             "selectedSetup": 2,
-                            "defaultSetup": 1,
+                            "defaultSetup": 2,
                             "setups": [
                                 {
                                     "name": "Normal",
