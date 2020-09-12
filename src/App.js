@@ -1,10 +1,10 @@
-import {Component} from 'react';
+import * as React from 'react';
 import './App.scss';
 
-import Setups from "./Setups.js";
+import Setups from "./Setups";
 
 
-class App extends Component {
+class App extends React.Component {
 
     render() {
         return (

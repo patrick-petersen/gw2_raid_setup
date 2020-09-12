@@ -1,12 +1,27 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import ItemIcon from "../helper/ItemIcon";
 
 import './Boss.scss';
 import SetupSelector from "./SetupSelector";
+import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 
-class Boss extends Component {
+type BossProps = {
+    big: boolean,
+    bigTime: number,
+    bossValue: RaidSetup.Boss<any>,
+    onChange: () => void,
+    playerSettings: RaidSetup.PlayerSettings<any>,
+    cheatString: string,
+}
 
-    constructor(props) {
+type BossState = {
+    big: boolean,
+    bigTime: number
+}
+
+class Boss extends React.Component<BossProps, BossState> {
+
+    constructor(props: BossProps) {
         super(props);
         this.state = {
             big: this.props.big,

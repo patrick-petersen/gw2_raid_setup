@@ -2,8 +2,8 @@ import {Component} from "react";
 import * as React from "react";
 
 type ItemIconProps = {
-    name: string
-    itemId: number
+    name?: string
+    itemId?: number
 }
 type Resolve = (value?: any) => void;
 

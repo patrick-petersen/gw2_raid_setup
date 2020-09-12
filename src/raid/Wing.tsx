@@ -1,9 +1,13 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import './Wing.scss';
-import Boss from './Boss';
+import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 
-class Wing extends Component {
-    constructor(props) {
+type WingProps = {
+    wingValue: RaidSetup.Wing<any>,
+}
+
+class Wing extends React.Component<WingProps> {
+    constructor(props : WingProps) {
         super(props);
         this.state = {
         }

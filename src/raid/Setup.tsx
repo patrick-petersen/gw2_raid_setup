@@ -1,12 +1,16 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 
 import './Setup.scss';
-import Role from "./Role";
+import {RaidSetup} from "../Setups/SetupConfigs/RaidSetup";
 
-class Setup extends Component {
+type SetupProps = {
+    setupValue: RaidSetup<any>
+}
+
+class Setup extends React.Component<SetupProps> {
     static setupStates = ["main-setup", "backup-setup", "missing-setup"];
 
-    constructor(props) {
+    constructor(props : SetupProps) {
         super(props);
         this.state = {
             setupState: Setup.setupStates[0],
@@ -14,7 +18,6 @@ class Setup extends Component {
     }
 
     render() {
-        const setupValue = this.props.setupValue;
         return (
             <div className={"setup-roles"}>
                 {this.props.children}

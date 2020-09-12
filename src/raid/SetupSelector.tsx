@@ -1,12 +1,26 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 
 import './SetupSelector.scss';
+import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 import Setup from "./Setup";
 
-class SetupSelector extends Component {
+type SetupSelectorProps = {
+    bossValue: RaidSetup.Boss<any>,
+    onChange: () => void,
+    cheatString?: string,
+    playerSettings: RaidSetup.PlayerSettings<any>,
+}
+
+type SetupSelectorState = {
+    setupState: string,
+    selectedSetup: number,
+    setupSelection: boolean,
+}
+
+class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorState> {
     static setupStates = ["main-setup", "backup-setup", "missing-setup"];
 
-    constructor(props) {
+    constructor(props: SetupSelectorProps) {
         super(props);
         this.state = {
             setupState: SetupSelector.setupStates[0],
@@ -30,7 +44,7 @@ class SetupSelector extends Component {
         }
     }
 
-    selectSetup(setupKey) {
+    selectSetup(setupKey: number) {
         console.log("selected: ", setupKey);
         this.setState({
             setupSelection: false,
@@ -40,7 +54,7 @@ class SetupSelector extends Component {
         this.props.onChange();
     }
 
-    childClick(setupKey) {
+    childClick(setupKey: number) {
         return (() => {
             console.log("childClick: ", setupKey);
             if(this.state.setupSelection) {
@@ -52,7 +66,7 @@ class SetupSelector extends Component {
         })
     }
 
-    renderSetup(child, index) {
+    renderSetup(child: Setup, index: number) {
         if(child) {
             return (
                 <div className={"setup " + this.state.setupState + (
@@ -81,13 +95,13 @@ class SetupSelector extends Component {
             + (this.state.setupSelection ? " open": " closed")
             + (isDefaultSetup ? " default" : " changed")}>
                 {
-                    React.Children.map(setups, (child, index) => {
+                    React.Children.map(setups, (child: Setup, index) => {
                         if(this.state.selectedSetup !== index) return null;
                         return this.renderSetup(child, index);
                     })
                 }
                 {
-                    React.Children.map(setups, (child, index) => {
+                    React.Children.map(setups, (child: Setup, index) => {
                         if(this.state.selectedSetup === index) return null;
                         return this.renderSetup(child, index);
                     })
