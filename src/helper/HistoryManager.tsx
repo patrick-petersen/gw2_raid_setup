@@ -10,7 +10,7 @@ export default class HistoryManager {
     _playerSettings : Settings;
     _list : List = [];
 
-    _onChangeCallbacks = [];
+    _onChangeCallbacks : ((list : List) => void)[] = [];
 
     constructor(list: List, playerSettings : Settings) {
         this._playerSettings = playerSettings;
@@ -25,7 +25,7 @@ export default class HistoryManager {
 
         this.updateListFromUrl(setup);
 
-        window.onpopstate = (event) => {
+        window.onpopstate = (event : PopStateEvent) => {
             console.log("location:", window.location.hash, "state:", event);
             const hash = window.location.hash.substr(1);
             const historyObject = event.state;
@@ -53,9 +53,12 @@ export default class HistoryManager {
     }
 
     generateUrlFromList(list : List) {
-        function concatWith(delimiter : string) {
-            return (total : string, currentValue : string, currentIndex : number)=> {
-                return total + "" + (currentIndex === 0?"":delimiter) + currentValue;
+        function concatWith(delimiter : string, finisher:(value: string) => any = (a)=>a) {
+            return (total : number | string,
+                    currentValue : number | string,
+                    currentIndex : number | string,
+                    array: number[] | string[])=> {
+                return finisher(total + "" + (currentIndex === 0?"":delimiter) + currentValue);
             }
         }
         
@@ -63,10 +66,11 @@ export default class HistoryManager {
             return wingValue.bosses.map((bossValue, bossIndex) => {
                 const selectedSetup = bossValue.selectedSetup;
                 const roles = bossValue.setups[selectedSetup].roles;
-                const decoded = "" + (this.stringToInt(selectedSetup) + 1n) + roles.map((roleValue, roleIndex) => {
-                    const player = (roleValue.hasOwnProperty("replacement")?roleValue.replacement:roleValue.player);
+                // @ts-ignore
+                const decoded = "" + (this.toBigInt(selectedSetup) + 1n) + roles.map((roleValue, roleIndex) => {
+                    const player : Player = (roleValue.hasOwnProperty("replacement")?roleValue.replacement:roleValue.player);
                     return this._playerSettings.players.indexOf(player);
-                }).reduce(concatWith(""));
+                }).reduce(concatWith(""), parseInt);
                 const encoded = Base64.fromBigInt(this.stringToInt(decoded));
                 return encoded;
             }).reduce(concatWith(";"));
@@ -76,6 +80,11 @@ export default class HistoryManager {
     stringToInt(string : string) {
         // eslint-disable-next-line
         return BigInt(string);
+    }
+
+    toBigInt(int : number) {
+        // eslint-disable-next-line
+        return BigInt(int);
     }
     
     updateListFromUrl(url : string) {
@@ -95,7 +104,7 @@ export default class HistoryManager {
             boss.selectedSetup = selectedSetup;
 
             for(let i = 0; i < roles.length; i++) {
-               const player = this._playerSettings.players[roles.charAt(i)];
+               const player = this._playerSettings.players[parseInt(roles.charAt(i))];
                if(rolesObject.length > i) {
                    rolesObject[i].replacement = player;
                }
@@ -117,7 +126,7 @@ export default class HistoryManager {
         this._onChangeCallbacks.forEach(value => value(this._list));
     }
 
-    addOnChangeCallback(callback) {
+    addOnChangeCallback(callback : (list : List) => void) {
         this._onChangeCallbacks.push(callback);
     }
 
@@ -145,13 +154,13 @@ const Base64 = (function () {
         //   v       v       v       v       v       v       v       v      v
         "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+-";
     const digits = digitsStr.split('');
-    let digitsMap = {};
+    let digitsMap : {[id: string] : number} = {};
     for (let i = 0; i < digits.length; i++) {
         digitsMap[digits[i]] = i;
     }
-    let digitsMap64 = {};
+    let digitsMap64 : {[id: string] : bigint}  = {};
     for (let i = 0n; i < digits.length; i++) {
-        digitsMap64[digits[i]] = i;
+        digitsMap64[digits[Number(i)]] = i;
     }
     return {
         fromInt: function(int32 : number) {
@@ -172,10 +181,10 @@ const Base64 = (function () {
             }
             return result;
         },
-        fromBigInt: function(int64 : number) {
+        fromBigInt: function(int64 : bigint) {
             var result = '';
             while (true) {
-                result = digits[int64 & 0x3fn] + result;
+                result = digits[Number(int64 & 0x3fn)] + result;
                 int64 >>= 6n;
                 if (int64 === 0n)
                     break;
