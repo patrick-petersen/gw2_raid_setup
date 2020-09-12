@@ -1,7 +1,9 @@
 import {RaidSetup} from "./RaidSetup";
 import {Player} from "./DefaultPlayers";
 
-const Marvin : RaidSetup<Player> = {
+export type Replacements = "Marvin";
+
+const Marvin : RaidSetup<Player | Replacements> = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": ["Lumi"],

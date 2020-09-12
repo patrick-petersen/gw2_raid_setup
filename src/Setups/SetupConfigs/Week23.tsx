@@ -1,7 +1,9 @@
 import {RaidSetup} from "./RaidSetup";
 import {Player} from "./DefaultPlayers";
 
-const FullComp : RaidSetup<Player> = {
+export type Replacements = "nafis";
+
+const FullComp : RaidSetup<Player | Replacements> = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": ["Assa"],

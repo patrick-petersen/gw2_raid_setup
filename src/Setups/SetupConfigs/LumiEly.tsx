@@ -1,7 +1,10 @@
 import {RaidSetup} from "./RaidSetup";
 import {Player} from "./DefaultPlayers";
 
-const LumiEly : RaidSetup<Player>= {
+
+export type Replacements = "Tasmosuth" | "Marvin";
+
+const LumiEly : RaidSetup<Player | Replacements>= {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": ["Lumi", "Ely"],

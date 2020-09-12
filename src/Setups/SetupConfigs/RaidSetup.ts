@@ -1,17 +1,17 @@
 export interface Role<Player> {
-    profession: String;
-    tasks: String[];
+    profession: string;
+    tasks: string[];
     player: Player;
-    replacement?: String;
+    replacement?: Player;
 }
 
 export interface Setup<Player> {
-    name: String;
+    name: string;
     roles: Role<Player>[];
 }
 
 export interface Boss<Player> {
-    name: String;
+    name: string;
     iconMiniId?: number;
     selectedSetup?: number;
     defaultSetup?: number;
@@ -19,14 +19,14 @@ export interface Boss<Player> {
 }
 
 export interface Wing<Player> {
-    name: String;
+    name: string;
     bosses: Boss<Player>[];
 }
 
 export interface PlayerSettings<Player> {
     players: Player[];
     missing: Player[];
-    replacements: object;
+    replacements: {[id: string] : Player};
 }
 
 export interface RaidSetup<Player> {
