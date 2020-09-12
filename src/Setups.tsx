@@ -25,6 +25,7 @@ import WeeklySetup from "./Setups/WeeklySetup";
 import SetupRenderer from "./Setups/SetupRenderer";
 import Week20 from "./Setups/SetupConfigs/Week20";
 import League01 from "./Setups/SetupConfigs/League01";
+import NewFullComp from "./Setups/SetupConfigs/NewFullComp_07-2020";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
@@ -68,6 +69,11 @@ const namedSetups = [
         name: "Silver League",
         shortcut: "league",
         setup: League01,
+    },
+    {
+        name: "New Setups",
+        shortcut: "new",
+        setup: NewFullComp,
     },
 ];
 

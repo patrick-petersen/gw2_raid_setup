@@ -1,17 +1,32 @@
-import React, {Component} from 'react';
+import {Component} from "react";
+import * as React from "react";
 
-class Profession extends Component {
+type Professions = {[id: string]: Resolve[]};
+type Promises = {[id: string]: Resolve[]};
+
+type Resolve = (value?: any) => void;
+
+type ProfessionState = {
+    loaded: boolean,
+    url: string
+}
+type ProfessionProps = {
+    name: string
+}
+
+class Profession extends Component<ProfessionProps> {
     static loading = false;
     static error = false;
-    static professions = {};
-    static promises = {};
+    static professions : Professions = {};
+    static promises : Promises = {};
 
-    constructor(props) {
+    state : ProfessionState = {
+        loaded: false,
+        url: "",
+    };
+
+    constructor(props: ProfessionProps) {
         super(props);
-        this.state = {
-            loaded: false,
-            url: "",
-        };
     }
 
     render() {
@@ -27,7 +42,7 @@ class Profession extends Component {
         }
     }
 
-    didLoadProfession(profession) {
+    didLoadProfession(profession: string) {
 
         let promise;
 
@@ -53,10 +68,10 @@ class Profession extends Component {
         return promise;
     }
 
-    resolvePromises(profession, url) {
+    resolvePromises(profession: string, url: string) {
         console.debug("resolving", profession, url);
         if(Profession.promises.hasOwnProperty(profession)) {
-            let current;
+            let current : Resolve;
             // eslint-disable-next-line
             while (current = Profession.promises[profession].pop())
             {
@@ -109,7 +124,7 @@ class Profession extends Component {
         }
     }
 
-    loadSpecs(ids) {
+    loadSpecs(ids : number[]) {
         for(let index in ids) {
             if(!ids.hasOwnProperty(index)) {
                 continue;

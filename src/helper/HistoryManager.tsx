@@ -1,12 +1,18 @@
+import {PlayerSettings, Wing} from "../Setups/SetupConfigs/RaidSetup";
+import {Player} from "../Setups/SetupConfigs/DefaultPlayers";
+
+type List = Wing<Player>[];
+type Settings = PlayerSettings<Player>;
+
 export default class HistoryManager {
     _startUrl = window.location.hash;
     _currentUrl = this._startUrl;
-    _playerSettings = {};
-    _list = [];
+    _playerSettings : Settings;
+    _list : List = [];
 
     _onChangeCallbacks = [];
 
-    constructor(list, playerSettings) {
+    constructor(list: List, playerSettings : Settings) {
         this._playerSettings = playerSettings;
         const hash = window.location.hash.substr(1);
 
@@ -41,14 +47,14 @@ export default class HistoryManager {
         };
     }
 
-    saveList(list) {
+    saveList(list : List) {
         this._list = list;
         this.listChanged();
     }
 
-    generateUrlFromList(list) {
-        function concatWith(delimiter) {
-            return (total, currentValue, currentIndex)=> {
+    generateUrlFromList(list : List) {
+        function concatWith(delimiter : string) {
+            return (total : string, currentValue : string, currentIndex : number)=> {
                 return total + "" + (currentIndex === 0?"":delimiter) + currentValue;
             }
         }
@@ -67,12 +73,12 @@ export default class HistoryManager {
         }).reduce(concatWith(";"));
     }
 
-    stringToInt(string) {
+    stringToInt(string : string) {
         // eslint-disable-next-line
         return BigInt(string);
     }
     
-    updateListFromUrl(url) {
+    updateListFromUrl(url : string) {
         if(url.length <= 1) return;
         const encounters = url.split(";");
         let wingIndex = 0;
@@ -115,7 +121,7 @@ export default class HistoryManager {
         this._onChangeCallbacks.push(callback);
     }
 
-    updateCurrentUrl(url) {
+    updateCurrentUrl(url : string) {
         this._currentUrl = url;
         const historyObject = {
             _currentUrl: this._currentUrl,
@@ -132,23 +138,24 @@ export default class HistoryManager {
 }
 
 //source: https://stackoverflow.com/a/27696695/2754830
+// rewritten for typescript
 const Base64 = (function () {
-    var digitsStr =
+    const digitsStr =
         //   0       8       16      24      32      40      48      56     63
         //   v       v       v       v       v       v       v       v      v
         "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+-";
-    var digits = digitsStr.split('');
-    var digitsMap = {};
-    for (var i = 0; i < digits.length; i++) {
+    const digits = digitsStr.split('');
+    let digitsMap = {};
+    for (let i = 0; i < digits.length; i++) {
         digitsMap[digits[i]] = i;
     }
-    var digitsMap64 = {};
-    for (var i = 0n; i < digits.length; i++) {
+    let digitsMap64 = {};
+    for (let i = 0n; i < digits.length; i++) {
         digitsMap64[digits[i]] = i;
     }
     return {
-        fromInt: function(int32) {
-            var result = '';
+        fromInt: function(int32 : number) {
+            let result = '';
             while (true) {
                 result = digits[int32 & 0x3f] + result;
                 int32 >>>= 6;
@@ -157,7 +164,7 @@ const Base64 = (function () {
             }
             return result;
         },
-        toInt: function(digitsStr) {
+        toInt: function(digitsStr : string) {
             var result = 0;
             var digits = digitsStr.split('');
             for (var i = 0; i < digits.length; i++) {
@@ -165,7 +172,7 @@ const Base64 = (function () {
             }
             return result;
         },
-        fromBigInt: function(int64) {
+        fromBigInt: function(int64 : number) {
             var result = '';
             while (true) {
                 result = digits[int64 & 0x3fn] + result;
@@ -175,7 +182,7 @@ const Base64 = (function () {
             }
             return result;
         },
-        toBigInt: function(digitsStr) {
+        toBigInt: function(digitsStr : string) {
             var result = 0n;
             var digits = digitsStr.split('');
             for (var i = 0; i < digits.length; i++) {

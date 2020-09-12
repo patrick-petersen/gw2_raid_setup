@@ -1,29 +1,29 @@
-interface Role<Player> {
+export interface Role<Player> {
     profession: String;
     tasks: String[];
     player: Player;
     replacement?: String;
 }
 
-interface Setup<Player> {
+export interface Setup<Player> {
     name: String;
     roles: Role<Player>[];
 }
 
-interface Boss<Player> {
+export interface Boss<Player> {
     name: String;
-    iconMiniId?: Number;
-    selectedSetup?: Number;
-    defaultSetup?: Number;
+    iconMiniId?: number;
+    selectedSetup?: number;
+    defaultSetup?: number;
     setups: Setup<Player>[];
 }
 
-interface Wing<Player> {
+export interface Wing<Player> {
     name: String;
     bosses: Boss<Player>[];
 }
 
-interface PlayerSettings<Player> {
+export interface PlayerSettings<Player> {
     players: Player[];
     missing: Player[];
     replacements: object;
