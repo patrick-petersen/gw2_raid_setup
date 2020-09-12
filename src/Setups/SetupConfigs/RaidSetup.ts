@@ -2,6 +2,7 @@ export interface Role<Player> {
     profession: string;
     tasks: string[];
     player: Player;
+    backups?: Player[];
     replacement?: Player;
 }
 
