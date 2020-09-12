@@ -4,6 +4,7 @@ import ItemIcon from "../helper/ItemIcon";
 import './Boss.scss';
 import SetupSelector from "./SetupSelector";
 import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
+import Setup from "./Setup";
 
 type BossProps = {
     big: boolean,
@@ -12,6 +13,7 @@ type BossProps = {
     onChange: () => void,
     playerSettings: RaidSetup.PlayerSettings<any>,
     cheatString: string,
+    children: Setup[],
 }
 
 type BossState = {
@@ -52,7 +54,7 @@ class Boss extends React.Component<BossProps, BossState> {
             <section className={"boss"
             + (big?" big" : " small")
             + (hasIcon?"":" no-icon")}>
-                {hasIcon
+                {bossValue.iconMiniId
                     ? <ItemIcon itemId={bossValue.iconMiniId} />
                     : null
                 }

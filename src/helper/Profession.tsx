@@ -52,7 +52,7 @@ class Profession extends Component<ProfessionProps> {
             });
         }
         else {
-            let outsideResolve;
+            let outsideResolve = () => {};
             //let outsideReject;
             promise = new Promise((resolve, reject) => {
                 outsideResolve = resolve;
@@ -71,8 +71,7 @@ class Profession extends Component<ProfessionProps> {
     resolvePromises(profession: string, url: string) {
         console.debug("resolving", profession, url);
         if(Profession.promises.hasOwnProperty(profession)) {
-            let current : Resolve;
-            // eslint-disable-next-line
+            let current : Resolve | undefined;
             while (current = Profession.promises[profession].pop())
             {
                 current(url);

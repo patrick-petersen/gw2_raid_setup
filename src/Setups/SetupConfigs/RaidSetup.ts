@@ -14,7 +14,7 @@ export interface Setup<Player> {
 export interface Boss<Player> {
     name: string;
     iconMiniId?: number;
-    selectedSetup?: number;
+    selectedSetup: number;
     defaultSetup?: number;
     setups: Setup<Player>[];
 }

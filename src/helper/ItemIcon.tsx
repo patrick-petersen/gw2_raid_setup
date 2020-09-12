@@ -3,7 +3,7 @@ import * as React from "react";
 
 type ItemIconProps = {
     name?: string
-    itemId?: number
+    itemId: number
 }
 type Resolve = (value?: any) => void;
 
@@ -80,7 +80,9 @@ class ItemIcon extends Component<ItemIconProps> {
         }
     }
 
-    loadItem(itemId: number) {
+    loadItem(itemId?: number) {
+        if(!itemId) return;
+
         if(!ItemIcon.loading.includes(itemId) && !ItemIcon.error.includes(itemId)) {
             ItemIcon.loading.push(itemId);
             console.debug("Loading " + itemId);

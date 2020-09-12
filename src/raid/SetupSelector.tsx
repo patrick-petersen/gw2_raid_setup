@@ -9,6 +9,7 @@ type SetupSelectorProps = {
     onChange: () => void,
     cheatString?: string,
     playerSettings: RaidSetup.PlayerSettings<any>,
+    children: Setup[]
 }
 
 type SetupSelectorState = {
@@ -84,7 +85,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
 
     render() {
         const bossValue = this.props.bossValue;
-        const setups =  this.props.children;
+        const setups : Setup[] =  this.props.children;
 
         const isDefaultSetup = !(bossValue.hasOwnProperty("defaultSetup")
             && (bossValue.defaultSetup != this.state.selectedSetup));

@@ -68,9 +68,9 @@ export default class HistoryManager {
                 const roles = bossValue.setups[selectedSetup].roles;
                 // @ts-ignore
                 const decoded = "" + (this.toBigInt(selectedSetup) + 1n) + roles.map((roleValue, roleIndex) => {
-                    const player : Player = (roleValue.hasOwnProperty("replacement")?roleValue.replacement:roleValue.player);
+                    const player : Player = (roleValue.replacement)?roleValue.replacement:roleValue.player;
                     return this._playerSettings.players.indexOf(player);
-                }).reduce(concatWith(""), parseInt);
+                }).reduce(concatWith("", parseInt));
                 const encoded = Base64.fromBigInt(this.stringToInt(decoded));
                 return encoded;
             }).reduce(concatWith(";"));
