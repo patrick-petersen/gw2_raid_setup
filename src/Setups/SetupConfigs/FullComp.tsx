@@ -1,5 +1,8 @@
+import {RaidSetup} from "./RaidSetup";
+import {Player} from "./DefaultPlayers";
 
-const NewFullComp = {
+
+const FullComp : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": [],
@@ -12,8 +15,8 @@ const NewFullComp = {
                         {
                             "name": "Valeguardian",
                             "iconMiniId": 77334,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -39,34 +42,34 @@ const NewFullComp = {
                                             "player": "Nevra"
                                         },
                                         {
-                                            "profession": "DPS",
-                                            "tasks": ["pDPS"],
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Seeker Root"],
                                             "player": "Assa"
                                         },
+                                    ]
+                                },
+                                {
+                                    "name": "1 Root",
+                                    "roles": [
                                         {
-                                            "profession": "DPS",
-                                            "tasks": ["pDPS"],
-                                            "player": "Fynn"
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
                                         },
                                         {
-                                            "profession": "Weaver",
-                                            "tasks": ["cDPS"],
-                                            "player": "Alex"
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "DPS",
-                                            "tasks": ["DPS"],
-                                            "player": "Assa"
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
                                         },
                                         {
-                                            "profession": "Firebrand",
-                                            "tasks": ["cDPS"],
-                                            "player": "Lumi"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["DPS", "CC"],
-                                            "player": "David"
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Seeker Root"],
+                                            "player": "Nevra"
                                         },
                                     ]
                                 },
@@ -96,7 +99,7 @@ const NewFullComp = {
                             "name": "Gorseval",
                             "iconMiniId": 77296,
                             "selectedSetup": 3,
-                            "defaultSetup": 2,
+                            "defaultSetup": 3,
                             "setups": [
                                 {
                                     "name": "No Updraft",
@@ -202,8 +205,8 @@ const NewFullComp = {
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Tank"],
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -242,8 +245,8 @@ const NewFullComp = {
                                             "player": "Fynn"
                                         },
                                         {
-                                            "profession": "DPS",
-                                            "tasks": ["DPS"],
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
                                             "player": "Assa"
                                         },
                                     ]
@@ -254,7 +257,7 @@ const NewFullComp = {
                             "name": "Sabetha",
                             "iconMiniId": 77339,
                             "selectedSetup": 2,
-                            "defaultSetup": 1,
+                            "defaultSetup": 2,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -591,7 +594,7 @@ const NewFullComp = {
                         {
                             "name": "Dhuum",
                             "iconMiniId": 85998,
-                            "selectedSetup": 2,
+                            "selectedSetup": 1,
                             "defaultSetup": 1,
                             "setups": [
                                 {
@@ -674,46 +677,6 @@ const NewFullComp = {
                                         },
                                     ]
                                 },
-                                {
-                                    "name": "FB Tank",
-                                    "roles": [
-                                        {
-                                            "profession": "Tempest",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Tank", "Quickness"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Green 1"],
-                                            "player": "David"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Kiter", "Green 2"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Green 3"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Some Quickness", "First Green 2"],
-                                            "player": "Lumi"
-                                        },
-                                    ]
-                                },
                             ]
                         },
                     ]
@@ -767,7 +730,7 @@ const NewFullComp = {
                         {
                             "name": "Twin Largos",
                             "iconMiniId": 88868,
-                            "selectedSetup": 1,
+                            "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -797,61 +760,6 @@ const NewFullComp = {
                                             "profession": "Chronomancer",
                                             "tasks": ["Portal"],
                                             "player": "Yasi"
-                                        },
-                                    ]
-                                },
-                                {
-                                    "name": "Chronos",
-                                    "roles": [
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Heal"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["cDPS", "Tank"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["cDPS", "Portal"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["cDPS", "Buffs"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["cDPS", "Buffs"],
-                                            "player": "Fynn"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["cDPS", "Buffs"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["cDPS", "Buffs"],
-                                            "player": "Lumi"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["cDPS", "Buffs"],
-                                            "player": "Assa"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["cDPS", "Buffs"],
-                                            "player": "David"
                                         },
                                     ]
                                 },
@@ -1171,7 +1079,7 @@ const NewFullComp = {
                             "name": "Keep Construct",
                             "iconMiniId": 78890,
                             "selectedSetup": 2,
-                            "defaultSetup": 1,
+                            "defaultSetup": 2,
                             "setups": [
                                 {
                                     "name": "1-1-2",
@@ -1253,7 +1161,7 @@ const NewFullComp = {
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["pDPS", "CC", "Quickness","Tank?"],
+                                            "tasks": ["pDPS", "CC", "Quickness", "Tank"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -1277,8 +1185,8 @@ const NewFullComp = {
                                             "player": "Fynn"
                                         },
                                         {
-                                            "profession": "DPS",
-                                            "tasks": ["DPS"],
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
                                             "player": "Assa"
                                         },
                                     ]
@@ -1289,7 +1197,7 @@ const NewFullComp = {
                             "name": "Xera",
                             "iconMiniId": 78815,
                             "selectedSetup": 2,
-                            "defaultSetup": 1,
+                            "defaultSetup": 2,
                             "setups": [
                                 {
                                     "name": "Mid",
@@ -1400,8 +1308,8 @@ const NewFullComp = {
                                             "player": "Fynn"
                                         },
                                         {
-                                            "profession": "DPS",
-                                            "tasks": ["DPS"],
+                                            "profession": "Chronomancer",
+                                            "tasks": ["pDPS", "CC", "Quickness"],
                                             "player": "Assa"
                                         },
                                     ]
@@ -1417,7 +1325,7 @@ const NewFullComp = {
                             "name": "Slothasor",
                             "iconMiniId": 77870,
                             "selectedSetup": 1,
-                            "defaultSetup": 0,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -1460,7 +1368,7 @@ const NewFullComp = {
                                     ]
                                 },
                                 {
-                                    "name": "DHs",
+                                    "name": "DH",
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
@@ -1519,7 +1427,7 @@ const NewFullComp = {
                         {
                             "name": "Trio",
                             "iconMiniId": 77820,
-                            "selectedSetup": 1,
+                            "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
                                 {
@@ -1588,7 +1496,7 @@ const NewFullComp = {
                             "name": "Mathias",
                             "iconMiniId": 78815,
                             "selectedSetup": 2,
-                            "defaultSetup": 1,
+                            "defaultSetup": 2,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -1911,7 +1819,7 @@ const NewFullComp = {
                         {
                             "name": "Samarog",
                             "iconMiniId": 80218,
-                            "selectedSetup": 2,
+                            "selectedSetup": 1,
                             "defaultSetup": 1,
                             "setups": [
                                 {
@@ -1976,61 +1884,6 @@ const NewFullComp = {
                                             "profession": "Daredevil",
                                             "tasks": ["DPS", "CC"],
                                             "player": "Lumi"
-                                        },
-                                    ]
-                                },
-                                {
-                                    "name": "Daredevil",
-                                    "roles": [
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Pull"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Tank", "Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Banner", "CC", "Extra Push"],
-                                            "player": "David"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["DPS", "CC"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["DPS", "CC"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["DPS", "CC"],
-                                            "player": "Lumi"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["DPS", "CC"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["DPS", "CC"],
-                                            "player": "Fynn"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["DPS", "CC"],
-                                            "player": "Assa"
                                         },
                                     ]
                                 },
@@ -2119,4 +1972,4 @@ const NewFullComp = {
             ]
         };
 
-export default NewFullComp;
+export default FullComp;

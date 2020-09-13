@@ -1,12 +1,32 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import ItemIcon from "../helper/ItemIcon";
 
 import './Boss.scss';
 import SetupSelector from "./SetupSelector";
+import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 
-class Boss extends Component {
+interface ISetup {
+    props : {setupValue: {name: string}}
+}
 
-    constructor(props) {
+type BossProps = {
+    big: boolean,
+    bigTime: number,
+    bossValue: RaidSetup.Boss<any>,
+    onChange: () => void,
+    playerSettings: RaidSetup.PlayerSettings<any>,
+    cheatString?: string,
+    children: (ISetup | undefined)[],
+}
+
+type BossState = {
+    big: boolean,
+    bigTime: number
+}
+
+class Boss extends React.Component<BossProps, BossState> {
+
+    constructor(props: BossProps) {
         super(props);
         this.state = {
             big: this.props.big,
@@ -37,13 +57,14 @@ class Boss extends Component {
             <section className={"boss"
             + (big?" big" : " small")
             + (hasIcon?"":" no-icon")}>
-                {hasIcon
+                {bossValue.iconMiniId
                     ? <ItemIcon itemId={bossValue.iconMiniId} />
                     : null
                 }
                 <span className={"boss-name"} onClick={this.toggleSize}>{bossValue.name}</span>
                 <SetupSelector bossValue={bossValue} onChange={this.props.onChange} cheatString={JSON.stringify(bossValue)}
                                playerSettings={this.props.playerSettings}>
+                    {this.props.children}
                 </SetupSelector>
             </section>
         )

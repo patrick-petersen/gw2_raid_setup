@@ -1,18 +1,29 @@
-import React, {Component} from 'react';
+import {Component} from "react";
+import * as React from "react";
 
-class Profession extends Component {
+type Professions = {[id: string]: Resolve[]};
+type Promises = {[id: string]: Resolve[]};
+
+type Resolve = (value?: any) => void;
+
+type ProfessionState = {
+    loaded: boolean,
+    url: string
+}
+type ProfessionProps = {
+    name: string
+}
+
+class Profession extends Component<ProfessionProps> {
     static loading = false;
     static error = false;
-    static professions = {};
-    static promises = {};
+    static professions : Professions = {};
+    static promises : Promises = {};
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            loaded: false,
-            url: "",
-        };
-    }
+    state : ProfessionState = {
+        loaded: false,
+        url: "",
+    };
 
     render() {
         if (!this.state.loaded) {
@@ -27,19 +38,18 @@ class Profession extends Component {
         }
     }
 
-    didLoadProfession(profession) {
+    didLoadProfession(profession: string) {
 
         let promise;
 
         if(Profession.professions.hasOwnProperty(profession)) {
-            promise = new Promise((resolve, reject) => {
+            promise = new Promise((resolve) => {
                 resolve(Profession.professions[profession]);
             });
         }
         else {
-            let outsideResolve;
-            //let outsideReject;
-            promise = new Promise((resolve, reject) => {
+            let outsideResolve = () => {};
+            promise = new Promise((resolve) => {
                 outsideResolve = resolve;
                 //outsideReject = reject;
             });
@@ -53,10 +63,13 @@ class Profession extends Component {
         return promise;
     }
 
-    resolvePromises(profession, url) {
+    resolvePromises(profession: string, url: string) {
         console.debug("resolving", profession, url);
         if(Profession.promises.hasOwnProperty(profession)) {
-            let current;
+            let current : Resolve | undefined;
+
+            //This loop is intentional, it gets a promise,
+            // resolves it and removes it from the list of unresolved promises
             // eslint-disable-next-line
             while (current = Profession.promises[profession].pop())
             {
@@ -109,7 +122,7 @@ class Profession extends Component {
         }
     }
 
-    loadSpecs(ids) {
+    loadSpecs(ids : number[]) {
         for(let index in ids) {
             if(!ids.hasOwnProperty(index)) {
                 continue;

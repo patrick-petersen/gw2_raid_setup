@@ -1,9 +1,13 @@
+import {RaidSetup} from "./RaidSetup";
+import {Player} from "./DefaultPlayers";
 
-const Week18 = {
+export type Replacements = "Marvin";
+
+const Marvin : RaidSetup<Player | Replacements> = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
-                "missing": [],
-                "replacements": {},
+                "missing": ["Lumi"],
+                "replacements": {"Lumi": "Marvin"},
             },
             "list": [
                 {
@@ -134,7 +138,8 @@ const Week18 = {
                                         {
                                             "profession": "Firebrand",
                                             "tasks": ["Cannon 2 & 4"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Yasi"
                                         },
                                     ]
                                 },
@@ -239,7 +244,7 @@ const Week18 = {
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -271,7 +276,7 @@ const Week18 = {
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Some Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -325,6 +330,54 @@ const Week18 = {
                                             "profession": "Deadeye",
                                             "tasks": ["Adds"],
                                             "player": "Assa"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Dhuum",
+                            "iconMiniId": 85998,
+                            "selectedSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Full Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Green 1"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Kiter", "Green 2"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Green 3"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["First Green 2"],
+                                            "player": "Lumi",
+                                            "replacement": "Yasi"
                                         },
                                     ]
                                 },
@@ -398,17 +451,60 @@ const Week18 = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Scourge",
-                                            "tasks": ["Heal"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["Portal"],
                                             "player": "Yasi"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Qadim",
+                            "iconMiniId": 88587,
+                            "selectedSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Spellbreaker",
+                                            "tasks": ["Tank", "Boonstrip", "Banner"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Full Quickness", "Wyvern Tank"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["Solo Kiter"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Reaper",
+                                            "tasks": ["Lampe"],
+                                            "player": "Nevra"
                                         },
                                     ]
                                 },
@@ -523,8 +619,9 @@ const Week18 = {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Full Quickness", "Stability"],
-                                            "player": "Yasi"
+                                            "tasks": ["Full Quickness"],
+                                            "player": "Yasi",
+                                            "replacement": "Lumi"
                                         },
                                         {
                                             "profession": "Renegade",
@@ -539,7 +636,8 @@ const Week18 = {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Pylon N"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Yasi"
                                         },
                                         {
                                             "profession": "Scourge",
@@ -603,7 +701,7 @@ const Week18 = {
                             "selectedSetup": 0,
                             "setups": [
                                 {
-                                    "name": "1-1-2",
+                                    "name": "2-2-3",
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
@@ -697,7 +795,8 @@ const Week18 = {
                                         {
                                             "profession": "Daredevil",
                                             "tasks": ["Mushroom 3"],
-                                            "player": "Lumi"
+                                            "player": "Lumi",
+                                            "replacement": "Fynn"
                                         },
                                         {
                                             "profession": "Weaver",
@@ -935,4 +1034,4 @@ const Week18 = {
             ]
         };
 
-export default Week18;
+export default Marvin;

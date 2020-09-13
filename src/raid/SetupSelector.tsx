@@ -1,12 +1,29 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 
 import './SetupSelector.scss';
-import Setup from "./Setup";
+import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 
-class SetupSelector extends Component {
+interface ISetup {
+    props : {setupValue: {name: string}}
+};
+type SetupSelectorProps = {
+    bossValue: RaidSetup.Boss<any>,
+    onChange: () => void,
+    cheatString?: string,
+    playerSettings: RaidSetup.PlayerSettings<any>,
+    children: (ISetup | undefined)[]
+}
+
+type SetupSelectorState = {
+    setupState: string,
+    selectedSetup: number,
+    setupSelection: boolean,
+}
+
+class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorState> {
     static setupStates = ["main-setup", "backup-setup", "missing-setup"];
 
-    constructor(props) {
+    constructor(props: SetupSelectorProps) {
         super(props);
         this.state = {
             setupState: SetupSelector.setupStates[0],
@@ -18,25 +35,6 @@ class SetupSelector extends Component {
         this.openSetupSelect = this.openSetupSelect.bind(this);
         this.selectSetup = this.selectSetup.bind(this);
         this.childClick = this.childClick.bind(this);
-        this.wantToChangePlayerCallback = this.wantToChangePlayerCallback.bind(this);
-        this.wantToShowChangePlayerCallback = this.wantToShowChangePlayerCallback.bind(this);
-    }
-
-
-    wantToChangePlayerCallback(setup) {
-        return (role) => {
-            return (fromPlayer, toPlayer) => {
-                return true;
-            }
-        }
-    }
-
-    wantToShowChangePlayerCallback(setup) {
-        return (role) => {
-            return () => {
-                return !this.state.setupSelection;
-            }
-        }
     }
 
     openSetupSelect() {
@@ -49,7 +47,7 @@ class SetupSelector extends Component {
         }
     }
 
-    selectSetup(setupKey) {
+    selectSetup(setupKey: number) {
         console.log("selected: ", setupKey);
         this.setState({
             setupSelection: false,
@@ -59,7 +57,7 @@ class SetupSelector extends Component {
         this.props.onChange();
     }
 
-    childClick(setupKey) {
+    childClick(setupKey: number) {
         return (() => {
             console.log("childClick: ", setupKey);
             if(this.state.setupSelection) {
@@ -71,7 +69,7 @@ class SetupSelector extends Component {
         })
     }
 
-    renderSetup(child, index) {
+    renderSetup(child: ISetup | undefined, index: number) {
         if(child) {
             return (
                 <div className={"setup " + this.state.setupState + (
@@ -89,19 +87,10 @@ class SetupSelector extends Component {
 
     render() {
         const bossValue = this.props.bossValue;
-        const setups =  bossValue.setups.map((setupValue, setupIndex) => {
-            if(!setupValue.hidden) {
-                return (<Setup setupValue={setupValue} playerSettings={this.props.playerSettings}
-                               onChange={this.props.onChange} key={setupValue.name}
-                               cheatString={JSON.stringify(setupValue)}
-                               wantToChangePlayer={this.wantToChangePlayerCallback(setupIndex)}
-                               wantToShowChangePlayer={this.wantToShowChangePlayerCallback(setupIndex)}>
-                </Setup>);
-            }
-        });
+        const setups : (ISetup | undefined)[] =  this.props.children;
 
         const isDefaultSetup = !(bossValue.hasOwnProperty("defaultSetup")
-            && (bossValue.defaultSetup != this.state.selectedSetup));
+            && (bossValue.defaultSetup !== this.state.selectedSetup));
 
 
         return (
@@ -109,13 +98,13 @@ class SetupSelector extends Component {
             + (this.state.setupSelection ? " open": " closed")
             + (isDefaultSetup ? " default" : " changed")}>
                 {
-                    React.Children.map(setups, (child, index) => {
+                    React.Children.map(setups, (child: ISetup | undefined, index) => {
                         if(this.state.selectedSetup !== index) return null;
                         return this.renderSetup(child, index);
                     })
                 }
                 {
-                    React.Children.map(setups, (child, index) => {
+                    React.Children.map(setups, (child: ISetup | undefined, index) => {
                         if(this.state.selectedSetup === index) return null;
                         return this.renderSetup(child, index);
                     })

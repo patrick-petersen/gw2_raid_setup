@@ -1,5 +1,7 @@
+import {RaidSetup} from "./RaidSetup";
+import {Player} from "./DefaultPlayers";
 
-const DhuumCM = {
+const QadimCC : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": [],
@@ -7,19 +9,24 @@ const DhuumCM = {
             },
             "list": [
                 {
-                    "name": "Wing 5",
+                    "name": "Wing 6",
                     "bosses": [
                         {
-                            "name": "Dhuum CM",
-                            "iconMiniId": 85998,
+                            "name": "Qadim",
+                            "iconMiniId": 88587,
                             "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
                                     "roles": [
                                         {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness", "Portal"],
+                                            "player": "Kalell"
+                                        },
+                                        {
                                             "profession": "Tempest",
-                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "tasks": ["Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
                                         {
@@ -28,29 +35,19 @@ const DhuumCM = {
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Full Quickness"],
+                                            "profession": "Daredevil",
+                                            "tasks": ["Portal"],
                                             "player": "Yasi"
                                         },
                                         {
-                                            "profession": "Berserker",
-                                            "tasks": ["Green 1"],
-                                            "player": "David"
+                                            "profession": "Daredevil",
+                                            "tasks": ["Solo Kiter"],
+                                            "player": "Alex"
                                         },
                                         {
-                                            "profession": "Scourge",
-                                            "tasks": ["Kiter", "Green 2"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Green 3"],
+                                            "profession": "Reaper",
+                                            "tasks": ["Lampe"],
                                             "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["First Green 2"],
-                                            "player": "Lumi"
                                         },
                                     ]
                                 },
@@ -61,4 +58,4 @@ const DhuumCM = {
             ]
         };
 
-export default DhuumCM;
+export default QadimCC;

@@ -1,9 +1,15 @@
-import React, {Component} from "react";
+import * as React from "react";
 import functions from "./helper/functions";
 import Sidebar from "./settings/Sidebar";
-
 import NamedSetup from "./Setups/NamedSetup";
 import "./Setups.scss";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useParams
+} from "react-router-dom";
+import * as RaidSetup from "./Setups/SetupConfigs/RaidSetup";
 
 //Setups:
 import FullComp from "./Setups/SetupConfigs/FullComp";
@@ -12,22 +18,21 @@ import Week18 from "./Setups/SetupConfigs/Week18";
 import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
 import QadimCC from "./Setups/SetupConfigs/QadimCC";
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams
-} from "react-router-dom";
 import WeeklySetup from "./Setups/WeeklySetup";
 import SetupRenderer from "./Setups/SetupRenderer";
 import Week20 from "./Setups/SetupConfigs/Week20";
 import League01 from "./Setups/SetupConfigs/League01";
 import NewFullComp from "./Setups/SetupConfigs/NewFullComp_07-2020";
 
+interface RouteParams {
+    id: string
+}
+
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
-const weeklySetups = [
+type weeklySetupType = {week: number, setup: RaidSetup.RaidSetup<any>};
+
+const weeklySetups : weeklySetupType[] = [
     {
         week: 17,
         setup: Marvin,
@@ -42,12 +47,18 @@ const weeklySetups = [
     },
 ];
 
-let weeklySetupsIndex = {};
-weeklySetups.forEach((value, index) => {
+let weeklySetupsIndex : {[id: number]: weeklySetupType} = {};
+weeklySetups.forEach((value) => {
     weeklySetupsIndex[value.week] = value;
 });
 
-const namedSetups = [
+type NamedSetupType = {
+    name: string,
+    shortcut: string,
+    setup: RaidSetup.RaidSetup<any>,
+}
+
+const namedSetups : NamedSetupType[] = [
     {
         name: "Lumi -> Marvin",
         shortcut: "marvin",
@@ -75,15 +86,22 @@ const namedSetups = [
     },
 ];
 
-let namedSetupsIndex = {};
-namedSetups.forEach((value, index) => {
+let namedSetupsIndex : {[id: string]: NamedSetupType} = {};
+namedSetups.forEach((value: NamedSetupType) => {
     namedSetupsIndex[value.shortcut] = value;
 });
 
 
-class Setups extends Component {
+type SetupsProps = {
 
-    constructor(props) {
+}
+type SetupsState = {
+    big: boolean,
+    bigTime: number
+}
+
+class Setups extends React.Component<SetupsProps, SetupsState> {
+    constructor(props : SetupsProps) {
         super(props);
 
         this.state = {
@@ -105,11 +123,11 @@ class Setups extends Component {
         })
     }
 
-    customSetupRenderer(params) {
+    customSetupRenderer(params: RaidSetup.RaidSetup<any>) {
         return <SetupRenderer big={this.state.big} bigTime={this.state.bigTime} {... params} />;
     }
 
-    getSetupForKey(id) {
+    getSetupForKey(id: number) {
         console.log("setupForId", id);
         if(namedSetupsIndex.hasOwnProperty(id)) {
             console.log("named", id);
@@ -125,7 +143,9 @@ class Setups extends Component {
         }
     }
     AutomatedSetup() {
-        let { id } = useParams();
+        const params = useParams<RouteParams>();
+
+        const id = parseInt(params.id);
 
         console.log("autoId", id);
         return (
@@ -158,7 +178,6 @@ class Setups extends Component {
                             <Route
                                 key={index}
                                 path={'/'+setup.week}
-                                exact={setup.exact}
                                 children={<WeeklySetup id={setup.week}>
                                     {this.customSetupRenderer(setup.setup)}
                                 </WeeklySetup>}
@@ -168,7 +187,6 @@ class Setups extends Component {
                             <Route
                                 key={index}
                                 path={'/'+setup.shortcut}
-                                exact={setup.exact}
                                 children={<NamedSetup name={setup.name}>
                                     {this.customSetupRenderer(setup.setup)}
                                 </NamedSetup>}

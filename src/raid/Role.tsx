@@ -1,10 +1,26 @@
-import React, {Component} from 'react';
+import {Component} from "react";
+import * as React from "react";
 
 import './Role.scss';
-import Profession from "../helper/Profession.js";
+import Profession from "../helper/Profession";
+import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup"
+import {Player} from "../Setups/SetupConfigs/DefaultPlayers";
 
-class Role extends Component {
-    constructor(props) {
+type RoleProps = {
+    roleValue: RaidSetup.Role<any>,
+    onChange: () => void,
+    playerSettings: RaidSetup.PlayerSettings<any>,
+    cheatString?: string;
+}
+
+type StateProps = {
+    playerSelection: boolean,
+    player: Player
+}
+
+
+class Role extends Component<RoleProps, StateProps> {
+    constructor(props: RoleProps) {
         super(props);
 
         let player = this.props.roleValue.player;
@@ -23,16 +39,13 @@ class Role extends Component {
         this.insertReplacementName = this.insertReplacementName.bind(this);
     }
 
-    componentDidMount() {
-    }
-
     openPlayerSelect() {
         this.setState({
             playerSelection: true
         })
     }
 
-    selectPlayer(player) {
+    selectPlayer(player : Player) {
         this.setState({
             playerSelection: false,
             player: player
@@ -41,7 +54,8 @@ class Role extends Component {
         this.props.onChange();
     }
 
-    componentDidUpdate(prevProps, prevState, snapshot) {
+    componentDidUpdate(prevProps: Readonly<RoleProps>,
+                       prevState: Readonly<StateProps>, snapshot: any) {
         if(prevProps !== this.props) {
             let player = this.props.roleValue.player;
 
@@ -56,7 +70,7 @@ class Role extends Component {
         }
     }
 
-    insertReplacementName(name) {
+    insertReplacementName(name: string) {
         const replacements = this.props.playerSettings.replacements;
         if(replacements.hasOwnProperty(name)) {
             return replacements[name];
@@ -66,7 +80,7 @@ class Role extends Component {
 
     render() {
         const roleValue = this.props.roleValue;
-        let players;
+        let players : Player[];
         if(roleValue.hasOwnProperty("backups")) {
             players = roleValue.player.concat([roleValue.backups]);
         }
@@ -84,14 +98,14 @@ class Role extends Component {
                         ?
                         <div className={"player-select"}>
                             <span key={this.state.player} onClick={
-                                (e) => this.selectPlayer(this.state.player, e)
+                                (e) => this.selectPlayer(this.state.player)
                         }>{this.state.player}
                             </span>
                             {
                                 players.map(player =>
                                     (player !== this.state.player)
                                         ? <span key={player} onClick={
-                                            (e) => this.selectPlayer(player, e)
+                                            (e) => this.selectPlayer(player)
                                         }>{this.insertReplacementName(player)}</span>
                                     : null
                                 )

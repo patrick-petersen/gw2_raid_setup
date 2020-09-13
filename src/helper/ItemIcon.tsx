@@ -1,18 +1,25 @@
-import React, {Component} from 'react';
+import {Component} from "react";
+import * as React from "react";
 
-class ItemIcon extends Component {
-    static loading = [];
-    static error = [];
-    static items = {};
-    static promises = {};
+type ItemIconProps = {
+    name?: string
+    itemId: number
+}
+type Resolve = (value?: any) => void;
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            loaded: false,
-            url: "",
-        };
-    }
+type Items = {[id: number]: Promise<number>[]};
+type Promises = {[id: number]: Resolve[]};
+
+class ItemIcon extends Component<ItemIconProps> {
+    static loading : Array<number> = [];
+    static error : Array<number> = [];
+    static items : Items = {};
+    static promises : Promises = {};
+
+    state = {
+        loaded: false,
+        url: "",
+    };
 
     render() {
         if (!this.state.loaded) {
@@ -27,22 +34,19 @@ class ItemIcon extends Component {
         }
     }
 
-    didLoadItem(itemId) {
-
-        // eslint-disable-next-line
+    didLoadItem(itemId: number) {
         let promise;
 
         if(ItemIcon.items.hasOwnProperty(itemId)) {
-            promise = new Promise((resolve, reject) => {
+            promise = new Promise((resolve) => {
                 resolve(ItemIcon.items[itemId]);
             });
         }
         else {
             let outsideResolve = () => {};
-            //let outsideReject;
-            promise = new Promise((resolve, reject) => {
+
+            promise = new Promise((resolve) => {
                 outsideResolve = resolve;
-                //outsideReject = reject;
             });
             if(!ItemIcon.promises.hasOwnProperty(itemId)) {
                 ItemIcon.promises[itemId] = [];
@@ -56,7 +60,7 @@ class ItemIcon extends Component {
         return promise;
     }
 
-    resolvePromises(itemId, url) {
+    resolvePromises(itemId: number, url: string) {
         console.debug("Resolving: ", itemId, url);
 
         if(ItemIcon.promises.hasOwnProperty(itemId)) {
@@ -69,7 +73,9 @@ class ItemIcon extends Component {
         }
     }
 
-    loadItem(itemId) {
+    loadItem(itemId?: number) {
+        if(!itemId) return;
+
         if(!ItemIcon.loading.includes(itemId) && !ItemIcon.error.includes(itemId)) {
             ItemIcon.loading.push(itemId);
             console.debug("Loading " + itemId);
@@ -85,7 +91,7 @@ class ItemIcon extends Component {
                 })
                 .finally(() => {
                     //remove it from the loading list
-                    ItemIcon.loading[itemId] = ItemIcon.loading.filter(function(item) {
+                    ItemIcon.loading = ItemIcon.loading.filter(function(item) {
                         return item !== itemId
                     })
 
