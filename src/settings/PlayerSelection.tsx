@@ -1,14 +1,26 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 
 import './PlayerSelection.scss';
+import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 
-class PlayerSelection extends Component {
+type PlayerSelectionProps = {
+    playerSettings: RaidSetup.PlayerSettings<any>,
+    filterListCallback: (func: (s: RaidSetup.Wing<any>[]) => RaidSetup.Wing<any>[]) => void
+}
 
-    constructor(props) {
+type PlayerSelectionState = {
+    selected: string,
+    selectionOpen: boolean
+}
+
+class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelectionState> {
+
+    constructor(props: PlayerSelectionProps) {
         super(props);
 
         this.state = {
             selected: "All",
+            selectionOpen: false,
         };
 
         this.selectPlayer = this.selectPlayer.bind(this);
@@ -17,7 +29,7 @@ class PlayerSelection extends Component {
         this.insertReplacementName = this.insertReplacementName.bind(this);
     }
 
-    selectPlayer(player) {
+    selectPlayer(player: string) {
         return () => {
             this.setState({
                 selected: player,
@@ -29,7 +41,7 @@ class PlayerSelection extends Component {
         };
     }
 
-    insertReplacementName(name) {
+    insertReplacementName(name: string) {
         const replacements = this.props.playerSettings.replacements;
         if(replacements.hasOwnProperty(name)) {
             return replacements[name];
@@ -37,11 +49,11 @@ class PlayerSelection extends Component {
         return name;
     }
 
-    filterList(filterPlayer) {
+    filterList(filterPlayer: string) {
         console.log("filterPlayer", filterPlayer);
-        return (list) => {
+        return (list: RaidSetup.Wing<any>[]) => {
             console.log("filterList", list);
-            let newList = JSON.parse(JSON.stringify(list)).filter(wing => {
+            let newList = (JSON.parse(JSON.stringify(list)) as RaidSetup.Wing<any>[]).filter(wing => {
                 wing.bosses = wing.bosses.filter(boss => {
                     boss.setups = boss.setups.filter(setup => {
                         setup.roles = setup.roles.filter(role => {
@@ -59,17 +71,10 @@ class PlayerSelection extends Component {
         };
     }
 
-    hideList(filterPlayer) {
+    hideList(filterPlayer: string) {
         console.log("hide by player", filterPlayer);
 
-        const countVisible = (total, element, index) => {
-            if(!element.hidden) {
-                total++;
-            }
-                return total;
-        };
-
-        return (list) => {
+        return (list: RaidSetup.Wing<any>[]) => {
             console.log("hideList", list);
             list.forEach(wing => {
                 wing.bosses.forEach(boss => {
@@ -83,21 +88,21 @@ class PlayerSelection extends Component {
                                 role.hidden = true;
                             }
                         });
-                        if(setup.roles.reduce(countVisible, 0) >= 1) {
+                        if(setup.roles.filter(value => !value.hidden).length >= 1) {
                             setup.hidden = false;
                         }
                         else {
                             setup.hidden = true;
                         }
                     });
-                    if(boss.setups.reduce(countVisible, 0) >= 1) {
+                    if(boss.setups.filter(value => !value.hidden).length >= 1) {
                         boss.hidden = false;
                     }
                     else {
                         boss.hidden = true;
                     }
                 });
-                if(wing.bosses.reduce(countVisible, 0) >= 1) {
+                if(wing.bosses.filter(value => !value.hidden).length >= 1) {
                     wing.hidden = false;
                 }
                 else {
