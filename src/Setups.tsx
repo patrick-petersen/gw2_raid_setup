@@ -1,9 +1,6 @@
-import {Component} from "react";
 import * as React from "react";
-
 import functions from "./helper/functions";
 import Sidebar from "./settings/Sidebar";
-
 import NamedSetup from "./Setups/NamedSetup";
 import "./Setups.scss";
 
@@ -26,11 +23,17 @@ import SetupRenderer from "./Setups/SetupRenderer";
 import Week20 from "./Setups/SetupConfigs/Week20";
 import League01 from "./Setups/SetupConfigs/League01";
 import NewFullComp from "./Setups/SetupConfigs/NewFullComp_07-2020";
-import {RaidSetup} from "./Setups/SetupConfigs/RaidSetup";
+import * as RaidSetup from "./Setups/SetupConfigs/RaidSetup";
+
+interface RouteParams {
+    id: string
+}
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
-const weeklySetups : {week: number, setup: RaidSetup<any>}[] = [
+type weeklySetupType = {week: number, setup: RaidSetup.RaidSetup<any>};
+
+const weeklySetups : weeklySetupType[] = [
     {
         week: 17,
         setup: Marvin,
@@ -45,18 +48,18 @@ const weeklySetups : {week: number, setup: RaidSetup<any>}[] = [
     },
 ];
 
-let weeklySetupsIndex : {[id: number]: RaidSetup<any>}[] = [];
+let weeklySetupsIndex : {[id: number]: weeklySetupType} = {};
 weeklySetups.forEach((value, index) => {
     weeklySetupsIndex[value.week] = value;
 });
 
-type NamedSetup = {
+type NamedSetupType = {
     name: string,
     shortcut: string,
-    setup: RaidSetup<any>,
+    setup: RaidSetup.RaidSetup<any>,
 }
 
-const namedSetups : NamedSetup[] = [
+const namedSetups : NamedSetupType[] = [
     {
         name: "Lumi -> Marvin",
         shortcut: "marvin",
@@ -84,8 +87,8 @@ const namedSetups : NamedSetup[] = [
     },
 ];
 
-let namedSetupsIndex : {[id: string]: NamedSetup} = {};
-namedSetups.forEach((value: NamedSetup, index: number) => {
+let namedSetupsIndex : {[id: string]: NamedSetupType} = {};
+namedSetups.forEach((value: NamedSetupType, index: number) => {
     namedSetupsIndex[value.shortcut] = value;
 });
 
@@ -98,7 +101,7 @@ type SetupsState = {
     bigTime: number
 }
 
-class Setups extends Component<SetupsProps, SetupsState> {
+class Setups extends React.Component<SetupsProps, SetupsState> {
     constructor(props : SetupsProps) {
         super(props);
 
@@ -121,11 +124,11 @@ class Setups extends Component<SetupsProps, SetupsState> {
         })
     }
 
-    customSetupRenderer(params: object) {
+    customSetupRenderer(params: RaidSetup.RaidSetup<any>) {
         return <SetupRenderer big={this.state.big} bigTime={this.state.bigTime} {... params} />;
     }
 
-    getSetupForKey(id) {
+    getSetupForKey(id: number) {
         console.log("setupForId", id);
         if(namedSetupsIndex.hasOwnProperty(id)) {
             console.log("named", id);
@@ -141,7 +144,9 @@ class Setups extends Component<SetupsProps, SetupsState> {
         }
     }
     AutomatedSetup() {
-        let { id } = useParams();
+        const params = useParams<RouteParams>();
+
+        const id = parseInt(params.id);
 
         console.log("autoId", id);
         return (
@@ -174,7 +179,6 @@ class Setups extends Component<SetupsProps, SetupsState> {
                             <Route
                                 key={index}
                                 path={'/'+setup.week}
-                                exact={setup.exact}
                                 children={<WeeklySetup id={setup.week}>
                                     {this.customSetupRenderer(setup.setup)}
                                 </WeeklySetup>}
@@ -184,7 +188,6 @@ class Setups extends Component<SetupsProps, SetupsState> {
                             <Route
                                 key={index}
                                 path={'/'+setup.shortcut}
-                                exact={setup.exact}
                                 children={<NamedSetup name={setup.name}>
                                     {this.customSetupRenderer(setup.setup)}
                                 </NamedSetup>}
