@@ -90,7 +90,7 @@ class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
 
                                             bossValue.setups.forEach((setupValue, setupIndex) => {
                                                 if(!setupValue.hidden) {
-                                                    return (<Setup setupValue={setupValue}
+                                                    children.push(<Setup setupValue={setupValue}
                                                                    key={setupValue.name}>
                                                         {
                                                             setupValue.roles.map((roleValue, roleIndex) => {
