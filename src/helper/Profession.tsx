@@ -25,10 +25,6 @@ class Profession extends Component<ProfessionProps> {
         url: "",
     };
 
-    constructor(props: ProfessionProps) {
-        super(props);
-    }
-
     render() {
         if (!this.state.loaded) {
             return (

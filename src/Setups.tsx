@@ -3,6 +3,13 @@ import functions from "./helper/functions";
 import Sidebar from "./settings/Sidebar";
 import NamedSetup from "./Setups/NamedSetup";
 import "./Setups.scss";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useParams
+} from "react-router-dom";
+import * as RaidSetup from "./Setups/SetupConfigs/RaidSetup";
 
 //Setups:
 import FullComp from "./Setups/SetupConfigs/FullComp";
@@ -11,19 +18,11 @@ import Week18 from "./Setups/SetupConfigs/Week18";
 import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
 import QadimCC from "./Setups/SetupConfigs/QadimCC";
 
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams
-} from "react-router-dom";
 import WeeklySetup from "./Setups/WeeklySetup";
 import SetupRenderer from "./Setups/SetupRenderer";
 import Week20 from "./Setups/SetupConfigs/Week20";
 import League01 from "./Setups/SetupConfigs/League01";
 import NewFullComp from "./Setups/SetupConfigs/NewFullComp_07-2020";
-import * as RaidSetup from "./Setups/SetupConfigs/RaidSetup";
 
 interface RouteParams {
     id: string
@@ -49,7 +48,7 @@ const weeklySetups : weeklySetupType[] = [
 ];
 
 let weeklySetupsIndex : {[id: number]: weeklySetupType} = {};
-weeklySetups.forEach((value, index) => {
+weeklySetups.forEach((value) => {
     weeklySetupsIndex[value.week] = value;
 });
 
@@ -88,7 +87,7 @@ const namedSetups : NamedSetupType[] = [
 ];
 
 let namedSetupsIndex : {[id: string]: NamedSetupType} = {};
-namedSetups.forEach((value: NamedSetupType, index: number) => {
+namedSetups.forEach((value: NamedSetupType) => {
     namedSetupsIndex[value.shortcut] = value;
 });
 

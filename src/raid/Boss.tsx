@@ -4,11 +4,11 @@ import ItemIcon from "../helper/ItemIcon";
 import './Boss.scss';
 import SetupSelector from "./SetupSelector";
 import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
-import Setup from "./Setup";
 
 interface ISetup {
     props : {setupValue: {name: string}}
-};
+}
+
 type BossProps = {
     big: boolean,
     bigTime: number,

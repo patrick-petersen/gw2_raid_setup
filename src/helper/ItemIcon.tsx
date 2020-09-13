@@ -21,10 +21,6 @@ class ItemIcon extends Component<ItemIconProps> {
         url: "",
     };
 
-    constructor(props: ItemIconProps) {
-        super(props);
-    }
-
     render() {
         if (!this.state.loaded) {
             return (
@@ -39,21 +35,18 @@ class ItemIcon extends Component<ItemIconProps> {
     }
 
     didLoadItem(itemId: number) {
-
-        // eslint-disable-next-line
         let promise;
 
         if(ItemIcon.items.hasOwnProperty(itemId)) {
-            promise = new Promise((resolve, reject) => {
+            promise = new Promise((resolve) => {
                 resolve(ItemIcon.items[itemId]);
             });
         }
         else {
             let outsideResolve = () => {};
-            //let outsideReject;
-            promise = new Promise((resolve, reject) => {
+
+            promise = new Promise((resolve) => {
                 outsideResolve = resolve;
-                //outsideReject = reject;
             });
             if(!ItemIcon.promises.hasOwnProperty(itemId)) {
                 ItemIcon.promises[itemId] = [];
