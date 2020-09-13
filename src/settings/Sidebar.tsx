@@ -1,13 +1,8 @@
 import * as React from 'react';
 
 import "./Sidebar.scss";
-import LinkTo from "../Setups/LinkTo";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link,
-    useParams
 } from "react-router-dom";
 import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 

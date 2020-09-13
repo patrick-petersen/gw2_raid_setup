@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import './SetupSelector.scss';
 import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
-import Setup from "./Setup";
 
 interface ISetup {
     props : {setupValue: {name: string}}
@@ -91,7 +90,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
         const setups : (ISetup | undefined)[] =  this.props.children;
 
         const isDefaultSetup = !(bossValue.hasOwnProperty("defaultSetup")
-            && (bossValue.defaultSetup != this.state.selectedSetup));
+            && (bossValue.defaultSetup !== this.state.selectedSetup));
 
 
         return (

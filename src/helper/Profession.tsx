@@ -43,14 +43,13 @@ class Profession extends Component<ProfessionProps> {
         let promise;
 
         if(Profession.professions.hasOwnProperty(profession)) {
-            promise = new Promise((resolve, reject) => {
+            promise = new Promise((resolve) => {
                 resolve(Profession.professions[profession]);
             });
         }
         else {
             let outsideResolve = () => {};
-            //let outsideReject;
-            promise = new Promise((resolve, reject) => {
+            promise = new Promise((resolve) => {
                 outsideResolve = resolve;
                 //outsideReject = reject;
             });
@@ -68,6 +67,10 @@ class Profession extends Component<ProfessionProps> {
         console.debug("resolving", profession, url);
         if(Profession.promises.hasOwnProperty(profession)) {
             let current : Resolve | undefined;
+
+            //This loop is intentional, it gets a promise,
+            // resolves it and removes it from the list of unresolved promises
+            // eslint-disable-next-line
             while (current = Profession.promises[profession].pop())
             {
                 current(url);

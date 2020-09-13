@@ -10,7 +10,7 @@ import * as RaidSetup from "./SetupConfigs/RaidSetup";
 
 interface ISetup {
     props : {setupValue: {name: string}}
-};
+}
 
 type SetupRendererProps = {
     list: RaidSetup.Wing<any>[],
@@ -75,26 +75,38 @@ class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
         const playerSettings = this.props.playerSettings;
 
         return [<PlayerSelection playerSettings={playerSettings}
-                                 filterListCallback={this.filterListCallback} key={"settings"}></PlayerSelection>,
-            this.state.list.map((wingValue: RaidSetup.Wing<any>, wingIndex: number) => {
+                                 filterListCallback={this.filterListCallback} key={"settings"}/>,
+            this.state.list.map((wingValue: RaidSetup.Wing<any>) => {
                 console.log("Wing: hidden?", wingValue.hidden);
-                if(!wingValue.hidden) {
+                if(wingValue.hidden) {
+                    return undefined;
+                }
+                else {
                     return (
                         <Wing wingValue={wingValue}
                                   key={wingValue.name}>
                             {
-                                wingValue.bosses.map((bossValue, bossIndex) => {
-                                        if(!bossValue.hidden) {
+                                wingValue.bosses.map((bossValue) => {
+                                        if(bossValue.hidden) {
+                                            return undefined;
+                                        }
+                                        else {
                                             const children : ISetup[] = [];
 
 
-                                            bossValue.setups.forEach((setupValue, setupIndex) => {
-                                                if(!setupValue.hidden) {
+                                            bossValue.setups.forEach((setupValue) => {
+                                                if(setupValue.hidden) {
+                                                    return undefined
+                                                }
+                                                else {
                                                     children.push(<Setup setupValue={setupValue}
                                                                    key={setupValue.name}>
                                                         {
-                                                            setupValue.roles.map((roleValue, roleIndex) => {
-                                                                if(!roleValue.hidden) {
+                                                            setupValue.roles.map((roleValue) => {
+                                                                if(roleValue.hidden) {
+                                                                    return undefined;
+                                                                }
+                                                                else {
                                                                     return (<Role roleValue={roleValue} playerSettings={playerSettings}
                                                                                   onChange={onChange} key={roleValue.player}
                                                                                   cheatString={JSON.stringify(roleValue)}>
