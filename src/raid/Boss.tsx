@@ -6,14 +6,17 @@ import SetupSelector from "./SetupSelector";
 import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 import Setup from "./Setup";
 
+interface ISetup {
+    props : {setupValue: {name: string}}
+};
 type BossProps = {
     big: boolean,
     bigTime: number,
     bossValue: RaidSetup.Boss<any>,
     onChange: () => void,
     playerSettings: RaidSetup.PlayerSettings<any>,
-    cheatString: string,
-    children: Setup[],
+    cheatString?: string,
+    children: (ISetup | undefined)[],
 }
 
 type BossState = {

@@ -4,12 +4,15 @@ import './SetupSelector.scss';
 import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 import Setup from "./Setup";
 
+interface ISetup {
+    props : {setupValue: {name: string}}
+};
 type SetupSelectorProps = {
     bossValue: RaidSetup.Boss<any>,
     onChange: () => void,
     cheatString?: string,
     playerSettings: RaidSetup.PlayerSettings<any>,
-    children: Setup[]
+    children: (ISetup | undefined)[]
 }
 
 type SetupSelectorState = {
@@ -67,7 +70,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
         })
     }
 
-    renderSetup(child: Setup, index: number) {
+    renderSetup(child: ISetup | undefined, index: number) {
         if(child) {
             return (
                 <div className={"setup " + this.state.setupState + (
@@ -85,7 +88,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
 
     render() {
         const bossValue = this.props.bossValue;
-        const setups : Setup[] =  this.props.children;
+        const setups : (ISetup | undefined)[] =  this.props.children;
 
         const isDefaultSetup = !(bossValue.hasOwnProperty("defaultSetup")
             && (bossValue.defaultSetup != this.state.selectedSetup));
@@ -96,13 +99,13 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
             + (this.state.setupSelection ? " open": " closed")
             + (isDefaultSetup ? " default" : " changed")}>
                 {
-                    React.Children.map(setups, (child: Setup, index) => {
+                    React.Children.map(setups, (child: ISetup | undefined, index) => {
                         if(this.state.selectedSetup !== index) return null;
                         return this.renderSetup(child, index);
                     })
                 }
                 {
-                    React.Children.map(setups, (child: Setup, index) => {
+                    React.Children.map(setups, (child: ISetup | undefined, index) => {
                         if(this.state.selectedSetup === index) return null;
                         return this.renderSetup(child, index);
                     })

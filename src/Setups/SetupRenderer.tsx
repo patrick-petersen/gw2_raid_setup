@@ -6,10 +6,28 @@ import PlayerSelection from "../settings/PlayerSelection";
 import Boss from "../raid/Boss";
 import Setup from "../raid/Setup";
 import Role from "../raid/Role";
+import * as RaidSetup from "./SetupConfigs/RaidSetup";
 
+interface ISetup {
+    props : {setupValue: {name: string}}
+};
 
-class SetupRenderer extends Component {
-    constructor(props) {
+type SetupRendererProps = {
+    list: RaidSetup.Wing<any>[],
+    playerSettings: RaidSetup.PlayerSettings<any>,
+    big: boolean,
+    bigTime: number,
+}
+
+type SetupRendererState = {
+    list: RaidSetup.Wing<any>[],
+    cheatString?: string
+}
+
+class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
+    historyManager : HistoryManager;
+
+    constructor(props : SetupRendererProps) {
         super(props);
         const list = this.props.list;
         const playerSettings = this.props.playerSettings;
@@ -32,7 +50,7 @@ class SetupRenderer extends Component {
         console.log("list changed", this.state.list);
         this.historyManager.listChanged();
     }
-    listChangedCallback(list) {
+    listChangedCallback(list: RaidSetup.Wing<any>[]) {
         console.log("list change callback");
         this.setState({
             list: list,
@@ -40,7 +58,7 @@ class SetupRenderer extends Component {
         });
     }
 
-    filterListCallback(filter) {
+    filterListCallback(filter: (list: RaidSetup.Wing<any>[]) => RaidSetup.Wing<any>[]) {
         const filteredList = filter(this.props.list);
         this.setState({
             list: filteredList,
@@ -58,42 +76,43 @@ class SetupRenderer extends Component {
 
         return [<PlayerSelection playerSettings={playerSettings}
                                  filterListCallback={this.filterListCallback} key={"settings"}></PlayerSelection>,
-            this.state.list.map((wingValue, wingIndex) => {
+            this.state.list.map((wingValue: RaidSetup.Wing<any>, wingIndex: number) => {
                 console.log("Wing: hidden?", wingValue.hidden);
                 if(!wingValue.hidden) {
                     return (
-                        <Wing wingValue={wingValue} playerSettings={playerSettings}
-                                  onChange={onChange} key={wingValue.name}
-                                  big={big} bigTime={bigTime}>
+                        <Wing wingValue={wingValue}
+                                  key={wingValue.name}>
                             {
                                 wingValue.bosses.map((bossValue, bossIndex) => {
                                         if(!bossValue.hidden) {
+                                            const children : ISetup[] = [];
+
+
+                                            bossValue.setups.forEach((setupValue, setupIndex) => {
+                                                if(!setupValue.hidden) {
+                                                    return (<Setup setupValue={setupValue}
+                                                                   key={setupValue.name}>
+                                                        {
+                                                            setupValue.roles.map((roleValue, roleIndex) => {
+                                                                if(!roleValue.hidden) {
+                                                                    return (<Role roleValue={roleValue} playerSettings={playerSettings}
+                                                                                  onChange={onChange} key={roleValue.player}
+                                                                                  cheatString={JSON.stringify(roleValue)}>
+
+                                                                    </Role>);
+                                                                }
+                                                            })
+                                                        }
+
+                                                    </Setup>);
+                                                }
+                                            });
+
                                             return (<Boss bossValue={bossValue} playerSettings={playerSettings}
                                                           onChange={onChange} key={bossValue.name}
-                                                          big={big} bigTime={bigTime}>
-                                                {
-                                                    bossValue.setups.map((setupValue, setupIndex) => {
-                                                        if(!setupValue.hidden) {
-                                                            return (<Setup setupValue={setupValue} playerSettings={playerSettings}
-                                                                           onChange={onChange} key={setupValue.name}>
-                                                                {
-                                                                    setupValue.roles.map((roleValue, roleIndex) => {
-                                                                        if(!roleValue.hidden) {
-                                                                            return (<Role roleValue={roleValue} playerSettings={playerSettings}
-                                                                                          onChange={onChange} key={roleValue.player}
-                                                                                          cheatString={JSON.stringify(roleValue)}>
-
-                                                                            </Role>);
-                                                                        }
-                                                                    })
-                                                                }
-
-                                                            </Setup>);
-                                                        }
-                                                    })
-                                                }
-
-                                            </Boss>);
+                                                          big={big} bigTime={bigTime}
+                                                children={children}
+                                            />);
                                         }
                                     }
                                 )

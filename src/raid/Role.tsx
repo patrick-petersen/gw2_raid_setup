@@ -10,6 +10,7 @@ type RoleProps = {
     roleValue: RaidSetup.Role<any>,
     onChange: () => void,
     playerSettings: RaidSetup.PlayerSettings<any>,
+    cheatString?: string;
 }
 
 type StateProps = {

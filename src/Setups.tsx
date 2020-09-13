@@ -26,10 +26,11 @@ import SetupRenderer from "./Setups/SetupRenderer";
 import Week20 from "./Setups/SetupConfigs/Week20";
 import League01 from "./Setups/SetupConfigs/League01";
 import NewFullComp from "./Setups/SetupConfigs/NewFullComp_07-2020";
+import {RaidSetup} from "./Setups/SetupConfigs/RaidSetup";
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
 
-const weeklySetups = [
+const weeklySetups : {week: number, setup: RaidSetup<any>}[] = [
     {
         week: 17,
         setup: Marvin,
@@ -44,12 +45,18 @@ const weeklySetups = [
     },
 ];
 
-let weeklySetupsIndex = {};
+let weeklySetupsIndex : {[id: number]: RaidSetup<any>}[] = [];
 weeklySetups.forEach((value, index) => {
     weeklySetupsIndex[value.week] = value;
 });
 
-const namedSetups = [
+type NamedSetup = {
+    name: string,
+    shortcut: string,
+    setup: RaidSetup<any>,
+}
+
+const namedSetups : NamedSetup[] = [
     {
         name: "Lumi -> Marvin",
         shortcut: "marvin",
@@ -77,15 +84,22 @@ const namedSetups = [
     },
 ];
 
-let namedSetupsIndex = {};
-namedSetups.forEach((value, index) => {
+let namedSetupsIndex : {[id: string]: NamedSetup} = {};
+namedSetups.forEach((value: NamedSetup, index: number) => {
     namedSetupsIndex[value.shortcut] = value;
 });
 
 
-class Setups extends Component {
+type SetupsProps = {
 
-    constructor(props) {
+}
+type SetupsState = {
+    big: boolean,
+    bigTime: number
+}
+
+class Setups extends Component<SetupsProps, SetupsState> {
+    constructor(props : SetupsProps) {
         super(props);
 
         this.state = {
@@ -107,7 +121,7 @@ class Setups extends Component {
         })
     }
 
-    customSetupRenderer(params) {
+    customSetupRenderer(params: object) {
         return <SetupRenderer big={this.state.big} bigTime={this.state.bigTime} {... params} />;
     }
 
