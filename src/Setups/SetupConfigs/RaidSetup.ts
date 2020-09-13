@@ -37,5 +37,4 @@ export interface PlayerSettings<Player> {
 export interface RaidSetup<Player> {
     playerSettings: PlayerSettings<Player>;
     list: Wing<Player>[];
-    name: string;
 };
