@@ -776,8 +776,8 @@ const FullComp : RaidSetup<Player> = {
                         {
                             "name": "Adina",
                             "iconMiniId": 82686,
-                            "selectedSetup": 1,
-                            "defaultSetup": 1,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Rev Tank",
@@ -798,17 +798,17 @@ const FullComp : RaidSetup<Player> = {
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "Dragonhunter",
+                                            "profession": "DPS",
                                             "tasks": ["Pillar"],
                                             "player": "Nevra"
                                         },
                                         {
-                                            "profession": "Firebrand",
+                                            "profession": "DPS",
                                             "tasks": ["Pillar"],
                                             "player": "Yasi"
                                         },
                                         {
-                                            "profession": "Berserker",
+                                            "profession": "DPS",
                                             "tasks": ["Pillar"],
                                             "player": "David"
                                         },
