@@ -91,6 +91,7 @@ class Role extends Component<RoleProps, StateProps> {
         return (
             <div className={"role"
             + (this.state.player !== roleValue.player?" replacement":"")
+            + (this.props.roleValue.hidden?" hidden":"")
             + (this.props.playerSettings.missing.includes(this.state.player )?" missing":"")}>
                 <div className={"profession"}><Profession name={roleValue.profession} /></div>
                 <div className={"task"}>{roleValue.tasks.join(", ")}</div>

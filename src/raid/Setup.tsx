@@ -19,7 +19,8 @@ class Setup extends React.Component<SetupProps> {
 
     render() {
         return (
-            <div className={"setup-roles"}>
+            <div className={"setup-roles"
+            + (this.props.setupValue.hidden?" hidden":"")}>
                 {this.props.children}
             </div>
         )
