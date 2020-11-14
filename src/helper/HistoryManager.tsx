@@ -1,5 +1,6 @@
 import {PlayerSettings, Wing} from "../Setups/SetupConfigs/RaidSetup";
-import {Player} from "../Setups/SetupConfigs/DefaultPlayers";
+
+import {Player} from "../Setups/SetupConfigs/AllPlayers";
 
 type List = Wing<Player>[];
 type Settings = PlayerSettings<Player>;
@@ -63,14 +64,20 @@ export default class HistoryManager {
         }
         
         return list.map((wingValue, wingIndex) => {
+            console.debug("wingIndex", wingIndex)
             return wingValue.bosses.map((bossValue, bossIndex) => {
                 const selectedSetup = bossValue.selectedSetup;
                 const roles = bossValue.setups[selectedSetup].roles;
+                console.debug("bossIndex", bossIndex);
+                console.debug("selectedSetup", selectedSetup);
                 // @ts-ignore
                 const decoded = "" + (this.toBigInt(selectedSetup) + 1n) + roles.map((roleValue, roleIndex) => {
                     const player : Player = (roleValue.replacement)?roleValue.replacement:roleValue.player;
+                    console.debug(player, this._playerSettings.players.indexOf(player));
                     return this._playerSettings.players.indexOf(player);
-                }).reduce(concatWith("", parseInt));
+                }).reduce(concatWith("", a=>a));
+                console.debug(list, decoded);
+
                 const encoded = Base64.fromBigInt(this.stringToInt(decoded));
                 return encoded;
             }).reduce(concatWith(";"));
