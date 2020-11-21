@@ -48,9 +48,9 @@ const weeklySetups : weeklySetupType[] = [
     },
 ];
 
-type defaultSetups = {startWeek: number, lastWeek: number, setup: RaidSetup.RaidSetup<any>};
+type defaultSetupsType = {startWeek: number, lastWeek: number, setup: RaidSetup.RaidSetup<any>};
 
-const defaultSetups : defaultSetups[] = [
+const defaultSetups : defaultSetupsType[] = [
     {
         startWeek: 0,
         lastWeek: 46,
@@ -146,11 +146,11 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
 
     getSetupForKey(id: number) {
         console.log("setupForId", id);
-        if(namedSetupsIndex.hasOwnProperty(id)) {
+        if(Object.prototype.hasOwnProperty.call(namedSetupsIndex, id)) {
             console.log("named", id);
             return this.customSetupRenderer(namedSetupsIndex[id].setup);
         }
-        else if (weeklySetupsIndex.hasOwnProperty(id)) {
+        else if (Object.prototype.hasOwnProperty.call(weeklySetupsIndex, id)) {
             console.log("weekly", id);
             return this.customSetupRenderer(weeklySetupsIndex[id].setup);
         }

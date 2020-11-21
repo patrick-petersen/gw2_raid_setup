@@ -57,8 +57,8 @@ export default class HistoryManager {
         function concatWith(delimiter : string, finisher:(value: string) => any = (a)=>a) {
             return (total : number | string,
                     currentValue : number | string,
-                    currentIndex : number | string,
-                    array: number[] | string[])=> {
+                    currentIndex : number | string/*,
+                    array: number[] | string[]*/)=> {
                 return finisher(total + "" + (currentIndex === 0?"":delimiter) + currentValue);
             }
         }
@@ -71,15 +71,14 @@ export default class HistoryManager {
                 console.debug("bossIndex", bossIndex);
                 console.debug("selectedSetup", selectedSetup);
                 // @ts-ignore
-                const decoded = "" + (this.toBigInt(selectedSetup) + 1n) + roles.map((roleValue, roleIndex) => {
+                const decoded = "" + (this.toBigInt(selectedSetup) + 1n) + roles.map((roleValue/*, roleIndex*/) => {
                     const player : Player = (roleValue.replacement)?roleValue.replacement:roleValue.player;
                     console.debug(player, this._playerSettings.players.indexOf(player));
                     return this._playerSettings.players.indexOf(player);
                 }).reduce(concatWith("", a=>a));
                 console.debug(list, decoded);
 
-                const encoded = Base64.fromBigInt(this.stringToInt(decoded));
-                return encoded;
+                return Base64.fromBigInt(this.stringToInt(decoded));
             }).reduce(concatWith(";"));
         }).reduce(concatWith(";"));
     }
@@ -99,7 +98,7 @@ export default class HistoryManager {
         const encounters = url.split(";");
         let wingIndex = 0;
         let bossIndex = 0;
-        encounters.forEach((value, index) => {
+        encounters.forEach((value/*, index*/) => {
             const decodedValue = Base64.toBigInt(value).toString();
             const roles = decodedValue.substring(1);
             const selectedSetup = parseInt(decodedValue.charAt(0)) - 1;
@@ -165,6 +164,7 @@ const Base64 = (function () {
     for (let i = 0; i < digits.length; i++) {
         digitsMap[digits[i]] = i;
     }
+    //eslint-disable-next-line no-undef
     let digitsMap64 : {[id: string] : bigint}  = {};
     for (let i = 0n; i < digits.length; i++) {
         digitsMap64[digits[Number(i)]] = i;
@@ -172,30 +172,27 @@ const Base64 = (function () {
     return {
         fromInt: function(int32 : number) {
             let result = '';
-            while (true) {
+            do {
                 result = digits[int32 & 0x3f] + result;
                 int32 >>>= 6;
-                if (int32 === 0)
-                    break;
-            }
+            } while (int32 !== 0)
             return result;
         },
         toInt: function(digitsStr : string) {
-            var result = 0;
-            var digits = digitsStr.split('');
-            for (var i = 0; i < digits.length; i++) {
+            let result = 0;
+            let digits = digitsStr.split('');
+            for (let i = 0; i < digits.length; i++) {
                 result = (result << 6) + digitsMap[digits[i]];
             }
             return result;
         },
+        //eslint-disable-next-line no-undef
         fromBigInt: function(int64 : bigint) {
-            var result = '';
-            while (true) {
+            let result = '';
+            do {
                 result = digits[Number(int64 & 0x3fn)] + result;
                 int64 >>= 6n;
-                if (int64 === 0n)
-                    break;
-            }
+            } while (int64 !== 0n)
             return result;
         },
         toBigInt: function(digitsStr : string) {

@@ -2,7 +2,7 @@ import {Component} from "react";
 import * as React from "react";
 
 type ItemIconProps = {
-    name?: string
+    name?: string,
     itemId: number
 }
 type Resolve = (value?: any) => void;
@@ -37,18 +37,18 @@ class ItemIcon extends Component<ItemIconProps> {
     didLoadItem(itemId: number) {
         let promise;
 
-        if(ItemIcon.items.hasOwnProperty(itemId)) {
+        if(Object.prototype.hasOwnProperty.call(ItemIcon.items, itemId)) {
             promise = new Promise((resolve) => {
                 resolve(ItemIcon.items[itemId]);
             });
         }
         else {
-            let outsideResolve = () => {};
+            let outsideResolve = (_: any) => {};
 
             promise = new Promise((resolve) => {
                 outsideResolve = resolve;
             });
-            if(!ItemIcon.promises.hasOwnProperty(itemId)) {
+            if(!Object.prototype.hasOwnProperty.call(ItemIcon.promises, itemId)) {
                 ItemIcon.promises[itemId] = [];
             }
 
@@ -63,7 +63,7 @@ class ItemIcon extends Component<ItemIconProps> {
     resolvePromises(itemId: number, url: string) {
         console.debug("Resolving: ", itemId, url);
 
-        if(ItemIcon.promises.hasOwnProperty(itemId)) {
+        if(Object.prototype.hasOwnProperty.call(ItemIcon.promises, itemId)) {
             let current;
             // eslint-disable-next-line
             while (current = ItemIcon.promises[itemId].pop())

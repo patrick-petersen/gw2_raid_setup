@@ -51,7 +51,7 @@ class Boss extends React.Component<BossProps, BossState> {
     render() {
         console.debug("render boss");
         const bossValue = this.props.bossValue;
-        const hasIcon = bossValue.hasOwnProperty("iconMiniId");
+        const hasIcon = Object.prototype.hasOwnProperty.call(bossValue, "iconMiniId");
         const big = this.getBig();
         return (
             <section className={"boss"
