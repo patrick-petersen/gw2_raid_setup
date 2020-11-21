@@ -1,5 +1,5 @@
 import {RaidSetup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers";
+import {Player} from "./DefaultPlayers_0";
 
 
 export type Replacements = "Tasmosuth" | "Marvin";

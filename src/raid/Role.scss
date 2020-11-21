@@ -12,9 +12,14 @@
         background-color: red;
     }
 
+    &.hidden {
+        display: none;
+    }
+
     .task, .profession, .player {
 
     }
+
     .profession {
         height: 54px;
         vertical-align: middle;

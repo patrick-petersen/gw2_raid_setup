@@ -2,7 +2,7 @@ export type Player = "Kalell" |
     "Nevra" |
     "Yasi" |
     "Alex" |
-    "Kartky" |
+    "Lumi" |
     "Fynn" |
     "David" |
     "Shrotty" |

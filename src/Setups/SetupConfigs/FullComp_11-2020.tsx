@@ -1,10 +1,10 @@
 import {RaidSetup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers";
+import {Player} from "./DefaultPlayers_0";
 
 
-const FullComp : RaidSetup<Player> = {
+const FullComp_112020 : RaidSetup<Player> = {
             "playerSettings": {
-                "players": ["Kalell", "Nevra", "Yasi", "Alex", "Kartky", "Fynn", "David", "Shrotty", "Assa", "Ely"],
+                "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": [],
                 "replacements": {},
             },
@@ -232,7 +232,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Kartky"
+                                            "player": "Lumi"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -256,9 +256,89 @@ const FullComp : RaidSetup<Player> = {
                         {
                             "name": "Sabetha",
                             "iconMiniId": 77339,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 2,
+                            "defaultSetup": 2,
                             "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Kiter"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Cannon 1 & 3"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Cannon 2 & 4"],
+                                            "player": "Lumi"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Condi Supps",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condition", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Kiter"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Cannon 1 & 3"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Cannon 2 & 4"],
+                                            "player": "Lumi"
+                                        },
+                                    ]
+                                },
                                 {
                                     "name": "Chronos",
                                     "roles": [
@@ -295,7 +375,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["pDPS", "Quickness"],
-                                            "player": "Kartky"
+                                            "player": "Lumi"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -324,8 +404,8 @@ const FullComp : RaidSetup<Player> = {
                         {
                             "name": "Desmina",
                             "iconMiniId": 86076,
-                            "selectedSetup": 1,
-                            "defaultSetup": 1,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -359,46 +439,6 @@ const FullComp : RaidSetup<Player> = {
                                             "profession": "Scourge",
                                             "tasks": ["Epi"],
                                             "player": "Assa"
-                                        },
-                                    ]
-                                },
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Tank", "Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Tempest",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Condition", "Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Condition", "Alacrity"],
-                                            "player": "Assa"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Some Quickness"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Pusher"],
-                                            "player": "Fynn"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Epi"],
-                                            "player": "Nevra"
                                         },
                                     ]
                                 },
@@ -554,8 +594,8 @@ const FullComp : RaidSetup<Player> = {
                         {
                             "name": "Dhuum",
                             "iconMiniId": 85998,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -567,18 +607,13 @@ const FullComp : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["Condi", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "Renegade",
-                                            "tasks": ["Condi", "Alacrity"],
-                                            "player": "Assa"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Green 3"],
-                                            "player": "Kalell"
+                                            "profession": "Firebrand",
+                                            "tasks": ["Full Quickness"],
+                                            "player": "Yasi"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -586,14 +621,59 @@ const FullComp : RaidSetup<Player> = {
                                             "player": "David"
                                         },
                                         {
-                                            "profession": "Druid",
+                                            "profession": "Scourge",
                                             "tasks": ["Kiter", "Green 2"],
-                                            "player": "Yasi"
+                                            "player": "Kalell"
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["First Green 2"],
+                                            "tasks": ["Green 3"],
                                             "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["First Green 2"],
+                                            "player": "Lumi"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Dual FB",
+                                    "roles": [
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Green 1"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Kiter", "Green 2"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Green 3"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness", "First Green 2"],
+                                            "player": "Lumi"
                                         },
                                     ]
                                 },
@@ -669,7 +749,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Assa"
+                                            "player": "Lumi"
                                         },
                                         {
                                             "profession": "Scourge",
@@ -776,39 +856,44 @@ const FullComp : RaidSetup<Player> = {
                         {
                             "name": "Adina",
                             "iconMiniId": 82686,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
-                                    "name": "Rev Tank",
+                                    "name": "Normal",
                                     "roles": [
                                         {
                                             "profession": "Thief",
                                             "tasks": ["Boons", "Pillar"],
-                                            "player": "Kalell"
+                                            "player": "Assa"
                                         },
                                         {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Pillar"],
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["Alacrity", "Tank"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "DPS",
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Pillar"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Dragonhunter",
                                             "tasks": ["Pillar"],
                                             "player": "Nevra"
                                         },
                                         {
-                                            "profession": "DPS",
+                                            "profession": "Firebrand",
                                             "tasks": ["Pillar"],
                                             "player": "Yasi"
                                         },
                                         {
-                                            "profession": "DPS",
+                                            "profession": "Berserker",
                                             "tasks": ["Pillar"],
                                             "player": "David"
                                         },
@@ -824,7 +909,7 @@ const FullComp : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Pillar"],
+                                            "tasks": ["Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
                                         {
@@ -833,17 +918,17 @@ const FullComp : RaidSetup<Player> = {
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "DPS",
+                                            "profession": "Firebrand",
                                             "tasks": ["Pillar"],
-                                            "player": "Kartky"
+                                            "player": "Lumi"
                                         },
                                         {
-                                            "profession": "DPS",
+                                            "profession": "Dragonhunter",
                                             "tasks": ["Pillar"],
                                             "player": "Nevra"
                                         },
                                         {
-                                            "profession": "DPS",
+                                            "profession": "Firebrand",
                                             "tasks": ["Pillar"],
                                             "player": "Yasi"
                                         },
@@ -904,39 +989,34 @@ const FullComp : RaidSetup<Player> = {
                                             "player": "Kalell"
                                         },
                                         {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Anomaly CC"],
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["Condi", "Soulcleave", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Stability"],
+                                            "tasks": ["Full Quickness", "Stability"],
                                             "player": "Yasi"
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["Condi", "Soulcleave", "Alacrity"],
+                                            "tasks": ["Soulcleave"],
                                             "player": "Alex"
                                         },
                                         {
-                                            "profession": "Renegade",
-                                            "tasks": ["Condi", "Soulcleave", "Alacrity"],
-                                            "player": "Fynn"
-                                        },
-                                        {
                                             "profession": "Berserker",
-                                            "tasks": ["Banner"],
+                                            "tasks": ["Anomaly CC"],
                                             "player": "David"
                                         },
                                         {
-                                            "profession": "Deadeye",
+                                            "profession": "Scourge",
                                             "tasks": ["Pylon N"],
-                                            "player": "Kartky"
+                                            "player": "Lumi"
                                         },
                                         {
                                             "profession": "Scourge",
@@ -1052,7 +1132,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["DPS", "CC", "Pull"],
-                                            "player": "Yasi"
+                                            "player": "Lumi"
                                         },
                                     ]
                                 },
@@ -1071,7 +1151,7 @@ const FullComp : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["Alacrity", "Tank"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
@@ -1081,7 +1161,7 @@ const FullComp : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["pDPS", "CC", "Quickness"],
+                                            "tasks": ["pDPS", "CC", "Quickness", "Tank"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -1092,7 +1172,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Kartky"
+                                            "player": "Lumi"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -1140,6 +1220,46 @@ const FullComp : RaidSetup<Player> = {
                                     ]
                                 },
                                 {
+                                    "name": "Condi Supps",
+                                    "roles": [
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banners", "CC"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["DPS", "Pull"],
+                                            "player": "Lumi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity", "Condition"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity", "Condition"],
+                                            "player": "Kalell"
+                                        },
+                                    ]
+                                },
+                                {
                                     "name": "Chronos",
                                     "roles": [
                                         {
@@ -1175,62 +1295,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Kartky"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Fynn"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Assa"
-                                        },
-                                    ]
-                                },
-                                {
-                                    "name": "Rev Rank",
-                                    "roles": [
-                                        {
-                                            "profession": "Tempest",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["pDPS", "Quickness"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity", "Tank"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Banner", "CC"],
-                                            "player": "David"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Kartky"
+                                            "player": "Lumi"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -1259,8 +1324,8 @@ const FullComp : RaidSetup<Player> = {
                         {
                             "name": "Slothasor",
                             "iconMiniId": 77870,
-                            "selectedSetup": 2,
-                            "defaultSetup": 2,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Normal",
@@ -1291,12 +1356,12 @@ const FullComp : RaidSetup<Player> = {
                                             "player": "Nevra"
                                         },
                                         {
-                                            "profession": "DPS",
+                                            "profession": "Daredevil",
                                             "tasks": ["Mushroom 3"],
-                                            "player": "Kartky"
+                                            "player": "Lumi"
                                         },
                                         {
-                                            "profession": "DPS",
+                                            "profession": "Weaver",
                                             "tasks": ["Mushroom 4"],
                                             "player": "Alex"
                                         },
@@ -1338,7 +1403,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Dragonhunter",
                                             "tasks": ["Mushroom 3"],
-                                            "player": "Kartky"
+                                            "player": "Lumi"
                                         },
                                         {
                                             "profession": "Dragonhunter",
@@ -1357,63 +1422,13 @@ const FullComp : RaidSetup<Player> = {
                                         },
                                     ]
                                 },
-                                {
-                                    "name": "CC",
-                                    "roles": [
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "CC"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity", "CC"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Mushroom 1", "CC"],
-                                            "player": "David"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["CC", "DPS"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Mushroom 2"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Mushroom 3"],
-                                            "player": "Kartky"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Mushroom 4"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "Soulbeast",
-                                            "tasks": ["Stanceshare"],
-                                            "player": "Fynn"
-                                        },
-                                    ]
-                                },
                             ]
                         },
                         {
                             "name": "Trio",
                             "iconMiniId": 77820,
-                            "selectedSetup": 1,
-                            "defaultSetup": 1,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
                             "setups": [
                                 {
                                     "name": "Tempest",
@@ -1462,6 +1477,11 @@ const FullComp : RaidSetup<Player> = {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
                                             "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Full Quickness"],
+                                            "player": "Yasi"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -1636,7 +1656,7 @@ const FullComp : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Stability"],
+                                            "tasks": ["Some Quickness", "Stability"],
                                             "player": "Yasi"
                                         },
                                     ]
@@ -1851,11 +1871,6 @@ const FullComp : RaidSetup<Player> = {
                                             "player": "David"
                                         },
                                         {
-                                            "profession": "Soulbeast",
-                                            "tasks": ["Stanceshare", "Push"],
-                                            "player": "Fynn"
-                                        },
-                                        {
                                             "profession": "Daredevil",
                                             "tasks": ["DPS", "CC"],
                                             "player": "Nevra"
@@ -1868,17 +1883,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Daredevil",
                                             "tasks": ["DPS", "CC"],
-                                            "player": "Kartky"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["DPS", "CC"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["DPS", "CC"],
-                                            "player": "Assa"
+                                            "player": "Lumi"
                                         },
                                     ]
                                 },
@@ -1887,8 +1892,8 @@ const FullComp : RaidSetup<Player> = {
                         {
                             "name": "Deimos",
                             "iconMiniId": 80327,
-                            "selectedSetup": 2,
-                            "defaultSetup": 2,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Melee",
@@ -1909,6 +1914,11 @@ const FullComp : RaidSetup<Player> = {
                                             "player": "Ely"
                                         },
                                         {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness"],
+                                            "player": "Yasi"
+                                        },
+                                        {
                                             "profession": "Revenant",
                                             "tasks": ["Handkiter"],
                                             "player": "David"
@@ -1916,7 +1926,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Berserker",
                                             "tasks": ["Banner"],
-                                            "player": "Yasi"
+                                            "player": "Lumi"
                                         },
                                     ]
                                 },
@@ -1939,34 +1949,9 @@ const FullComp : RaidSetup<Player> = {
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "Revenant",
-                                            "tasks": ["Handkiter"],
-                                            "player": "David"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Banner"],
+                                            "profession": "Firebrand",
+                                            "tasks": ["Some Quickness"],
                                             "player": "Yasi"
-                                        },
-                                    ]
-                                },
-                                {
-                                    "name": "Rev Tank",
-                                    "roles": [
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Black-kiter"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity", "Tank"],
-                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Revenant",
@@ -1976,7 +1961,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Berserker",
                                             "tasks": ["Banner"],
-                                            "player": "Yasi"
+                                            "player": "Lumi"
                                         },
                                     ]
                                 },
@@ -1987,4 +1972,4 @@ const FullComp : RaidSetup<Player> = {
             ]
         };
 
-export default FullComp;
+export default FullComp_112020;

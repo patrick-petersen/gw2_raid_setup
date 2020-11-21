@@ -12,7 +12,7 @@ import {
 import * as RaidSetup from "./Setups/SetupConfigs/RaidSetup";
 
 //Setups:
-import FullComp from "./Setups/SetupConfigs/FullComp";
+import FullComp_112020 from "./Setups/SetupConfigs/FullComp_11-2020";
 import Marvin from "./Setups/SetupConfigs/Marvin";
 import Week18 from "./Setups/SetupConfigs/Week18";
 import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
@@ -22,7 +22,8 @@ import WeeklySetup from "./Setups/WeeklySetup";
 import SetupRenderer from "./Setups/SetupRenderer";
 import Week20 from "./Setups/SetupConfigs/Week20";
 import League01 from "./Setups/SetupConfigs/League01";
-import NewFullComp from "./Setups/SetupConfigs/NewFullComp_07-2020";
+import FullComp_072020 from "./Setups/SetupConfigs/FullComp_07-2020";
+import FullComp from "./Setups/SetupConfigs/FullComp";
 
 interface RouteParams {
     id: string
@@ -46,6 +47,22 @@ const weeklySetups : weeklySetupType[] = [
         setup: Week20,
     },
 ];
+
+type defaultSetupsType = {startWeek: number, lastWeek: number, setup: RaidSetup.RaidSetup<any>};
+
+const defaultSetups : defaultSetupsType[] = [
+    {
+        startWeek: 0,
+        lastWeek: 46,
+        setup: FullComp_112020
+    },
+    {
+        startWeek: 47,
+        lastWeek: 999,
+        setup: FullComp
+    },
+]
+
 
 let weeklySetupsIndex : {[id: number]: weeklySetupType} = {};
 weeklySetups.forEach((value) => {
@@ -82,7 +99,7 @@ const namedSetups : NamedSetupType[] = [
     {
         name: "New Setups",
         shortcut: "new",
-        setup: NewFullComp,
+        setup: FullComp_072020,
     },
 ];
 
@@ -129,16 +146,21 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
 
     getSetupForKey(id: number) {
         console.log("setupForId", id);
-        if(namedSetupsIndex.hasOwnProperty(id)) {
+        if(Object.prototype.hasOwnProperty.call(namedSetupsIndex, id)) {
             console.log("named", id);
             return this.customSetupRenderer(namedSetupsIndex[id].setup);
         }
-        else if (weeklySetupsIndex.hasOwnProperty(id)) {
+        else if (Object.prototype.hasOwnProperty.call(weeklySetupsIndex, id)) {
             console.log("weekly", id);
             return this.customSetupRenderer(weeklySetupsIndex[id].setup);
         }
         else {
-            console.log("full", id);
+            console.log("defaultSetup", id);
+            for (let setup of defaultSetups) {
+                if (setup.startWeek <= id && setup.lastWeek >= id) {
+                    return this.customSetupRenderer(setup.setup);
+                }
+            }
             return this.customSetupRenderer(FullComp);
         }
     }

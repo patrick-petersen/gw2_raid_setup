@@ -43,7 +43,7 @@ class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelect
 
     insertReplacementName(name: string) {
         const replacements = this.props.playerSettings.replacements;
-        if(replacements.hasOwnProperty(name)) {
+        if(Object.prototype.hasOwnProperty.call(replacements, name)) {
             return replacements[name];
         }
         return name;
@@ -53,11 +53,12 @@ class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelect
         console.log("filterPlayer", filterPlayer);
         return (list: RaidSetup.Wing<any>[]) => {
             console.log("filterList", list);
-            let newList = (JSON.parse(JSON.stringify(list)) as RaidSetup.Wing<any>[]).filter(wing => {
+            const clonedList : RaidSetup.Wing<any>[] = JSON.parse(JSON.stringify(list));
+            let newList = clonedList.filter(wing => {
                 wing.bosses = wing.bosses.filter(boss => {
                     boss.setups = boss.setups.filter(setup => {
                         setup.roles = setup.roles.filter(role => {
-                            const player = role.hasOwnProperty("replacement")?role.replacement:role.player;
+                            const player = Object.prototype.hasOwnProperty.call(role, "replacement")?role.replacement:role.player;
                             return (filterPlayer === "All") || (filterPlayer === player);
                         });
                         return setup.roles.length >= 1;
@@ -80,7 +81,7 @@ class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelect
                 wing.bosses.forEach(boss => {
                     boss.setups.forEach(setup => {
                         setup.roles.forEach(role => {
-                            const player = role.hasOwnProperty("replacement")?role.replacement:role.player;
+                            const player = Object.prototype.hasOwnProperty.call(role, "replacement")?role.replacement:role.player;
                             if((filterPlayer === "All") || (filterPlayer === player)) {
                                 role.hidden = false;
                             }

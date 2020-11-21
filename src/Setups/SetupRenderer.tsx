@@ -95,29 +95,19 @@ class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
 
 
                                             bossValue.setups.forEach((setupValue) => {
-                                                if(setupValue.hidden) {
-                                                    return undefined
-                                                }
-                                                else {
-                                                    children.push(<Setup setupValue={setupValue}
-                                                                   key={setupValue.name}>
-                                                        {
-                                                            setupValue.roles.map((roleValue) => {
-                                                                if(roleValue.hidden) {
-                                                                    return undefined;
-                                                                }
-                                                                else {
-                                                                    return (<Role roleValue={roleValue} playerSettings={playerSettings}
-                                                                                  onChange={onChange} key={roleValue.player}
-                                                                                  cheatString={JSON.stringify(roleValue)}>
+                                                children.push(<Setup setupValue={setupValue}
+                                                               key={setupValue.name}>
+                                                    {
+                                                        setupValue.roles.map((roleValue) => {
+                                                            return (<Role roleValue={roleValue} playerSettings={playerSettings}
+                                                                          onChange={onChange} key={roleValue.player}
+                                                                          cheatString={JSON.stringify(roleValue)}>
 
-                                                                    </Role>);
-                                                                }
-                                                            })
-                                                        }
+                                                            </Role>);
+                                                        })
+                                                    }
 
-                                                    </Setup>);
-                                                }
+                                                </Setup>);
                                             });
 
                                             return (<Boss bossValue={bossValue} playerSettings={playerSettings}

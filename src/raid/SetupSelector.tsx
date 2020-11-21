@@ -5,7 +5,8 @@ import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
 
 interface ISetup {
     props : {setupValue: {name: string}}
-};
+}
+
 type SetupSelectorProps = {
     bossValue: RaidSetup.Boss<any>,
     onChange: () => void,
@@ -89,7 +90,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
         const bossValue = this.props.bossValue;
         const setups : (ISetup | undefined)[] =  this.props.children;
 
-        const isDefaultSetup = !(bossValue.hasOwnProperty("defaultSetup")
+        const isDefaultSetup = !(Object.prototype.hasOwnProperty.call(bossValue, "defaultSetup")
             && (bossValue.defaultSetup !== this.state.selectedSetup));
 
 

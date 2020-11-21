@@ -42,18 +42,18 @@ class Profession extends Component<ProfessionProps> {
 
         let promise;
 
-        if(Profession.professions.hasOwnProperty(profession)) {
+        if(Object.prototype.hasOwnProperty.call(Profession.professions, profession)) {
             promise = new Promise((resolve) => {
                 resolve(Profession.professions[profession]);
             });
         }
         else {
-            let outsideResolve = () => {};
+            let outsideResolve = (_ : any) => {};
             promise = new Promise((resolve) => {
                 outsideResolve = resolve;
                 //outsideReject = reject;
             });
-            if(!Profession.promises.hasOwnProperty(profession)) {
+            if(!Object.prototype.hasOwnProperty.call(Profession.promises, profession)) {
                 Profession.promises[profession] = [];
             }
 
@@ -65,7 +65,7 @@ class Profession extends Component<ProfessionProps> {
 
     resolvePromises(profession: string, url: string) {
         console.debug("resolving", profession, url);
-        if(Profession.promises.hasOwnProperty(profession)) {
+        if(Object.prototype.hasOwnProperty.call(Profession.promises, profession)) {
             let current : Resolve | undefined;
 
             //This loop is intentional, it gets a promise,
@@ -89,7 +89,7 @@ class Profession extends Component<ProfessionProps> {
                     // jsonData is parsed json object received from url
                     console.debug(jsonData);
                     for(let index in jsonData) {
-                        if(!jsonData.hasOwnProperty(index)) {
+                        if(!Object.prototype.hasOwnProperty.call(jsonData, index)) {
                             continue;
                         }
                         let profession = jsonData[index];
@@ -124,7 +124,7 @@ class Profession extends Component<ProfessionProps> {
 
     loadSpecs(ids : number[]) {
         for(let index in ids) {
-            if(!ids.hasOwnProperty(index)) {
+            if(!Object.prototype.hasOwnProperty.call(ids, index)) {
                 continue;
             }
             let spec = ids[index];

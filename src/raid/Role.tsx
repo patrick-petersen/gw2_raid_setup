@@ -3,8 +3,9 @@ import * as React from "react";
 
 import './Role.scss';
 import Profession from "../helper/Profession";
-import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup"
-import {Player} from "../Setups/SetupConfigs/DefaultPlayers";
+import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
+
+import {Player} from "../Setups/SetupConfigs/AllPlayers";
 
 type RoleProps = {
     roleValue: RaidSetup.Role<any>,
@@ -54,8 +55,8 @@ class Role extends Component<RoleProps, StateProps> {
         this.props.onChange();
     }
 
-    componentDidUpdate(prevProps: Readonly<RoleProps>,
-                       prevState: Readonly<StateProps>, snapshot: any) {
+    componentDidUpdate(prevProps: RoleProps,
+                       prevState: StateProps, snapshot: any) {
         if(prevProps !== this.props) {
             let player = this.props.roleValue.player;
 
@@ -72,7 +73,7 @@ class Role extends Component<RoleProps, StateProps> {
 
     insertReplacementName(name: string) {
         const replacements = this.props.playerSettings.replacements;
-        if(replacements.hasOwnProperty(name)) {
+        if(Object.prototype.hasOwnProperty.call(replacements, name)) {
             return replacements[name];
         }
         return name;
@@ -81,7 +82,7 @@ class Role extends Component<RoleProps, StateProps> {
     render() {
         const roleValue = this.props.roleValue;
         let players : Player[];
-        if(roleValue.hasOwnProperty("backups")) {
+        if(Object.prototype.hasOwnProperty.call(roleValue, "backups")) {
             players = roleValue.player.concat([roleValue.backups]);
         }
         else {
@@ -90,6 +91,7 @@ class Role extends Component<RoleProps, StateProps> {
         return (
             <div className={"role"
             + (this.state.player !== roleValue.player?" replacement":"")
+            + (this.props.roleValue.hidden?" hidden":"")
             + (this.props.playerSettings.missing.includes(this.state.player )?" missing":"")}>
                 <div className={"profession"}><Profession name={roleValue.profession} /></div>
                 <div className={"task"}>{roleValue.tasks.join(", ")}</div>
