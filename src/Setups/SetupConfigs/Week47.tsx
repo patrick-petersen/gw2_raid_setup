@@ -71,16 +71,6 @@ const FullComp : RaidSetup<Player> = {
                                             "tasks": ["Seeker Root"],
                                             "player": "Nevra"
                                         },
-                                        {
-                                            "profession": "cDPS",
-                                            "tasks": ["Red Guardian"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "cDPS",
-                                            "tasks": ["Red Guardian"],
-                                            "player": "Yasi"
-                                        },
                                     ]
                                 },
                                 {
@@ -612,6 +602,175 @@ const FullComp : RaidSetup<Player> = {
                     ]
                 },
                 {
+                    "name": "Wing 6",
+                    "bosses": [
+                        {
+                            "name": "Conjured Amalgamate",
+                            /*"iconMiniId": 0,*/
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Soulbeast",
+                                            "tasks": ["Swords"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Swords"],
+                                            "player": "Fynn"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Shields"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Twin Largos",
+                            "iconMiniId": 88868,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Portal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Heal"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Portal"],
+                                            "player": "Yasi"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Qadim",
+                            "iconMiniId": 88587,
+                            "selectedSetup": 1,
+                            "defaultSetup": 1,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Spellbreaker",
+                                            "tasks": ["Tank", "Boonstrip", "Banner"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Wyvern Tank"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["Solo Kiter"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Reaper",
+                                            "tasks": ["Lampe"],
+                                            "player": "Nevra"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "No CC",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["Portal"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Daredevil",
+                                            "tasks": ["Solo Kiter"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Reaper",
+                                            "tasks": ["Lampe"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner", "Wyvern Tank"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
+                {
                     "name": "Wing 7",
                     "bosses": [
                         {
@@ -796,175 +955,6 @@ const FullComp : RaidSetup<Player> = {
                     ]
                 },
                 {
-                    "name": "Wing 6",
-                    "bosses": [
-                        {
-                            "name": "Conjured Amalgamate",
-                            /*"iconMiniId": 0,*/
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Tempest",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Soulbeast",
-                                            "tasks": ["Swords"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Swords"],
-                                            "player": "Fynn"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Shields"],
-                                            "player": "David"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Twin Largos",
-                            "iconMiniId": 88868,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Portal",
-                                    "roles": [
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Tempest",
-                                            "tasks": ["Tank", "Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Assa"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Heal"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Portal"],
-                                            "player": "Yasi"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Qadim",
-                            "iconMiniId": 88587,
-                            "selectedSetup": 1,
-                            "defaultSetup": 1,
-                            "setups": [
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Spellbreaker",
-                                            "tasks": ["Tank", "Boonstrip", "Banner"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Tempest",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Wyvern Tank"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["Solo Kiter"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "Reaper",
-                                            "tasks": ["Lampe"],
-                                            "player": "Nevra"
-                                        },
-                                    ]
-                                },
-                                {
-                                    "name": "No CC",
-                                    "roles": [
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Tank", "Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Tempest",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["Portal"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Daredevil",
-                                            "tasks": ["Solo Kiter"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "Reaper",
-                                            "tasks": ["Lampe"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Banner", "Wyvern Tank"],
-                                            "player": "David"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                    ]
-                },
-                {
                     "name": "Wing 3",
                     "bosses": [
                         {
@@ -1012,7 +1002,7 @@ const FullComp : RaidSetup<Player> = {
                             "defaultSetup": 2,
                             "setups": [
                                 {
-                                    "name": "1-1-1",
+                                    "name": "1-1-2",
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
@@ -1070,7 +1060,7 @@ const FullComp : RaidSetup<Player> = {
                                     "name": "Chronos",
                                     "roles": [
                                         {
-                                            "profession": "Tempest",
+                                            "profession": "Druid",
                                             "tasks": ["Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
