@@ -12,15 +12,16 @@ import {
 import * as RaidSetup from "./Setups/SetupConfigs/RaidSetup";
 
 //Setups:
+import Week18 from "./Setups/SetupConfigs/Week18";
+import Week20 from "./Setups/SetupConfigs/Week20";
+import Week47 from "./Setups/SetupConfigs/Week47";
 import FullComp_112020 from "./Setups/SetupConfigs/FullComp_11-2020";
 import Marvin from "./Setups/SetupConfigs/Marvin";
-import Week18 from "./Setups/SetupConfigs/Week18";
 import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
 import QadimCC from "./Setups/SetupConfigs/QadimCC";
 
 import WeeklySetup from "./Setups/WeeklySetup";
 import SetupRenderer from "./Setups/SetupRenderer";
-import Week20 from "./Setups/SetupConfigs/Week20";
 import League01 from "./Setups/SetupConfigs/League01";
 import FullComp_072020 from "./Setups/SetupConfigs/FullComp_07-2020";
 import FullComp from "./Setups/SetupConfigs/FullComp";
@@ -45,6 +46,10 @@ const weeklySetups : weeklySetupType[] = [
     {
         week: 20,
         setup: Week20,
+    },
+    {
+        week: 47,
+        setup: Week47,
     },
 ];
 
