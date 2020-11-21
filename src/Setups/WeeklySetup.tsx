@@ -1,5 +1,4 @@
 import LinkTo from "./LinkTo";
-import * as React from "react";
 import {Component} from "react";
 import functions from "../helper/functions";
 import GenericSetup from "./GenericSetup";

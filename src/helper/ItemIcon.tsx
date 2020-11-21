@@ -1,5 +1,4 @@
 import {Component} from "react";
-import * as React from "react";
 
 type ItemIconProps = {
     name?: string,
@@ -43,6 +42,7 @@ class ItemIcon extends Component<ItemIconProps> {
             });
         }
         else {
+            // eslint-disable-next-line
             let outsideResolve = (_: any) => {};
 
             promise = new Promise((resolve) => {

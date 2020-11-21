@@ -1,6 +1,5 @@
 import Wing from "../raid/Wing";
 import {Component} from "react";
-import * as React from "react";
 import HistoryManager from "../helper/HistoryManager";
 import PlayerSelection from "../settings/PlayerSelection";
 import Boss from "../raid/Boss";

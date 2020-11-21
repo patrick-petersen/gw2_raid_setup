@@ -1,5 +1,4 @@
 import {Component} from "react";
-import * as React from "react";
 
 type Professions = {[id: string]: Resolve[]};
 type Promises = {[id: string]: Resolve[]};
@@ -48,6 +47,7 @@ class Profession extends Component<ProfessionProps> {
             });
         }
         else {
+            // eslint-disable-next-line
             let outsideResolve = (_ : any) => {};
             promise = new Promise((resolve) => {
                 outsideResolve = resolve;

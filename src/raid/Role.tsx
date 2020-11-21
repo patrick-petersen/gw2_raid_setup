@@ -1,5 +1,4 @@
 import {Component} from "react";
-import * as React from "react";
 
 import './Role.scss';
 import Profession from "../helper/Profession";
@@ -55,8 +54,8 @@ class Role extends Component<RoleProps, StateProps> {
         this.props.onChange();
     }
 
-    componentDidUpdate(prevProps: RoleProps,
-                       prevState: StateProps, snapshot: any) {
+    componentDidUpdate(prevProps: RoleProps/*,
+                       prevState: StateProps, snapshot: any*/) {
         if(prevProps !== this.props) {
             let player = this.props.roleValue.player;
 
@@ -100,14 +99,14 @@ class Role extends Component<RoleProps, StateProps> {
                         ?
                         <div className={"player-select"}>
                             <span key={this.state.player} onClick={
-                                (e) => this.selectPlayer(this.state.player)
+                                () => this.selectPlayer(this.state.player)
                         }>{this.state.player}
                             </span>
                             {
                                 players.map(player =>
                                     (player !== this.state.player)
                                         ? <span key={player} onClick={
-                                            (e) => this.selectPlayer(player)
+                                            () => this.selectPlayer(player)
                                         }>{this.insertReplacementName(player)}</span>
                                     : null
                                 )
