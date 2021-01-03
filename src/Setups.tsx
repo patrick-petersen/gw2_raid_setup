@@ -28,56 +28,71 @@ import FullComp_122020 from "./Setups/SetupConfigs/FullComp_12-2020";
 import FullComp_012021 from "./Setups/SetupConfigs/FullComp_01-2021";
 
 interface RouteParams {
-    id: string
+    week: string,
+    year: string,
 }
 
 const currentWeek = functions.getWeekNumberOfNextMonday();
+const currentYear = functions.getYearNumberOfNextMonday();
 
-type weeklySetupType = {week: number, setup: RaidSetup.RaidSetup<any>};
+type weeklySetupType = {year: number, week: number, setup: RaidSetup.RaidSetup<any>};
 
 const weeklySetups : weeklySetupType[] = [
     {
+        year: 2020,
         week: 17,
         setup: Marvin,
     },
     {
+        year: 2020,
         week: 18,
         setup: Week18,
     },
     {
+        year: 2020,
         week: 20,
         setup: Week20,
     },
     {
+        year: 2020,
         week: 47,
         setup: Week47,
     },
 ];
 
-type defaultSetupsType = {startWeek: number, lastWeek: number, setup: RaidSetup.RaidSetup<any>};
+type defaultSetupsType = {startYear: number, startWeek: number, lastYear: number, lastWeek: number, setup: RaidSetup.RaidSetup<any>};
 
 const defaultSetups : defaultSetupsType[] = [
     {
+        startYear: 2020,
         startWeek: 0,
+        lastYear: 2020,
         lastWeek: 46,
         setup: FullComp_112020
     },
     {
+        startYear: 2020,
         startWeek: 47,
+        lastYear: 2020,
         lastWeek: 52,
         setup: FullComp_122020
     },
     {
-        startWeek: 53,
+        startYear: 2021,
+        startWeek: 1,
+        lastYear: 2025,
         lastWeek: 999,
         setup: FullComp_012021
     },
 ]
 
 
-let weeklySetupsIndex : {[id: number]: weeklySetupType} = {};
+let weeklySetupsIndex : {[id: number]: {[id: number]: weeklySetupType}} = {};
 weeklySetups.forEach((value) => {
-    weeklySetupsIndex[value.week] = value;
+    if(typeof(weeklySetupsIndex[value.year]) === "undefined") {
+        weeklySetupsIndex[value.year] = [];
+    }
+    weeklySetupsIndex[value.year][value.week] = value;
 });
 
 type NamedSetupType = {
@@ -138,7 +153,7 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
         };
         this.toggleBig = this.toggleBig.bind(this);
         this.customSetupRenderer = this.customSetupRenderer.bind(this);
-        this.getSetupForKey = this.getSetupForKey.bind(this);
+        this.getSetupForYearWeek = this.getSetupForYearWeek.bind(this);
         this.AutomatedSetup = this.AutomatedSetup.bind(this);
         this.DefaultSetup = this.DefaultSetup.bind(this);
     }
@@ -155,20 +170,19 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
         return <SetupRenderer big={this.state.big} bigTime={this.state.bigTime} {... params} />;
     }
 
-    getSetupForKey(id: number) {
-        console.log("setupForId", id);
-        if(Object.prototype.hasOwnProperty.call(namedSetupsIndex, id)) {
-            console.log("named", id);
-            return this.customSetupRenderer(namedSetupsIndex[id].setup);
-        }
-        else if (Object.prototype.hasOwnProperty.call(weeklySetupsIndex, id)) {
-            console.log("weekly", id);
-            return this.customSetupRenderer(weeklySetupsIndex[id].setup);
+    getSetupForYearWeek(year: number, week: number) {
+        console.log("setupForId", year, week);
+        if (Object.prototype.hasOwnProperty.call(weeklySetupsIndex, year) &&
+            Object.prototype.hasOwnProperty.call(weeklySetupsIndex[year], week)
+        ) {
+            console.log("weeklySetup");
+            return this.customSetupRenderer(weeklySetupsIndex[year][week].setup);
         }
         else {
-            console.log("defaultSetup", id);
+            console.log("defaultSetup");
             for (let setup of defaultSetups) {
-                if (setup.startWeek <= id && setup.lastWeek >= id) {
+                if (setup.startWeek <= week && setup.lastWeek >= week &&
+                    setup.startYear <= year && setup.lastYear >= year) {
                     return this.customSetupRenderer(setup.setup);
                 }
             }
@@ -178,22 +192,24 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
     AutomatedSetup() {
         const params = useParams<RouteParams>();
 
-        const id = parseInt(params.id);
+        const week = parseInt(params.week);
+        const year = parseInt(params.year);
 
-        console.log("autoId", id);
+        console.log("autoId", week, year);
         return (
-            <WeeklySetup id={id}>
-                {this.getSetupForKey(id)}
+            <WeeklySetup year={year} week={week}>
+                {this.getSetupForYearWeek(year, week)}
             </WeeklySetup>
         );
     }
 
     DefaultSetup() {
-        const id = currentWeek;
+        const week = currentWeek;
+        const year = currentYear;
 
         return (
-            <WeeklySetup id={id} >
-                {this.getSetupForKey(id)}
+            <WeeklySetup year={year} week={week}>
+                {this.getSetupForYearWeek(year, week)}
             </WeeklySetup>
         );
     }
@@ -210,8 +226,8 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
                         {weeklySetups.map((setup, index) => (
                             <Route
                                 key={index}
-                                path={'/'+setup.week}
-                                children={<WeeklySetup id={setup.week}>
+                                path={'/'+setup.year+'/'+setup.week}
+                                children={<WeeklySetup year={setup.year} week={setup.week}>
                                     {this.customSetupRenderer(setup.setup)}
                                 </WeeklySetup>}
                             />))
@@ -225,7 +241,7 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
                                 </NamedSetup>}
                             />))
                         }
-                        <Route path="/:id" children={<this.AutomatedSetup />} />
+                        <Route path="/:year/:week" children={<this.AutomatedSetup />} />
                         <Route>
                             <this.DefaultSetup />
                         </Route>

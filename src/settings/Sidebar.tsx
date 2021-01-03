@@ -5,6 +5,7 @@ import {
     Link,
 } from "react-router-dom";
 import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
+import LinkTo from "../Setups/LinkTo";
 
 enum menus {
     WEEK = "Week" ,
@@ -17,7 +18,7 @@ type NamedSetupType = {
     setup: RaidSetup.RaidSetup<any>,
 }
 
-type weeklySetupType = {week: number, setup: RaidSetup.RaidSetup<any>};
+type weeklySetupType = {year: number, week: number, setup: RaidSetup.RaidSetup<any>};
 
 type SidebarProps = {
     toggleBigCallback: Function,
@@ -75,7 +76,7 @@ class Sidebar extends React.Component<SidebarProps, SidebarState> {
                     <ul>
                         <li key={"currentWeek"}><Link to={"/" + this.props.currentWeek}>Current Week</Link></li>
                         {this.props.weeklySetups.map(setup => {
-                            return <li key={setup.week}><Link to={"/" + setup.week}>Week {setup.week}</Link></li>
+                            return <li key={setup.week}><LinkTo year={setup.year} week={setup.week}>Week {setup.week}-{setup.year}</LinkTo></li>
                         })}
                     </ul>;
             break;

@@ -2,12 +2,14 @@ import {Component} from "react";
 import {Link} from "react-router-dom";
 
 type LinkProps = {
-    id: number
+    year: number,
+    week: number
 }
 
 class LinkTo extends Component<LinkProps> {
     render() {
-        return (<Link to={"/" + this.props.id}>{this.props.id}</Link>);
+        const content = (this.props.children ? this.props.children : this.props.week);
+        return (<Link to={"/" + this.props.year + "/" + this.props.week}>{content}</Link>);
     }
 }
 
