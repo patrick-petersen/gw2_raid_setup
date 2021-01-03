@@ -1,8 +1,8 @@
 import {RaidSetup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers";
+import {Player} from "./DefaultPlayers_1";
 
 
-const FullComp : RaidSetup<Player> = {
+const FullComp_122020 : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Kartky", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": [],
@@ -1997,4 +1997,4 @@ const FullComp : RaidSetup<Player> = {
             ]
         };
 
-export default FullComp;
+export default FullComp_122020;
