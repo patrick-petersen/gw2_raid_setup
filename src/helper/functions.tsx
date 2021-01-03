@@ -15,8 +15,9 @@ export default {
         const dayNum = ((d.getUTCDay() + 6) % 7 ) || 7;
         d.setUTCDate(d.getUTCDate() + 4 - dayNum);
         const yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
+        console.log(d);
         console.log((((d.getTime() - yearStart.getTime()) / 86400000))/7);
-        return Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1)/7) + 1
+        return Math.round((((d.getTime() - yearStart.getTime()) / 86400000) + 1.1)/7) + 1
     },
 
     getYearNumberOfNextMonday : function() {
@@ -28,12 +29,13 @@ export default {
 
     getNextWeek(year: number, week: number) {
         const date = this.getDateOfISOWeek(week, year);
+        date.setUTCDate(date.getUTCDate() + 7);
         return this.getWeekNumberOfNextMondayFromDate(date);
     },
 
     getPreviousWeek(year: number, week: number) {
         const date = this.getDateOfISOWeek(week, year);
-        date.setUTCDate(date.getUTCDate() - 14);
+        date.setUTCDate(date.getUTCDate() - 7);
         return this.getWeekNumberOfNextMondayFromDate(date);
     },
 
