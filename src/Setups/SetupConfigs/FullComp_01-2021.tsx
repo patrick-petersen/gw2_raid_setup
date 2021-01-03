@@ -1,10 +1,10 @@
 import {RaidSetup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers_1";
+import {Player} from "./DefaultPlayers_2";
 
 
-const FullComp : RaidSetup<Player> = {
+const FullComp_122020 : RaidSetup<Player> = {
             "playerSettings": {
-                "players": ["Kalell", "Nevra", "Yasi", "Alex", "Kartky", "Fynn", "David", "Shrotty", "Assa", "Ely"],
+                "players": ["Kalell", "Nevra", "Yasi", "Alex", "Dolavan", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": [],
                 "replacements": {},
             },
@@ -70,6 +70,16 @@ const FullComp : RaidSetup<Player> = {
                                             "profession": "Soulbeast",
                                             "tasks": ["Seeker Root"],
                                             "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "cDPS",
+                                            "tasks": ["Red Guardian"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "cDPS",
+                                            "tasks": ["Red Guardian"],
+                                            "player": "Yasi"
                                         },
                                     ]
                                 },
@@ -232,7 +242,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Kartky"
+                                            "player": "Dolavan"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -295,7 +305,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["pDPS", "Quickness"],
-                                            "player": "Kartky"
+                                            "player": "Dolavan"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -602,6 +612,190 @@ const FullComp : RaidSetup<Player> = {
                     ]
                 },
                 {
+                    "name": "Wing 7",
+                    "bosses": [
+                        {
+                            "name": "Adina",
+                            "iconMiniId": 82686,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Rev Tank",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons", "Pillar"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs", "Pillar"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity", "Tank"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "DPS",
+                                            "tasks": ["Pillar"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "DPS",
+                                            "tasks": ["Pillar"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "DPS",
+                                            "tasks": ["Pillar"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Thief Tank",
+                                    "roles": [
+                                        {
+                                            "profession": "Thief",
+                                            "tasks": ["Boons", "Tank"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs", "Pillar"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "DPS",
+                                            "tasks": ["Pillar"],
+                                            "player": "Dolavan"
+                                        },
+                                        {
+                                            "profession": "DPS",
+                                            "tasks": ["Pillar"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "DPS",
+                                            "tasks": ["Pillar"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Pillar"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Sabir",
+                            "iconMiniId": 83551,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Whisps"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Qadim 2",
+                            "iconMiniId": 91232,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Tank", "Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs", "Anomaly CC"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condi", "Soulcleave", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness", "Stability"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condi", "Soulcleave", "Alacrity"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Condi", "Soulcleave", "Alacrity"],
+                                            "player": "Fynn"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Deadeye",
+                                            "tasks": ["Pylon N"],
+                                            "player": "Dolavan"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Pylon W"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Deadeye",
+                                            "tasks": ["Pylon E"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
+                {
                     "name": "Wing 6",
                     "bosses": [
                         {
@@ -771,190 +965,6 @@ const FullComp : RaidSetup<Player> = {
                     ]
                 },
                 {
-                    "name": "Wing 7",
-                    "bosses": [
-                        {
-                            "name": "Adina",
-                            "iconMiniId": 82686,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Rev Tank",
-                                    "roles": [
-                                        {
-                                            "profession": "Thief",
-                                            "tasks": ["Boons", "Pillar"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Pillar"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity", "Tank"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Pillar"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Pillar"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Pillar"],
-                                            "player": "David"
-                                        },
-                                    ]
-                                },
-                                {
-                                    "name": "Thief Tank",
-                                    "roles": [
-                                        {
-                                            "profession": "Thief",
-                                            "tasks": ["Boons", "Tank"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Pillar"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Pillar"],
-                                            "player": "Kartky"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Pillar"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Pillar"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Pillar"],
-                                            "player": "David"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Sabir",
-                            "iconMiniId": 83551,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Tempest",
-                                            "tasks": ["Tank", "Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Whisps"],
-                                            "player": "David"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Qadim 2",
-                            "iconMiniId": 91232,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Tank", "Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Anomaly CC"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Condi", "Soulcleave", "Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Stability"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Condi", "Soulcleave", "Alacrity"],
-                                            "player": "Alex"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Condi", "Soulcleave", "Alacrity"],
-                                            "player": "Fynn"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Banner"],
-                                            "player": "David"
-                                        },
-                                        {
-                                            "profession": "Deadeye",
-                                            "tasks": ["Pylon N"],
-                                            "player": "Kartky"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Pylon W"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "Deadeye",
-                                            "tasks": ["Pylon E"],
-                                            "player": "Assa"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                    ]
-                },
-                {
                     "name": "Wing 3",
                     "bosses": [
                         {
@@ -1002,7 +1012,7 @@ const FullComp : RaidSetup<Player> = {
                             "defaultSetup": 2,
                             "setups": [
                                 {
-                                    "name": "1-1-2",
+                                    "name": "1-1-1",
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
@@ -1060,7 +1070,7 @@ const FullComp : RaidSetup<Player> = {
                                     "name": "Chronos",
                                     "roles": [
                                         {
-                                            "profession": "Druid",
+                                            "profession": "Tempest",
                                             "tasks": ["Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
@@ -1092,7 +1102,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Kartky"
+                                            "player": "Dolavan"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -1175,7 +1185,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Kartky"
+                                            "player": "Dolavan"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -1230,7 +1240,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["pDPS", "CC", "Quickness"],
-                                            "player": "Kartky"
+                                            "player": "Dolavan"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -1293,7 +1303,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "DPS",
                                             "tasks": ["Mushroom 3"],
-                                            "player": "Kartky"
+                                            "player": "Dolavan"
                                         },
                                         {
                                             "profession": "DPS",
@@ -1338,7 +1348,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Dragonhunter",
                                             "tasks": ["Mushroom 3"],
-                                            "player": "Kartky"
+                                            "player": "Dolavan"
                                         },
                                         {
                                             "profession": "Dragonhunter",
@@ -1393,7 +1403,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "DPS",
                                             "tasks": ["Mushroom 3"],
-                                            "player": "Kartky"
+                                            "player": "Dolavan"
                                         },
                                         {
                                             "profession": "DPS",
@@ -1868,7 +1878,7 @@ const FullComp : RaidSetup<Player> = {
                                         {
                                             "profession": "Daredevil",
                                             "tasks": ["DPS", "CC"],
-                                            "player": "Kartky"
+                                            "player": "Dolavan"
                                         },
                                         {
                                             "profession": "Daredevil",
@@ -1987,4 +1997,4 @@ const FullComp : RaidSetup<Player> = {
             ]
         };
 
-export default FullComp;
+export default FullComp_122020;

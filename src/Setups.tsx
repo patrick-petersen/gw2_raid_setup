@@ -24,7 +24,8 @@ import WeeklySetup from "./Setups/WeeklySetup";
 import SetupRenderer from "./Setups/SetupRenderer";
 import League01 from "./Setups/SetupConfigs/League01";
 import FullComp_072020 from "./Setups/SetupConfigs/FullComp_07-2020";
-import FullComp from "./Setups/SetupConfigs/FullComp";
+import FullComp_122020 from "./Setups/SetupConfigs/FullComp_12-2020";
+import FullComp_012021 from "./Setups/SetupConfigs/FullComp_01-2021";
 
 interface RouteParams {
     id: string
@@ -63,8 +64,13 @@ const defaultSetups : defaultSetupsType[] = [
     },
     {
         startWeek: 47,
+        lastWeek: 52,
+        setup: FullComp_122020
+    },
+    {
+        startWeek: 53,
         lastWeek: 999,
-        setup: FullComp
+        setup: FullComp_012021
     },
 ]
 
@@ -166,7 +172,7 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
                     return this.customSetupRenderer(setup.setup);
                 }
             }
-            return this.customSetupRenderer(FullComp);
+            return this.customSetupRenderer(FullComp_122020);
         }
     }
     AutomatedSetup() {
