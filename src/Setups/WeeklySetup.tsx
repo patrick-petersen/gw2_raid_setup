@@ -14,9 +14,17 @@ class WeeklySetup extends Component<WeeklySetupProps> {
         const year = this.props.year;
         const d = functions.getDateOfISOWeek(week, year);
         const dayString =  d.getDate()  + "." + (d.getMonth()+1) + ".";
+
+        const previousWeek = functions.getPreviousWeek(year, week);
+        const previousYear = (week < previousWeek) ? year - 1 : year;
+        const nextWeek = functions.getNextWeek(year, week);
+        const nextYear = (week < nextWeek) ? year : year + 1;
+
         return <GenericSetup>
             <h3>
-                <LinkTo year={year} week={week - 1}/> Setup for week: {week}-{year} ({dayString}) <LinkTo year={year} week={week - 1 + 2}/>
+                <LinkTo year={previousYear} week={previousWeek}/>&nbsp;
+                Setup for week: {week}-{year} ({dayString})&nbsp;
+                <LinkTo year={nextYear} week={nextWeek}/>
             </h3>
             {this.props.children}
         </GenericSetup>;
