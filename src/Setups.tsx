@@ -26,6 +26,7 @@ import League01 from "./Setups/SetupConfigs/League01";
 import FullComp_072020 from "./Setups/SetupConfigs/FullComp_07-2020";
 import FullComp_122020 from "./Setups/SetupConfigs/FullComp_12-2020";
 import FullComp_012021 from "./Setups/SetupConfigs/FullComp_01-2021";
+import FullComp_022021 from "./Setups/SetupConfigs/FullComp_02-2021";
 
 interface RouteParams {
     week: string,
@@ -80,9 +81,16 @@ const defaultSetups : defaultSetupsType[] = [
     {
         startYear: 2021,
         startWeek: 1,
+        lastYear: 2021,
+        lastWeek: 2,
+        setup: FullComp_012021
+    },
+    {
+        startYear: 2021,
+        startWeek: 3,
         lastYear: 2025,
         lastWeek: 999,
-        setup: FullComp_012021
+        setup: FullComp_022021
     },
 ]
 
