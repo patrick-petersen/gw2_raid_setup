@@ -396,14 +396,9 @@ const FullComp_122020 : RaidSetup<Player> = {
                                             "player": "Assa"
                                         },
                                         {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Some Quickness"],
-                                            "player": "Yasi"
-                                        },
-                                        {
                                             "profession": "Druid",
                                             "tasks": ["Pusher"],
-                                            "player": "Fynn"
+                                            "player": "Yasi"
                                         },
                                         {
                                             "profession": "Scourge",
@@ -1296,9 +1291,9 @@ const FullComp_122020 : RaidSetup<Player> = {
                                             "player": "David"
                                         },
                                         {
-                                            "profession": "Daredevil",
+                                            "profession": "DPS",
                                             "tasks": ["Mushroom 2"],
-                                            "player": "Nevra"
+                                            "player": "Assa"
                                         },
                                         {
                                             "profession": "DPS",
@@ -1308,7 +1303,7 @@ const FullComp_122020 : RaidSetup<Player> = {
                                         {
                                             "profession": "DPS",
                                             "tasks": ["Mushroom 4"],
-                                            "player": "Alex"
+                                            "player": "Yasi"
                                         },
                                     ]
                                 },
@@ -1392,13 +1387,8 @@ const FullComp_122020 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "DPS",
-                                            "tasks": ["CC", "DPS"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "DPS",
                                             "tasks": ["Mushroom 2"],
-                                            "player": "Nevra"
+                                            "player": "Assa"
                                         },
                                         {
                                             "profession": "DPS",
@@ -1408,7 +1398,7 @@ const FullComp_122020 : RaidSetup<Player> = {
                                         {
                                             "profession": "DPS",
                                             "tasks": ["Mushroom 4"],
-                                            "player": "Alex"
+                                            "player": "Yasi"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -1987,6 +1977,11 @@ const FullComp_122020 : RaidSetup<Player> = {
                                             "profession": "Berserker",
                                             "tasks": ["Banner"],
                                             "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Aegis"],
+                                            "player": "Djoice"
                                         },
                                     ]
                                 },
