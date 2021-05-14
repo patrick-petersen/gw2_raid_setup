@@ -61,12 +61,12 @@ const FullComp_202105 : RaidSetup<Player> = {
                                     "roles": [
                                         {
                                             "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Entangle"],
+                                            "tasks": ["Tank", "Heal", "Buffs", "Entangle"],
                                             "player": "Shrotty"
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Tank", "Quickness", "Aegis"],
+                                            "tasks": ["Quickness", "Aegis"],
                                             "player": "Kalell"
                                         },
                                         {
