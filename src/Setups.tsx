@@ -15,7 +15,7 @@ import * as RaidSetup from "./Setups/SetupConfigs/RaidSetup";
 import Week18 from "./Setups/SetupConfigs/Week18";
 import Week20 from "./Setups/SetupConfigs/Week20";
 import Week47 from "./Setups/SetupConfigs/Week47";
-import FullComp_112020 from "./Setups/SetupConfigs/FullComp_11-2020";
+import FullComp_202011 from "./Setups/SetupConfigs/FullComp_2020-11";
 import Marvin from "./Setups/SetupConfigs/Marvin";
 import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
 import QadimCC from "./Setups/SetupConfigs/QadimCC";
@@ -23,10 +23,11 @@ import QadimCC from "./Setups/SetupConfigs/QadimCC";
 import WeeklySetup from "./Setups/WeeklySetup";
 import SetupRenderer from "./Setups/SetupRenderer";
 import League01 from "./Setups/SetupConfigs/League01";
-import FullComp_072020 from "./Setups/SetupConfigs/FullComp_07-2020";
-import FullComp_122020 from "./Setups/SetupConfigs/FullComp_12-2020";
-import FullComp_012021 from "./Setups/SetupConfigs/FullComp_01-2021";
-import FullComp_022021 from "./Setups/SetupConfigs/FullComp_02-2021";
+import FullComp_202007 from "./Setups/SetupConfigs/FullComp_2020-07";
+import FullComp_202012 from "./Setups/SetupConfigs/FullComp_2020-12";
+import FullComp_202101 from "./Setups/SetupConfigs/FullComp_2021-01";
+import FullComp_202102 from "./Setups/SetupConfigs/FullComp_2021-02";
+import FullComp_202105 from "./Setups/SetupConfigs/FullComp_2021-05";
 
 interface RouteParams {
     week: string,
@@ -69,28 +70,35 @@ const defaultSetups : defaultSetupsType[] = [
         startWeek: 0,
         lastYear: 2020,
         lastWeek: 46,
-        setup: FullComp_112020
+        setup: FullComp_202011
     },
     {
         startYear: 2020,
         startWeek: 47,
         lastYear: 2020,
         lastWeek: 52,
-        setup: FullComp_122020
+        setup: FullComp_202012
     },
     {
         startYear: 2021,
         startWeek: 1,
         lastYear: 2021,
         lastWeek: 2,
-        setup: FullComp_012021
+        setup: FullComp_202101
     },
     {
         startYear: 2021,
         startWeek: 3,
+        lastYear: 2021,
+        lastWeek: 18,
+        setup: FullComp_202102
+    },
+    {
+        startYear: 2021,
+        startWeek: 19,
         lastYear: 2025,
         lastWeek: 999,
-        setup: FullComp_022021
+        setup: FullComp_202105
     },
 ]
 
@@ -133,7 +141,7 @@ const namedSetups : NamedSetupType[] = [
     {
         name: "New Setups",
         shortcut: "new",
-        setup: FullComp_072020,
+        setup: FullComp_202007,
     },
 ];
 
@@ -194,7 +202,7 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
                     return this.customSetupRenderer(setup.setup);
                 }
             }
-            return this.customSetupRenderer(FullComp_122020);
+            return this.customSetupRenderer(FullComp_202012);
         }
     }
     AutomatedSetup() {
