@@ -1027,6 +1027,31 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         {
                                             "profession": "Firebrand",
                                             "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity", "Bubble"],
+                                            "player": "Ely"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Condi RR",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -1056,6 +1081,36 @@ const FullComp_202105 : RaidSetup<Player> = {
                             "setups": [
                                 {
                                     "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs", "Dispel"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity", "Claim"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Protect"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Condi RR",
                                     "roles": [
                                         {
                                             "profession": "Druid",
@@ -1108,6 +1163,36 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         {
                                             "profession": "Firebrand",
                                             "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity", "CC"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banners", "Extra Push"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Power RR",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Push", "Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -1127,7 +1212,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Berserker",
-                                            "tasks": ["Extra Push"],
+                                            "tasks": ["Banners", "Extra Push"],
                                             "player": "David"
                                         },
                                     ]
@@ -1142,6 +1227,41 @@ const FullComp_202105 : RaidSetup<Player> = {
                             "setups": [
                                 {
                                     "name": "Melee",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs", "Black-kiter"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Tank", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Revenant",
+                                            "tasks": ["Handkiter"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banner"],
+                                            "player": "Yasi"
+                                        },
+                                    ]
+                                },
+                                {
+                                    "name": "Power RR",
                                     "roles": [
                                         {
                                             "profession": "Druid",
