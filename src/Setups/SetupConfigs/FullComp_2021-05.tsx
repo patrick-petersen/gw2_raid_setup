@@ -992,6 +992,16 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "player": "Michi"
                                         },
                                         {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Assa"
+                                        },
+                                        {
                                             "profession": "Scourge",
                                             "tasks": ["Healing", "Reviving"],
                                             "player": "Yasi"
