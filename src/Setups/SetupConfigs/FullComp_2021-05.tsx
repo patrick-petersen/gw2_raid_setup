@@ -268,13 +268,8 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
-                                            "player": "Fynn"
                                         },
                                     ]
                                 },
@@ -306,13 +301,8 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
-                                            "player": "Fynn"
                                         },
                                     ]
                                 },
@@ -344,13 +334,8 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
-                                            "player": "Fynn"
                                         },
                                         {
                                             "profession": "Druid",
@@ -398,7 +383,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["RR", "Alacrity"],
-                                            "player": "Assa"
+                                            "player": "Fynn"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -457,11 +442,6 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "profession": "DPS",
                                             "tasks": ["Pillar"],
                                             "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Pillar"],
-                                            "player": "Yasi"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -603,9 +583,9 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "player": "Kalell"
                                         },
                                         {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Pull"],
-                                            "player": "Yasi"
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Michi"
                                         },
                                         {
                                             "profession": "Renegade",
