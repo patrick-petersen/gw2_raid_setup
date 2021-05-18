@@ -5,13 +5,13 @@ import {Player} from "../Setups/SetupConfigs/AllPlayers";
 type List = Wing<Player>[];
 type Settings = PlayerSettings<Player>;
 type historyObjectType = {
-    _currentUrl: string,
+    _currentHash: string,
     _list: List,
 };
 
 export default class HistoryManager {
-    _startUrl = this.getHash();
-    _currentUrl = this._startUrl;
+    _startHash = this.getHash();
+    _currentHash = this._startHash;
     _playerSettings : Settings;
     _list : List = [];
 
@@ -19,16 +19,15 @@ export default class HistoryManager {
 
     constructor(list: List, playerSettings : Settings) {
         this._playerSettings = playerSettings;
-        const hash = this.getHash();
+        let hash = this.getHash();
 
         this.saveList(list);
 
-        let setup = "";
-        if(hash.length >= 1) {
-            setup = hash;
+        if(hash.length < 1) {
+            hash = "";
         }
 
-        this.updateListFromUrl(setup);
+        this.updateListFromHash(hash);
 
         window.onpopstate = (event : PopStateEvent) => {
             const hash = this.getHash();
@@ -38,19 +37,19 @@ export default class HistoryManager {
     }
 
     getHash() {
-        console.log("location:", window.location.hash, "state:", event);
+        console.log("location:", window.location.hash);
         return window.location.hash.substr(1);
 
     }
-    saveHash(historyObject : historyObjectType, url : string) {
-        window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+url);
+    saveHash(historyObject : historyObjectType, hash : string) {
+        window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+hash);
     }
 
     changedHash(historyObject : historyObjectType, hash : string) {
 
         if(historyObject !== null) {
             this._list = historyObject._list;
-            this._currentUrl = historyObject._currentUrl;
+            this._currentHash = historyObject._currentHash;
             this.callOnChangeCallbacks();
         }
         else {
@@ -60,8 +59,8 @@ export default class HistoryManager {
             if(hash.length >= 1) {
                 setup = hash;
             }
-            this.updateListFromUrl(setup);
-            this._currentUrl = hash;
+            this.updateListFromHash(setup);
+            this._currentHash = hash;
         }
     }
 
@@ -70,7 +69,7 @@ export default class HistoryManager {
         this.listChanged();
     }
 
-    generateUrlFromList(list : List) {
+    generateHashFromList(list : List) {
         function concatWith(delimiter : string, finisher:(value: string) => any = (a)=>a) {
             return (total : number | string,
                     currentValue : number | string,
@@ -110,9 +109,9 @@ export default class HistoryManager {
         return BigInt(int);
     }
     
-    updateListFromUrl(url : string) {
-        if(url.length <= 1) return;
-        const encounters = url.split(";");
+    updateListFromHash(hash : string) {
+        if(hash.length <= 1) return;
+        const encounters = hash.split(";");
         let wingIndex = 0;
         let bossIndex = 0;
         encounters.forEach((value/*, index*/) => {
@@ -153,19 +152,19 @@ export default class HistoryManager {
         this._onChangeCallbacks.push(callback);
     }
 
-    updateCurrentUrl(url : string) {
-        this._currentUrl = url;
+    updateCurrentHash(hash : string) {
+        this._currentHash = hash;
         const historyObject = {
-            _currentUrl: this._currentUrl,
+            _currentHash: this._currentHash,
             _list: this._list,
         };
 
-        this.saveHash(historyObject, url);
+        this.saveHash(historyObject, hash);
     }
 
     listChanged() {
-        const url = this.generateUrlFromList(this._list);
-        this.updateCurrentUrl(url);
+        const hash = this.generateHashFromList(this._list);
+        this.updateCurrentHash(hash);
     }
 }
 
