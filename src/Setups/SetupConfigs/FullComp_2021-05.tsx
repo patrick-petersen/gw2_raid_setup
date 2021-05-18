@@ -28,12 +28,12 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Quickness", "Tank"],
                                             "player": "Kalell"
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Heal", "Tank", "Quickness"],
+                                            "tasks": ["Heal", "Quickness"],
                                             "player": "Michi"
                                         },
                                         {
@@ -61,17 +61,17 @@ const FullComp_202105 : RaidSetup<Player> = {
                                     "roles": [
                                         {
                                             "profession": "Druid",
-                                            "tasks": ["Tank", "Heal", "Buffs", "Entangle"],
+                                            "tasks": ["Heal", "Buffs", "Entangle"],
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Aegis"],
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Pull", "Tank"],
                                             "player": "Kalell"
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Aegis"],
+                                            "tasks": ["Quickness", "SyG"],
                                             "player": "Michi"
                                         },
                                         {
