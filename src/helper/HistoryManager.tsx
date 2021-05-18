@@ -4,9 +4,13 @@ import {Player} from "../Setups/SetupConfigs/AllPlayers";
 
 type List = Wing<Player>[];
 type Settings = PlayerSettings<Player>;
+type historyObjectType = {
+    _currentUrl: string,
+    _list: List,
+};
 
 export default class HistoryManager {
-    _startUrl = window.location.hash;
+    _startUrl = this.getHash();
     _currentUrl = this._startUrl;
     _playerSettings : Settings;
     _list : List = [];
@@ -15,7 +19,7 @@ export default class HistoryManager {
 
     constructor(list: List, playerSettings : Settings) {
         this._playerSettings = playerSettings;
-        const hash = window.location.hash.substr(1);
+        const hash = this.getHash();
 
         this.saveList(list);
 
@@ -27,25 +31,38 @@ export default class HistoryManager {
         this.updateListFromUrl(setup);
 
         window.onpopstate = (event : PopStateEvent) => {
-            console.log("location:", window.location.hash, "state:", event);
-            const hash = window.location.hash.substr(1);
-            const historyObject = event.state;
-            if(historyObject !== null) {
-                this._list = historyObject._list;
-                this._currentUrl = historyObject._currentUrl;
-                this.callOnChangeCallbacks();
-            }
-            else {
-                //In case there is no history object
-                //i.e. back to initial load, or manually editing the hash
-                let setup = "";
-                if(hash.length >= 1) {
-                    setup = hash;
-                }
-                this.updateListFromUrl(setup);
-                this._currentUrl = hash;
-            }
+            const hash = this.getHash();
+            const historyObject : historyObjectType = event.state;
+            this.changedHash(historyObject, hash);
         };
+    }
+
+    getHash() {
+        console.log("location:", window.location.hash, "state:", event);
+        return window.location.hash.substr(1);
+
+    }
+    saveHash(historyObject : historyObjectType, url : string) {
+        window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+url);
+    }
+
+    changedHash(historyObject : historyObjectType, hash : string) {
+
+        if(historyObject !== null) {
+            this._list = historyObject._list;
+            this._currentUrl = historyObject._currentUrl;
+            this.callOnChangeCallbacks();
+        }
+        else {
+            //In case there is no history object
+            //i.e. back to initial load, or manually editing the hash
+            let setup = "";
+            if(hash.length >= 1) {
+                setup = hash;
+            }
+            this.updateListFromUrl(setup);
+            this._currentUrl = hash;
+        }
     }
 
     saveList(list : List) {
@@ -143,7 +160,7 @@ export default class HistoryManager {
             _list: this._list,
         };
 
-        window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+url);
+        this.saveHash(historyObject, url);
     }
 
     listChanged() {
