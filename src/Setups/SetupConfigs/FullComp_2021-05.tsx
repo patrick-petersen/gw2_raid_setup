@@ -103,8 +103,8 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Aegis"],
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
