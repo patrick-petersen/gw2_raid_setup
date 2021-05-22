@@ -38,7 +38,7 @@ abstract class HistoryManager {
         this.updateListFromHash(hash);
     }
 
-    saveList(list : List) {
+    saveList(list : List) : void {
         this._list = list;
         this.listChanged();
     }
@@ -73,17 +73,17 @@ abstract class HistoryManager {
         }).reduce(concatWith(";"));
     }
 
-    stringToInt(string : string) {
+    stringToInt(string : string) : bigint{
         // eslint-disable-next-line
         return BigInt(string);
     }
 
-    toBigInt(int : number) {
+    toBigInt(int : number) : bigint {
         // eslint-disable-next-line
         return BigInt(int);
     }
     
-    updateListFromHash(hash : string) {
+    updateListFromHash(hash : string) : void {
         if(hash.length <= 1) return;
         const encounters = hash.split(";");
         let wingIndex = 0;
@@ -118,15 +118,15 @@ abstract class HistoryManager {
         this.callOnChangeCallbacks();
     }
 
-    callOnChangeCallbacks() {
+    callOnChangeCallbacks() : void {
         this._onChangeCallbacks.forEach(value => value(this._list));
     }
 
-    addOnChangeCallback(callback : (list : List) => void) {
+    addOnChangeCallback(callback : (list : List) => void) : void {
         this._onChangeCallbacks.push(callback);
     }
 
-    updateCurrentHash(hash : string) {
+    updateCurrentHash(hash : string) : void {
         this._currentHash = hash;
         const historyObject = {
             _currentHash: this._currentHash,
@@ -136,7 +136,7 @@ abstract class HistoryManager {
         this.saveHash(historyObject, hash);
     }
 
-    listChanged() {
+    listChanged() : void {
         const hash = this.generateHashFromList(this._list);
         this.updateCurrentHash(hash);
     }
