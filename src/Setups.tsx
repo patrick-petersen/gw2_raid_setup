@@ -4,7 +4,7 @@ import Sidebar from "./settings/Sidebar";
 import NamedSetup from "./Setups/NamedSetup";
 import "./Setups.scss";
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route,
     useParams
