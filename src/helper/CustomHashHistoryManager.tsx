@@ -1,27 +1,33 @@
 import HistoryManager, {historyObjectType, List, Settings} from "./HistoryManager";
 
-export default class HashHistoryManager extends HistoryManager {
+export default class CustomHashHistoryManager extends HistoryManager {
     constructor(list: List, playerSettings : Settings) {
         super(list, playerSettings);
-
+/*
         window.onpopstate = (event : PopStateEvent) => {
             const hash = this.getHash();
             const historyObject : historyObjectType = event.state;
             this.changedHash(historyObject, hash);
         };
+ */
     }
 
     getHash() : string {
+        return "";
+        /*
         console.log("location:", window.location.hash);
         return window.location.hash.substr(1);
+        */
     }
 
     saveHash(historyObject : historyObjectType, hash : string) : void {
+        /*
         window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+hash);
+         */
     }
 
     changedHash(historyObject : historyObjectType, hash : string) : void {
-
+    /*
         if(historyObject !== null) {
             this._list = historyObject._list;
             this._currentHash = historyObject._currentHash;
@@ -37,6 +43,7 @@ export default class HashHistoryManager extends HistoryManager {
             this.updateListFromHash(setup);
             this._currentHash = hash;
         }
+     */
     }
 
 }
