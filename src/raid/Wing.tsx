@@ -13,7 +13,7 @@ class Wing extends React.Component<WingProps> {
         }
     }
 
-    render() {
+    render() : JSX.Element {
         console.debug("rendering wing")
         const wingValue = this.props.wingValue;
         return (

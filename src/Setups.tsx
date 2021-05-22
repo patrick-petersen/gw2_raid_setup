@@ -174,7 +174,7 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
         this.DefaultSetup = this.DefaultSetup.bind(this);
     }
 
-    toggleBig() {
+    toggleBig() : void {
         console.log("toggle big");
         this.setState({
             big: !this.state.big,
@@ -182,11 +182,11 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
         })
     }
 
-    customSetupRenderer(params: RaidSetup.RaidSetup<any>) {
+    customSetupRenderer(params: RaidSetup.RaidSetup<any>) : JSX.Element {
         return <SetupRenderer big={this.state.big} bigTime={this.state.bigTime} {... params} />;
     }
 
-    getSetupForYearWeek(year: number, week: number) {
+    getSetupForYearWeek(year: number, week: number) : JSX.Element {
         console.log("setupForId", year, week);
         if (Object.prototype.hasOwnProperty.call(weeklySetupsIndex, year) &&
             Object.prototype.hasOwnProperty.call(weeklySetupsIndex[year], week)
@@ -205,7 +205,7 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
             return this.customSetupRenderer(FullComp_202012);
         }
     }
-    AutomatedSetup() {
+    AutomatedSetup() : JSX.Element {
         const params = useParams<RouteParams>();
 
         const week = parseInt(params.week);
@@ -219,7 +219,7 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
         );
     }
 
-    DefaultSetup() {
+    DefaultSetup() : JSX.Element {
         const week = currentWeek;
         const year = currentYear;
 
@@ -229,7 +229,7 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
             </WeeklySetup>
         );
     }
-    render() {
+    render() : JSX.Element {
         return (
             <div className={"body"}>
                 <Router>

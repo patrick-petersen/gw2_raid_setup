@@ -1,8 +1,7 @@
 import {Component} from "react";
 
 class GenericSetup extends Component {
-    render() {
-
+    render() : JSX.Element {
         return (
             <div className={"content"}>
                 {this.props.children}

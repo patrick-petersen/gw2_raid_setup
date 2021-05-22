@@ -20,12 +20,14 @@ export default class CustomHashHistoryManager extends HistoryManager {
         */
     }
 
+    // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
     saveHash(historyObject : historyObjectType, hash : string) : void {
         /*
         window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+hash);
          */
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     changedHash(historyObject : historyObjectType, hash : string) : void {
     /*
         if(historyObject !== null) {

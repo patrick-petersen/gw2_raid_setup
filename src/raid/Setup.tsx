@@ -17,7 +17,7 @@ class Setup extends React.Component<SetupProps> {
         };
     }
 
-    render() {
+    render() : JSX.Element {
         return (
             <div className={"setup-roles"
             + (this.props.setupValue.hidden?" hidden":"")}>

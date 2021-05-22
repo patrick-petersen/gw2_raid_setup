@@ -38,7 +38,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
         this.childClick = this.childClick.bind(this);
     }
 
-    openSetupSelect() {
+    openSetupSelect() : void {
         const bossValue = this.props.bossValue;
         console.log("openSelect");
         if(bossValue.setups.length > 1) {
@@ -48,7 +48,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
         }
     }
 
-    selectSetup(setupKey: number) {
+    selectSetup(setupKey: number) : void {
         console.log("selected: ", setupKey);
         this.setState({
             setupSelection: false,
@@ -59,7 +59,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
     }
 
     childClick(setupKey: number) {
-        return (() => {
+        return (() : void => {
             console.log("childClick: ", setupKey);
             if(this.state.setupSelection) {
                 this.selectSetup(setupKey)
@@ -70,7 +70,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
         })
     }
 
-    renderSetup(child: ISetup | undefined, index: number) {
+    renderSetup(child: ISetup | undefined, index: number) : JSX.Element | undefined {
         if(child) {
             return (
                 <div className={"setup " + this.state.setupState + (
@@ -86,7 +86,7 @@ class SetupSelector extends React.Component<SetupSelectorProps, SetupSelectorSta
         }
     }
 
-    render() {
+    render() : JSX.Element {
         const bossValue = this.props.bossValue;
         const setups : (ISetup | undefined)[] =  this.props.children;
 

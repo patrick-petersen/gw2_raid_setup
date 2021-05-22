@@ -6,7 +6,7 @@ type NamedSetupProps = {
 }
 
 class NamedSetup extends Component<NamedSetupProps> {
-    render() {
+    render() : JSX.Element {
         return <GenericSetup>
             <h3>
                 Setup named: {this.props.name}

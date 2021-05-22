@@ -9,7 +9,7 @@ type WeeklySetupProps = {
 }
 
 class WeeklySetup extends Component<WeeklySetupProps> {
-    render() {
+    render() : JSX.Element {
         const week = this.props.week;
         const year = this.props.year;
         const d = functions.getDateOfISOWeek(week, year);

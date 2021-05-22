@@ -24,7 +24,7 @@ class Profession extends Component<ProfessionProps> {
         url: "",
     };
 
-    render() {
+    render() : JSX.Element {
         if (!this.state.loaded) {
             return (
                 <span>{this.props.name}</span>

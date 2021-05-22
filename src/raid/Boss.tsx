@@ -37,18 +37,18 @@ class Boss extends React.Component<BossProps, BossState> {
         this.getBig = this.getBig.bind(this);
     }
 
-    toggleSize() {
+    toggleSize() : void {
         this.setState({
             big: !this.getBig(),
             bigTime: Date.now(),
         })
     }
 
-    getBig() {
+    getBig() : boolean {
         return this.props.bigTime > this.state.bigTime ? this.props.big : this.state.big;
     }
 
-    render() {
+    render() : JSX.Element {
         console.debug("render boss");
         const bossValue = this.props.bossValue;
         const hasIcon = Object.prototype.hasOwnProperty.call(bossValue, "iconMiniId");

@@ -39,13 +39,13 @@ class Role extends Component<RoleProps, StateProps> {
         this.insertReplacementName = this.insertReplacementName.bind(this);
     }
 
-    openPlayerSelect() {
+    openPlayerSelect() : void {
         this.setState({
             playerSelection: true
         })
     }
 
-    selectPlayer(player : Player) {
+    selectPlayer(player : Player) : void {
         this.setState({
             playerSelection: false,
             player: player
@@ -55,7 +55,7 @@ class Role extends Component<RoleProps, StateProps> {
     }
 
     componentDidUpdate(prevProps: RoleProps/*,
-                       prevState: StateProps, snapshot: any*/) {
+                       prevState: StateProps, snapshot: any*/) : void {
         if(prevProps !== this.props) {
             let player = this.props.roleValue.player;
 
@@ -70,7 +70,7 @@ class Role extends Component<RoleProps, StateProps> {
         }
     }
 
-    insertReplacementName(name: string) {
+    insertReplacementName(name: string) : string {
         const replacements = this.props.playerSettings.replacements;
         if(Object.prototype.hasOwnProperty.call(replacements, name)) {
             return replacements[name];
@@ -78,7 +78,7 @@ class Role extends Component<RoleProps, StateProps> {
         return name;
     }
 
-    render() {
+    render() : JSX.Element {
         const roleValue = this.props.roleValue;
         let players : Player[];
         if(Object.prototype.hasOwnProperty.call(roleValue, "backups")) {
