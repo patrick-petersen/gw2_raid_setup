@@ -21,7 +21,7 @@ type NamedSetupType = {
 type weeklySetupType = {year: number, week: number, setup: RaidSetup.RaidSetup<any>};
 
 type SidebarProps = {
-    toggleBigCallback: Function,
+    toggleBigCallback: () => void,
     namedSetups: NamedSetupType[],
     currentWeek: number,
     weeklySetups: weeklySetupType[],

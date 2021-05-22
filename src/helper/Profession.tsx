@@ -37,7 +37,7 @@ class Profession extends Component<ProfessionProps> {
         }
     }
 
-    didLoadProfession(profession: string) {
+    didLoadProfession(profession: string) : Promise<any> {
 
         let promise;
 
@@ -63,7 +63,7 @@ class Profession extends Component<ProfessionProps> {
         return promise;
     }
 
-    resolvePromises(profession: string, url: string) {
+    resolvePromises(profession: string, url: string) : void {
         console.debug("resolving", profession, url);
         if(Object.prototype.hasOwnProperty.call(Profession.promises, profession)) {
             let current : Resolve | undefined;
@@ -78,7 +78,7 @@ class Profession extends Component<ProfessionProps> {
         }
     }
 
-    loadProfessions() {
+    loadProfessions() : void {
         console.debug("loading professions");
         if(!Profession.loading && !Profession.error) {
             Profession.loading = true;
@@ -88,11 +88,11 @@ class Profession extends Component<ProfessionProps> {
                 .then((jsonData) => {
                     // jsonData is parsed json object received from url
                     console.debug(jsonData);
-                    for(let index in jsonData) {
+                    for(const index in jsonData) {
                         if(!Object.prototype.hasOwnProperty.call(jsonData, index)) {
                             continue;
                         }
-                        let profession = jsonData[index];
+                        const profession = jsonData[index];
                         fetch("https://api.guildwars2.com/v2/professions/" + profession + "?lang=en")
                             .then(response => response.json())
                             .then((jsonData) => {
@@ -122,12 +122,12 @@ class Profession extends Component<ProfessionProps> {
         }
     }
 
-    loadSpecs(ids : number[]) {
-        for(let index in ids) {
+    loadSpecs(ids : number[]) : void {
+        for(const index in ids) {
             if(!Object.prototype.hasOwnProperty.call(ids, index)) {
                 continue;
             }
-            let spec = ids[index];
+            const spec = ids[index];
             fetch("https://api.guildwars2.com/v2/specializations/" + spec + "?lang=en")
             .then(response => response.json())
             .then((jsonData) => {
@@ -145,7 +145,7 @@ class Profession extends Component<ProfessionProps> {
         }
     }
 
-    componentDidMount() {
+    componentDidMount() : void {
         this.didLoadProfession(this.props.name).then((url) => {
             this.setState({loaded: true, url: url});
         });

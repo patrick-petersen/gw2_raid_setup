@@ -4,7 +4,7 @@ import Sidebar from "./settings/Sidebar";
 import NamedSetup from "./Setups/NamedSetup";
 import "./Setups.scss";
 import {
-    BrowserRouter as Router,
+    HashRouter as Router,
     Switch,
     Route,
     useParams
@@ -33,7 +33,7 @@ interface RouteParams {
     week: string,
     year: string,
 }
-
+//abstract class a {};
 const currentWeek = functions.getWeekNumberOfNextMonday();
 const currentYear = functions.getYearNumberOfNextMonday();
 
@@ -103,7 +103,7 @@ const defaultSetups : defaultSetupsType[] = [
 ]
 
 
-let weeklySetupsIndex : {[id: number]: {[id: number]: weeklySetupType}} = {};
+const weeklySetupsIndex : {[id: number]: {[id: number]: weeklySetupType}} = {};
 weeklySetups.forEach((value) => {
     if(typeof(weeklySetupsIndex[value.year]) === "undefined") {
         weeklySetupsIndex[value.year] = [];
@@ -145,7 +145,7 @@ const namedSetups : NamedSetupType[] = [
     },
 ];
 
-let namedSetupsIndex : {[id: string]: NamedSetupType} = {};
+const namedSetupsIndex : {[id: string]: NamedSetupType} = {};
 namedSetups.forEach((value: NamedSetupType) => {
     namedSetupsIndex[value.shortcut] = value;
 });
@@ -196,7 +196,7 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
         }
         else {
             console.log("defaultSetup");
-            for (let setup of defaultSetups) {
+            for (const setup of defaultSetups) {
                 if (setup.startWeek <= week && setup.lastWeek >= week &&
                     setup.startYear <= year && setup.lastYear >= year) {
                     return this.customSetupRenderer(setup.setup);

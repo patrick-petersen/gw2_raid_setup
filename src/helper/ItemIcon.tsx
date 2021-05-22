@@ -33,7 +33,7 @@ class ItemIcon extends Component<ItemIconProps> {
         }
     }
 
-    didLoadItem(itemId: number) {
+    didLoadItem(itemId: number) : Promise<any> {
         let promise;
 
         if(Object.prototype.hasOwnProperty.call(ItemIcon.items, itemId)) {
@@ -60,7 +60,7 @@ class ItemIcon extends Component<ItemIconProps> {
         return promise;
     }
 
-    resolvePromises(itemId: number, url: string) {
+    resolvePromises(itemId: number, url: string) : void {
         console.debug("Resolving: ", itemId, url);
 
         if(Object.prototype.hasOwnProperty.call(ItemIcon.promises, itemId)) {
@@ -73,7 +73,7 @@ class ItemIcon extends Component<ItemIconProps> {
         }
     }
 
-    loadItem(itemId?: number) {
+    loadItem(itemId?: number) : void {
         if(!itemId) return;
 
         if(!ItemIcon.loading.includes(itemId) && !ItemIcon.error.includes(itemId)) {
@@ -105,8 +105,7 @@ class ItemIcon extends Component<ItemIconProps> {
         }
     }
     
-    componentDidMount() {
-
+    componentDidMount() : void {
         this.didLoadItem(this.props.itemId).then((url) => {
             this.setState({loaded: true, url: url});
         });

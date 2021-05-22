@@ -54,7 +54,7 @@ class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelect
         return (list: RaidSetup.Wing<any>[]) => {
             console.log("filterList", list);
             const clonedList : RaidSetup.Wing<any>[] = JSON.parse(JSON.stringify(list));
-            let newList = clonedList.filter(wing => {
+            const newList = clonedList.filter(wing => {
                 wing.bosses = wing.bosses.filter(boss => {
                     boss.setups = boss.setups.filter(setup => {
                         setup.roles = setup.roles.filter(role => {

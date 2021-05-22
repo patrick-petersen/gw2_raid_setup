@@ -6,6 +6,7 @@ import Boss from "../raid/Boss";
 import Setup from "../raid/Setup";
 import Role from "../raid/Role";
 import * as RaidSetup from "./SetupConfigs/RaidSetup";
+import NoHistoryManager from "../helper/NoHistoryManager";
 
 interface ISetup {
     props : {setupValue: {name: string}}
@@ -39,7 +40,7 @@ class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
         this.listChangedCallback = this.listChangedCallback.bind(this);
         this.filterListCallback = this.filterListCallback.bind(this);
 
-        this.historyManager = new HistoryManager(list, playerSettings);
+        this.historyManager = new NoHistoryManager(list, playerSettings);
         this.historyManager.saveList(this.props.list);
         this.historyManager.addOnChangeCallback(this.listChangedCallback);
     }
