@@ -11,16 +11,16 @@ export default class HashHistoryManager extends HistoryManager {
         };
     }
 
-    getHash() {
+    getHash() : string {
         console.log("location:", window.location.hash);
         return window.location.hash.substr(1);
     }
 
-    saveHash(historyObject : historyObjectType, hash : string) {
+    saveHash(historyObject : historyObjectType, hash : string) : void {
         window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+hash);
     }
 
-    changedHash(historyObject : historyObjectType, hash : string) {
+    changedHash(historyObject : historyObjectType, hash : string) : void {
 
         if(historyObject !== null) {
             this._list = historyObject._list;

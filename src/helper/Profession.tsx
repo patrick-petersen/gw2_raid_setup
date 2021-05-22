@@ -37,7 +37,7 @@ class Profession extends Component<ProfessionProps> {
         }
     }
 
-    didLoadProfession(profession: string) {
+    didLoadProfession(profession: string) : Promise<any> {
 
         let promise;
 
@@ -63,7 +63,7 @@ class Profession extends Component<ProfessionProps> {
         return promise;
     }
 
-    resolvePromises(profession: string, url: string) {
+    resolvePromises(profession: string, url: string) : void {
         console.debug("resolving", profession, url);
         if(Object.prototype.hasOwnProperty.call(Profession.promises, profession)) {
             let current : Resolve | undefined;
@@ -78,7 +78,7 @@ class Profession extends Component<ProfessionProps> {
         }
     }
 
-    loadProfessions() {
+    loadProfessions() : void {
         console.debug("loading professions");
         if(!Profession.loading && !Profession.error) {
             Profession.loading = true;
@@ -122,7 +122,7 @@ class Profession extends Component<ProfessionProps> {
         }
     }
 
-    loadSpecs(ids : number[]) {
+    loadSpecs(ids : number[]) : void {
         for(const index in ids) {
             if(!Object.prototype.hasOwnProperty.call(ids, index)) {
                 continue;
@@ -145,7 +145,7 @@ class Profession extends Component<ProfessionProps> {
         }
     }
 
-    componentDidMount() {
+    componentDidMount() : void {
         this.didLoadProfession(this.props.name).then((url) => {
             this.setState({loaded: true, url: url});
         });
