@@ -43,7 +43,7 @@ abstract class HistoryManager {
         this.listChanged();
     }
 
-    generateHashFromList(list : List) {
+    generateHashFromList(list : List) : string {
         function concatWith(delimiter : string, finisher:(value: string) => any = (a)=>a) {
             return (total : number | string,
                     currentValue : number | string,

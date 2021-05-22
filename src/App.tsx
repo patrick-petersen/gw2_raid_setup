@@ -6,7 +6,7 @@ import Setups from "./Setups";
 
 class App extends React.Component {
 
-    render() {
+    render() : JSX.Element {
         return (
             <div className="App">
                 <header className="App-header">

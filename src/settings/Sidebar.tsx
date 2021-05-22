@@ -46,20 +46,20 @@ class Sidebar extends React.Component<SidebarProps, SidebarState> {
         this.toggleBig = this.toggleBig.bind(this);
     }
 
-    selectSubmenu(menu: menus) {
+    selectSubmenu(menu: menus) : void {
         this.setState({
             selected: menu,
         })
     }
 
-    toggleBig() {
+    toggleBig() : void {
         this.setState({
             big: !this.state.big
         });
         this.props.toggleBigCallback();
     }
 
-    render() {
+    render() : JSX.Element {
         let submenu;
         switch (this.state.selected) {
             default:

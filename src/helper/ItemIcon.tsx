@@ -20,7 +20,7 @@ class ItemIcon extends Component<ItemIconProps> {
         url: "",
     };
 
-    render() {
+    render() : JSX.Element  {
         if (!this.state.loaded) {
             return (
                 <span>{this.props.name}</span>

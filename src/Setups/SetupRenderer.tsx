@@ -46,11 +46,11 @@ class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
     }
 
 
-    listChanged() {
+    listChanged() : void {
         console.log("list changed", this.state.list);
         this.historyManager.listChanged();
     }
-    listChangedCallback(list: RaidSetup.Wing<any>[]) {
+    listChangedCallback(list: RaidSetup.Wing<any>[]) : void {
         console.log("list change callback");
         this.setState({
             list: list,
@@ -58,7 +58,7 @@ class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
         });
     }
 
-    filterListCallback(filter: (list: RaidSetup.Wing<any>[]) => RaidSetup.Wing<any>[]) {
+    filterListCallback(filter: (list: RaidSetup.Wing<any>[]) => RaidSetup.Wing<any>[]) : void {
         const filteredList = filter(this.props.list);
         this.setState({
             list: filteredList,
@@ -67,61 +67,64 @@ class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
         console.log("filtered: ", filteredList);
     }
 
-    render() {
+    render() : JSX.Element[]  {
         console.log("rendering", this.state.list);
         const big = this.props.big;
         const bigTime = this.props.bigTime;
         const onChange = this.listChanged;
         const playerSettings = this.props.playerSettings;
 
-        return [<PlayerSelection playerSettings={playerSettings}
-                                 filterListCallback={this.filterListCallback} key={"settings"}/>,
-            this.state.list.map((wingValue: RaidSetup.Wing<any>) => {
-                console.log("Wing: hidden?", wingValue.hidden);
-                if(wingValue.hidden) {
-                    return undefined;
-                }
-                else {
-                    return (
-                        <Wing wingValue={wingValue}
-                                  key={wingValue.name}>
-                            {
-                                wingValue.bosses.map((bossValue) => {
-                                        if(bossValue.hidden) {
-                                            return undefined;
-                                        }
-                                        else {
-                                            const children : ISetup[] = [];
+        const playerSettingsElement : JSX.Element[] = [<PlayerSelection playerSettings={playerSettings}
+                                                       filterListCallback={this.filterListCallback} key={"settings"}/>]
 
-
-                                            bossValue.setups.forEach((setupValue) => {
-                                                children.push(<Setup setupValue={setupValue}
-                                                               key={setupValue.name}>
-                                                    {
-                                                        setupValue.roles.map((roleValue) => {
-                                                            return (<Role roleValue={roleValue} playerSettings={playerSettings}
-                                                                          onChange={onChange} key={roleValue.player}
-                                                                          cheatString={JSON.stringify(roleValue)}>
-
-                                                            </Role>);
-                                                        })
-                                                    }
-
-                                                </Setup>);
-                                            });
-
-                                            return (<Boss bossValue={bossValue} playerSettings={playerSettings}
-                                                          onChange={onChange} key={bossValue.name}
-                                                          big={big} bigTime={bigTime}
-                                                children={children}
-                                            />);
-                                        }
+        const wings : JSX.Element[] = this.state.list.map((wingValue: RaidSetup.Wing<any>) => {
+            console.log("Wing: hidden?", wingValue.hidden);
+            if(wingValue.hidden) {
+                return undefined;
+            }
+            else {
+                return (
+                    <Wing wingValue={wingValue}
+                          key={wingValue.name}>
+                        {
+                            wingValue.bosses.map((bossValue) => {
+                                    if(bossValue.hidden) {
+                                        return undefined;
                                     }
-                                )
-                            }
+                                    else {
+                                        const children : ISetup[] = [];
+
+
+                                        bossValue.setups.forEach((setupValue) => {
+                                            children.push(<Setup setupValue={setupValue}
+                                                                 key={setupValue.name}>
+                                                {
+                                                    setupValue.roles.map((roleValue) => {
+                                                        return (<Role roleValue={roleValue} playerSettings={playerSettings}
+                                                                      onChange={onChange} key={roleValue.player}
+                                                                      cheatString={JSON.stringify(roleValue)}>
+
+                                                        </Role>);
+                                                    })
+                                                }
+
+                                            </Setup>);
+                                        });
+
+                                        return (<Boss bossValue={bossValue} playerSettings={playerSettings}
+                                                      onChange={onChange} key={bossValue.name}
+                                                      big={big} bigTime={bigTime}
+                                                      children={children}
+                                        />);
+                                    }
+                                }
+                            )
+                        }
                     </Wing>);
-                }
-        })];
+            }
+        }).filter((el): el is JSX.Element => typeof el != "undefined");
+
+        return playerSettingsElement.concat(wings);
     }
 }
 

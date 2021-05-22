@@ -30,7 +30,7 @@ class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelect
     }
 
     selectPlayer(player: string) {
-        return () => {
+        return () : void => {
             this.setState({
                 selected: player,
                 selectionOpen: false
@@ -41,7 +41,7 @@ class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelect
         };
     }
 
-    insertReplacementName(name: string) {
+    insertReplacementName(name: string) : string {
         const replacements = this.props.playerSettings.replacements;
         if(Object.prototype.hasOwnProperty.call(replacements, name)) {
             return replacements[name];
@@ -49,16 +49,16 @@ class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelect
         return name;
     }
 
-    filterList(filterPlayer: string) {
+    filterList(filterPlayer: string) : (list: RaidSetup.Wing<PlayerSelectionProps> []) => RaidSetup.Wing<PlayerSelectionProps> [] {
         console.log("filterPlayer", filterPlayer);
         return (list: RaidSetup.Wing<any>[]) => {
             console.log("filterList", list);
             const clonedList : RaidSetup.Wing<any>[] = JSON.parse(JSON.stringify(list));
-            const newList = clonedList.filter(wing => {
+            return clonedList.filter(wing => {
                 wing.bosses = wing.bosses.filter(boss => {
                     boss.setups = boss.setups.filter(setup => {
                         setup.roles = setup.roles.filter(role => {
-                            const player = Object.prototype.hasOwnProperty.call(role, "replacement")?role.replacement:role.player;
+                            const player = Object.prototype.hasOwnProperty.call(role, "replacement") ? role.replacement : role.player;
                             return (filterPlayer === "All") || (filterPlayer === player);
                         });
                         return setup.roles.length >= 1;
@@ -67,12 +67,10 @@ class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelect
                 });
                 return wing.bosses.length >= 1;
             });
-
-            return newList;
         };
     }
 
-    hideList(filterPlayer: string) {
+    hideList(filterPlayer: string) : (list: RaidSetup.Wing<PlayerSelectionProps> []) => RaidSetup.Wing<PlayerSelectionProps> [] {
         console.log("hide by player", filterPlayer);
 
         return (list: RaidSetup.Wing<any>[]) => {
@@ -82,39 +80,19 @@ class PlayerSelection extends React.Component<PlayerSelectionProps, PlayerSelect
                     boss.setups.forEach(setup => {
                         setup.roles.forEach(role => {
                             const player = Object.prototype.hasOwnProperty.call(role, "replacement")?role.replacement:role.player;
-                            if((filterPlayer === "All") || (filterPlayer === player)) {
-                                role.hidden = false;
-                            }
-                            else {
-                                role.hidden = true;
-                            }
+                            role.hidden = !((filterPlayer === "All") || (filterPlayer === player));
                         });
-                        if(setup.roles.filter(value => !value.hidden).length >= 1) {
-                            setup.hidden = false;
-                        }
-                        else {
-                            setup.hidden = true;
-                        }
+                        setup.hidden = setup.roles.filter(value => !value.hidden).length < 1;
                     });
-                    if(boss.setups.filter(value => !value.hidden).length >= 1) {
-                        boss.hidden = false;
-                    }
-                    else {
-                        boss.hidden = true;
-                    }
+                    boss.hidden = boss.setups.filter(value => !value.hidden).length < 1;
                 });
-                if(wing.bosses.filter(value => !value.hidden).length >= 1) {
-                    wing.hidden = false;
-                }
-                else {
-                    wing.hidden = true;
-                }
+                wing.hidden = wing.bosses.filter(value => !value.hidden).length < 1;
             });
             return list;
         }
     }
 
-    render() {
+    render() : JSX.Element {
         const selection = ["All"].concat(this.props.playerSettings.players);
         return (
             <div className="players">
