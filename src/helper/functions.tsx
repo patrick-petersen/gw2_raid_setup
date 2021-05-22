@@ -43,7 +43,7 @@ export default {
     getDateOfISOWeek: function(w : number, y : number) {
         const simple = new Date(y, 0, 1 + (w - 1) * 7);
         const dow = simple.getDay();
-        let ISOweekStart = simple;
+        const ISOweekStart = simple;
         if (dow <= 4)
             ISOweekStart.setDate(simple.getDate() - simple.getDay() + 1);
         else

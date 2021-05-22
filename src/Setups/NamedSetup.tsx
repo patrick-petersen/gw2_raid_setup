@@ -2,7 +2,7 @@ import {Component} from "react";
 import GenericSetup from "./GenericSetup";
 
 type NamedSetupProps = {
-    name: String
+    name: string
 }
 
 class NamedSetup extends Component<NamedSetupProps> {

@@ -1,15 +1,23 @@
+//abstract class a {}
+
 import {PlayerSettings, Wing} from "../Setups/SetupConfigs/RaidSetup";
 
 import {Player} from "../Setups/SetupConfigs/AllPlayers";
 
-type List = Wing<Player>[];
-type Settings = PlayerSettings<Player>;
-type historyObjectType = {
+export type List = Wing<Player>[];
+export type Settings = PlayerSettings<Player>;
+export type historyObjectType = {
     _currentHash: string,
     _list: List,
 };
 
-export default class HistoryManager {
+
+abstract class HistoryManager {
+
+    abstract getHash() : string;
+    abstract saveHash(historyObject : historyObjectType, hash : string) : void;
+    abstract changedHash(historyObject : historyObjectType, hash : string) : void;
+
     _startHash = this.getHash();
     _currentHash = this._startHash;
     _playerSettings : Settings;
@@ -28,40 +36,6 @@ export default class HistoryManager {
         }
 
         this.updateListFromHash(hash);
-
-        window.onpopstate = (event : PopStateEvent) => {
-            const hash = this.getHash();
-            const historyObject : historyObjectType = event.state;
-            this.changedHash(historyObject, hash);
-        };
-    }
-
-    getHash() {
-        console.log("location:", window.location.hash);
-        return window.location.hash.substr(1);
-
-    }
-    saveHash(historyObject : historyObjectType, hash : string) {
-        window.history.pushState(historyObject, "[Koss] Raidplaner", "#"+hash);
-    }
-
-    changedHash(historyObject : historyObjectType, hash : string) {
-
-        if(historyObject !== null) {
-            this._list = historyObject._list;
-            this._currentHash = historyObject._currentHash;
-            this.callOnChangeCallbacks();
-        }
-        else {
-            //In case there is no history object
-            //i.e. back to initial load, or manually editing the hash
-            let setup = "";
-            if(hash.length >= 1) {
-                setup = hash;
-            }
-            this.updateListFromHash(setup);
-            this._currentHash = hash;
-        }
     }
 
     saveList(list : List) {
@@ -86,7 +60,7 @@ export default class HistoryManager {
                 const roles = bossValue.setups[selectedSetup].roles;
                 console.debug("bossIndex", bossIndex);
                 console.debug("selectedSetup", selectedSetup);
-                // @ts-ignore
+
                 const decoded = "" + (this.toBigInt(selectedSetup) + 1n) + roles.map((roleValue/*, roleIndex*/) => {
                     const player : Player = (roleValue.replacement)?roleValue.replacement:roleValue.player;
                     console.debug(player, this._playerSettings.players.indexOf(player));
@@ -176,12 +150,12 @@ const Base64 = (function () {
         //   v       v       v       v       v       v       v       v      v
         "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz+-";
     const digits = digitsStr.split('');
-    let digitsMap : {[id: string] : number} = {};
+    const digitsMap : {[id: string] : number} = {};
     for (let i = 0; i < digits.length; i++) {
         digitsMap[digits[i]] = i;
     }
     //eslint-disable-next-line no-undef
-    let digitsMap64 : {[id: string] : bigint}  = {};
+    const digitsMap64 : {[id: string] : bigint}  = {};
     for (let i = 0n; i < digits.length; i++) {
         digitsMap64[digits[Number(i)]] = i;
     }
@@ -196,7 +170,7 @@ const Base64 = (function () {
         },
         toInt: function(digitsStr : string) {
             let result = 0;
-            let digits = digitsStr.split('');
+            const digits = digitsStr.split('');
             for (let i = 0; i < digits.length; i++) {
                 result = (result << 6) + digitsMap[digits[i]];
             }
@@ -212,12 +186,14 @@ const Base64 = (function () {
             return result;
         },
         toBigInt: function(digitsStr : string) {
-            var result = 0n;
-            var digits = digitsStr.split('');
-            for (var i = 0; i < digits.length; i++) {
+            let result = 0n;
+            const digits = digitsStr.split('');
+            for (let i = 0; i < digits.length; i++) {
                 result = (result << 6n) + digitsMap64[digits[i]];
             }
             return result;
         }
     };
 })();
+
+export default HistoryManager;

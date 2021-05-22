@@ -88,11 +88,11 @@ class Profession extends Component<ProfessionProps> {
                 .then((jsonData) => {
                     // jsonData is parsed json object received from url
                     console.debug(jsonData);
-                    for(let index in jsonData) {
+                    for(const index in jsonData) {
                         if(!Object.prototype.hasOwnProperty.call(jsonData, index)) {
                             continue;
                         }
-                        let profession = jsonData[index];
+                        const profession = jsonData[index];
                         fetch("https://api.guildwars2.com/v2/professions/" + profession + "?lang=en")
                             .then(response => response.json())
                             .then((jsonData) => {
@@ -123,11 +123,11 @@ class Profession extends Component<ProfessionProps> {
     }
 
     loadSpecs(ids : number[]) {
-        for(let index in ids) {
+        for(const index in ids) {
             if(!Object.prototype.hasOwnProperty.call(ids, index)) {
                 continue;
             }
-            let spec = ids[index];
+            const spec = ids[index];
             fetch("https://api.guildwars2.com/v2/specializations/" + spec + "?lang=en")
             .then(response => response.json())
             .then((jsonData) => {
