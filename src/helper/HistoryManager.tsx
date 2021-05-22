@@ -25,7 +25,7 @@ abstract class HistoryManager {
 
     _onChangeCallbacks : ((list : List) => void)[] = [];
 
-    constructor(list: List, playerSettings : Settings) {
+    protected constructor(list: List, playerSettings : Settings) {
         this._playerSettings = playerSettings;
         let hash = this.getHash();
 
