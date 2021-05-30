@@ -125,7 +125,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Kiter"],
-                                            "player": "Nevra"
+                                            "player": "Yasi"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -135,7 +135,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         {
                                             "profession": "DPS",
                                             "tasks": ["Cannon 2-4"],
-                                            "player": "Yasi"
+                                            "player": "Nevra"
                                         },
                                     ]
                                 },
@@ -691,7 +691,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         {
                                             "profession": "Reaper",
                                             "tasks": ["Lampe"],
-                                            "player": "Nevra"
+                                            "player": "Yasi"
                                         },
                                     ]
                                 },
