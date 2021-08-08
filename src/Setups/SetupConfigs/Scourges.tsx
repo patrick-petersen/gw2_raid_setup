@@ -88,12 +88,12 @@ mathias.roles[2].tasks = ["Feedback", "Alacrity", "Quickness"];
 const druid = cloneSetup(standardBossSetup);
 druid.roles[0].profession = "Druid";
 
-const MO = cloneSetup(standardBossSetup);
+const MO = cloneSetup(druid);
 MO.roles[0].tasks = ["Heal", "Buffs", "Dispel"];
 MO.roles[1].tasks = ["Heal", "Buffs", "Protect"];
 MO.roles[6].tasks = ["Banner", "Claim"];
 
-const deimos = cloneSetup(standardBossSetup);
+const deimos = cloneSetup(druid);
 deimos.roles[6].profession = "Revenant";
 deimos.roles[6].tasks = ["Handkiter"];
 
@@ -658,7 +658,7 @@ const Scourges : RaidSetup<Player> = {
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
-                                standardBossSetup
+                                druid
                             ]
                         },
                         {
