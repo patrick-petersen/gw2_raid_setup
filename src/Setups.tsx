@@ -28,6 +28,7 @@ import FullComp_202012 from "./Setups/SetupConfigs/FullComp_2020-12";
 import FullComp_202101 from "./Setups/SetupConfigs/FullComp_2021-01";
 import FullComp_202102 from "./Setups/SetupConfigs/FullComp_2021-02";
 import FullComp_202105 from "./Setups/SetupConfigs/FullComp_2021-05";
+import FullComp_202108 from "./Setups/SetupConfigs/FullComp_2021-08";
 import Scourges from "./Setups/SetupConfigs/Scourges";
 
 interface RouteParams {
@@ -105,8 +106,15 @@ const defaultSetups : defaultSetupsType[] = [
         startYear: 2021,
         startWeek: 30,
         lastYear: 2025,
-        lastWeek: 999,
+        lastWeek: 34,
         setup: Scourges
+    },
+    {
+        startYear: 2021,
+        startWeek: 35,
+        lastYear: 2025,
+        lastWeek: 999,
+        setup: FullComp_202108
     },
 ]
 
