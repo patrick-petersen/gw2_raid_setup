@@ -81,135 +81,147 @@ const FullComp_202105 : RaidSetup<Player> = {
             },
             "list": [
                 {
-                    "name": "Wing 1",
+                    "name": "Wing 7",
                     "bosses": [
                         {
-                            "name": "Valeguardian",
-                            "iconMiniId": 77334,
+                            "name": "Adina",
+                            "iconMiniId": 82686,
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
-                                ValeGuardian,
                                 {
-                                    "name": "Center",
+                                    "name": "Rev Tank",
                                     "roles": [
                                         {
                                             "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Entangle"],
+                                            "tasks": ["Heal", "Buffs", "Pillar"],
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Tank"],
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness", "Pillar"],
                                             "player": "Kalell"
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Heal", "Quickness"],
+                                            "tasks": ["Quickness", "Pillar"],
                                             "player": "Michi"
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
+                                            "tasks": ["Alacrity", "Tank"],
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
-                                            "player": "Assa"
+                                            "profession": "DPS",
+                                            "tasks": ["Pillar"],
+                                            "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Pillar"],
+                                            "player": "David"
                                         },
                                     ]
                                 },
                             ]
                         },
                         {
-                            "name": "Gorseval",
-                            "iconMiniId": 77296,
+                            "name": "Sabir",
+                            "iconMiniId": 83551,
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
-                                Gorseval,
                                 {
-                                    "name": "No Updraft",
+                                    "name": "Normal",
                                     "roles": [
                                         {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Entangle"],
+                                            "profession": "Tempest",
+                                            "tasks": ["Tank", "Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Pull", "Tank"],
+                                            "tasks": ["Quickness", "Portal"],
                                             "player": "Kalell"
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness", "SyG"],
+                                            "tasks": ["Quickness"],
                                             "player": "Michi"
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
-                                            "player": "Assa"
+                                            "profession": "Berserker",
+                                            "tasks": ["Whisps"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Epi", "Blood-Pull"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Epi"],
+                                            "player": "Nevra"
                                         },
                                     ]
                                 },
-                        ]
+                            ]
                         },
                         {
-                            "name": "Sabetha",
-                            "iconMiniId": 77339,
+                            "name": "Qadim 2",
+                            "iconMiniId": 91232,
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
-                                Sabetha,
                                 {
                                     "name": "Normal",
                                     "roles": [
                                         {
                                             "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs"],
+                                            "tasks": ["Heal", "Buffs", "Anomaly CC"],
                                             "player": "Shrotty"
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Tank", "Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Aegis"],
+                                            "tasks": ["Quickness", "Stability"],
                                             "player": "Michi"
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
-                                            "player": "Assa"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Kiter"],
-                                            "player": "Yasi"
-                                        },
-                                        {
                                             "profession": "Berserker",
-                                            "tasks": ["Banners", "Cannon 1-3"],
+                                            "tasks": ["Banner"],
                                             "player": "David"
                                         },
                                         {
-                                            "profession": "DPS",
-                                            "tasks": ["Cannon 2-4"],
+                                            "profession": "Deadeye",
+                                            "tasks": ["Pylon N"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Pylon W"],
                                             "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Deadeye",
+                                            "tasks": ["Pylon E"],
+                                            "player": "Assa"
                                         },
                                     ]
                                 },
@@ -476,155 +488,6 @@ const FullComp_202105 : RaidSetup<Player> = {
                     ]
                 },
                 {
-                    "name": "Wing 7",
-                    "bosses": [
-                        {
-                            "name": "Adina",
-                            "iconMiniId": 82686,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Rev Tank",
-                                    "roles": [
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Pillar"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Pillar"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Pillar"],
-                                            "player": "Michi"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity", "Tank"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Pillar"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Pillar"],
-                                            "player": "David"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Sabir",
-                            "iconMiniId": 83551,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Tempest",
-                                            "tasks": ["Tank", "Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Portal"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
-                                            "player": "Michi"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Whisps"],
-                                            "player": "David"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Epi", "Blood-Pull"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Epi"],
-                                            "player": "Nevra"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Qadim 2",
-                            "iconMiniId": 91232,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs", "Anomaly CC"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Tank", "Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness", "Stability"],
-                                            "player": "Michi"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Banner"],
-                                            "player": "David"
-                                        },
-                                        {
-                                            "profession": "Deadeye",
-                                            "tasks": ["Pylon N"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Pylon W"],
-                                            "player": "Nevra"
-                                        },
-                                        {
-                                            "profession": "Deadeye",
-                                            "tasks": ["Pylon E"],
-                                            "player": "Assa"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                    ]
-                },
-                {
                     "name": "Wing 6",
                     "bosses": [
                         {
@@ -751,6 +614,282 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "profession": "Reaper",
                                             "tasks": ["Lampe"],
                                             "player": "Yasi"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "name": "Wing 1",
+                    "bosses": [
+                        {
+                            "name": "Valeguardian",
+                            "iconMiniId": 77334,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                ValeGuardian,
+                                {
+                                    "name": "Center",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs", "Entangle"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Tank"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Heal", "Quickness"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Gorseval",
+                            "iconMiniId": 77296,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                Gorseval,
+                                {
+                                    "name": "No Updraft",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs", "Entangle"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Pull", "Tank"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness", "SyG"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Assa"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Sabetha",
+                            "iconMiniId": 77339,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                Sabetha,
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness", "Aegis"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Kiter"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Banners", "Cannon 1-3"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "DPS",
+                                            "tasks": ["Cannon 2-4"],
+                                            "player": "Nevra"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                    ]
+                },
+                {
+                    "name": "Wing 2",
+                    "bosses": [
+                        {
+                            "name": "Slothasor",
+                            "iconMiniId": 77870,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Pull", "CC", "Mushroom 3"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["RR", "Alacrity"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Mushroom 1", "Epi", "CC"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Mushroom 2"],
+                                            "player": "David"
+                                        },
+                                        {
+                                            "profession": "DPS",
+                                            "tasks": ["Mushroom 4"],
+                                            "player": "Alex"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Trio",
+                            "iconMiniId": 77820,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Mortar CC"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Renegade",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Berserker",
+                                            "tasks": ["Saboteur", "Banners"],
+                                            "player": "David"
+                                        },
+                                    ]
+                                },
+                            ]
+                        },
+                        {
+                            "name": "Mathias",
+                            "iconMiniId": 78815,
+                            "selectedSetup": 0,
+                            "defaultSetup": 0,
+                            "setups": [
+                                {
+                                    "name": "Normal",
+                                    "roles": [
+                                        {
+                                            "profession": "Druid",
+                                            "tasks": ["Heal", "Buffs"],
+                                            "player": "Shrotty"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["Quickness"],
+                                            "player": "Michi"
+                                        },
+                                        {
+                                            "profession": "Mirage",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Healing", "Reviving"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Mirage",
+                                            "tasks": ["Reflect"],
+                                            "player": "Nevra"
                                         },
                                     ]
                                 },
@@ -900,145 +1039,6 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "profession": "Berserker",
                                             "tasks": ["Banner", "CC"],
                                             "player": "David"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                    ]
-                },
-                {
-                    "name": "Wing 2",
-                    "bosses": [
-                        {
-                            "name": "Slothasor",
-                            "iconMiniId": 77870,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Pull", "CC", "Mushroom 3"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
-                                            "player": "Michi"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
-                                            "player": "Assa"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Mushroom 1", "Epi", "CC"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Mushroom 2"],
-                                            "player": "David"
-                                        },
-                                        {
-                                            "profession": "DPS",
-                                            "tasks": ["Mushroom 4"],
-                                            "player": "Alex"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Trio",
-                            "iconMiniId": 77820,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Mortar CC"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
-                                            "player": "Michi"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Berserker",
-                                            "tasks": ["Saboteur", "Banners"],
-                                            "player": "David"
-                                        },
-                                    ]
-                                },
-                            ]
-                        },
-                        {
-                            "name": "Mathias",
-                            "iconMiniId": 78815,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                {
-                                    "name": "Normal",
-                                    "roles": [
-                                        {
-                                            "profession": "Druid",
-                                            "tasks": ["Heal", "Buffs"],
-                                            "player": "Shrotty"
-                                        },
-                                        {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
-                                            "player": "Kalell"
-                                        },
-                                        {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
-                                            "player": "Michi"
-                                        },
-                                        {
-                                            "profession": "Mirage",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Scourge",
-                                            "tasks": ["Healing", "Reviving"],
-                                            "player": "Yasi"
-                                        },
-                                        {
-                                            "profession": "Mirage",
-                                            "tasks": ["Reflect"],
-                                            "player": "Nevra"
                                         },
                                     ]
                                 },
