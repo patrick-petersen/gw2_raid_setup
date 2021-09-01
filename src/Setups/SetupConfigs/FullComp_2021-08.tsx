@@ -93,12 +93,12 @@ const FullComp_202105 : RaidSetup<Player> = {
                                     "name": "Rev Tank",
                                     "roles": [
                                         {
-                                            "profession": "Druid",
+                                            "profession": "Tempest",
                                             "tasks": ["Heal", "Buffs", "Pillar"],
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Firebrand",
+                                            "profession": "Chronomancer",
                                             "tasks": ["Quickness", "Pillar"],
                                             "player": "Kalell"
                                         },
@@ -787,13 +787,8 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
-                                        },
-                                        {
-                                            "profession": "Renegade",
-                                            "tasks": ["RR", "Alacrity"],
-                                            "player": "Assa"
                                         },
                                         {
                                             "profession": "Scourge",
