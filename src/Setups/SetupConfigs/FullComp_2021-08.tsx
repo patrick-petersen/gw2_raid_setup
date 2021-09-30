@@ -98,7 +98,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Chronomancer",
+                                            "profession": "Firebrand",
                                             "tasks": ["Quickness", "Pillar"],
                                             "player": "Kalell"
                                         },
@@ -1059,7 +1059,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Firebrand",
+                                            "profession": "Chronomancer",
                                             "tasks": ["Quickness"],
                                             "player": "Kalell"
                                         },
@@ -1097,7 +1097,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Firebrand",
+                                            "profession": "Chronomancer",
                                             "tasks": ["Quickness"],
                                             "player": "Kalell"
                                         },
@@ -1140,7 +1140,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Firebrand",
+                                            "profession": "Chronomancer",
                                             "tasks": ["Quickness"],
                                             "player": "Kalell"
                                         },
@@ -1167,7 +1167,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                             "name": "Deimos",
                             "iconMiniId": 80327,
                             "selectedSetup": 1,
-                            "defaultSetup": 0,
+                            "defaultSetup": 1,
                             "setups": [
                                 {
                                     "name": "Melee",
@@ -1178,8 +1178,8 @@ const FullComp_202105 : RaidSetup<Player> = {
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Firebrand",
-                                            "tasks": ["Quickness"],
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Quickness", "Tank"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -1189,7 +1189,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["Tank", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
@@ -1214,7 +1214,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Quickness", "Tank"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -1224,7 +1224,7 @@ const FullComp_202105 : RaidSetup<Player> = {
                                         },
                                         {
                                             "profession": "Renegade",
-                                            "tasks": ["Tank", "Alacrity"],
+                                            "tasks": ["Alacrity"],
                                             "player": "Ely"
                                         },
                                         {
