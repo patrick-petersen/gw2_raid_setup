@@ -25,7 +25,14 @@ type NamedSetupType = {
     setup: RaidSetup.RaidSetup<any>,
 }
 
+const defaultSetup = League01;
+
 const namedSetups : NamedSetupType[] = [
+    {
+        name: "default",
+        shortcut: "default",
+        setup: defaultSetup,
+    },
     {
         name: "Lumi -> Marvin",
         shortcut: "marvin",
@@ -48,17 +55,15 @@ const namedSetups : NamedSetupType[] = [
     },
 ];
 
-const defaultSetup = League01;
-
 const namedSetupsIndex : {[id: string]: NamedSetupType} = {};
 namedSetups.forEach((value: NamedSetupType) => {
     namedSetupsIndex[value.shortcut] = value;
 });
 
-
 type SetupsProps = {
 
 }
+
 type SetupsState = {
     big: boolean,
     bigTime: number
