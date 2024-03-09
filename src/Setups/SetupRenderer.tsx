@@ -1,12 +1,10 @@
 import Wing from "../raid/Wing";
 import {Component} from "react";
-import HistoryManager from "../helper/HistoryManager";
 import PlayerSelection from "../settings/PlayerSelection";
 import Boss from "../raid/Boss";
 import Setup from "../raid/Setup";
 import Role from "../raid/Role";
 import * as RaidSetup from "./SetupConfigs/RaidSetup";
-import NoHistoryManager from "../helper/NoHistoryManager";
 
 interface ISetup {
     props : {setupValue: {name: string}}
@@ -25,8 +23,6 @@ type SetupRendererState = {
 }
 
 class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
-    historyManager : HistoryManager;
-
     constructor(props : SetupRendererProps) {
         super(props);
         const list = this.props.list;
@@ -40,15 +36,11 @@ class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
         this.listChangedCallback = this.listChangedCallback.bind(this);
         this.filterListCallback = this.filterListCallback.bind(this);
 
-        this.historyManager = new NoHistoryManager(list, playerSettings);
-        this.historyManager.saveList(this.props.list);
-        this.historyManager.addOnChangeCallback(this.listChangedCallback);
     }
 
 
     listChanged() : void {
         console.log("list changed", this.state.list);
-        this.historyManager.listChanged();
     }
     listChangedCallback(list: RaidSetup.Wing<any>[]) : void {
         console.log("list change callback");
