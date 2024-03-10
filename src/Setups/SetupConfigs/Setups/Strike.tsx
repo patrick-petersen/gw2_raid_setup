@@ -91,7 +91,7 @@ const Raid : RaidSetup<Player> = {
                     "bosses": [
                         {
                             "name": "Keineng Overlook",
-                            "iconMiniId": 82686,
+                            "iconMiniId": 98085,
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
@@ -100,7 +100,7 @@ const Raid : RaidSetup<Player> = {
                         },
                         {
                             "name": "Aetherblade Hideout",
-                            "iconMiniId": 83551,
+                            "iconMiniId": 49950,
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
@@ -109,7 +109,7 @@ const Raid : RaidSetup<Player> = {
                         },
                         {
                             "name": "Xunlai Jade Junkyard",
-                            "iconMiniId": 91232,
+                            "iconMiniId": 20203,
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
@@ -123,7 +123,7 @@ const Raid : RaidSetup<Player> = {
                     "bosses": [
                         {
                             "name": "Cosmic Observatory",
-                            /*"iconMiniId": 0,*/
+                            "iconMiniId": 100293,
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
@@ -132,7 +132,7 @@ const Raid : RaidSetup<Player> = {
                         },
                         {
                             "name": "Temple of Febe",
-                            "iconMiniId": 88868,
+                            "iconMiniId": 100141,
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [

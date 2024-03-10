@@ -18,7 +18,7 @@ class Wing extends React.Component<WingProps> {
         const wingValue = this.props.wingValue;
         return (
             <article className={"wing"}>
-                <div className={"wing-name-wrapper"}><span className={"wing-name"}>Raid: {wingValue.name}</span></div>
+                <div className={"wing-name-wrapper"}><span className={"wing-name"}>{wingValue.name}</span></div>
                 {this.props.children}
             </article>
         )
