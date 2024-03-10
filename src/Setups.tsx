@@ -12,13 +12,10 @@ import {
 import * as RaidSetup from "./Setups/SetupConfigs/Setups/RaidSetup";
 
 //Setups:
-import Marvin from "./Setups/SetupConfigs/Setups/Marvin";
-import DhuumCM from "./Setups/SetupConfigs/Setups/DhuumCM";
-import QadimCC from "./Setups/SetupConfigs/Setups/QadimCC";
 
 import SetupRenderer from "./Setups/SetupRenderer";
-import League01 from "./Setups/SetupConfigs/Setups/League01";
 import Raid from "./Setups/SetupConfigs/Setups/Raid";
+import strike from "./Setups/SetupConfigs/Setups/Strike";
 
 type NamedSetupType = {
     name: string,
@@ -30,29 +27,14 @@ const raidSetup = Raid;
 
 const namedSetups : NamedSetupType[] = [
     {
-        name: "raid",
+        name: "Raid",
         shortcut: "raid",
         setup: raidSetup,
     },
     {
-        name: "Lumi -> Marvin",
-        shortcut: "marvin",
-        setup: Marvin,
-    },
-    {
-        name: "Dhuum CM",
-        shortcut: "dhuum",
-        setup: DhuumCM,
-    },
-    {
-        name: "Qadim no CC",
-        shortcut: "qadim",
-        setup: QadimCC,
-    },
-    {
-        name: "Silver League",
-        shortcut: "league",
-        setup: League01,
+        name: "Strikes",
+        shortcut: "strikes",
+        setup: strike,
     },
 ];
 
