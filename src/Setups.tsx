@@ -18,6 +18,7 @@ import QadimCC from "./Setups/SetupConfigs/QadimCC";
 
 import SetupRenderer from "./Setups/SetupRenderer";
 import League01 from "./Setups/SetupConfigs/League01";
+import Default from "./Setups/SetupConfigs/Default";
 
 type NamedSetupType = {
     name: string,
@@ -25,7 +26,7 @@ type NamedSetupType = {
     setup: RaidSetup.RaidSetup<any>,
 }
 
-const defaultSetup = League01;
+const defaultSetup = Default;
 
 const namedSetups : NamedSetupType[] = [
     {
