@@ -18,7 +18,7 @@ import QadimCC from "./Setups/SetupConfigs/Setups/QadimCC";
 
 import SetupRenderer from "./Setups/SetupRenderer";
 import League01 from "./Setups/SetupConfigs/Setups/League01";
-import Default from "./Setups/SetupConfigs/Setups/Default";
+import Raid from "./Setups/SetupConfigs/Setups/Raid";
 
 type NamedSetupType = {
     name: string,
@@ -26,13 +26,13 @@ type NamedSetupType = {
     setup: RaidSetup.RaidSetup<any>,
 }
 
-const defaultSetup = Default;
+const raidSetup = Raid;
 
 const namedSetups : NamedSetupType[] = [
     {
-        name: "default",
-        shortcut: "default",
-        setup: defaultSetup,
+        name: "raid",
+        shortcut: "raid",
+        setup: raidSetup,
     },
     {
         name: "Lumi -> Marvin",
@@ -98,8 +98,8 @@ class Setups extends React.Component<SetupsProps, SetupsState> {
 
     DefaultSetup() : JSX.Element {
 
-        return (<NamedSetup name={"default"}>
-                {this.customSetupRenderer(defaultSetup)}
+        return (<NamedSetup name={"raid"}>
+                {this.customSetupRenderer(raidSetup)}
             </NamedSetup>
         );
     }

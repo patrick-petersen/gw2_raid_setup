@@ -257,7 +257,7 @@ EscortSetup.roles[2].tasks = ["Tower"];
 
 
 
-const Default : RaidSetup<Player> = {
+const Raid : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Nevra", "Alex", "Dice", "Agnt", "Jay", "Assa"],
                 "missing": [],
@@ -594,4 +594,4 @@ const Default : RaidSetup<Player> = {
             ]
         };
 
-export default Default;
+export default Raid;
