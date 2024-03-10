@@ -1,5 +1,5 @@
 import {RaidSetup, Setup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers_0";
+import {Player} from "../Players/RaidPlayers";
 
 const soloHealSetup : Setup<Player> = {
     "name": "Solo Heal",

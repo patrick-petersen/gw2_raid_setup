@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import './PlayerSelection.scss';
-import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
+import * as RaidSetup from "../Setups/SetupConfigs/Setups/RaidSetup";
 
 type PlayerSelectionProps = {
     playerSettings: RaidSetup.PlayerSettings<any>,

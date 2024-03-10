@@ -1,7 +1,7 @@
 import {RaidSetup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers_1";
+import {Player} from "../Players/DefaultPlayers_1";
 
-const QadimCC : RaidSetup<Player> = {
+const DhuumCM : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
                 "missing": [],
@@ -9,24 +9,19 @@ const QadimCC : RaidSetup<Player> = {
             },
             "list": [
                 {
-                    "name": "Wing 6",
+                    "name": "Wing 5",
                     "bosses": [
                         {
-                            "name": "Qadim",
-                            "iconMiniId": 88587,
+                            "name": "Dhuum CM",
+                            "iconMiniId": 85998,
                             "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Normal",
                                     "roles": [
                                         {
-                                            "profession": "Chronomancer",
-                                            "tasks": ["Tank", "Quickness", "Portal"],
-                                            "player": "Kalell"
-                                        },
-                                        {
                                             "profession": "Tempest",
-                                            "tasks": ["Heal", "Buffs"],
+                                            "tasks": ["Tank", "Heal", "Buffs"],
                                             "player": "Shrotty"
                                         },
                                         {
@@ -35,19 +30,29 @@ const QadimCC : RaidSetup<Player> = {
                                             "player": "Ely"
                                         },
                                         {
-                                            "profession": "Daredevil",
-                                            "tasks": ["Portal"],
+                                            "profession": "Firebrand",
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi"
                                         },
                                         {
-                                            "profession": "Daredevil",
-                                            "tasks": ["Solo Kiter"],
-                                            "player": "Alex"
+                                            "profession": "Berserker",
+                                            "tasks": ["Green 1"],
+                                            "player": "David"
                                         },
                                         {
-                                            "profession": "Reaper",
-                                            "tasks": ["Lampe"],
+                                            "profession": "Scourge",
+                                            "tasks": ["Kiter", "Green 2"],
+                                            "player": "Kalell"
+                                        },
+                                        {
+                                            "profession": "Chronomancer",
+                                            "tasks": ["Green 3"],
                                             "player": "Nevra"
+                                        },
+                                        {
+                                            "profession": "Firebrand",
+                                            "tasks": ["First Green 2"],
+                                            "player": "Lumi"
                                         },
                                     ]
                                 },
@@ -58,4 +63,4 @@ const QadimCC : RaidSetup<Player> = {
             ]
         };
 
-export default QadimCC;
+export default DhuumCM;

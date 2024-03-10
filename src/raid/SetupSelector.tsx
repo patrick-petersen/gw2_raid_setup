@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import './SetupSelector.scss';
-import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
+import * as RaidSetup from "../Setups/SetupConfigs/Setups/RaidSetup";
 
 interface ISetup {
     props : {setupValue: {name: string}}

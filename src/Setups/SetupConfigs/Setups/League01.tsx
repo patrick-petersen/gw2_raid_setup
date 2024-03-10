@@ -1,5 +1,5 @@
 import {RaidSetup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers_1";
+import {Player} from "../Players/DefaultPlayers_1";
 
 const League01 : RaidSetup<Player> = {
     "playerSettings": {

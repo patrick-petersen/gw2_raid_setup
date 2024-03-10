@@ -1,14 +1,13 @@
 import {RaidSetup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers_1";
+import {Player} from "../Players/DefaultPlayers_1";
 
+export type Replacements = "Marvin";
 
-export type Replacements = "Tasmosuth" | "Marvin";
-
-const LumiEly : RaidSetup<Player | Replacements>= {
+const Marvin : RaidSetup<Player | Replacements> = {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
-                "missing": ["Lumi", "Ely"],
-                "replacements": {"Lumi": "Tasmosuth", "Ely": "Marvin"},
+                "missing": ["Lumi"],
+                "replacements": {"Lumi": "Marvin"},
             },
             "list": [
                 {
@@ -17,7 +16,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                         {
                             "name": "Valeguardian",
                             "iconMiniId": 77334,
-                            "selectedSetup": 1,
+                            "selectedSetup": 0,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -35,8 +34,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -66,8 +64,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                     ]
                                 },
@@ -94,8 +91,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -127,14 +123,12 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Kiter"],
-                                            "player": "Assa",
-                                            "replacement": "Nevra"
+                                            "player": "Assa"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -177,8 +171,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -193,8 +186,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Epi"],
-                                            "player": "Assa",
-                                            "replacement": "Nevra"
+                                            "player": "Assa"
                                         },
                                     ]
                                 },
@@ -231,8 +223,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -253,7 +244,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -264,8 +255,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -286,7 +276,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness"],
+                                            "tasks": ["Some Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -297,8 +287,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                     ]
                                 },
@@ -325,8 +314,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -341,8 +329,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Deadeye",
                                             "tasks": ["Adds"],
-                                            "player": "Assa",
-                                            "replacement": "David"
+                                            "player": "Assa"
                                         },
                                     ]
                                 },
@@ -364,8 +351,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -423,8 +409,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -471,15 +456,13 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         },
                                         {
                                             "profession": "Scourge",
-                                            "tasks": ["Heal"],
-                                            "player": "Ely",
-                                            "replacement": "Yasi"
+                                            "tasks": ["Alacrity"],
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["Portal"],
-                                            "player": "Yasi",
-                                            "replacement": "David"
+                                            "player": "Yasi"
                                         },
                                     ]
                                 },
@@ -506,12 +489,11 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Quickness", "Wyvern Tank"],
+                                            "tasks": ["Full Quickness", "Wyvern Tank"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -554,8 +536,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Kalell"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -602,8 +583,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -635,20 +615,18 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Full Quickness", "Stability"],
+                                            "tasks": ["Full Quickness"],
                                             "player": "Yasi",
-                                            "replacement": "Ely"
+                                            "replacement": "Lumi"
                                         },
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Soulcleave"],
-                                            "player": "Alex",
-                                            "replacement": "Fynn"
+                                            "player": "Alex"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -659,7 +637,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                             "profession": "Scourge",
                                             "tasks": ["Pylon N"],
                                             "player": "Lumi",
-                                            "replacement": "Alex"
+                                            "replacement": "Yasi"
                                         },
                                         {
                                             "profession": "Scourge",
@@ -669,8 +647,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Deadeye",
                                             "tasks": ["Pylon E"],
-                                            "player": "Assa",
-                                            "replacement": "Yasi"
+                                            "player": "Assa"
                                         },
                                     ]
                                 },
@@ -702,8 +679,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -740,8 +716,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -773,8 +748,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                     ]
                                 },
@@ -806,8 +780,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -822,7 +795,8 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Daredevil",
                                             "tasks": ["Mushroom 3"],
-                                            "player": "Fynn"
+                                            "player": "Lumi",
+                                            "replacement": "Fynn"
                                         },
                                         {
                                             "profession": "Weaver",
@@ -854,8 +828,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -897,8 +870,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Healing", "Reviving"],
-                                            "player": "Ely",
-                                            "replacement": "Yasi"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Mirage",
@@ -935,8 +907,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -973,8 +944,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Kalell"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -1006,8 +976,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -1039,8 +1008,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely",
-                                            "replacement": "Assa"
+                                            "player": "Ely"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -1055,8 +1023,7 @@ const LumiEly : RaidSetup<Player | Replacements>= {
                                         {
                                             "profession": "Berserker",
                                             "tasks": ["Banner"],
-                                            "player": "Assa",
-                                            "replacement": "Lumi"
+                                            "player": "Assa"
                                         },
                                     ]
                                 },
@@ -1067,4 +1034,4 @@ const LumiEly : RaidSetup<Player | Replacements>= {
             ]
         };
 
-export default LumiEly;
+export default Marvin;

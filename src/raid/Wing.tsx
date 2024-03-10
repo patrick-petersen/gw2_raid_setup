@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './Wing.scss';
-import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
+import * as RaidSetup from "../Setups/SetupConfigs/Setups/RaidSetup";
 
 type WingProps = {
     wingValue: RaidSetup.Wing<any>,

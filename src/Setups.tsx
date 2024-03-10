@@ -9,16 +9,16 @@ import {
     Route,
     useParams
 } from "react-router-dom";
-import * as RaidSetup from "./Setups/SetupConfigs/RaidSetup";
+import * as RaidSetup from "./Setups/SetupConfigs/Setups/RaidSetup";
 
 //Setups:
-import Marvin from "./Setups/SetupConfigs/Marvin";
-import DhuumCM from "./Setups/SetupConfigs/DhuumCM";
-import QadimCC from "./Setups/SetupConfigs/QadimCC";
+import Marvin from "./Setups/SetupConfigs/Setups/Marvin";
+import DhuumCM from "./Setups/SetupConfigs/Setups/DhuumCM";
+import QadimCC from "./Setups/SetupConfigs/Setups/QadimCC";
 
 import SetupRenderer from "./Setups/SetupRenderer";
-import League01 from "./Setups/SetupConfigs/League01";
-import Default from "./Setups/SetupConfigs/Default";
+import League01 from "./Setups/SetupConfigs/Setups/League01";
+import Default from "./Setups/SetupConfigs/Setups/Default";
 
 type NamedSetupType = {
     name: string,

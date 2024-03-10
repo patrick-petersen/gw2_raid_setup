@@ -2,9 +2,9 @@ import {Component} from "react";
 
 import './Role.scss';
 import Profession from "../helper/Profession";
-import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
+import * as RaidSetup from "../Setups/SetupConfigs/Setups/RaidSetup";
 
-import {Player} from "../Setups/SetupConfigs/AllPlayers";
+import {Player} from "../Setups/SetupConfigs/Players/AllPlayers";
 
 type RoleProps = {
     roleValue: RaidSetup.Role<any>,

@@ -1,13 +1,14 @@
 import {RaidSetup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers_1";
+import {Player} from "../Players/DefaultPlayers_1";
 
-export type Replacements = "Marvin";
 
-const Marvin : RaidSetup<Player | Replacements> = {
+export type Replacements = "Tasmosuth" | "Marvin";
+
+const LumiEly : RaidSetup<Player | Replacements>= {
             "playerSettings": {
                 "players": ["Kalell", "Nevra", "Yasi", "Alex", "Lumi", "Fynn", "David", "Shrotty", "Assa", "Ely"],
-                "missing": ["Lumi"],
-                "replacements": {"Lumi": "Marvin"},
+                "missing": ["Lumi", "Ely"],
+                "replacements": {"Lumi": "Tasmosuth", "Ely": "Marvin"},
             },
             "list": [
                 {
@@ -16,7 +17,7 @@ const Marvin : RaidSetup<Player | Replacements> = {
                         {
                             "name": "Valeguardian",
                             "iconMiniId": 77334,
-                            "selectedSetup": 0,
+                            "selectedSetup": 1,
                             "setups": [
                                 {
                                     "name": "Center",
@@ -34,7 +35,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -64,7 +66,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                     ]
                                 },
@@ -91,7 +94,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -123,12 +127,14 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Kiter"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "Nevra"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -171,7 +177,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -186,7 +193,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Epi"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "Nevra"
                                         },
                                     ]
                                 },
@@ -223,7 +231,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -244,7 +253,7 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Full Quickness"],
+                                            "tasks": ["Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -255,7 +264,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -276,7 +286,7 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                     "roles": [
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Some Quickness"],
+                                            "tasks": ["Quickness"],
                                             "player": "Kalell"
                                         },
                                         {
@@ -287,7 +297,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                     ]
                                 },
@@ -314,7 +325,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -329,7 +341,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Deadeye",
                                             "tasks": ["Adds"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "David"
                                         },
                                     ]
                                 },
@@ -351,7 +364,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -409,7 +423,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -456,13 +471,15 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         },
                                         {
                                             "profession": "Scourge",
-                                            "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "tasks": ["Heal"],
+                                            "player": "Ely",
+                                            "replacement": "Yasi"
                                         },
                                         {
                                             "profession": "Chronomancer",
                                             "tasks": ["Portal"],
-                                            "player": "Yasi"
+                                            "player": "Yasi",
+                                            "replacement": "David"
                                         },
                                     ]
                                 },
@@ -489,11 +506,12 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Chronomancer",
-                                            "tasks": ["Full Quickness", "Wyvern Tank"],
+                                            "tasks": ["Quickness", "Wyvern Tank"],
                                             "player": "Yasi"
                                         },
                                         {
@@ -536,7 +554,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Kalell"
                                         },
                                         {
                                             "profession": "Soulbeast",
@@ -583,7 +602,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -615,18 +635,20 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
-                                            "tasks": ["Full Quickness"],
+                                            "tasks": ["Full Quickness", "Stability"],
                                             "player": "Yasi",
-                                            "replacement": "Lumi"
+                                            "replacement": "Ely"
                                         },
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Soulcleave"],
-                                            "player": "Alex"
+                                            "player": "Alex",
+                                            "replacement": "Fynn"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -637,7 +659,7 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                             "profession": "Scourge",
                                             "tasks": ["Pylon N"],
                                             "player": "Lumi",
-                                            "replacement": "Yasi"
+                                            "replacement": "Alex"
                                         },
                                         {
                                             "profession": "Scourge",
@@ -647,7 +669,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Deadeye",
                                             "tasks": ["Pylon E"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "Yasi"
                                         },
                                     ]
                                 },
@@ -679,7 +702,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -716,7 +740,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Chronomancer",
@@ -748,7 +773,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                     ]
                                 },
@@ -780,7 +806,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -795,8 +822,7 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Daredevil",
                                             "tasks": ["Mushroom 3"],
-                                            "player": "Lumi",
-                                            "replacement": "Fynn"
+                                            "player": "Fynn"
                                         },
                                         {
                                             "profession": "Weaver",
@@ -828,7 +854,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -870,7 +897,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Healing", "Reviving"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Yasi"
                                         },
                                         {
                                             "profession": "Mirage",
@@ -907,7 +935,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -944,7 +973,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Kalell"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -976,7 +1006,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Berserker",
@@ -1008,7 +1039,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Renegade",
                                             "tasks": ["Alacrity"],
-                                            "player": "Ely"
+                                            "player": "Ely",
+                                            "replacement": "Assa"
                                         },
                                         {
                                             "profession": "Firebrand",
@@ -1023,7 +1055,8 @@ const Marvin : RaidSetup<Player | Replacements> = {
                                         {
                                             "profession": "Berserker",
                                             "tasks": ["Banner"],
-                                            "player": "Assa"
+                                            "player": "Assa",
+                                            "replacement": "Lumi"
                                         },
                                     ]
                                 },
@@ -1034,4 +1067,4 @@ const Marvin : RaidSetup<Player | Replacements> = {
             ]
         };
 
-export default Marvin;
+export default LumiEly;

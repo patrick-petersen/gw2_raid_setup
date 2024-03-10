@@ -4,7 +4,7 @@ import "./Sidebar.scss";
 import {
     Link,
 } from "react-router-dom";
-import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
+import * as RaidSetup from "../Setups/SetupConfigs/Setups/RaidSetup";
 import LinkTo from "../Setups/LinkTo";
 
 

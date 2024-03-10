@@ -1,5 +1,5 @@
 import {RaidSetup, Setup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers_4";
+import {Player} from "../Players/DefaultPlayers_4";
 
 const standardBossSetup : Setup<Player> = {
         "name": "Scourges",

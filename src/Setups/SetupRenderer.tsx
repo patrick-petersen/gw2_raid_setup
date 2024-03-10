@@ -4,7 +4,7 @@ import PlayerSelection from "../settings/PlayerSelection";
 import Boss from "../raid/Boss";
 import Setup from "../raid/Setup";
 import Role from "../raid/Role";
-import * as RaidSetup from "./SetupConfigs/RaidSetup";
+import * as RaidSetup from "./SetupConfigs/Setups/RaidSetup";
 
 interface ISetup {
     props : {setupValue: {name: string}}
