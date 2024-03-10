@@ -1,13 +1,11 @@
 import * as React from "react";
-import functions from "./helper/functions";
 import Sidebar from "./settings/Sidebar";
 import NamedSetup from "./Setups/NamedSetup";
 import "./Setups.scss";
 import {
     HashRouter as Router,
     Switch,
-    Route,
-    useParams
+    Route
 } from "react-router-dom";
 import * as RaidSetup from "./Setups/SetupConfigs/Setups/RaidSetup";
 
