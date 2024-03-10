@@ -149,6 +149,11 @@ const qadimSetup : Setup<Player> = {
             "player": "Assa"
         },
         {
+            "profession": "Reaper",
+            "tasks": ["Lamp"],
+            "player": "Nevra"
+        },
+        {
             "profession": "Herald",
             "tasks": ["Kiter"],
             "player": "Agnt"
