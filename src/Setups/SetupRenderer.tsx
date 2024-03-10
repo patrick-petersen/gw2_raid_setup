@@ -26,8 +26,6 @@ class SetupRenderer extends Component<SetupRendererProps, SetupRendererState> {
     constructor(props : SetupRendererProps) {
         super(props);
         const list = this.props.list;
-        const playerSettings = this.props.playerSettings;
-
         this.state = {
             list: list,
         };
