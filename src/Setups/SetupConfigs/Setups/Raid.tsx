@@ -154,7 +154,7 @@ const qadimSetup : Setup<Player> = {
             "player": "Nevra"
         },
         {
-            "profession": "Herald",
+            "profession": "Deadeye",
             "tasks": ["Kiter"],
             "player": "Agnt"
         },
@@ -265,7 +265,7 @@ EscortSetup.roles[2].tasks = ["Tower"];
 const Raid : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Nevra", "Alex", "Dice", "Agnt", "Jay", "Assa"],
-                "missing": [],
+                "missing": ["Assa", "Agnt"],
                 "replacements": {},
             },
             "list": [
@@ -306,7 +306,7 @@ const Raid : RaidSetup<Player> = {
                     "bosses": [
                         {
                             "name": "Conjured Amalgamate",
-                            /*"iconMiniId": 0,*/
+                            "iconMiniId": 88543,
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
