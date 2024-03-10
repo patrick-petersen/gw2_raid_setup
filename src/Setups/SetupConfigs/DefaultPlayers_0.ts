@@ -1,10 +1,11 @@
-export type Player = "Kalell" |
-    "Nevra" |
-    "Yasi" |
-    "Alex" |
-    "Lumi" |
-    "Fynn" |
-    "David" |
+export type Player =
+    "Ely" |
     "Shrotty" |
-    "Assa" |
-    "Ely";
+    "Kalell" |
+    "Yasi" |
+    "Nevra" |
+    "Alex" |
+    "Dice" |
+    "Agnt" |
+    "Jay" |
+    "Assa";

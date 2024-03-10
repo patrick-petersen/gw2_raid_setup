@@ -1,5 +1,5 @@
 import {RaidSetup} from "./RaidSetup";
-import {Player} from "./DefaultPlayers_0";
+import {Player} from "./DefaultPlayers_1";
 
 export type Replacements = "Marvin";
 
