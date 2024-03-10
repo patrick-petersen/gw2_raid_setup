@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import './Setup.scss';
-import * as RaidSetup from "../Setups/SetupConfigs/RaidSetup";
+import * as RaidSetup from "../Setups/SetupConfigs/Setups/RaidSetup";
 
 type SetupProps = {
     setupValue: RaidSetup.Setup<any>
