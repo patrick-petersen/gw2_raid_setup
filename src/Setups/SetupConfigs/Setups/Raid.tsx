@@ -244,8 +244,7 @@ const OLCSetup : Setup<Player> = {
 };
 
 function cloneSetup(setup : Setup<Player>) : Setup<Player> {
-    const clonesSetup = JSON.parse(JSON.stringify(setup));
-    return clonesSetup;
+    return JSON.parse(JSON.stringify(setup));
 }
 
 const desminaSetup : Setup<Player> = cloneSetup(soloHealSetup);
@@ -261,12 +260,11 @@ const EscortSetup : Setup<Player> = cloneSetup(duoHealSetup);
 EscortSetup.roles[2].tasks = ["Tower"];
 
 
-
 const Raid : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Nevra", "Alex", "Dice", "Agnt", "Jay", "Assa"],
-                "missing": ["Assa", "Agnt"],
-                "replacements": {},
+                "missing": ["Dice", "Alex"],
+                "replacements": {"Shania": "Dice"},
             },
             "list": [
                 {
