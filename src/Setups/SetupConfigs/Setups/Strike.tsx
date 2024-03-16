@@ -82,8 +82,8 @@ const AHSetup : Setup<Player> = {
 const Raid : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Saqo", "Alex", "Gregor", "Agnt", "Jay", "Assa"],
-                "missing": [],
-                "replacements": {},
+                "missing": ["Alex"],
+                "replacements": {"Eioz": "Alex"},
             },
             "list": [
                 {
