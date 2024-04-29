@@ -22,7 +22,7 @@ const soloHealSetup: Setup<Player> = {
         {
             "profession": "Herald",
             "tasks": ["Quickness"],
-            "player": "Yasi"
+            "player": "Nevra"
         },
     ]
 };
@@ -48,7 +48,7 @@ const duoHealSetup: Setup<Player> = {
         {
             "profession": "Herald",
             "tasks": ["Quickness"],
-            "player": "Yasi"
+            "player": "Nevra"
         },
     ]
 };
@@ -74,7 +74,7 @@ const qadim2Setup: Setup<Player> = {
         {
             "profession": "Herald",
             "tasks": ["Quickness"],
-            "player": "Yasi"
+            "player": "Nevra"
         },
         {
             "profession": "Deadeye",
@@ -89,7 +89,7 @@ const qadim2Setup: Setup<Player> = {
         {
             "profession": "Scourge",
             "tasks": ["Pylon"],
-            "player": "Nevra"
+            "player": "Yasi"
         },
     ]
 };
@@ -115,7 +115,7 @@ const largosSetup: Setup<Player> = {
         {
             "profession": "Herald",
             "tasks": ["Quickness"],
-            "player": "Yasi"
+            "player": "Nevra"
         },
     ]
 };
@@ -238,7 +238,7 @@ const OLCSetup: Setup<Player> = {
         {
             "profession": "Herald",
             "tasks": ["Quickness"],
-            "player": "Yasi"
+            "player": "Nevra"
         },
     ]
 };
@@ -406,7 +406,7 @@ const Raid: RaidSetup<Player> = {
                                 {
                                     "profession": "Herald",
                                     "tasks": ["Quickness"],
-                                    "player": "Yasi"
+                                    "player": "Nevra"
                                 },
                                 {
                                     "profession": "Scrapper",
