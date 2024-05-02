@@ -13,7 +13,8 @@ import * as RaidSetup from "./Setups/SetupConfigs/Setups/RaidSetup";
 
 import SetupRenderer from "./Setups/SetupRenderer";
 import Raid from "./Setups/SetupConfigs/Setups/Raid";
-import strike from "./Setups/SetupConfigs/Setups/Strike";
+import Strike from "./Setups/SetupConfigs/Setups/Strike";
+import Cerus from "./Setups/SetupConfigs/Setups/Cerus";
 
 type NamedSetupType = {
     name: string,
@@ -32,7 +33,12 @@ const namedSetups : NamedSetupType[] = [
     {
         name: "Strikes",
         shortcut: "strikes",
-        setup: strike,
+        setup: Strike,
+    },
+    {
+        name: "Cerus",
+        shortcut: "cerus",
+        setup: Cerus,
     },
 ];
 
