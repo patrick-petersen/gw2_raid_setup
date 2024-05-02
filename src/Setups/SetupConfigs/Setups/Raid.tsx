@@ -84,7 +84,7 @@ const qadim2Setup: Setup<Player> = {
         {
             "profession": "Deadeye",
             "tasks": ["Pylon"],
-            "player": "Jay"
+            "player": "Shania"
         },
         {
             "profession": "Scourge",
@@ -175,9 +175,9 @@ const DeimosSetup: Setup<Player> = {
             "player": "Shrotty"
         },
         {
-            "profession": "Spellbreaker",
+            "profession": "Herald",
             "tasks": ["Handkite"],
-            "player": "Kalell"
+            "player": "Shania"
         },
         {
             "profession": "Specter",
@@ -251,6 +251,7 @@ const desminaSetup: Setup<Player> = cloneSetup(soloHealSetup);
 desminaSetup.roles[0].profession = "Mechanist";
 desminaSetup.roles[0].tasks = ["Tank", "Heal", "Alacrity"];
 desminaSetup.roles[1].tasks = ["Push", "Heal", "Alacrity"];
+desminaSetup.roles[3].player = "Yasi";
 
 const DhuumSetup: Setup<Player> = cloneSetup(soloHealSetup);
 DhuumSetup.roles[0].tasks = ["Kiter", "Heal", "Alacrity"];
@@ -262,11 +263,9 @@ EscortSetup.roles[2].tasks = ["Tower"];
 
 const Raid: RaidSetup<Player> = {
     "playerSettings": {
-        "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Nevra", "Alex", "Dice", "Agnt", "Jay", "Assa"],
-        "missing": ["Jay", "Assa", "Dice", "Yasi"],
+        "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Nevra", "Alex", "Shania", "Agnt", "Jay", "Assa"],
+        "missing": [],
         "replacements": {
-            "Shania": "Assa",
-            "Gregor": "Jay"
         },
     },
     "list": [
