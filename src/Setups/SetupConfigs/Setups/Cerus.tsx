@@ -4,8 +4,8 @@ import {Player} from "../Players/CerusPlayers";
 const Cerus : RaidSetup<Player> = {
             "playerSettings": {
                 "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Alex", "Agnt", "Jay", "Assa", "1", "2"],
-                "missing": ["Alex"],
-                "replacements": {"Eioz": "Alex"},
+                "missing": [],
+                "replacements": {},
             },
             "list": [
                 {
