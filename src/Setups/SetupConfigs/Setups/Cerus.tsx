@@ -3,7 +3,7 @@ import {Player} from "../Players/CerusPlayers";
 
 const Cerus : RaidSetup<Player> = {
             "playerSettings": {
-                "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Alex", "Agnt", "Jay", "1", "2", "3"],
+                "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Alex", "Agnt", "Jay", "Assa", "1", "2"],
                 "missing": ["Alex"],
                 "replacements": {"Eioz": "Alex"},
             },
@@ -31,14 +31,44 @@ const Cerus : RaidSetup<Player> = {
                                             "player": "Shrotty"
                                         },
                                         {
-                                            "profession": "Chronomancer",
+                                            "profession": "Herald",
                                             "tasks": ["Quickness"],
+                                            "player": "Jay"
+                                        },
+                                        {
+                                            "profession": "Scourge",
+                                            "tasks": ["Alacrity"],
+                                            "player": "Assa"
+                                        },
+                                        {
+                                            "profession": "Virtuoso",
+                                            "tasks": ["DPS"],
+                                            "player": "Yasi"
+                                        },
+                                        {
+                                            "profession": "Virtuoso",
+                                            "tasks": ["DPS"],
                                             "player": "Kalell"
                                         },
                                         {
-                                            "profession": "Herald",
-                                            "tasks": ["Quickness"],
-                                            "player": "Yasi"
+                                            "profession": "Virtuoso",
+                                            "tasks": ["DPS"],
+                                            "player": "Alex"
+                                        },
+                                        {
+                                            "profession": "Virtuoso",
+                                            "tasks": ["DPS"],
+                                            "player": "Agnt"
+                                        },
+                                        {
+                                            "profession": "Virtuoso",
+                                            "tasks": ["DPS"],
+                                            "player": "1"
+                                        },
+                                        {
+                                            "profession": "Virtuoso",
+                                            "tasks": ["DPS"],
+                                            "player": "2"
                                         },
                                     ]
                                 }
