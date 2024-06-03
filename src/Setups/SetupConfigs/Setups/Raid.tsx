@@ -27,32 +27,6 @@ const soloHealSetup: Setup<Player> = {
     ]
 };
 
-const sabirSetup: Setup<Player> = {
-    "name": "Duo Heal",
-    "roles": [
-        {
-            "profession": "Chrono",
-            "tasks": ["Heal", "Alacrity"],
-            "player": "Ely"
-        },
-        {
-            "profession": "Herald",
-            "tasks": ["Quickness", "Bubble"],
-            "player": "Shrotty"
-        },
-        {
-            "profession": "Chronomancer",
-            "tasks": ["Heal", "Alacrity", "Portal"],
-            "player": "Kalell"
-        },
-        {
-            "profession": "Herald",
-            "tasks": ["Quickness", "Bubble"],
-            "player": "Nevra"
-        },
-    ]
-};
-
 const duoHealSetup: Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
@@ -78,6 +52,33 @@ const duoHealSetup: Setup<Player> = {
         },
     ]
 };
+
+const sabirSetup: Setup<Player> = {
+    "name": "Duo Heal",
+    "roles": [
+        {
+            "profession": "Chronomancer",
+            "tasks": ["Heal", "Alacrity"],
+            "player": "Ely"
+        },
+        {
+            "profession": "Herald",
+            "tasks": ["Quickness", "Bubble"],
+            "player": "Shrotty"
+        },
+        {
+            "profession": "Chronomancer",
+            "tasks": ["Heal", "Alacrity", "Portal"],
+            "player": "Kalell"
+        },
+        {
+            "profession": "Herald",
+            "tasks": ["Quickness", "Bubble"],
+            "player": "Nevra"
+        },
+    ]
+};
+
 
 const valeGuardianSetup: Setup<Player> = {
     "name": "Duo Heal",
