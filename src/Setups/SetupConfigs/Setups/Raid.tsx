@@ -27,6 +27,32 @@ const soloHealSetup: Setup<Player> = {
     ]
 };
 
+const sabirSetup: Setup<Player> = {
+    "name": "Duo Heal",
+    "roles": [
+        {
+            "profession": "Chrono",
+            "tasks": ["Heal", "Alacrity"],
+            "player": "Ely"
+        },
+        {
+            "profession": "Herald",
+            "tasks": ["Quickness", "Bubble"],
+            "player": "Shrotty"
+        },
+        {
+            "profession": "Chronomancer",
+            "tasks": ["Heal", "Alacrity", "Portal"],
+            "player": "Kalell"
+        },
+        {
+            "profession": "Herald",
+            "tasks": ["Quickness", "Bubble"],
+            "player": "Nevra"
+        },
+    ]
+};
+
 const duoHealSetup: Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
@@ -49,6 +75,42 @@ const duoHealSetup: Setup<Player> = {
             "profession": "Herald",
             "tasks": ["Quickness"],
             "player": "Nevra"
+        },
+    ]
+};
+
+const valeGuardianSetup: Setup<Player> = {
+    "name": "Duo Heal",
+    "roles": [
+        {
+            "profession": "Druid",
+            "tasks": ["Heal", "Alacrity"],
+            "player": "Ely"
+        },
+        {
+            "profession": "Druid",
+            "tasks": ["Heal", "Alacrity"],
+            "player": "Shrotty"
+        },
+        {
+            "profession": "Chronomancer",
+            "tasks": ["Quickness"],
+            "player": "Kalell"
+        },
+        {
+            "profession": "Herald",
+            "tasks": ["Quickness"],
+            "player": "Nevra"
+        },
+        {
+            "profession": "Virtuoso",
+            "tasks": ["Condi"],
+            "player": "Shania"
+        },
+        {
+            "profession": "Virtuoso",
+            "tasks": ["Condi"],
+            "player": "Jay"
         },
     ]
 };
@@ -146,7 +208,7 @@ const qadimSetup: Setup<Player> = {
         {
             "profession": "Herald",
             "tasks": ["Quickness"],
-            "player": "Assa"
+            "player": "Jay"
         },
         {
             "profession": "Reaper",
@@ -156,7 +218,7 @@ const qadimSetup: Setup<Player> = {
         {
             "profession": "Deadeye",
             "tasks": ["Kiter"],
-            "player": "Agnt"
+            "player": "Shania"
         },
     ]
 };
@@ -195,12 +257,12 @@ const MathiasSetup: Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
         {
-            "profession": "Firebrand",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Quickness", "Reflect"],
             "player": "Ely"
         },
         {
-            "profession": "Firebrand",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Quickness", "Reflect"],
             "player": "Shrotty"
         },
@@ -212,7 +274,7 @@ const MathiasSetup: Setup<Player> = {
         {
             "profession": "Specter",
             "tasks": ["Alacrity"],
-            "player": "Assa"
+            "player": "Nevra"
         },
     ]
 };
@@ -287,7 +349,7 @@ const Raid: RaidSetup<Player> = {
                     "selectedSetup": 0,
                     "defaultSetup": 0,
                     "setups": [
-                        soloHealSetup
+                        sabirSetup
                     ]
                 },
                 {
@@ -559,7 +621,7 @@ const Raid: RaidSetup<Player> = {
                     "selectedSetup": 0,
                     "defaultSetup": 0,
                     "setups": [
-                        duoHealSetup
+                        valeGuardianSetup
                     ]
                 },
                 {
