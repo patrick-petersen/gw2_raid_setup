@@ -6,6 +6,6 @@ export type Player =
     "Alex" |
     "Agnt" |
     "Jay" |
-    "Assa" |
-    "1" |
-    "2";
+    "Blank" |
+    "Gregor" |
+    "Akuras";

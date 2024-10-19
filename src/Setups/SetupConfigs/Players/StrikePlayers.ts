@@ -8,4 +8,4 @@ export type Player =
     "Gregor" |
     "Agnt" |
     "Jay" |
-    "Assa";
+    "Blank";

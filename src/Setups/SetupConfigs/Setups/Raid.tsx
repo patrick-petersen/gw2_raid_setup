@@ -5,7 +5,7 @@ const soloHealSetup: Setup<Player> = {
     "name": "Solo Heal",
     "roles": [
         {
-            "profession": "Druid",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Alacrity"],
             "player": "Ely"
         },
@@ -31,7 +31,7 @@ const duoHealSetup: Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
         {
-            "profession": "Druid",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Alacrity"],
             "player": "Ely"
         },
@@ -84,7 +84,7 @@ const valeGuardianSetup: Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
         {
-            "profession": "Druid",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Alacrity"],
             "player": "Ely"
         },
@@ -140,9 +140,9 @@ const qadim2Setup: Setup<Player> = {
             "player": "Nevra"
         },
         {
-            "profession": "Deadeye",
+            "profession": "Deadeye", //?
             "tasks": ["Pylon"],
-            "player": "Assa"
+            "player": "Jay"
         },
         {
             "profession": "Deadeye",
@@ -161,23 +161,23 @@ const largosSetup: Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
         {
-            "profession": "Druid",
-            "tasks": ["Heal", "Alacrity", "Tank"],
+            "profession": "Chronomancer",
+            "tasks": ["Heal", "Quickness", "Tank"],
             "player": "Ely"
         },
         {
-            "profession": "Firebrand",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Quickness", "Tank"],
             "player": "Shrotty"
         },
         {
-            "profession": "Specter",
+            "profession": "Scourge",
             "tasks": ["Alacrity"],
             "player": "Kalell"
         },
         {
-            "profession": "Herald",
-            "tasks": ["Quickness"],
+            "profession": "Scourge",
+            "tasks": ["Alacrity"],
             "player": "Nevra"
         },
     ]
@@ -228,12 +228,12 @@ const DeimosSetup: Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
         {
-            "profession": "Firebrand",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Quickness", "Tank", "Aegis"],
             "player": "Ely"
         },
         {
-            "profession": "Firebrand",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Quickness", "Aegis"],
             "player": "Shrotty"
         },
@@ -243,14 +243,14 @@ const DeimosSetup: Setup<Player> = {
             "player": "Shania"
         },
         {
-            "profession": "Specter",
+            "profession": "Scourge",
             "tasks": ["Alacrity"],
-            "player": "Assa"
+            "player": "Kalell"
         },
         {
-            "profession": "Revenant",
+            "profession": "Scourge",
             "tasks": ["Alacrity"],
-            "player": "Jay"
+            "player": "Nevra"
         },
     ]
 };
@@ -268,12 +268,12 @@ const MathiasSetup: Setup<Player> = {
             "player": "Shrotty"
         },
         {
-            "profession": "Specter",
+            "profession": "Scourge",
             "tasks": ["Alacrity"],
             "player": "Kalell"
         },
         {
-            "profession": "Specter",
+            "profession": "Scourge",
             "tasks": ["Alacrity"],
             "player": "Nevra"
         },
@@ -326,7 +326,7 @@ EscortSetup.roles[2].tasks = ["Tower"];
 
 const Raid: RaidSetup<Player> = {
     "playerSettings": {
-        "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Nevra", "Alex", "Shania", "Agnt", "Jay", "Assa"],
+        "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Nevra", "Alex", "Shania", "Agnt", "Jay", "Blank"],
         "missing": [],
         "replacements": {
         },

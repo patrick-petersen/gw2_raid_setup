@@ -3,7 +3,7 @@ import {Player} from "../Players/CerusPlayers";
 
 const Cerus : RaidSetup<Player> = {
             "playerSettings": {
-                "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Alex", "Agnt", "Jay", "Assa", "1", "2"],
+                "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Alex", "Agnt", "Jay", "Blank", "Gregor", "Akuras"],
                 "missing": [],
                 "replacements": {},
             },
@@ -38,7 +38,7 @@ const Cerus : RaidSetup<Player> = {
                                         {
                                             "profession": "Scourge",
                                             "tasks": ["Alacrity"],
-                                            "player": "Assa"
+                                            "player": "Agnt"
                                         },
                                         {
                                             "profession": "Virtuoso",
@@ -63,12 +63,12 @@ const Cerus : RaidSetup<Player> = {
                                         {
                                             "profession": "Virtuoso",
                                             "tasks": ["DPS"],
-                                            "player": "1"
+                                            "player": "Akuras"
                                         },
                                         {
                                             "profession": "Virtuoso",
                                             "tasks": ["DPS"],
-                                            "player": "2"
+                                            "player": "Blank"
                                         },
                                     ]
                                 }

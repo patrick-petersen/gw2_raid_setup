@@ -1,21 +1,21 @@
 import {RaidSetup, Setup} from "./RaidSetup";
 import {Player} from "../Players/StrikePlayers";
 
-const duoHealSetup : Setup<Player> = {
+const XJJ : Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
         {
-            "profession": "Druid",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Alacrity"],
             "player": "Ely"
         },
         {
-            "profession": "Druid",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Alacrity"],
             "player": "Shrotty"
         },
         {
-            "profession": "Chronomancer",
+            "profession": "Herald",
             "tasks": ["Quickness"],
             "player": "Kalell"
         },
@@ -31,12 +31,12 @@ const KOSetup : Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
         {
-            "profession": "Firebrand",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Quickness", "Tank", "Stability"],
             "player": "Ely"
         },
         {
-            "profession": "Firebrand",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Quickness", "Tank", "Stability"],
             "player": "Shrotty"
         },
@@ -48,7 +48,7 @@ const KOSetup : Setup<Player> = {
         {
             "profession": "Specter",
             "tasks": ["Alacrity", "CC"],
-            "player": "Assa"
+            "player": "Gregor" //?
         },
     ]
 };
@@ -57,12 +57,12 @@ const AHSetup : Setup<Player> = {
     "name": "Duo Heal",
     "roles": [
         {
-            "profession": "Firebrand",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Quickness", "Tank"],
             "player": "Ely"
         },
         {
-            "profession": "Firebrand",
+            "profession": "Chronomancer",
             "tasks": ["Heal", "Quickness", "Tank"],
             "player": "Shrotty"
         },
@@ -74,14 +74,14 @@ const AHSetup : Setup<Player> = {
         {
             "profession": "Specter",
             "tasks": ["Alacrity", "CC"],
-            "player": "Assa"
+            "player": "Gregor"
         },
     ]
 };
 
 const Raid : RaidSetup<Player> = {
             "playerSettings": {
-                "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Saqo", "Alex", "Gregor", "Agnt", "Jay", "Assa"],
+                "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Saqo", "Alex", "Gregor", "Agnt", "Jay", "Blank"],
                 "missing": [],
                 "replacements": {},
             },
@@ -113,30 +113,7 @@ const Raid : RaidSetup<Player> = {
                             "selectedSetup": 0,
                             "defaultSetup": 0,
                             "setups": [
-                                duoHealSetup,
-                            ]
-                        },
-                    ]
-                },
-                {
-                    "name": "Secrets of the Obscure",
-                    "bosses": [
-                        {
-                            "name": "Cosmic Observatory",
-                            "iconMiniId": 100293,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                duoHealSetup,
-                            ]
-                        },
-                        {
-                            "name": "Temple of Febe",
-                            "iconMiniId": 100141,
-                            "selectedSetup": 0,
-                            "defaultSetup": 0,
-                            "setups": [
-                                duoHealSetup,
+                                XJJ,
                             ]
                         },
                     ]
