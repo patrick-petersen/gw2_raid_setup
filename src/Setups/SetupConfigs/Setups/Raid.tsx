@@ -106,7 +106,7 @@ const valeGuardianSetup: Setup<Player> = {
         {
             "profession": "Virtuoso",
             "tasks": ["Condi"],
-            "player": "Shania"
+            "player": "Radu"
         },
         {
             "profession": "Virtuoso",
@@ -147,7 +147,7 @@ const qadim2Setup: Setup<Player> = {
         {
             "profession": "Deadeye",
             "tasks": ["Pylon"],
-            "player": "Shania"
+            "player": "Radu"
         },
         {
             "profession": "Scourge",
@@ -219,7 +219,7 @@ const qadimSetup: Setup<Player> = {
         {
             "profession": "Deadeye",
             "tasks": ["Kiter"],
-            "player": "Shania"
+            "player": "Radu"
         },
     ]
 };
@@ -240,7 +240,7 @@ const DeimosSetup: Setup<Player> = {
         {
             "profession": "Herald",
             "tasks": ["Handkite"],
-            "player": "Shania"
+            "player": "Radu"
         },
         {
             "profession": "Scourge",
@@ -311,22 +311,30 @@ function cloneSetup(setup: Setup<Player>): Setup<Player> {
 }
 
 const desminaSetup: Setup<Player> = cloneSetup(soloHealSetup);
-desminaSetup.roles[0].profession = "Mechanist";
-desminaSetup.roles[0].tasks = ["Tank", "Heal", "Alacrity"];
+desminaSetup.roles[0].profession = "Chronomancer";
+desminaSetup.roles[0].tasks = ["Tank", "Heal", "Quickness"];
 desminaSetup.roles[1].tasks = ["Push", "Heal", "Alacrity"];
-desminaSetup.roles[3].player = "Yasi";
+desminaSetup.roles[1].profession = "Druid";
+desminaSetup.roles[2].tasks = ["Quickness"];
+desminaSetup.roles[3].player = "Nevra";
+desminaSetup.roles[3].profession = "Scourge";
+desminaSetup.roles[3].tasks = ["Alacrity"];
 
 const DhuumSetup: Setup<Player> = cloneSetup(soloHealSetup);
 DhuumSetup.roles[0].tasks = ["Kiter", "Heal", "Alacrity"];
 DhuumSetup.roles[2].tasks = ["Alacrity", "Tank"];
 
 const EscortSetup: Setup<Player> = cloneSetup(duoHealSetup);
-EscortSetup.roles[2].tasks = ["Tower"];
+EscortSetup.roles.push({
+    "profession": "Chronomancer",
+    tasks: ["Portal"],
+    player: "Radu"
+});
 
 
 const Raid: RaidSetup<Player> = {
     "playerSettings": {
-        "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Nevra", "Alex", "Shania", "Agnt", "Jay", "Blank"],
+        "players": ["Ely", "Shrotty", "Kalell", "Yasi", "Nevra", "Alex", "Radu", "Agnt", "Jay", "Blank"],
         "missing": [],
         "replacements": {
         },

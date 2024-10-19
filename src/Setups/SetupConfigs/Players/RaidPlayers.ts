@@ -5,7 +5,7 @@ export type Player =
     "Yasi" |
     "Nevra" |
     "Alex" |
-    "Shania" |
+    "Radu" |
     "Agnt" |
     "Jay" |
     "Blank";
